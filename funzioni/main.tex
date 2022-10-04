@@ -1,65 +1,8 @@
+%Update 9/7/2022
 \documentclass{article}     %type of document
 \usepackage[utf8]{inputenc} %for text encoding
-\usepackage[italian]{babel} %for language elements
-\usepackage{graphicx}   %for adding figures
-\usepackage[a4paper, portrait, margin=2cm]{geometry}   %paper shape
-\usepackage{array}      %table management
-\usepackage{wrapfig}    %figures alignment
-\usepackage{subcaption}     %for subfigures
-%\usepackage{url}        %clickable links
-\usepackage{longtable}  %multiple page tables
-\usepackage{multirow}   %crowspan
-\usepackage{tikz}
-%\usetikzlibrary{trees}
-\usetikzlibrary{calc}
-
-%geogebra
-\usepackage{pgfplots}
-\pgfplotsset{compat=1.15}
-\usepackage{mathrsfs}
-\usetikzlibrary{arrows}
-
-\usepackage{amsfonts} %per simboli insiemi numerici
-\usepackage{amsmath} %per coefficienti binomiali
-\usepackage{amsthm} %per teoremi non numerati
-\usepackage{amssymb} %per simbolo insieme vuoto \varnothing
-
-%intestazione
-\usepackage{fancyhdr}
-\pagestyle{fancy}
-\newcommand\parallelo{/\!/} %simbolo parallelismo
-\newcommand\tg{\text{\textnormal{tg\,}}} %tangente
-\newcommand\cotg{\text{\textnormal{cotg\,}}} %cotangente
-\newcommand\arctg{\text{\textnormal{arctg\,}}} %arcotangente
-\newcommand\arccotg{\text{\textnormal{arccotg\,}}} %arcocotangente
-
-\newcommand\N{\mathbb{N}}
-\newcommand\Z{\mathbb{Z}}
-\newcommand\Q{\mathbb{Q}}
-\newcommand\R{\mathbb{R}}
-\newcommand\C{\mathbb{C}}
-
-
-\pgfplotsset{compat=1.15}
-\usepackage{mathrsfs}
-\usetikzlibrary{arrows}
-
-\usepackage{standalone} %external matlab tikz files
-
-\newtheorem*{theorem}{Teorema}
-
-\newtheorem*{definition}{DEF}
-
-\newtheorem*{law}{Legge}
-
-\newtheorem{ex}{Esempio}[section]
-\newtheorem*{ex*}{Esempio}
-
-\newtheorem{axiom}{Assioma}
-
-\newtheorem{corollary}{Corollario}
-
-\renewcommand\qedsymbol{QED}
+\usepackage{../lambdatex} 
+\everymath{\displaystyle}
 
 \title{Funzioni reali di variabili reali}
 \author{Davide Borra - 5LA}
@@ -69,6 +12,8 @@
     \begin{titlepage}
     \maketitle
     \tableofcontents
+    \vspace{\fill}
+    \hspace{\fill} v. 1.2   %incrementare primo numero per contenuti e secondo numero per patch
     \end{titlepage}
     
     \lhead{Funzioni reali di variabili reali}
@@ -162,7 +107,7 @@
             \begin{enumerate}
                 \item[-] Dominio: Si tratta di una funzione polinomiale, di conseguenza il suo dominio è l'insieme $\R$
                 \item[-] Zeri: Per determinare gli zeri bisogna risolvere l'equazione $f(x)=0$, ovvero \[x^2+x-2=0\]\[(x-1)(x+2)=0\]\[x_1=1~~~~x_2=-2\]
-                \item[-] Segno: Risolviamo la disequazione \[x^2+x-2>0\]\[(x-1)(x+2)>0\]\[\text{prodotto di fattori } >0 \text{: soluzioni esterne }-2<x<1\]
+                \item[-] Segno: Risolviamo la disequazione \[x^2+x-2>0\]\[(x-1)(x+2)>0\]\[\text{prodotto di fattori } >0 \text{: soluzioni esterne }x<-2\lor x>1\]
             \end{enumerate}
     \section{Proprietà}
         \subsection{Funzioni iniettive, suriettive e biiettive}
@@ -541,7 +486,7 @@
                     \end{axis}
                 \end{tikzpicture}
         \end{wrapfigure}
-        La funzione tangente è una funzione goniometrica trascendente, periodica in $T=\pi$. Essa ha dominio $D:x\neq \frac{\pi}{2}+k\pi~~~(k\in\Z)$ e codominio $C:\R$. Presenta zeri di funzione per $x=k\pi$, assume valori positivi in $]k\pi;\frac{\pi}{2}+2k\pi[$ e negativi altrove. \newpage
+        La funzione tangente è una funzione goniometrica trascendente, periodica in $T=\pi$. Essa ha dominio $D:x\neq \frac{\pi}{2}+k\pi~~~(k\in\Z)$ e codominio $C:\R$. Presenta zeri di funzione per $x=k\pi$, assume valori positivi in $]k\pi;\frac{\pi}{2}+2k\pi[$ e negativi altrove. %\newpage
     \subsubsection{La funzione cotangtente}
         \begin{wrapfigure}[4]{r}{0.5\textwidth}
             \centering
@@ -2258,7 +2203,7 @@
                 \end{axis}
             \end{tikzpicture}
         \end{figure} 
-        
+\newpage
 \section{Studio di funzione completo}
     \subsection{Classificazione}
     \begin{tabular}{|c|c|c|c|}
@@ -2334,7 +2279,7 @@
                 \draw[->] (0.4,-1.85)--(1.1,-1.15); %+ sx
                 \draw[->] (1.9,-1.15)--(2.6,-1.85); %- dx
             \end{tikzpicture}
-            \caption{Minimo relativo}
+            \caption{Massimo relativo}
         \end{subfigure}
         \begin{subfigure}{0.48\textwidth}
             \centering
@@ -2349,7 +2294,7 @@
                 \draw[->] (0.4,-1.15)--(1.1,-1.85); %- sx
                 \draw[->] (1.9,-1.85)--(2.6,-1.15); %+ dx
             \end{tikzpicture}
-            \caption{Massimo relativo}
+            \caption{Minimo relativo}
         \end{subfigure}
         \begin{subfigure}{0.48\textwidth}
             \centering
@@ -2381,7 +2326,7 @@
                 \draw[->] (0.4,-1.15)--(1.1,-1.85); %- sx
                 \draw[->] (1.9,-1.15)--(2.6,-1.85); %- dx
             \end{tikzpicture}
-            \caption{Flesso a tangente verticale discendente}
+            \caption{Flesso a tangente orizzontale discendente}
         \end{subfigure}
     \end{figure}
     Lo studio della derivata prima fornisce anche informazioni circa la monotonia della funzione.
