@@ -1,0 +1,235 @@
+\documentclass{article}
+\usepackage[utf8]{inputenc}
+\usepackage[italian]{babel} %for language elements
+\usepackage{graphicx}   %for adding figures
+\usepackage[a4paper, portrait, margin=2cm]{geometry}   %paper shape
+\usepackage{array}      %table management
+\usepackage{wrapfig}    %figures alignment
+\usepackage{subcaption}     %for subfigures
+%\usepackage{url}        %clickable links
+\usepackage{longtable}  %multiple page tables
+
+\usepackage{amsfonts} %per simboli insiemi numerici
+\usepackage{amsmath} %per coefficienti binomiali
+\usepackage{amsthm} %per teoremi non numerati
+\usepackage{amssymb} %per simbolo insieme vuoto \varnothing
+
+\usepackage{fancyhdr}
+\pagestyle{fancy}
+
+\usepackage{multirow} %per rowspan
+
+\usepackage{tikz}
+\usetikzlibrary{trees}
+
+\usepackage{amsthm} %per teoremi non numerati
+
+\newtheorem*{theorem}{Teorema}
+
+\newtheorem*{definition}{DEF}
+
+\newtheorem*{law}{Legge}
+
+\newtheorem{ex}{Esempio}[section]
+
+\newtheorem{axiom}{Assioma}
+
+\newtheorem{corollary}{Corollario}
+
+\title{Coniche}
+
+\begin{document}
+\lhead{Coniche}
+    \chead{}
+    \rhead{Davide Borra - 5LA}
+\section*{Parabola}
+\begin{table}[h]
+    \centering
+    \begin{tabular}{|m{0.16\textwidth}|m{0.37\textwidth}|m{0.37\textwidth}|}
+        \hline
+        & Asse parallelo all'asse $y$ & Asse parallelo all'asse $x$\\ \hline\hline
+        Equazione & \[y=ax^2+bx+c\] & \[x=ay^2+by+c\]\\ \hline
+        Concavità & \multicolumn{2}{m{0.74\textwidth}|}{\[\left\{\begin{array}{ll}
+            \text{verso l'alto} & \text{se }a>0\\
+            \text{verso il basso} & \text{se }a<0 
+        \end{array}\right.\]}\\\hline
+        Vertice & \[V\left(-\frac{b}{2a};-\frac{\Delta}{4a}\right)\] & \[V\left(-\frac{\Delta}{4a};-\frac{b}{2a}\right)\]\\\hline
+        Asse & \[x=-\frac{b}{2a}\] & \[y=-\frac{b}{2a}\]\\\hline
+        Fuoco &\[F\left(-\frac{b}{2a};\frac{1-\Delta}{4a}\right)\] & \[F\left(\frac{1-\Delta}{4a};-\frac{b}{2a}\right)\]\\\hline
+        Direttrice & \[y=\frac{-1+\Delta}{4a}\] & \[x=\frac{-1+\Delta}{4a}\]\\\hline
+        Sdoppiamento & \[\frac{y+y_P}{2}=axx_P+b\frac{x+x_P}{2}+c\] & \[\frac{x+x_P}{2}=ayy_P+b\frac{y+y_P}{2}+c\]\\\hline
+    \end{tabular}
+\end{table}
+L'area del segmento parabolico compreso tra una retta $r$ secante alla parabola e che la interseca nei punti $A$ e $B$ è i $\frac{2}{3}$ dell'area del rettangolo $ABB'A'$, dove $A'$ e $B'$ sono le proiezioni dei punti $A$ e $B$ sulla retta $r'$ parallela a $r$ e tangente alla parabola. 
+\section*{Circonferenza}
+\begin{table}[h]
+    \centering
+    \begin{tabular}{|m{0.16\textwidth}|m{0.74\textwidth}|}
+        \hline
+        Equazione & \[(x-x_C)^2+(y-y_C)^2=r^2\] \[x^2+y^2+ax+by+c=0\] \\\hline
+        Centro & \[C\left(-\frac{a}{2};-\frac{b}{2}\right)\] \\ \hline
+        Raggio & \[r=\sqrt{\frac{a^2}{4}+\frac{b^2}{4}-c}\] \\ \hline
+        Sdoppiamento & \[xx_P+yy_P+a\frac{x+x_P}{2}+b\frac{y+y_P}{2}+c=0\] \\ \hline
+    \end{tabular}
+\end{table}
+\newpage
+\section*{Ellisse}
+    \begin{table}[h]
+    \centering
+    \begin{tabular}{|m{0.16\textwidth}|m{0.37\textwidth}|m{0.37\textwidth}|}
+        \hline
+        & Fuochi paralleli all'asse $x$ ($a>b$) & Fuochi paralleli all'asse $y$ ($a<b$)\\ \hline\hline
+        Equazione & \multicolumn{2}{m{0.74\textwidth}|}{\[\frac{(x-x_C)^2}{a^2}+\frac{(y-y_C)^2}{b^2}=1\] \[Ax^2+By^2+Cx+Dy+E=0\]}\\ \hline
+        Centro & \multicolumn{2}{m{0.74\textwidth}|}{\[C\left(x_C,y_C\right)\]}\\\hline
+        Semiasse maggiore & \[a\] & \[b\]\\\hline
+        Semiasse minore & \[b\] & \[a\]\\\hline
+        Semidistanza focale & \[c=\sqrt{a^2-b^2}\] & \[c=\sqrt{b^2-a^2}\]\\ \hline
+        Eccentricità & \[e=\frac{c}{a}\] & \[e=\frac{c}{b}\] \\ \hline
+        Fuochi &\[F\left(\pm c+x_C;y_C\right)\] & \[F\left(x_C;\pm c + y_C\right)\]\\\hline
+        Vertici & \multicolumn{2}{m{0.74\textwidth}|}{\[A\left(\pm a + x_C;y_C\right) ~~~~~B\left(x_C;\pm b +y_C\right)\]}\\\hline
+        Sdoppiamento & \multicolumn{2}{m{0.74\textwidth}|}{\[Axx_P+Byy_P+C\frac{x+x_P}{2}+D\frac{y+y_P}{2}+E=0\]} \\ \hline
+    \end{tabular}
+\end{table}
+\newpage
+\section*{Iperbole}
+        \begin{table}[h]
+    \centering
+    \begin{tabular}{|m{0.16\textwidth}|m{0.37\textwidth}|m{0.37\textwidth}|}
+        \hline
+        & Fuochi paralleli all'asse $x$ & Fuochi paralleli all'asse $y$\\ \hline\hline
+        Equazione & \[\frac{(x-x_C)^2}{a^2}-\frac{(y-y_C)^2}{b^2}=1\]& \[\frac{(x-x_C)^2}{a^2}-\frac{(y-y_C)^2}{b^2}=-1\]\\ \hline 
+        Equazione generica& \multicolumn{2}{m{0.74\textwidth}|}{
+        \[Ax^2+By^2+Cx+Dy+E=0\]}\\ \hline
+        Centro & \multicolumn{2}{m{0.74\textwidth}|}{\[C\left(x_C,y_C\right)\]}\\\hline
+        Semiasse maggiore & \[a\] & \[b\]\\\hline
+        Semiasse minore & \[b\] & \[a\]\\\hline
+        Asintoti & \multicolumn{2}{m{0.74\textwidth}|}{\[y=\pm \frac{b}{a}(x-x_C)+y_C\]} \\ \hline
+        Semidistanza focale & \multicolumn{2}{m{0.74\textwidth}|}{\[c=\sqrt{a^2+b^2}\]}\\ \hline
+        Eccentricità & \[e=\frac{c}{a}\] & \[e=\frac{c}{b}\] \\ \hline
+        Fuochi &\[F\left(\pm c+x_C;y_C\right)\] & \[F\left(x_C;\pm c + y_C\right)\]\\\hline
+        Vertici & \multicolumn{2}{m{0.74\textwidth}|}{\[A\left(\pm a + x_C;y_C\right) ~~~~~B\left(x_C;\pm b +y_C\right)\]}\\\hline
+        Sdoppiamento & \multicolumn{2}{m{0.74\textwidth}|}{\[Axx_P+Byy_P+C\frac{x+x_P}{2}+D\frac{y+y_P}{2}+E=0\]} \\ \hline
+    \end{tabular}
+\end{table}
+\newpage
+\subsection*{Iperbole equilatera riferita ai propri asintoti e funzione omografica}
+        \begin{table}[h]
+    \centering
+    \begin{tabular}{|m{0.16\textwidth}|m{0.37\textwidth}|m{0.37\textwidth}|}
+        \hline
+        & $k>0$ & $k<0$\\ \hline\hline
+        Equazione & \multicolumn{2}{m{0.74\textwidth}|}{
+        \[y=\frac{ax+b}{cx+d}~~~~~\text{con }c\neq 0 \land ad-bc\neq 0\]}\\ \hline
+        Centro & \multicolumn{2}{m{0.74\textwidth}|}{\[C\left(-\frac{d}{c};\frac{a}{c}\right)\]}\\\hline
+        Costante di proporzionalità & \multicolumn{2}{m{0.74\textwidth}|}{\[k=\frac{bc-ad}{c^2}\]}\\\hline
+        Semiassi & \multicolumn{2}{m{0.74\textwidth}|}{\[a=\sqrt{2|k|}\]}\\ \hline
+        Asintoti & \multicolumn{2}{m{0.74\textwidth}|}{\[x=-\frac{d}{c}~~~~~y=\frac{a}{c}\]} \\ \hline
+        Semidistanza focale & \multicolumn{2}{m{0.74\textwidth}|}{\[c=2\sqrt{|k|}\]}\\ \hline
+        Eccentricità & \multicolumn{2}{m{0.74\textwidth}|}{\[e=\sqrt{2}\]} \\ \hline
+        Fuochi &\[F\left(\pm a+x_C;\pm a+y_C\right)\] & \[F\left(\pm a + x_C; \mp a + y_C\right)\]\\\hline
+        Vertici & \[A\left(\pm \sqrt{|k|} + x_C;\pm\sqrt{|k|}+y_C\right)\] & \[A\left(\pm \sqrt{|k|} + x_C;\mp\sqrt{|k|}+y_C\right)\]\\\hline
+    \end{tabular}
+\end{table}
+\section*{Classificazione di coniche nella forma $Ax^2+Bxy+Cy^2+Dx+Ey+F=0$}
+\subsection*{Metodo 1: Eccentricità}
+\begin{definition}
+Si dice conica il luogo dei punti P del piano tali che sia costante il rapporto $e$ (eccentricità della curva) tra le distanze da un punto $F$ detto fuoco e una retta $d$ detta direttrice:
+\end{definition}
+\[\frac{\overline{PF}}{d(P, d)}=e\]
+L'eccentricità permette di classificare le coniche come segue:
+\begin{itemize}
+    \item $e>1$: iperbole (2 direttrici)
+    \begin{itemize}
+        \item $e=\sqrt{2}$: iperbole equilatera
+    \end{itemize}
+    \item $e=1$: parabola
+    \item $0<e<1$: ellisse
+    \item $e=0$: circonferenza
+\end{itemize}
+\subsection*{Metodo 2: Termine rettangolare} 
+                \tikzstyle{level 1}=[level distance=1cm, sibling distance=4.5cm]
+                \tikzstyle{level 2}=[level distance=2.5cm, sibling distance=2cm]
+                \tikzstyle{level 3}=[level distance=3.5cm, sibling distance=0.9cm]
+                
+                \tikzstyle{bag} = [text width=1.5 cm, text centered]
+                \tikzstyle{end} = [text width=9 cm, anchor = west]
+                
+                \begin{tikzpicture}[grow=right]
+                \node[bag] {}
+                    child {
+                        node[bag] {$B=0$}        
+                            child {
+                                node[bag]{$A\neq 0$ $\lor$ $C\neq 0$}
+                                    child {
+                                        node[end]{Altra conica ruotata}
+                                    }
+                            }
+                            child {
+                                node[bag]{$A=0$ $\land$ $C=0$}
+                                    child {
+                                        node[end]{Omografica}
+                                    }
+                            }
+                    }
+                    child {
+                        node[bag] {$B\neq0$}        
+                            child {
+                                node[bag]{$AC>0$}
+                                    child {
+                                        node[end]{Ellisse se $s>0$ e concorde con $A$ e $C$ (cfr se $A=C$)}
+                                    }child {
+                                        node[end]{Ellisse degenere in punto se $s=0$}
+                                    }
+                            }
+                            child {
+                                node[bag]{$AC<0$}
+                                    child {
+                                        node[end]{Iperbole se $s=\frac{D^2}{4A}+\frac{E^2}{4C}-F\neq0$}
+                                    }child {
+                                        node[end]{Iperbole degenere in rette se $s=0$}
+                                    }
+                            }
+                            child {
+                                node[bag]{$AC=0$}
+                                    child {
+                                        node[end]{Parabola}
+                                    }child {
+                                        node[end]{Parabola degenere in rette ($A=D=0 \lor C=E=0$)}
+                                }
+                            }
+                    };
+                \end{tikzpicture}
+\subsection*{Metodo 3: Matrice associata}
+Si costruisce la matrice \[\renewcommand{\arraystretch}{2}A=\left[\begin{array}{ccc}
+    A & \dfrac{B}{2} & \dfrac{D}{2}\\
+    \dfrac{B}{2} & C & \dfrac{E}{2} \\
+    \dfrac{D}{2} & \dfrac{E}{2} & F
+\end{array}\right]\]
+Il cui minore principale di ordine 2 è la matrice 
+\[\renewcommand{\arraystretch}{2}M=\left[\begin{array}{cc}
+    A & \dfrac{B}{2} \\
+    \dfrac{B}{2} & C
+\end{array}\right]\]
+\begin{itemize}
+    \item $detM>0$: ellisse
+        \begin{itemize}
+            \item $detA(A+C)>0$ ellisse complessa
+            \item $detA(A+C)<0$ ellisse reale
+            \item $detA=0$ ellisse degenere
+            \item $B=0 \land A=C$ circonferenza (reale o complessa come sopra)
+        \end{itemize}
+    \item $detM=0$: parabola
+        \begin{itemize}
+            \item $detA(A+C)>0$ parabola complessa
+            \item $detA(A+C)<0$ parabola reale
+            \item $detA=0$ parabola degenere
+        \end{itemize}
+    \item $detM<0$: iperbole
+    \begin{itemize}
+            \item $detA(A+C)>0$ iperbole complessa
+            \item $detA(A+C)<0$ iperbole reale
+            \item $detA=0$ iperbole degenere
+            \item $A+C=0$ iperbole equilatera (reale o complessa come sopra)
+        \end{itemize}
+\end{itemize}
+\end{document}

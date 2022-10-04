@@ -1,0 +1,974 @@
+\documentclass{article}     %type of document
+\usepackage[utf8]{inputenc} %for text encoding
+\usepackage[italian]{babel} %for language elements
+\usepackage{graphicx}   %for adding figures
+\usepackage[a4paper, portrait, margin=2cm]{geometry}   %paper shape
+\usepackage{array}      %table management
+\usepackage{wrapfig}    %figures alignment
+%\usepackage{url}        %clickable links
+%\usepackage{longtable}  %multiple page tables
+%trees
+\usepackage{tikz}
+\usetikzlibrary{trees}
+\usetikzlibrary{calc}
+%geogebra
+\usepackage{pgfplots}
+\pgfplotsset{compat=1.15}
+\usepackage{mathrsfs}
+\usetikzlibrary{arrows}
+\usepackage{amsfonts} %per simboli insiemi numerici
+\usepackage{amsmath} %per coefficienti binomiali
+\usepackage{amsthm} %per teoremi non numerati
+\usepackage{amssymb} %per simbolo insieme vuoto \varnothing
+%intestazione
+\usepackage{fancyhdr}
+\pagestyle{fancy}
+\usepackage{subcaption}     %for subfigures
+\newcommand\parallelo{/\!/} %simbolo parallelismo
+
+\pgfplotsset{compat=1.15}
+\usepackage{mathrsfs}
+\usetikzlibrary{arrows}
+
+\usepackage{standalone} %external matlab tikz files
+
+\newtheorem*{theorem}{Teorema}
+
+\newtheorem*{definition}{DEF}
+
+\newtheorem*{law}{Legge}
+
+\newtheorem{ex}{Esempio}[section]
+
+\newtheorem{axiom}{Assioma}
+
+\newtheorem{corollary}{Corollario}
+
+
+\title{Geometria analitica nello spazio}
+\author{Davide Borra - 5LA}
+\date{A.S. 2021-2022}
+
+\begin{document}
+    \begin{titlepage}
+    \maketitle
+    \tableofcontents
+    \end{titlepage}
+    
+    \lhead{Geometria analitica nello spazio}
+    \chead{}
+    \rhead{Davide Borra - 5LA}
+    \section{Le coordinate cartesiane}
+        Un punto nel piano è identificato univocamente da una coppia di numeri reali, corrispondenti alla distanza delle sue proiezioni sugli assi dall'intersezione degli stessi. Nello spazio i punti vengono individuati nello stesso modo, ma è necessario introdurre un'ulteriore asse (e di conseguenza un'ulteriore coordinata). Un punto nello spazio è individuato quindi tramite una terna ordinata di numeri reali $(x,y,z)$, chiamati rispettivamente \textit{ascissa}, \textit{ordinata} e \textit{quota}.
+        \begin{center}
+            \begin{figure}[h]
+                \begin{subfigure}{0.30\textwidth}
+                    \begin{center}
+                        \begin{tikzpicture}[scale=0.8]
+                            \draw[help lines, color=white];
+                            \draw[->,thin] (-1,0)--(4,0) node[right]{$x$};
+                            \draw[->,thin] (0,-1)--(0,4) node[left]{$y$};
+                            
+                            \node[rotate=90] at (-1, 2) {~~Asse delle ordinate};
+                            \node[rotate=0] at (2, -1) {~~Asse delle ascisse};
+    
+                            \node at (2,3) {\textbullet};
+                            \node at (2.3, 3.3) {$A(3,2)$};
+                            
+                            \draw[dashed] (2,3)--(2,0) node[below]{2};
+                            \draw[dashed] (2,3)--(0,3) node[left]{3};
+                        \end{tikzpicture}
+                    \end{center}
+                    \caption{Nel piano}
+                \end{subfigure}
+                \begin{subfigure}{0.30\textwidth}
+                    \begin{center}
+                        \begin{tikzpicture}[scale=0.8]
+                            \draw[help lines, color=white];
+                            \draw[->,thin] (0,0,0)--(3,0,0) node[right]{$x$};
+                            \draw[->,thin] (0,0,0)--(0,3,0) node[left]{$z$};
+                            \draw[->,thin] (0,0,0)--(0,0,4) node[left]{$y$};
+        
+                            \draw[dashed] (-0.6,0,0)--(0,0,0);
+                            \draw[dashed] (0,-0.6,0)--(0,0,0);
+                            \draw[dashed] (0,0,-1)--(0,0,0);
+                        \end{tikzpicture}
+        
+                    \end{center}
+                    \caption{Sistema sinistro}
+                \end{subfigure}
+                \begin{subfigure}{0.30\textwidth}
+                    \begin{center}
+                        \begin{tikzpicture}[scale=0.8]
+                            \draw[help lines, color=white];
+                            \draw[->,thin] (0,0,0)--(3,0,0) node[right]{$y$};
+                            \draw[->,thin] (0,0,0)--(0,3,0) node[left]{$z$};
+                            \draw[->,thin] (0,0,0)--(0,0,4) node[left]{$x$};
+        
+                            \draw[dashed] (-0.6,0,0)--(0,0,0);
+                            \draw[dashed] (0,-0.6,0)--(0,0,0);
+                            \draw[dashed] (0,0,-1)--(0,0,0);
+        
+                            \node at (2,2,3) {\textbullet};
+                            \node at (2.7, 2.5, 3.3) {$A(3,2,3)$};
+                            
+                            \draw[dashed] (2,0,3)--(2,0,0) node[above]{2};
+                            \draw[dashed] (2,2,3)--(0,2,0) node[left]{2};
+                            \draw[dashed] (2,0,3)--(0,0,3) node[left]{3};
+                            \draw[dashed] (2,2,3)--(2,0,3);
+                        \end{tikzpicture}
+                    \end{center}
+                    \caption{Sistema destro (il più utilizzato)}
+                \end{subfigure}
+                \caption{Coordinate cartesiane}
+            \end{figure}    
+
+        \end{center}
+        
+        \subsection{Quadranti e ottanti}
+            Come il piano cartesiano è diviso in 4 quandranti (Fig. \ref{fig:quadranti}) dagli assi cartesiani, lo spazio cartesiano è diviso in 8 ottanti (Fig. \ref{fig:ottanti}).
+
+            \begin{center}
+                \begin{figure}[h]
+                    \begin{subfigure}{0.49\textwidth}
+                        \begin{center}
+                            \begin{tikzpicture}
+                                \draw[help lines, color=white];
+                                    \draw[->,thin] (-2,0)--(2,0) node[right]{$x$};
+                                    \draw[->,thin] (0,-2)--(0,2) node[left]{$y$};
+            
+                                    \node at (1,1) {1};
+                                    \node at (-1,1) {2};
+                                    \node at (-1,-1) {3};
+                                    \node at (1,-1) {4};
+                            \end{tikzpicture}
+                        \end{center}
+                        \caption{Quadranti}
+                        \label{fig:quadranti}
+                    \end{subfigure}
+                    \begin{subfigure}{0.49\textwidth}
+                        \begin{center}
+                            \begin{tikzpicture}
+                                \draw[help lines, color=white];
+                                \draw[->,thin] (0,0,0)--(2,0,0) node[right]{$y$};
+                                \draw[->,thin] (0,0,0)--(0,2,0) node[left]{$z$};
+                                \draw[->,thin] (0,0,0)--(0,0,3) node[left]{$x$};
+
+                                \draw[dashed] (-2,0,0)--(0,0,0);
+                                \draw[dashed] (0,-2,0)--(0,0,0);
+                                \draw[dashed] (0,0,-3)--(0,0,0);
+            
+                                \node at (1,1,1) {1};
+                                \node at (-1,1,1) {2};
+                                \node at (-1,-1,1) {5};
+                                \node at (1,-1,1) {6};
+                                \node at (1,1,-1) {4};
+                                \node at (-1,1,-1) {3};
+                                \node at (-1,-1,-1) {7};
+                                \node at (1,-1,-1) {8};
+                            \end{tikzpicture}
+                        \end{center}
+                        \caption{Ottanti}
+                        \label{fig:ottanti}
+                    \end{subfigure}
+                    \caption{Suddivisione del piano e dello spazio cartesiano}
+                \end{figure}
+            \end{center}
+        
+        \subsection{Piani coordinati}
+            Esistono alcuni piani particolari, detti coorinati, in cui una delle variabili assume il valore 0. Essi sono:
+            \begin{wrapfigure}{r}{0.2\textwidth}
+                \begin{center}
+                    \begin{tikzpicture}[scale=0.5]
+                        \draw[help lines, color=white];
+                        \draw[->,thin] (0,0,0)--(2,0,0) node[right]{$y$};
+                        \draw[->,thin] (0,0,0)--(0,2,0) node[left]{$z$};
+                        \draw[->,thin] (0,0,0)--(0,0,3) node[left]{$x$};
+    
+                        \draw[dashed] (-2,0,0)--(0,0,0);
+                        \draw[dashed] (0,-2,0)--(0,0,0);
+                        \draw[dashed] (0,0,-3)--(0,0,0);
+    
+                        \draw[fill=gray, color=gray, opacity=0.5] (-2,0,-3) -- (-2,0,3) -- (2,0,3) -- (2,0,-3) -- cycle;
+    
+                    \end{tikzpicture}
+                \end{center}
+                \caption{Il piano\\ coordinato $xy$}
+                \label{fig:pianoxy}
+            \end{wrapfigure}
+            \begin{itemize}
+                \item il piano $xy$ quando $z=0$ (Fig. \ref{fig:pianoxy}). È costituito da punti di coordinate $(x,y,0)$.
+                \item il piano $xz$ quando $y=0$. È costituito da punti di coordinate $(x,0,z)$.
+                \item il piano $zy$ quando $x=0$. È costituito da punti di coordinate $(0,y,z)$.
+            \end{itemize}
+            
+            \subsection{Assi coordinati}
+            Analogamente i tre assi cartesiani sono detti assi coordinati: 
+            \[\text{Asse }x:\left\{\begin{array}{c}
+                y=0\\
+                z=0
+            \end{array}\right.
+            \text{~~~Asse }y:\left\{\begin{array}{c}
+                x=0\\
+                z=0
+            \end{array}\right.
+            \text{~~~Asse }z:\left\{\begin{array}{c}
+                x=0\\
+                y=0
+            \end{array}\right.
+            \]
+
+        \subsection{Distanza tra due punti}
+            Consideriamo due punti $A(x_A,y_A,z_A)$ e $B(x_B,y_B,z_B)$, la distanza tra essi è \[ \overline{AB}=\sqrt{(x_A-x_B)^2+(y_A-y_B)^2+(z_A-z_B)^2}\]
+            La formula si dimostra facilmente tramite l'utilizzo del Teorema di Pitagora.
+
+        \subsection{Punti notevoli}
+            \paragraph*{Ricorda:}
+                \begin{tabular}[h]{|c|c|}
+                    \hline
+                    Punto nottevole & Segmenti ceviani corrispondenti\\
+                    \hline \hline
+                    Baricentro & Mediane\\ \hline
+                    Circocentro & Assi\\ \hline
+                    Ortocentro & Altezze\\ \hline
+                    Incentro & Bisettrici \\ \hline
+                \end{tabular}
+            \subsubsection{Punto medio}
+                Dati due punti $A(x_A,y_A,z_A)$ e $B(x_B,y_B,z_B)$, le coordinate del punto medio $M(x_M, y_M, z_M)$ sono date dalla media delle coordinate dei due punti.
+                \[x_M=\frac{x_A+x_B}{2}~~~~~~y_M=\frac{y_A+y_B}{2}~~~~~~z_M=\frac{z_A+z_B}{2}\]
+            \subsubsection{Baricentro}
+                Dato un triangolo $ABC$ di vertici $A(x_A,y_A,z_A)$, $B(x_B,y_B,z_B)$, $C(x_C,y_C,z_C)$, le coordinate del baricentro $G(x_G,y_G,z_G)$ sono date dalla media delle coordinate dei tre punti:
+                \[x_G=\frac{x_A+x_B+x_C}{3}~~~~~~y_G=\frac{y_A+y_B+y_C}{3}~~~~~~z_G=\frac{z_A+z_B+z_C}{3}\]
+
+    \section{Vettori}
+        \subsection{Vettori nel piano}
+            \begin{wrapfigure}{r}{0.30\textwidth}
+                \begin{tikzpicture}[line cap=round,line join=round,>=triangle 45,x=1.0cm,y=1.0cm]
+                    \begin{axis}[
+                    x=1.0cm,y=1.0cm,
+                    axis lines=middle,
+                    xmin=-1.5,
+                    xmax=3.5,
+                    ymin=-1.0,
+                    ymax=3.5,
+                    xtick={1.0},
+                    ytick={1.0},
+                    xlabel=$x$,
+                    ylabel=$y$,
+                    ]
+                    \draw[->] (0,0) to (2,2.3) node[above]{$P(a,b)$};
+                    \draw[dashed] (2,2.3) to (0,2.3) node[left]{$B(0,b)$};
+                    \draw[dashed] (2,2.3) to (2,0) node[below]{$A(a,0)$};
+        
+                    \draw[->, thick] (0,0) to (1,0);
+                    \node at (0.5,-0.3){$\overrightarrow{i}$};
+                    \draw[->, thick] (0,0) to (0,1);
+                    \node at (-0.2,0.3){$\overrightarrow{j}$};
+                    \end{axis}
+                    \end{tikzpicture}
+                    \caption{Vettori nel piano}
+            \end{wrapfigure}
+
+            Si definisce \textbf{vettore} un segmento orientato che ha un estremo nell'origine. Esso è individuato da una terna ordinata di coordinate, dette componenti, che identificano l'altro estremo del vettore, verso cui è orientato. \\
+            Si dice \textbf{versore} un vettore di lunghezza unitaria parallelo ad un asse cartesiano. I versori nel piano sono $\overrightarrow{i}(1,0)$ e $\overrightarrow{j}(1,0)$.\\
+            I vettori possono essere rappresentati due in diversi modi:
+            \begin{itemize}
+                \item Tramite una terna di coordinate: $\overrightarrow{v}(v_x, v_y, v_z)$
+                \item Tramite i versori: $\overrightarrow{v}=v_x\overrightarrow{i}+v_y\overrightarrow{j}$
+            \end{itemize}
+            I vettori $\overrightarrow{OA}$ e $\overrightarrow{OB}$ soo detti vettori componenti del vettore $\overrightarrow{OP}$.
+            Il modulo di un vettore è la lunghezza del segmento orentato, per cui si calcola attraverso la formula per la distanza tra due punti:
+            \[|\overrightarrow{v}|=v=\sqrt{v_x^2+v_y^2}\]
+        \subsection{Vettori nello spazio}
+            Per passare dal piano allo spazio è necessario introdurre una nuova coordinata, $z$. Di conseguenza è necessario introdurre anche una nuova componente dei vettori e un nuovo versore. I versori nello spazio saranno quindi:
+            \begin{itemize}
+                \item $\overrightarrow{i}(1,0,0)$, associato all'asse $x$
+                \item $\overrightarrow{j}(0,1,0)$, associato all'asse $y$
+                \item $\overrightarrow{k}(0,0,1)$, associato all'asse $z$
+            \end{itemize}
+            I vettori saranno quindi individuati da una terna ordinata di numeri reali o da una somma di componenti:
+            \[\overrightarrow{v}(v_x, v_y, v_z)\]
+            \[\overrightarrow{v}=v_x\overrightarrow{i}+v_y\overrightarrow{j}+v_z\overrightarrow{k}\]
+
+            Valgono ancora tutte le proprietà dei vettori nel piano:
+
+            \renewcommand{\labelenumi}{\alph{enumi})}
+            \begin{enumerate}
+                \item il modulo del vettore $\overrightarrow{v}(v_x, v_y, v_z)$ è dato da \[|\overrightarrow{v}|=v=\sqrt{v_x^2+v_y^2+v_z^2}\]
+                \item le componenti di un vettore $\overrightarrow{v}(v_x, v_y, v_z)=\overrightarrow{AB}$ con $A(x_A,y_A,z_A)$ e $B(x_B,y_B,z_B)$ sono 
+                \[\begin{array}{c}
+                    v_x=x_B-x_A\\
+                    v_y=y_B-y_A\\
+                    v_z=z_B-z_A
+                \end{array}\]
+                \item dati due vettori $\overrightarrow{v}(v_x, v_y, v_z)$ e $\overrightarrow{\mu}(\mu_x, \mu_y, \mu_z)$ 
+                    \[\begin{array}{c}
+                        \overrightarrow{v}+\overrightarrow{\mu}(v_x+\mu_x, v_y+\mu_y, v_z+\mu_z)\\ \\
+                        \overrightarrow{v}-\overrightarrow{\mu}(v_x-\mu_x, v_y-\mu_y, v_z-\mu_z)\\ \\
+                        k\overrightarrow{\mu}(k\mu_x, k\mu_y, k\mu_z)\\ \\
+                        \text{prodotto scalare:~~~~} \overrightarrow{v}\cdot\overrightarrow{\mu}=v_x\mu_x + v_y\mu_y+v_z\mu_z
+                    \end{array}\]
+            \end{enumerate}
+            \renewcommand{\labelenumi}{\arabic{enumi}.} %resets default list type
+            
+        \subsection{Vettori paralleli e perpendicolari}
+            \begin{definition}
+                Due vettori si dicono \textbf{paralleli} quando hanno, una volta traslati nell'origine, la stessa retta d'azione, ovvero giacciono sulla stessa retta (indipendentemente dal verso). Questo significa che un vettore è multiplo dell'altro. 
+                
+                \[\overrightarrow{v}\parallelo\overrightarrow{w}\Leftrightarrow \overrightarrow{v}=k\overrightarrow{w}\]
+            \end{definition}
+            
+            Per determinare quando due vettori sono perpendicolari invece è possibile sfruttare una caratteristica del prodotto scalare: esso infatti assume valore nullo quando i due vettori considerati sono perpendicolari. Di conseguenza:
+            \[\overrightarrow{v}\perp\overrightarrow{w}\Leftrightarrow \overrightarrow{v}\cdot\overrightarrow{w}=0\]
+
+            \section{Piani}
+            Dati una retta $r$ e un punto $P_0(x_0, y_0, z_0)$ qualsiasi, esiste uno e un solo piano passante per $P$ e perpendicolare a $r$. Il piano resta univocamente determinato se alla retta si sostituisce un vettore parallelo alla stessa, detto \textbf{vettore normale del piano} $\overrightarrow{n}(a,b,c)$. 
+            \begin{figure}[h]
+                \begin{subfigure}{0.49\textwidth}
+                    \begin{center}
+                        \begin{tikzpicture}[scale=0.8]
+                            \draw[help lines, color=white];
+                            \draw[thin] (0,0,0)--(0,2,0) node[left]{$r$};
+            
+                            \draw[dashed] (0,-2,0)--(0,0,0);
+            
+                            \node at (0,0,0){\textbullet};
+                            \node at (1,0,-1){\textbullet};
+                            \node at (1,0.5,-1){$P_0$};
+            
+                            \draw[fill=gray, color=gray, opacity=0.5] (-2,0,-3) -- (-2,0,3) -- (2,0,3) -- (2,0,-3) -- cycle;
+            
+                        \end{tikzpicture}
+                    \end{center}
+                    \caption{Retta perpendicolare e punto}
+                \end{subfigure}
+                \begin{subfigure}{0.49\textwidth}
+                    \begin{center}
+                        \begin{tikzpicture}[scale=0.8]
+                            \draw[help lines, color=white];
+                            \draw[->,thin] (0,0,0)--(0,1.5,0) node[right]{$\overrightarrow{n}$};
+
+                            \node at (0,0,0){\textbullet};
+                            \node at (-0.6,0,0){$P_0$};
+
+                            \draw[fill=gray, color=gray, opacity=0.5] (-2,0,-3) -- (-2,0,3) -- (2,0,3) -- (2,0,-3) -- cycle;
+            
+                        \end{tikzpicture}
+                    \end{center}
+                    \caption{Vettore normale e punto}
+                \end{subfigure}
+                \caption{Metodi di individuazione di un piano}
+                \label{fig:defpiano}
+            \end{figure}
+
+            \begin{wrapfigure}{r}{0.49\textwidth}
+                \begin{center}
+                    \begin{tikzpicture}[scale=0.8]
+                        \draw[help lines, color=white];
+                        \draw[->] (0,0,0)--(0,1.5,0) node[right]{$\overrightarrow{n}$};
+                        \draw[->] (0,0,0)--(1,0,-1);
+                            \node at (0.8,0,0.3) {$\overrightarrow{P_0P}$};
+
+                        \draw (0,0.2,0)--(0.141,0.2,-0.141)--(0.141,0,-0.141);
+
+                        \node at (0,0,0){\textbullet};
+                            \node at (-0.6,0,0){$P_0$};
+                        \node at (1,0,-1){$\mathbf{\cdot}$};
+                            \node at (1,0.3,-1){$P$};
+
+                        \draw[fill=gray, color=gray, opacity=0.5] (-2,0,-3) -- (-2,0,3) -- (2,0,3) -- (2,0,-3) -- cycle;
+        
+                    \end{tikzpicture}
+                \end{center}
+                \caption{Definizione del piano}
+            \end{wrapfigure}
+            Un punto $P(x,y,z)$ appastiene al piano $\pi$ se e solo se $\overrightarrow{P_0P}\perp \overrightarrow{n}$
+            \[\overrightarrow{P_0P}\perp\overrightarrow{n}\]
+            \[\overrightarrow{P_0P}\cdot\overrightarrow{n}=0\]
+            \[P(x,y,z)~~~~~P_0(x_0,y_0,z_0)\]
+            \[\overrightarrow{P_0P}(x-x_0,y-y_0,z-z_0)~~~~~\overrightarrow{n}(a,b,c)~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~\]
+            \[(a,b,c)(x-x_0,y-y_0,z-z_0)=0~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~\]
+            \[a(x-x_0)+b(y-y_0)+c(z-z_0)=0~~\rightarrow~~\text{equazione del piano passante per un punto dao vettore normale}\]
+            \[ax+by+cz+(-ax_0-by_0-cz_0)=0)~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~\]
+            \[\mathbf{ax+by+cz+d}=0~~~~\rightarrow~~~~\text{equazione del piano in forma cartesiana}~~~~~~~~~~~~\]
+
+            \subsection{Posizioni notevoli dei piani}
+            \[\pi: ax+by+cz+d=0\]
+            
+            Se $d=0$ il piano passa per l'origine. 
+            
+            Se nell'equazione del piano almeno uno dei coefficienti $a$, $b$ o $c$ è nullo, si ottiene un piano che risulta parallelo all'asse corrispondente alla variabile mancante.
+
+            \begin{center}
+                \begin{figure}[h]
+                    \begin{subfigure}{0.3\textwidth}
+                        \begin{center}
+                            \begin{tikzpicture}[scale=0.8]
+                                \draw[help lines, color=white];
+                                \draw[->,thin] (0,0,0)--(3,0,0) node[right]{$y$};
+                                \draw[->,thin] (0,0,0)--(0,3,0) node[left]{$z$};
+                                \draw[->,thin] (0,0,0)--(0,0,4) node[left]{$x$};
+                            
+                                \draw[fill=gray, color=gray, opacity=0.3] (0,0,0) -- (0,0,3.7) -- (0,2.7,3.7) -- (0,2.7,0) -- cycle;    %piano xz
+                                \draw[fill=gray, color=gray, opacity=0.3] (0,0,0) -- (0,2.7,0) -- (2.7,2.7,0) -- (2.7,0,0) -- cycle;    %piano yz
+                            
+                                \draw[fill=cyan, color=cyan, opacity=0.5] (2,0,-1) -- (2,2,-1) -- (-1,2,2) -- (-1,0,2) -- cycle;    %piano // z
+                                \draw (1,-0.5,0)--(1,2.5,0);
+                                    \draw[dashed] (1,-0.5,0)--(1,-1.1,0);
+                                    \draw[dashed] (1,3,0)--(1,2.5,0);
+                                \draw (0,-0.5,1)--(0,2.5,1);
+                                    \draw[dashed] (0,-0.5,1)--(0,-1.1,1);
+                                    \draw[dashed] (0,3,1)--(0,2.5,1);
+                            \end{tikzpicture}
+                        \end{center}
+                        \caption{$ax+by+d=0$\\Piano parallelo all'asse $z$\\Interseca i piani $xz$ e $yz$ lungo\\ rette parallele all'asse $z$.}
+                    \end{subfigure}
+                    \begin{subfigure}{0.3\textwidth}
+                        \begin{center}
+                            \begin{tikzpicture}[scale=0.8]
+                                \draw[help lines, color=white];
+                                \draw[->,thin] (0,0,0)--(3,0,0) node[right]{$y$};
+                                \draw[->,thin] (0,0,0)--(0,3,0) node[left]{$z$};
+                                \draw[->,thin] (0,0,0)--(0,0,4) node[left]{$x$};
+                            
+                                \draw[fill=gray, color=gray, opacity=0.3] (0,0,0) -- (0,0,3.7) -- (2.7,0,3.7) -- (2.7,0,0) -- cycle;    %piano xy
+                                \draw[fill=gray, color=gray, opacity=0.3] (0,0,0) -- (0,2.7,0) -- (2.7,2.7,0) -- (2.7,0,0) -- cycle;    %piano yz
+                            
+                                \draw[fill=cyan, color=cyan, opacity=0.5] (0,-1,2) -- (2,-1,2) -- (2,2,-1) -- (0,2,-1) -- cycle;    %piano // y
+                                \draw (-0.5,0,1)--(2.5,0,1); 
+                                    \draw[dashed] (-0.5,0,1)--(-1.1,0,1);
+                                    \draw[dashed] (3,0,1)--(2.5,0,1);
+                                \draw (-0.5,1,0)--(2.5,1,0); 
+                                    \draw[dashed] (-0.5,1,0)--(-1.1,1,0);
+                                    \draw[dashed] (3,1,0)--(2.5,1,0);
+                            \end{tikzpicture}
+                        \end{center}
+                        \caption{$ax+cz+d=0$\\Piano parallelo all'asse $y$\\Interseca i piani $xy$ e $yz$ lungo\\ rette parallele all'asse $y$.}
+                    \end{subfigure}
+                    \begin{subfigure}{0.3\textwidth}
+                        \begin{center}
+                            \begin{tikzpicture}[scale=0.8]
+                                \draw[help lines, color=white];
+                                \draw[->,thin] (0,0,0)--(3,0,0) node[right]{$y$};
+                                \draw[->,thin] (0,0,0)--(0,3,0) node[left]{$z$};
+                                \draw[->,thin] (0,0,0)--(0,0,4) node[left]{$x$};
+                            
+                                \draw[fill=gray, color=gray, opacity=0.3] (0,0,0) -- (0,0,3.7) -- (2.7,0,3.7) -- (2.7,0,0) -- cycle;    %piano xy
+                                \draw[fill=gray, color=gray, opacity=0.3] (0,0,0) -- (0,0,3.7) -- (0,2.7,3.7) -- (0,2.7,0) -- cycle;    %piano xz
+                                \draw[fill=cyan, color=cyan, opacity=0.5] (2,-1,0) -- (2,-1,2) -- (-1,2,2) -- (-1,2,0) -- cycle;    %piano // x
+                                \draw (1,0,-0.5)--(1,0,2.5); 
+                                    \draw[dashed] (1,0,-0.5)--(1,0,-1.1);
+                                    \draw[dashed] (1,0,3)--(1,0,2.5);
+                                \draw (0,1,-0.5)--(0,1,2.5); 
+                                    \draw[dashed] (0,1,-0.5)--(0,1,-1.1);
+                                    \draw[dashed] (0,1,3)--(0,1,2.5);
+                            
+                            \end{tikzpicture}
+                        \end{center}
+                        \caption{$by+cz+d=0$\\Piano parallelo all'asse $x$\\Interseca i piani $xy$ e $xz$ lungo\\ rette parallele all'asse $x$.}
+                    \end{subfigure}
+                    \caption{Piani paralleli agli assi coordinati}
+                \end{figure}
+            \end{center}
+            Se nell'equazione del piano due (soli) dei coefficienti $a$, $b$ o $c$ sono nulli, si ottiene un piano parallelo ad uno dei piani coordinati.
+            \begin{center}
+                \begin{figure}[h]
+            
+                    \begin{subfigure}{0.3\textwidth}
+                        \begin{center}
+                            \begin{tikzpicture}[scale=0.8]
+                                \draw[help lines, color=white];
+                                \draw[->,thin] (0,0,0)--(3,0,0) node[right]{$y$};
+                                \draw[->,thin] (0,0,0)--(0,3,0) node[left]{$z$};
+                                \draw[->,thin] (0,0,0)--(0,0,4) node[left]{$x$};
+                            
+                                \draw[fill=gray, color=gray, opacity=0.3] (0,0,0) -- (0,2.7,0) -- (2.7,2.7,0) -- (2.7,0,0) -- cycle;    %piano yz
+                            
+                                \draw[fill=cyan, color=cyan, opacity=0.5] (0,0,2) -- (0,2.7,2) -- (2.7,2.7,2) -- (2.7,0,2) -- cycle;    %piano yz
+            
+                                \node at (0,0,2){\textbullet};
+                                    \node at (0.7,-0.5,2){$(k,0,0)$};
+                                
+                                \node at (0.7,1,0){$x=k$};
+            
+                            \end{tikzpicture}
+                        \end{center}
+                        \caption{Piano parallelo al piano $yz$}
+                    \end{subfigure}
+                    \begin{subfigure}{0.3\textwidth}
+                        \begin{center}
+                            \begin{tikzpicture}[scale=0.8]
+                                \draw[help lines, color=white];
+                                \draw[->,thin] (0,0,0)--(3,0,0) node[right]{$y$};
+                                \draw[->,thin] (0,0,0)--(0,3,0) node[left]{$z$};
+                                \draw[->,thin] (0,0,0)--(0,0,4) node[left]{$x$};
+                            
+                                \draw[fill=gray, color=gray, opacity=0.3] (0,0,0) -- (0,0,3.7) -- (0,2.7,3.7) -- (0,2.7,0) -- cycle;    %piano xz
+                                \draw[fill=cyan, color=cyan, opacity=0.5] (2,0,0) -- (2,0,3.7) -- (2,2.7,3.7) -- (2,2.7,0) -- cycle;    %piano xz
+                                \node at (2,0,0){\textbullet};
+                                    \node at (2.7,-0.5,0){$(0,k,0)$};
+                                \node at (1.3,1,0){$y=k$};
+                            \end{tikzpicture}
+                        \end{center}
+                        \caption{Piano parallelo al piano $xz$}
+                    \end{subfigure}
+                    \begin{subfigure}{0.3\textwidth}
+                        \begin{center}
+                            \begin{tikzpicture}[scale=0.8]
+                                \draw[help lines, color=white];
+                                \draw[->,thin] (0,0,0)--(3,0,0) node[right]{$y$};
+                                \draw[->,thin] (0,0,0)--(0,3,0) node[left]{$z$};
+                                \draw[->,thin] (0,0,0)--(0,0,4) node[left]{$x$};
+                            
+                                \draw[fill=gray, color=gray, opacity=0.3] (0,0,0) -- (0,0,3.7) -- (2.7,0,3.7) -- (2.7,0,0) -- cycle;    %piano xy
+                                \draw[fill=cyan, color=cyan, opacity=0.5] (0,2,0) -- (0,2,3.7) -- (2.7,2,3.7) -- (2.7,2,0) -- cycle;    %piano xy
+                                \node at (0,2,0){\textbullet};
+                                    \node at (-1,2,0){$(0,0,k)$};
+                                \node at (0.7,1.2,0){$z=k$};
+            
+                            \end{tikzpicture}
+                        \end{center}
+                        \caption{Piano parallelo al piano $xy$}
+                    \end{subfigure}
+                    \caption{Piani paralleli ai piani coordinati}
+                \end{figure}
+            \end{center}
+        \subsection{Equazione del piano passante per tre punti}
+            Per individuare l'equazione del piano individuato da tre punti è sufficiente sostituire le coordinate dei punti nell'equazione del piano e risolvere il sistema. Siccome si tratta di un sistema di tre equazioni in 4 incongnite, alla fine si riuscirà a scrivere tre incognite in funzione dell'altra. Per quest'ultima andrà quindi scelto un valore arbitrario diverso da 0.
+            \begin{ex}
+                Scrivere l'equazione del piano passante per i punti $A(1,0,2)$, $B(0,1,3)$ e $C(0,0,3)$
+            \end{ex}
+                Consideriamo l'equazione del piano in forma cartesiana \[\pi:ax+by+cz+d=0\] e sostituiamo al suo interno le coordinate dei punti:
+                \[\begin{array}{l}
+                    A(1,0,2)\\
+                    B(0,1,3)\\
+                    C(0,0,3)
+                \end{array} \left\{
+                \begin{array}{l}
+                    a(1)+b(0)+c(2)+d=0\\
+                    a(0)+b(1)+c(3)+d=0\\
+                    a(0)+b(0)+c(3)+d=0
+                \end{array} \right.
+                \]
+                Ora risolviamo il sistema:
+                \[\left\{\begin{array}{l}
+                    a+2c+d=0\\
+                    b+3c+d=0\\
+                    3c+d=0
+                \end{array} \right.\]
+                \[\left\{\begin{array}{l}
+                    a=-2c-d\\
+                    b-d+d=0\\
+                    3c=-d
+                \end{array} \right.\]
+                \[\left\{\begin{array}{l}
+                    a=-2c-d\\
+                    b=0\\
+                    c=-\frac{1}{3}d
+                \end{array} \right.\]
+                \[\left\{\begin{array}{l}
+                    a=\frac{2}{3}d-d=-\frac{1}{3}d\\
+                    b=0\\
+                    c=-\frac{1}{3}d
+                \end{array} \right.\]
+                Per comodità scelgo di porre $d=-3$, ma potrei scegliere un qualsiasi altro numero.
+                \[\left\{\begin{array}{l}
+                    a=-\frac{1}{3}(-3)=1\\
+                    b=0\\
+                    c=-\frac{1}{3}(-3)=1
+                    d=-3
+                \end{array} \right.\]
+                \[\pi:x+z-3=0\]
+        \subsection{Piani paralleli e perpendicolari}
+            Siccome un piano è individuato dal suo vettore normale, esso può essere utilizzato anche per descriverne il parallelismo o la perpendicolarità con altri piani. In particolare:
+            \begin{itemize}
+                \item i vettori normali di due piani paralleli sono paralleli (CNS)
+                \item i vettori normali di due piani perpendicolari sono perpendicolari (CNS)
+            \end{itemize}
+            \begin{figure}[h!]
+                \centering
+                \begin{subfigure}{0.49\textwidth}
+                    \begin{center}
+                        \begin{tikzpicture}[scale=0.7]
+            
+                            \draw[->,thin] (1.35,0,1.85)--(1.35,1,1.85) node[left]{$\overrightarrow{n}$};
+                            \draw[->,thin] (1.85,1.5,1.85)--(1.85,2.5,1.85) node[left]{$\overrightarrow{n}'$};
+                        
+                            \draw[fill=gray, color=gray, opacity=0.3] (0,0,0) -- (0,0,3.7) node[left]{$\alpha$} -- (2.7,0,3.7) -- (2.7,0,0) -- cycle ; 
+                            \draw[fill=cyan, color=cyan, opacity=0.5] (0.5,1.5,0) -- (0.5,1.5,3.7) node[left]{$\alpha'$} -- (3.2,1.5,3.7) -- (3.2,1.5,0) -- cycle;
+                        
+                        \end{tikzpicture}
+                    \end{center}
+                    \caption{Piani paralleli: $\overrightarrow{n}'=k\overrightarrow{n}$\\ $\frac{a}{a'}=\frac{b}{b'}=\frac{c}{c'}$}
+                \end{subfigure}
+                \begin{subfigure}{0.49\textwidth}
+                    \begin{center}
+                        \begin{tikzpicture}[scale=0.7]
+            
+                            \draw[->,thin] (0.85,1.5,1.85)--(0.85,2.5,1.85) node[left]{$\overrightarrow{n}'$};
+                            \draw[->,thin] (2,2.5,1.85)--(3,2.5,1.85) node[above]{$\overrightarrow{n}$};
+                        
+                            
+                            \draw[fill=gray, color=gray, opacity=0.5] (2,0,0) -- (2,0,3.7) node[left]{$\alpha$} -- (2,2.7,3.7) -- (2,2.7,0) -- cycle;
+                            \draw[fill=cyan, color=cyan, opacity=0.5] (0.5,1.5,0) -- (0.5,1.5,3.7) node[left]{$\alpha'$} -- (3.2,1.5,3.7) -- (3.2,1.5,0) -- cycle;
+                        
+                        \end{tikzpicture}
+                    \end{center}
+                    \caption{Piani perpendicolari: $\overrightarrow{n}\cdot\overrightarrow{n}'$\\ $aa'+bb'+cc'=0$}
+                \end{subfigure}
+                \caption{Piani paralleli e perpendicolari}
+            \end{figure}
+        \subsection{Posizioni reciproche tra due piani}
+            Dati due pani $\alpha$ e $\alpha'$ di equazioni $ax+by+cz+d=0$ e $a'x+b'y+c'z+d'=0$, essi sono
+            \begin{itemize}
+                \item Paralleli distinti se il sistema delle loro equazioni non ammette soluzioni, ovvero $\frac{a}{a'}=\frac{b}{b'}=\frac{c}{c'}\neq\frac{d}{d'}$
+                \item Secanti se il sistema delle loro equazioni ammette infinite soluzioni, tutte appartenenti ad una retta
+                \item Paralleli coincidenti se il sistea delle loro equazioni è verificato per ogni terna $(x,y,z)$ che soddisfa una delle due equazioni, ovvero $\frac{a}{a'}=\frac{b}{b'}=\frac{c}{c'}=\frac{d}{d'}$
+            \end{itemize}
+            \begin{center}
+                \begin{figure}[h!]
+                    \begin{subfigure}{0.3\textwidth}
+                        \begin{center}
+                            \begin{tikzpicture}[scale=0.8]
+            
+                                \draw[fill=gray, color=gray, opacity=0.3] (0,0,0) -- (0,0,3.7) node[left]{$\alpha$} -- (2.7,0,3.7) -- (2.7,0,0) -- cycle ; 
+                                \draw[fill=cyan, color=cyan, opacity=0.5] (0.5,1.5,0) -- (0.5,1.5,3.7) node[left]{$\alpha'$} -- (3.2,1.5,3.7) -- (3.2,1.5,0) -- cycle;
+                            
+                            \end{tikzpicture}
+                        \end{center}
+                        \caption{Piani paralleli distinti}
+                    \end{subfigure}
+                    \begin{subfigure}{0.3\textwidth}
+                        \begin{center}
+                            \begin{tikzpicture}[scale=0.8]
+                
+                                \draw[thin] (2,1.56,0)--(2,1.56,3.7);
+                                \draw[dashed,thin] (2,1.56,0)--(2,1.56,-1);
+                                \draw[dashed,thin] (2,1.56,4.7)--(2,1.56,3.7);
+                                
+                                \draw[fill=gray, color=gray, opacity=0.5] (2,0,0) -- (2,0,3.7) node[left]{$\alpha$} -- (2,2.7,3.7) -- (2,2.7,0) -- cycle;
+                                \draw[fill=cyan, color=cyan, opacity=0.5] (0.5,1,0) -- (0.5,1,3.7) node[left]{$\alpha'$} -- (3.2,2,3.7) -- (3.2,2,0) -- cycle;
+                            
+                            \end{tikzpicture}
+                        \end{center}
+                        \caption{Piani secanti}
+                    \end{subfigure}
+                    \begin{subfigure}{0.3\textwidth}
+                        \begin{center}
+                            \begin{tikzpicture}[scale=0.8]
+            
+                                \draw[color=gray, opacity=0.7] (0.5,1.5,0) -- (0.5,1.5,3.7) node[left]{$\alpha$} -- (3.2,1.5,3.7) -- (3.2,1.5,0) -- cycle;
+                                \draw[fill=cyan, color=cyan, opacity=0.5] (0.5,1.5,0) -- (0.5,1.5,3.7) node[below]{$\alpha'$} -- (3.2,1.5,3.7) -- (3.2,1.5,0) -- cycle;
+                            
+                            \end{tikzpicture}
+                        \end{center}
+                        \caption{Piani paralleli coincidenti}
+                    \end{subfigure}
+                    \caption{Posizioni reciproche di due piani}
+                \end{figure}
+            \end{center}
+        \subsection{Area di un triangolo nello spazio}
+            Dato un triangolo di vertici $A(x_A,y_A,z_A)$, $B(x_B,y_B,z_B)$, $C(x_C,y_C,z_C)$, la sua area è data dalla formula 
+            \[A=\frac{1}{2}\sqrt{\left|\begin{array}{ccc}
+                x_A & y_A & 1\\
+                x_B & y_B & 1\\
+                x_C & y_C & 1
+            \end{array}\right|^2
+            \left|\begin{array}{ccc}
+                y_A & z_A & 1\\
+                y_B & z_B & 1\\
+                y_C & z_C & 1
+            \end{array}\right|^2
+            \left|\begin{array}{ccc}
+                x_A & z_A & 1\\
+                x_B & z_B & 1\\
+                x_C & z_C & 1
+            \end{array}\right|^2
+            }\]
+    \section{Rette}
+            \subsection{Equazione parametrica}
+            \begin{wrapfigure}{r}{0.3\textwidth}
+                \begin{center}
+                    \begin{tikzpicture}[scale=0.8]
+                        \draw[help lines, color=white];
+                        \draw[->,thin] (0,0,0)--(3,0,0) node[right]{$y$};
+                        \draw[->,thin] (0,0,0)--(0,3,0) node[left]{$z$};
+                        \draw[->,thin] (0,0,0)--(0,0,4) node[left]{$x$};
+                
+                        \draw[dashed] (-0.6,0,0)--(0,0,0);
+                        \draw[dashed] (0,-0.6,0)--(0,0,0);
+                        \draw[dashed] (0,0,-1)--(0,0,0);
+                
+                        \coordinate (v) at (1,2,1);
+                
+                        \draw[->,thick, color=red] (0,0,0)--(v) node[right]{$\overrightarrow{v}$};
+                
+                        \coordinate (P0) at (2,0,1);
+                        \node at ($(P0)+(0.5,0,0)$) {$P_0$};
+                        \coordinate (P) at (3,2,2);
+                        \node at ($(P)+(-0.5,0,0)$) {$P$};
+                        
+                        \fill[black] (P0) circle (1.5pt);
+                        \fill[black] (P) circle (1.5pt);
+                        
+                        \draw[thin] ($(P0)-(.6,1.2,.6)$) -- ($(P)+(.7,1.4,.7)$) node[right]{$r$};
+                        \draw[thin, dashed] ($(P0)-(.6,1.2,.6)$) -- ($(P0)-(v)$);
+                        \draw[thin, dashed] ($(P)+(v)$) -- ($(P)+(.7,1.4,.7)$);
+                
+                        \draw[->, thick, color=red] (P0) -- (P) node[right]{$\overrightarrow{P_0P}$};
+                        
+                    \end{tikzpicture}
+                \end{center}
+                \caption{Definizione di una retta nello spazio}
+            \end{wrapfigure}
+            Una retta nello spazio è definita se si conoscono un suo punto $P_0(x_0,y_0,z_0)$ e un vettore $\overrightarrow{v}(l,m,n)$ che ne identifica la direzione. Allora un punto generico $P(x,y,z)$ appartiene alla retta se e solo se \[\overrightarrow{P_0P}(x-x_0,y-y_0,z-z_0)\parallelo\overrightarrow{v}(l,m,n)\]
+            ovvero
+            \[\overrightarrow{P_0P}=k\overrightarrow{v}~~~\text{con }k\in\mathbb{R}\]
+            \[\left\{\begin{array}{l}
+                x-x_0=kl\\
+                y-y_0=km\\
+                z-z_0=kn
+            \end{array}\right.~~~\rightarrow~~~~
+            \left\{\begin{array}{l}
+                \mathbf{x=x_0+kl}\\
+                \mathbf{y=y_0+km}\\
+                \mathbf{z=z_0+kn}
+            \end{array}\right.~~~\text{con }k\in\mathbb{R}\]
+            \begin{definition}
+                I coefficienti $l$, $m$, $n$ si dicono \textbf{coefficienti direttivi} perchè determinano la direzione della retta.
+            \end{definition}
+            \begin{definition}
+                Il vettore $\overrightarrow{v}(l,m,n)$ si chiama \textbf{vettore direzione}.
+            \end{definition}
+            \subsubsection{Rette su GeoGebra}
+                GeoGebra utilizza un formato particolare per visualizzare le equazioni delle rette:
+                \[r: \,X =(x_0,y_0,z_0)+\lambda(l,m,n)\]
+                in cui $(x_0,y_0,z_0)$ sono le coordinate di un punto appartenente alla retta e $l$, $m$ e $n$ sono i coefficienti direttivi.
+        \subsection{Equazione cartesiana}
+            Se tutti i coefficienti direttivi sono \textbf{non nulli}, si può scrivere l'equazione della retta in forma cartesiana:
+            
+            \[\left\{\begin{array}{l}
+                x=x_0+kl\\
+                y=y_0+km\\
+                z=z_0+kn
+            \end{array}\right.~~~
+            \left\{\renewcommand{\arraystretch}{2}\begin{array}{ll}
+                \dfrac{x-x_0}{l}=k&l\neq0\\
+                \dfrac{y-y_0}{m}=k&m\neq0\\
+                \dfrac{z-z_0}{n}=k&n\neq0
+            \end{array}\right.\]
+
+            \[\mathbf{\dfrac{x-x_0}{l}=\dfrac{y-y_0}{m}=\dfrac{z-z_0}{n}}~~~\text{equazione cartesiana della retta}\]
+        \subsection{Equazione come intersezione di due piani}
+            Una retta può essere determinata anche tramite l'intersezione di due piani distinti e non paralleli
+            \[\left\{\renewcommand{\arraystretch}{1.5}\begin{array}{l}
+                ax+by+cz+d=0\\
+                a'x+b'y+c'z+d'=0
+            \end{array}\right.\]
+        \subsection{Equazione della retta passante per due punti}
+            La retta passante per due punti qualsiasi $A(x_A,y_A,z_A)$ e $B(x_B,y_B,z_B)$ ha vettore direzione \[\overrightarrow{AB}(x_B-x_A, y_B-y_A, z_B-z_A)\]. La sua equazione può essere quindi individuata come visto ai punti precedenti:
+            \[\frac{x-x_A}{x_B-x_A}=\frac{y-y_A}{y_B-y_A}=\frac{z-z_A}{z_B-z_A}\]
+            \subsubsection{Condizioni di allineamento}
+                Per verificare se tre punti sono allineati è sufficiente determinare la retta passante per due di loro e sostituire le coordinate del terzo all'interno dell'equazione. I tre punti sono allineati se e solo se tutte le uguaglianze sono verificate. In particolare i punti $A(x_A,y_A,z_A)$, $B(x_B,y_B,z_B)$ e $P(x_P,y_P,z_P)$ sono allineati se e solo se \[\frac{x_P-x_A}{x_B-x_A}=\frac{y_P-y_A}{y_B-y_A}=\frac{z_P-z_A}{z_B-z_A}\]
+        \subsection{Fasci di piani aventi per asse una retta data}
+        \begin{definition}
+            Un fascio di piani è un insieme contenente tutti e soli i piani aventi per asse una retta data, detta asse del fascio. 
+        \end{definition}
+        \begin{wrapfigure}{r}{0.25\textwidth}
+            \begin{center}
+                \begin{tikzpicture}[scale=0.7]
+        
+                    \draw[thin] (2,1.56,0)--(2,1.56,3.7);
+                    \draw[dashed,thin] (2,1.56,0)--(2,1.56,-1);
+                    \draw[dashed,thin] (2,1.56,4.7) node[below]{$r$}--(2,1.56,3.7);
+                    
+                    \draw[fill=gray, color=gray, opacity=0.5] (2,0,0) -- (2,0,3.7) node[left]{$\alpha$} -- (2,2.7,3.7) -- (2,2.7,0) -- cycle;
+                    \draw[fill=cyan, color=cyan, opacity=0.5] (0.5,1,0) -- (0.5,1,3.7) node[left]{$\alpha'$} -- (3.2,2,3.7) -- (3.2,2,0) -- cycle;
+                    \draw[dashed] (0.5,2,0) -- (0.5,2,3.7) node[left]{$\alpha''$} -- (3.2,1,3.7) -- (3.2,1,0) -- cycle;
+                
+                \end{tikzpicture}
+            \end{center}
+            \caption{Fascio di piani di asse $r$}
+        \end{wrapfigure}
+        
+            Se la retta è individuata come intersezione di due piani
+            \[\left\{\renewcommand{\arraystretch}{1.5}\begin{array}{l}
+                ax+by+cz+d=0\\
+                a'x+b'y+c'z+d'=0
+            \end{array}\right.\]
+            Il fascio di piani può essere scritto per combinazione lineare come:
+            \[ax+by+cz+d+k(a'x+b'y+c'z+d')=0\]
+            Al variare del parametro $k$, l'equazione descrive tutti i piani appartenenti al fascio, fatta eccezione per il secondo piano generatore, ottenibile solo per $k=\pm\infty$, analogamente a quanto avviene per i fasci di rette
+        \subsection{Posizioni reciproche di due rette}
+            \subsubsection{Rette parallele}
+                Date due rette $r$ e $s$ i cui vettori direzione sono rispettivamente $\overrightarrow{v}(l,m,n)$ e $\overrightarrow{w}(l',m',n')$, le due rette sono parallele se e solo se i loro vettori direzione sono paralleli:
+                \[r\parallelo s ~~\Leftrightarrow~~ \overrightarrow{v}\parallelo\overrightarrow{w}~~\Leftrightarrow~~\overrightarrow{v}=k\overrightarrow{w}\text{, con }k\in\mathbb{R}~~\Leftrightarrow~~\frac{l}{l'}=\frac{m}{m'}=\frac{n}{n'}\]
+                \subsubsection{Rette perpendicolari}
+                \begin{wrapfigure}{r}{0.3\textwidth}
+                    \begin{center}
+                        \begin{tikzpicture}[scale=0.8]
+    
+                            \draw[fill=gray, color=gray, opacity=0.3] (0,0,0) -- (0,0,3.7) -- (2.7,0,3.7) -- (2.7,0,0) -- cycle;    %piano xy
+    
+                            \draw (0.8,0,1.2)--(0.8,1.5,1.2) node[left]{$r$};
+                                \draw[dashed] (0.8,0,1.2)--(0.8,-1.1,1.2);
+                                \draw[dashed] (0.8,2,1.2)--(0.8,1.5,1.2);
+                                \draw[thick, ->, color=red] (0.8,0,1.2) -- (0.8,1,1.2)node[left]{$\overrightarrow{v}$};
+                            \draw (2,0,1.5)--(2,1.5,1.5)node[left]{$s$};
+                                \draw[dashed] (2,0,1.5)--(2,-1,1.5);
+                                \draw[dashed] (2,2,1.5)--(2,1.5,1.5);
+                                \draw[thick, ->, color=red](2,0,1.5)--(2,1,1.5)node[left]{$\overrightarrow{v}$};
+                            \draw (1.05,0,0.7)--(0.3,0,2.2)node[below]{$t$}; 
+                                \draw[dashed] (1.05,0,0.7)--(1.3,0,0.2);
+                                \draw[dashed] (0.3,0,2.2)--(0.05,0,2.7);
+                                \draw[thick, ->, color=blue] (0.8,0,1.2) -- (0.35,0,2.09)node[above]{$\overrightarrow{w}$};
+                        \end{tikzpicture}
+                    \end{center}
+                    \caption{$r\parallelo s$ - $r\perp t$ - $s\perp t$\\$r$ e $t$ sono complanari\\$r$ e $s$ sono complanari\\$s$ e $t$ sono sghembe}
+                \end{wrapfigure}
+                Date due rette $r$ e $s$ i cui vettori direzione sono rispettivamente $\overrightarrow{v}(l,m,n)$ e $\overrightarrow{w}(l',m',n')$, le due rette sono perpendicolari se e solo se i loro vettori direzione sono perpendicolari:
+                \[r\perp s ~~\Leftrightarrow~~ \overrightarrow{v}\perp\overrightarrow{w}~~\Leftrightarrow~~\overrightarrow{v}\cdot\overrightarrow{w}=0~~\Leftrightarrow~~ll'+mm'+nn'=0\]
+            \subsubsection{Rette sghembe o incidenti}
+                \begin{definition}
+                    Due rette nello spazio si dicono \textbf{complanari} se e solo se appartengono allo stesso piano. In tal caso possono essere incidenti, parallele distinte o parallele coincidenti. 
+                \end{definition}
+                Se due rette hanno un punto in comune o sono parallele, sono complanari. 
+
+                Se due rette sono complanari, allora sono incidenti o parallele.
+
+                \begin{definition}
+                    Due rette si dicono \textbf{sghembe} se non appartengono allo stesso piano. 
+                \end{definition}
+                Due rette sono sghembe se e solo se non hanno intersezioni e non sono parallele.
+        \subsection{Rette e piani}
+            Consideriamo un piano $\alpha$ con vettore normale $\overrightarrow{n}(a,b,c)$ non nullo e una retta $r$ con vettore direzione $\overrightarrow{v}(l,m,n)$ non nullo.
+            \begin{figure}[h]
+                \centering
+                \begin{subfigure}{0.49\textwidth}
+                    \begin{center}
+                        \begin{tikzpicture}[scale=0.8]
+                            \draw (-0.5,1,0)--(2.5,1,0); 
+                                            \draw[dashed] (-0.5,1,0)--(-1.1,1,0);
+                                            \draw[dashed] (3,1,0)--(2.5,1,0);
+                
+                            \draw[fill=gray, color=gray, opacity=0.3] (0,0,0) -- (0,0,3.7) node[left]{$\alpha$}-- (2.7,0,3.7) -- (2.7,0,0) -- cycle;    %piano xy
+                
+                                \draw[thick, ->, color=red](1.35,0,1.85)--(1.35,1,1.85)node[left]{$\overrightarrow{n}$};
+                            
+                            \draw (-0.5,1,0)--(2.5,1,0) node[above]{$r$}; 
+                                \draw[dashed] (-0.5,1,0)--(-1.1,1,0);
+                                \draw[dashed] (3,1,0)--(2.5,1,0);
+                                \draw[thick, ->, color=red] (1,1,0) -- (2,1,0)node[above]{$\overrightarrow{v}$};
+                        \end{tikzpicture}
+                    \end{center}
+                    \caption{$r\parallelo \alpha$}
+                \end{subfigure}
+                \begin{subfigure}{0.49\textwidth}
+                    \begin{center}
+                        \begin{tikzpicture}[scale=0.8]
+                            \draw[fill=gray, color=gray, opacity=0.3] (0,0,0) -- (0,0,3.7) node[left]{$\alpha$}-- (2.7,0,3.7) -- (2.7,0,0) -- cycle;    %piano xy
+                            %(y,z,x)
+                            \draw (0.8,0,1.2)--(0.8,1.5,1.2) node[left]{$r$};
+                                \draw[dashed] (0.8,0,1.2)--(0.8,-1.1,1.2);
+                                \draw[dashed] (0.8,2,1.2)--(0.8,1.5,1.2);
+                                \draw[thick, ->, color=red] (0.8,0,1.2) -- (0.8,1,1.2)node[left]{$\overrightarrow{v}$};
+                
+                                \draw[thick, ->, color=red](2,0,1.85)--(2,1,1.85)node[left]{$\overrightarrow{n}$};
+                            
+                        \end{tikzpicture}
+                    \end{center}
+                    \caption{$r\perp \alpha$}
+                \end{subfigure}
+                \caption{Posizioni reciproche tra retta e piano}
+            \end{figure}
+            \subsubsection{Retta parallela al piano}
+                La retta e il piano sono paralleli se il vettore direzione della retta e il vettore normale del piano sono perpendicolari.
+                \[r\parallelo\alpha ~~\Leftrightarrow~~\overrightarrow{n}\perp\overrightarrow{v}~~\Leftrightarrow~~ al+bm+cn=0\]
+                In particolare se la retta e il piano hanno almeno un punto in comune, allora la retta giace sul piano. 
+                \subsubsection{Retta perpendicolare al piano}
+                La retta e il piano sono perpendicolari se il vettore direzione della retta e il vettore normale del piano sono paralleli.
+                \[r\perp\alpha ~~\Leftrightarrow~~\overrightarrow{n}\parallelo\overrightarrow{v}~~\Leftrightarrow~~ \frac{a}{l}=\frac{b}{m}=\frac{c}{n}~~\left(\Leftrightarrow~~ \frac{l}{a}=\frac{m}{b}=\frac{n}{c}\right)\]
+    \section{Distanze}
+        \subsection{Distanza di un punto da un piano}
+            Dato il piano \[\alpha:ax+by+cz+d=0\] e il punto $A(x_A,y_A,z_A)$, la misura della distanza tra il punto e il piano è data da
+            \[d(A,\alpha)=\frac{|ax_A+by_A+cz_A+d|}{\sqrt{a^2+b^2+c^2}}\]
+        \subsection{Distanza fra due piani paralleli}
+            Si considerino due piani paralleli $\alpha$ e $\beta$ , la distanza tra esi è congruente alla distanza tra il piano $\beta$     e un punto $P\in\alpha$ qualsiasi. 
+        \subsection{Distanza di un punto da una retta}
+            \textbf{NON ESISTE UNA FORMULA SPECIFICA}
+
+            Si considerino una retta r $r$ e un punto $P$ non appartenente alla retta. Un metoto può essere quello di determinare il punto $H$ tale che $PH\perp r$ e calcolare a questo punto la distanza $PH$. Per fare questo è necassario determinare l'equazione del piano perpendicolare a $r$ e passante per $P$ e poi trovare la sua intersezione $H$ con la retta:
+
+            \begin{ex}
+                Calcolare la distanza tra il punto $P(2,1,5)$ e la retta $r: \left\{\begin{array}{l}
+                    x=-3+3t\\
+                    y=2t\\
+                    z=2+4t
+                \end{array}\right.$
+            \end{ex}
+            \begin{enumerate}
+                \item Determinare l'equazione del piano $\pi\perp r$ passante per $P$. Siccome la retta è perpendicolare al piano, il suo vettore direzione è parallelo al vettore direzione del piano.
+                    \[\overrightarrow{v}(3,2,4)~~~~~~P(2,1,5)\]
+                    \[3(x-2)+2(y-1)+4(z-5)=0\]
+                    % \[3x-6+2y-2+4z-20=0\]
+                    \[\pi: 3x-2y+4z-28=0\]
+                \item Determinare il punto di intersezione $H$ tra la retta $r$ e il piano $\pi$
+                    \[r\cap\pi\left\{\begin{array}{l}
+                        x=-3+3t\\
+                        y=2t\\
+                        z=2+4t\\
+                        3x-2y+4z-28=0
+                    \end{array}\right.~~~~~~~~~~~~\renewcommand{\arraystretch}{2}\begin{array}{c}
+                        3(-3+3t)-2(2t)+4(2+4t)-28=0\\
+                        t=1
+                    \end{array}\]
+                    \[\left\{\begin{array}{l}
+                        x=-3+3(1)=0\\
+                        y=2(1)=2\\
+                        z=2+4(1)=6
+                    \end{array}\right.~~~~~~~~~~~~H(0,2,6)\]
+                \item Determinare la lunghezza del segmento $\overline{PH}$, che ciuncide con la distanza del punto $P$ dalla retta $r$;
+                    \[d(P,r)=\overline{PH}=\sqrt{(0-2)^2+(-2-1)^2+(6-5)^2}=\sqrt{6}\]
+            \end{enumerate}
+        \subsection{Distanza tra due rette parallele}
+            \textbf{NON ESISTE UNA FORMULA SPECIFICA.}
+            Per calcoloare la distanza tra due rette parallele $r$ e $s$ è sufficiente calcolare la distanza tra un punto $P\in r$ qualsiasi e la retta $s$.
+        \subsection{Distanza tra due rette sghembe}
+            \textbf{NON ESISTE UNA FORMULA SPECIFICA.}
+            Per determinare la distanza tra due rette sghembe $r$ e $s$ è necessario calcolare la misura del segmento $\overline{RS}$, con $R$ e $S$ due punti appartenenti rispettivamente a $r$ e $s$ tali che $\overrightarrow{RS}\perp r$ e $\overrightarrow{RS}\perp s$.
+            \begin{theorem}
+                Prese due rette sghembe $r$ e $s$ nello spazio, esiste ed è unica la retta $t$ tale che $t\perp r$ e $t\perp s$
+            \end{theorem}
+    \section{Superfici notevoli}
+        \subsection{Superficie sferica}
+            \begin{definition}
+                Si dice \textbf{superficie sferica} il luogo geometrico di tutti e soli i punti del piano che hanno la stessa distanza $r$ da un punto fisso detto centro $C(x_0,y_0,z_0)$.
+            \end{definition}
+            La sfera, come la circonferenza, è identificata in due modi diversi:
+            \begin{enumerate}
+                \item come luogo geometrico:
+                    \[(x-x_0)^2+(y-y_0)^2+(z-z_0)^2=r^2\]
+                \item forma canonica, che rappresenta una superficie sferica se e solo se $a^2+b^2+c^2-4d\geq 0$ (condizione di realtà):
+                    \[x^2+y^2+z^2+ax+by+cz+d=0\] \[\text{con } C(-\frac{a}{2},-\frac{b}{2},-\frac{c}{2}) \text{ e } r=\frac{1}{2}\sqrt{a^2+b^2+c^2-4d}\]
+            \end{enumerate}
+            \subsubsection{posizioni reciproche tra piano e sfera}
+            \begin{wrapfigure}{r}{0.3\textwidth}
+                \begin{center}
+                    \begin{tikzpicture}[scale=0.8]
+                        \shade[ball color = gray!40, opacity = 0.4] (0,0) circle (2cm);
+                        \draw (0,0) circle (2cm);
+                        \draw (-2,0) arc (180:360:2 and 0.6);
+                        \draw[dashed] (2,0) arc (0:180:2 and 0.6);
+                        \fill[fill=black] (0,0) circle (1pt);
+                        \draw[dashed] (0,0 ) node[above]{$C$} -- node[above]{$r$} (2,0);
+                    \end{tikzpicture}
+                \end{center}
+                \caption{Superficie sferica di centro $C$ e raggio $r$}
+            \end{wrapfigure}
+            Dato un piano $\alpha$ e una superficie sferica di cerntro $C$ e raggio $r$, si ha che:
+            \begin{itemize}
+                \item Se $d(C,\alpha)<r$, il piano interseca la sfera lungo una circonferenza;
+                \item Se $d(C,\alpha)=r$, il piano è tangente alla sfera in un punto $P$ e perpendicolare al raggio $CP$.
+                \item Se $d(C,\alpha)>r$, il piano è esterno alla sfera.
+            \end{itemize}
+\end{document}

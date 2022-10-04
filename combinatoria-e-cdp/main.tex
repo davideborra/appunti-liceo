@@ -1,0 +1,831 @@
+\documentclass{article}     %type of document
+\usepackage[utf8]{inputenc} %for text encoding
+\usepackage[italian]{babel} %for language elements
+\usepackage{graphicx}   %for adding figures
+\usepackage[a4paper, portrait, margin=2cm]{geometry}   %paper shape
+\usepackage{array}      %table management
+\usepackage{wrapfig}    %figures alignment
+%\usepackage{url}        %clickable links
+%\usepackage{longtable}  %multiple page tables
+%trees
+\usepackage{tikz}
+\usetikzlibrary{trees}
+%geogebra
+\usepackage{pgfplots}
+\pgfplotsset{compat=1.15}
+\usepackage{mathrsfs}
+\usetikzlibrary{arrows}
+\usepackage{amsfonts} %per simboli insiemi numerici
+\usepackage{amsmath} %per coefficienti binomiali
+\usepackage{amsthm} %per teoremi non numerati
+\usepackage{amssymb} %per simbolo insieme vuoto \varnothing
+%intestazione
+\usepackage{fancyhdr}
+\pagestyle{fancy}
+
+\newtheorem*{theorem}{Teorema}
+
+\newtheorem*{definition}{DEF}
+
+\newtheorem*{law}{Legge}
+
+\newtheorem{ex}{Esempio}[section]
+
+\newtheorem{axiom}{Assioma}
+
+\newtheorem{corollary}{Corollario}
+
+
+\title{Calcolo Combinatorio e Calcolo delle Probabilità}
+\author{Davide Borra - 5LA}
+\date{A.S. 2021-2022}
+
+\begin{document}
+    \begin{titlepage}
+    \maketitle
+    \tableofcontents
+    \vspace{\fill}
+    \hspace{\fill} v. 1.1   %incrementare primo numero per contenuti e secondo numero per patch
+    \end{titlepage}
+    
+    \lhead{Calcolo Combinatorio e Calcolo delle Probabilità}
+    \chead{}
+    \rhead{Davide Borra - 5LA}
+    
+    \section{Calcolo Combinatorio}
+        \subsection{Il principio moltiplicativo}
+            \begin{ex}
+                In un armadio ci sono tre camicie, due giacche e quattro pantaloni, in quanti modi ci si può vestire, sapendo che non ci sono problemi dovuti al colore dei capi?
+            \end{ex}
+            
+            Per risolvere questo problema una strategia efficace potrebbe essere quella di costruire uno schema ad albero in modo da trovare tutti gli abbinamenti possibili:
+            
+            % Tree
+                \tikzstyle{level 1}=[level distance=3.5cm, sibling distance=7.5cm]
+                \tikzstyle{level 2}=[level distance=3.5cm, sibling distance=4cm]
+                \tikzstyle{level 3}=[level distance=3.5cm, sibling distance=0.9cm]
+                
+                \tikzstyle{bag} = [text width=4em, text centered]
+                
+                \begin{tikzpicture}[grow=right]
+                \node[bag] {}
+                    child {
+                        node[bag] {$C_3$}        
+                            child {
+                                node[bag]{$G_2$}
+                                    child {
+                                        node[bag]{$P_4$}
+                                    }child {
+                                        node[bag]{$P_3$}
+                                    }child {
+                                        rnode[bag]{$P_2$}
+                                    }child {
+                                        node[bag]{$P_1$}
+                                    }
+                            }
+                            child {
+                                node[bag]{$G_1$}
+                                    child {
+                                        node[bag]{$P_4$}
+                                    }child {
+                                        node[bag]{$P_3$}
+                                    }child {
+                                        node[bag]{$P_2$}
+                                    }child {
+                                        node[bag]{$P_1$}
+                                    }
+                            }
+                    }
+                    child {
+                        node[bag] {$C_2$}        
+                            child {
+                                node[bag]{$G_2$}
+                                    child {
+                                        node[bag]{$P_4$}
+                                    }child {
+                                        node[bag]{$P_3$}
+                                    }child {
+                                        node[bag]{$P_2$}
+                                    }child {
+                                        node[bag]{$P_1$}
+                                    }
+                            }
+                            child {
+                                node[bag]{$G_1$}
+                                    child {
+                                        node[bag]{$P_4$}
+                                    }child {
+                                        node[bag]{$P_3$}
+                                    }child {
+                                        node[bag]{$P_2$}
+                                    }child {
+                                        node[bag]{$P_1$}
+                                    }
+                            }
+                    }
+                    child {
+                        node[bag] {$C_1$}        
+                            child {
+                                node[bag]{$G_1$}
+                                    child {
+                                        node[bag]{$P_4$}
+                                    }child {
+                                        node[bag]{$P_3$}
+                                    }child {
+                                        node[bag]{$P_2$}
+                                    }child {
+                                        node[bag]{$P_1$}
+                                    }
+                            }
+                            child {
+                                node[bag]{$G_1$}
+                                    child {
+                                        node[bag]{$P_4$}
+                                    }child {
+                                        node[bag]{$P_3$}
+                                    }child {
+                                        node[bag]{$P_2$}
+                                    }child {
+                                        node[bag]{$P_1$}
+                                    }
+                            }
+                    };
+                \end{tikzpicture}
+            %Tree end
+            
+            Contando le foglie dell'albero si ricava facilmente che i possibili abbinameniti sono esattamente $24$, ovvero il prodotto delle cardinalità degli insiemi da cui si attinge, in simboli:
+            \[N=|C|\cdot|G|\cdot|P|=3\cdot2\cdot4=24\]
+        \subsection{Funzione fattoriale}
+            \begin{definition}
+                Si definisce $n!$ il fattoriale del numero $n$ (con $n>0$), ovvero il prodotto di tutti i numeri naturali compresi tra 1 e $n$. Inoltre per definizione $0!:=1$.
+            \end{definition}
+            \[n!:=\left\{\begin{array}{cc}
+                 1  & se ~n=0\\
+                 n(n-1)! & se ~n\geq 1
+            \end{array}\right.\]
+            
+            \begin{ex}
+                Si risolva la seguente equazione (Volume 4A - Pagina $\alpha$42 - Esercizio 4\footnote{Tutti gli esercizi per cui è specificato un riferimento sono tratti da \textit{Manuale blu 2.0 di matematica} di M.Bergamini, G. Barozzi, A. Trifone - Ed. Zanichelli.}):
+            \[(x+1)!-4(x-1)!=x!\]
+            \end{ex}
+            Prima di procedere con la semplificazione dell'espressione è opportuno porre le condizioni di esistenza (l'argomento della funzione fattoriale deve essere $\geq 0$).
+            \[ \left\{
+            \begin{array}{c}
+                 x+1\geq 0 \\
+                 x-1\geq 0 \\
+                 x\geq 0
+            \end{array} \right. ~~~~~
+            \left\{
+            \begin{array}{c}
+                 x\geq -1 \\
+                 x\geq 1 \\
+                 x\geq 0
+            \end{array} \right. ~~~~~
+            x\geq 1
+            \]
+            A questo punto è possibile scomporre la scrittura dei fattoriali in modo da poter raccogliere $(x-1)!$.
+            
+            \[x(x+1)(x-1)!-4(x-1)!=x(x-1)!\]
+            
+            Ora, siccome le condizioni di esistenza precedentemente poste garantiscono che $(x-1)!>0$, è possibile dividere entrambi i membri per $(x-1)!$.
+            \[x(x+1)-4=x\]
+            Ora si tratta semplicemente di risolvere un'equazione di secondo grado.
+            \[x^2+x-4=x\]
+            \[x^2-4=0\]
+            \[x=\pm2\]
+            Confronto ora il risultato trovato con le condizioni precedentemente poste: siccome $x\geq1$, posso accettare unicamente la soluzione positiva, per cui \[x=2\]
+        
+            \begin{ex}
+                Si risolva la seguente disequazione (Volume 4A - Pagina $\alpha$26 - Esercizio 98):
+                \[\frac{x!}{(x-2)!}>\frac{x!}{(x-1)!}\]
+            \end{ex}
+            
+            Prima di procedere con la semplificazione della disequazione è necessario porre le condizioni di esistenza:
+
+            \[ \left\{
+            \begin{array}{c}
+                 x\geq 0 \\
+                 x-2\geq 0 \\
+                 x-1\geq 0 \\
+                 x \in \mathbb{N}
+            \end{array} \right. ~~~~~
+            \left\{
+            \begin{array}{c}
+                 x\geq 0 \\
+                 x\geq 2 \\
+                 x\geq 1\\
+                 x \in \mathbb{N}
+            \end{array} \right. ~~~~~
+            \left\{
+            \begin{array}{c}
+                x\geq 2\\
+                x \in \mathbb{N}
+           \end{array} \right.
+           \]
+           
+           A questo punto è possibile dividere entrambi i membri per $x!$ \[\frac{1}{(x-2)!}>\frac{1}{(x-1)!}\] e scomporre i denominatori in modo da mettere in evidenza il termine $(x-2)!$ \[\frac{1}{(x-2)!}>\frac{1}{(x-1)(x-2)!}\]
+           Ora è possibile moltiplicare ad entrambi i membri per $(x-2)!$, ottenendo una disequazione fratta che può essere risolta facilmente. 
+           \[1>\frac{1}{x-1}\] \[\frac{1-(x-1)}{x-1}<0\] \[\frac{x+2}{x-1}>0\] \[x<1 \lor x>2\]
+           Per concludere, si confrontino le soluzioni con le condizioni di esistenza precedentemente poste, ricavando la soluzione ocmpleta all'equazione \[x>2 \land x\in \mathbb{N}\]
+           \subsection{Permutazioni}
+            \subsubsection{Permutazioni semplici} 
+            \begin{ex}
+                Si determini il numero degli anagrammi, anche privi di senso, della parola "MONTE"
+            \end{ex}
+            
+            Il problema si risolve applicando il principio moltiplicativo: Immaginiamo di dovere scegliere le lettere una per volta: la prima scelta può essere effettuata tra 5 lettere, la seconda potrà essere fatta tra 4, la terza tra 3 e così via fino all'ultima lettera la cui scelta sarà obbligata. Il numero di anagrammi si ricaverà quindi secondo la relazione \[P_5=5\cdot4\cdot3\cdot2\cdot1=120\]
+            \begin{definition}
+                Si definiscono permutazioni semplici di $n$ elementi distinti tutti i gruppi formati da $n$ elementi che differiscono per il loro ordine. Il loro numero è definito tramite la funzione fattoriale secondo la relazione \[P_n=n!\]
+            \end{definition}
+            
+            \subsubsection{Permutazioni circolari} 
+            \begin{ex}
+                Alice, Bob e Carlo devono sedersi attorno ad un tavolo rotondo, in quanti modi lo possono fare?
+                
+            \end{ex}
+            Cominciamo rappresentando tutte le $3!=6$ possibili configurazioni come se si trattasse di permutazioni semplici:
+
+            $(1) \begin{array}{ccc}
+                &A\\
+                &\bigodot \\
+                B&&C
+            \end{array}$~~~
+            $(2)\begin{array}{ccc}
+                &A\\
+                &\bigodot \\
+                C&&B
+            \end{array}$~~~
+            $(3)\begin{array}{ccc}
+                &B\\
+                &\bigodot \\
+                C&&A
+            \end{array}$~~~
+            $(4)\begin{array}{ccc}
+                &B\\
+                &\bigodot \\
+                A&&C
+            \end{array}$~~~
+            $(5)\begin{array}{ccc}
+                &C\\
+                &\bigodot \\
+                A&&B
+            \end{array}$~~~
+            $(6)\begin{array}{ccc}
+                &C\\
+                &\bigodot \\
+                B&&A
+            \end{array}$\\
+            Consideriamo ora Alice, notiamo che nelle configurazioni 1, 3, 5 ha alla sua destra Bob e alla sua sinistra Carlo, mentre nelle configurazioni 2, 4, 6 ha alla sua destra Carlo e alla sua sinistra Bob. Le configurazioni possibili sono quindi di meno, in particolare solo due, perchè le permutazoni vanno analizzare relativamente ad un elemento che viene "fissato". 
+            \begin{definition}
+                Si definiscono permutazioni circolari di $n$ elementi distinti tutti i gruppi formati da $n$ elementi che differiscono per il loro ordine e in cui non è poassibile definire un "primo elemento" e un "ultimo elemento". Il loro numero è definito tramite la funzione fattoriale secondo la relazione \[P_n^{circ}=(n-1)!\]
+            \end{definition}
+            
+            \subsubsection{Permutazioni con ripetizione} 
+            \begin{ex}
+                Si determini il numero degli anagrammi, anche privi di senso, della parola "TETTO"
+                
+            \end{ex}
+            Anche in questo caso non è possibile applicare il modello delle permutazioni semplici perché si andrebbero a contare sei volte tutte le reali configurazioni (infatti le tre T sarebbero considerate come lettere diverse), per cui è necessario dividere il numero delle configurazioni ottenute tramite le permutazioni semplici per le permutazioni di tutte le lettere ripetute, in questo caso \[P_5^{(3)}=\frac{P_5}{P_3}=\frac{5!}{3!}=\frac{5\cdot4\cdot3!}{3!}=5\cdot4=20\]
+
+            \begin{definition}
+                Si definiscono permutazioni con ripetizione di $n$ elementi di cui $\alpha, \beta, \dots$ ripetuti tutti i gruppi formati da $n$ elementi che differiscono per il loro ordine. Il loro numero è definito secondo la relazione \[P_n^{(\alpha, \beta, \dots)}=\frac{n!}{\alpha! \cdot \beta! \cdot \dots}\]
+            \end{definition}
+            
+            \subsection{Disposizioni}
+            \subsubsection{Disposizioni semplici}
+            \begin{ex}
+                Dobbiamo stilare una Top 6 tra i 151 pokémon della prima generazione, in quanti modi possiamo farlo?
+                
+            \end{ex} 
+            Qui è possibile seguire due strade, entrambe già viste per le permutazioni: 
+            \begin{itemize}
+                \item un metodo potrebbe essere quello basato sul principio moltiplicativo: il primo pokémon lo scelgo tra tutti i 151, il secondo tra 150, il terzo tra 149, il quarto tra 148, il quinto tra 147 e il sesto tra 146. Il numero di possibili Top 6 sarà quindi \[D_{151,6}=151\cdot150\cdot149\cdot148\cdot147\cdot146\]
+                \item un altro modo invece consiste nel calcolare tutte le possbili permutazioni dei 151 pokémon e poi "togliere" le permutazioni dei $151-6$ esclusi dalla Top 6, calcolando il rapporto tra le due permutazioni: \[D_{151,6}=\frac{P_{151}}{P_{(151-6)}}=\frac{151!}{145!}=\frac{151\cdot150\cdot149\cdot148\cdot147\cdot146\cdot145!}{145!}=151\cdot150\cdot149\cdot148\cdot147\cdot146\]
+            \end{itemize}
+
+            \begin{definition}
+                Si definiscono disposizioni semplici di $n$ elementi in classe $k$ (con $n>k>0$) tutti i gruppi di $k$ elementi scelti tra gli $n$ tali che differiscano per l'ordine o per almeno un elemento. Esse si ricavano dividendo le permutazioni del totale degli $n$ elementi per le permutazioni degli $n-k$ elementi esclusi. \[D_{n,k}=\frac{P_n}{P_{n-k}}=\frac{n!}{(n-k)!}\]
+            \end{definition}
+            
+            \subsubsection{Disposizioni circolari}
+            \begin{ex}
+                8 amici devonoi sedersi attorno ad un tavolo rotondo che ha 5 posti, in quanti modi possono farlo?
+                
+            \end{ex}
+            La soluzione è analoga a quella relativa alle permutazioni circolari, basta fissare una persona e variare le altre. Si ottengono quindi $k$ configurazioni identiche per ogni classe e di conseguenza il totale dei modi sarà
+            \[D_{8,5}^{circ}=\frac{8!}{5\cdot(8-5)!}\]
+            \subsubsection{Disposizioni con ripetizione}
+            \begin{ex}
+                Dobbiamo creare la nuova password per la nostra mail usando 8 caratteri anche ripetuti scelti tra le 26 lettere dell'alfabeto (maiuscole e minuscole) e le 10 cifre. In quanti modi possiamo farlo?
+                
+            \end{ex}
+            Abbiamo la possibilità di scegliere tra $n=26\cdot2+10=62$ caratteri. Il ragionamento è sempre lo stesso visto dall'inizio: il primo carattere può essere scelto tra 62, il secodo tra 62 (perché posso ripetere il primo), il terzo ancora tra 62 e così via. 
+            \[D_{62,8}^r=62\cdot62\cdot62\cdot62\cdot62\cdot62\cdot62\cdot62=62^8\]
+
+            \begin{definition}
+                Si definiscono disposizioni con ripetizione di $n$ elementi in classe $k$  tutti i gruppi di $k$ elementi, anche ripetuti, scelti tra gli $n$ tali che differiscano per l'ordine o per almeno un elemento. Si ricavano con la seguente relazione: \[D^r_{n,k}=n^k\]
+            \end{definition}
+        \subsection{Coefficienti Binomiali}
+            \begin{definition}
+                Il coefficiente binomiale di due numeri natorali $n$ e $k$, con $0<k<n$ è il numero  \[\binom{n}{k}=\frac{n!}{k!(n-k)!}\]
+                Dalla definizione di fattoriale si ricava inoltre che
+                \[\binom{n}{0}=\frac{n!}{0!\cdot n!}=1 ~~~~~~ \binom{0}{0}=\frac{0!}{0!\cdot 0!}=1 ~~~~~~ \binom{n}{n}=\frac{n!}{n!\cdot 0!}=1\]
+            \end{definition}
+           
+            
+            \paragraph{Proprietà:}
+                    \subparagraph{Legge delle classi complementari}
+                        \[\binom{n}{k}=\frac{n!}{k!(n-k)!}=\frac{n!}{(n-k)!k!}=\frac{n!}{(n-k)![n-(n-k)]!}=\binom{n}{n-k}\]
+                    \subparagraph{Formula di ricorrenza}
+                        \[\binom{n}{k+1}=\frac{n!}{(k+1)!(n-k-1)!}=\frac{n!\cdot(n-k)}{(k+1)k!\cdot(n-k)(n-k-1)!}=\frac{n!}{k!(n-k)!}\cdot \frac{n-k}{k+1}=\binom{n}{k}\cdot \frac{n-k}{k+1}\]
+        
+        \subsection{Combinazioni}
+            \subsubsection{Combinazioni semplici}
+            \begin{ex}
+                Devo formare una squadra con 6 dei 10 pokémon che ho catturato finora. Sapendo che non conta l'ordine con cui i pokémon si trovano nella squadra  e che ho catturato un esemplare per ogni pokémon, in quanti modi posso farlo?
+                
+            \end{ex}
+            \begin{wrapfigure}{r}{0.25\textwidth}
+                \includegraphics[width=0.9\linewidth]{pkmn/Box.png} 
+            \end{wrapfigure}
+            Ragioniamo come se contasse l'ordine dei pokémon nella squadra, in questo caso si tratterebbe di disposizioni semplici, come nel caso della Top 6 analizzato precedentemente. Otteniamo quindi $D_{10,6}=\frac{10!}{(10-6)!}=151200$ configurazioni possibili. A questo punto stiamo contantdo ogni possibile squadra diverse volte: ad esempio
+            \begin{center}
+                \includegraphics{pkmn/A.png} \includegraphics{pkmn/C.png} \includegraphics{pkmn/B.png} \includegraphics{pkmn/D.png} \includegraphics{pkmn/Z.png} \includegraphics{pkmn/J.png}
+            \end{center} 
+            viene contata $P_6$ volte. Per ottenere quindi il risultato corretto dobbiamo dividere il tutto per $P_6$:
+            \[C_{10,6}=\frac{D_{10,6}}{P_6}=\frac{10!}{6!(10-6)!}=\frac{10!}{6!\cdot4!}=\binom{10}{6}=210\]
+            \begin{definition}
+                Si definiscono combnazioni semplici di $n$ elementi in classe $k$ con $0<k\leq n$ tutti i gruppi di $k$ elementi scelti fra gli $n$ che differiscono per almeno un elemento ma non per l'ordine. Si ricavano tramite il coefficiente binomiale secondo la relazione \[C_{n,k}=\binom{n}{k}=\frac{n!}{k!(n-k)!}\]
+            \end{definition}
+        \subsubsection{Combinazioni con ripetizione}
+            \begin{ex}
+                E se avessi catturato abbastanza pokémon da poterli ripetere nella squadra?
+                
+            \end{ex}
+            Qui la situazione si complica: non possiamo più passare per le disposizioni o per le combinazioni, ma possiamo utilizzare dei "separatori". Immaginiamo mettere tutti i pokémon in fila e di aggiungere dei separatori "$|$" che indicano che il pokémon alla loro sinistra farà parte della squadra: 
+            \begin{center}
+                \includegraphics{pkmn/A.png} $|$\includegraphics{pkmn/B.png} $|$\includegraphics{pkmn/C.png} $|$$|$ \includegraphics{pkmn/D.png} \includegraphics{pkmn/J.png} \includegraphics{pkmn/M.png} \includegraphics{pkmn/MK.png} $|$\includegraphics{pkmn/P.png}$|$$|$\includegraphics{pkmn/R.png} \includegraphics{pkmn/Z.png}
+            \end{center} 
+            A questo punto calcoliamo tutte le permutazioni di questa stringa, trattando tutti i pokémon e tutti i separatori come indistinguibili (si tratta quindi di permutazioni con ripetizione $P_{16}^{(10,6)}$). Così facendo stiamo eliminando tutte le configurazioni ripetute. Rimane solo un problema: in questo modo si può presentare una configurazione in cui un separatore compare prima di \includegraphics{pkmn/A.png}, andando a scegliere un pokémon che in realtà non esiste. Per risolvere questo problema basta semplicemente eliminare \includegraphics{pkmn/A.png} dalla serie e sapere che se un separatore non avrà niente alla propria sinistra, in realtà starà indicando proprio lui. In sintesi si tratterebbe quindi di permutazioni con ripetizione di $n+k-1$ elementi, di cui $n-1$ e $k$ ripetuti, o meglio $\binom{n+k-1}{k}$.
+            \[C^r_{10,6}=\binom{10+6-1}{6}=\frac{15!}{6!\cdot9!}=455\]
+            \begin{definition}  
+                Si definiscono combinazioni con ripetizione di $n$ elementi in classe $k$ (con $n,k\in \mathbb{N}_0$) tutti i gruppi di $k$ elementi scelti fra gli $n$ tali che 
+                \begin{itemize}
+                    \item ogni elemento può essere ripetuto fino a $k$ volte
+                    \item non interessa l'ordine con cui gli elementi compaiono
+                    \item due gruppi sono considerati come distinti se differiscono per il numero di volte in cui un elemento compare al loro interno
+                \end{itemize}
+            \end{definition}
+            Esse si ricavano tramite un coefficiente binomiale secondo la relazione \[C_{n,k}^r=\binom{n+k-1}{k}=\frac{(n+k-1)!}{k!(n-1)!}\]
+
+        \subsection{Binomio di Newton}
+            Esistono due metodi per calcolare lo svilupopo dell'$n$-esima potenza del binomio $(A+B)$, il più semplice è il Triangolo di Tartaglia, che è molto utile per valori di $n$ bassi, ma poi diventa scomodo a causa della necessità di scrivere tutte le righe precedenti per arrivare alla riga cercata. UIn questi casi è più utile la formula del binomio di Newton, che permette di calcolare lo sviluppo di una potenza di binomio tramite i coefficienti binomiali. Si dimostra infatti per induzione che 
+            \[(A+B)^n=\sum_k^n\binom{n}{k}A^kB^{n-k}\]
+    \section{Calcolo delle Probabilità}
+        \subsection{Definizioni}
+            \textbf{Esperimento aleatorio:} fenomeno il cui esito non può essere previsto con certezza.\\
+            \textbf{Spazio campionario:} insieme di tuti i possibili risultati di un esperimento. Si indica con $\Omega$ o $U$.\\
+            \textbf{Evento:} un qualsiasi sottoinsieme dallo spazio campionario.\\
+            \textbf{Evento elementare:} sottoinsieme dello spazio campionario formato da un singolo risultato   dell'esperimento.
+            \begin{ex}
+                Si lancia un dado a sei facce due volte, rappresentare lo spazio campionario e individuare i seguenti eventi: $E_1=$"sul primo dado esce 2 e sul secondo esce 5" e $E_2=$"escono due numeri uguali."
+                
+            \end{ex}
+            Iniziamo rappresentando lo spazio campionario $\Omega$. Per farlo in questo caso la scelta migliore è una tabella a doppia entrata:
+            \begin{center}
+                \((1,1)~(1,2)~(1,3)~(1,4)~(1,5)~(1,6)\)\\
+                \((2,1)~(2,2)~(2,3)~(2,4)~(2,5)~(2,6)\)\\
+                \((3,1)~(3,2)~(3,3)~(3,4)~(3,5)~(3,6)\)\\
+                \((4,1)~(4,2)~(4,3)~(4,4)~(4,5)~(4,6)\)\\
+                \((5,1)~(5,2)~(5,3)~(5,4)~(5,5)~(5,6)\)\\
+                \((6,1)~(6,2)~(6,3)~(6,4)~(6,5)~(6,6)\)\\
+            \end{center}
+
+            Gli eventi sono sottoinsiemi dello spazio campionario, quindi la soluzione è:
+
+            $E_1=\{(2,5)\}$ - in questo caso si parla di evento elementare perché contiene un solo risultato
+
+            $E_2=\{(1,1), (2,2), (3,3), (4,4), (5,5), (6,6)\}$
+
+        \subsection{Definizione classica di probabilità}
+        \begin{definition}
+            Si dice probabilità dell'evento $E$ il rapporto tra i casi favorevoli in cui si verifica $E$ e i casi possibili che si possono verificare, quando sono tutti equiprobabili:
+        \[p(E)=\frac{casi~favorevoli}{casi~possibili}=\frac{|E|}{|\Omega|}\]
+        La probabilità di un evento può assumere un valore compreso tra 0 e 1. Se è 0 l'evento si dice \textbf{impossibile}, se è 1 l'evento si dice \textbf{certo}. 
+        \end{definition}
+        \begin{ex}
+            Calcolare la probabilità che lanciando un dado esca un numero maggiore o ugugale a 5.
+            
+        \end{ex}
+
+        $\Omega=\{1,2,3,4,5,6\}$
+
+        $|\Omega|=6$
+
+        $E=$"esce un numero maggiore o uguale a 5"
+
+        $E=\{5,6\}$
+
+        $|E|=2$
+
+        $p(E)=\frac{|E|}{|\Omega|}=\frac{2}{6}=\frac{1}{3}$
+
+        \subsubsection{Probabilità dell'evento contrario}
+            Si consideri un evento $E$, si dice evento contrario di $E$ l'evento $\overline{E}$ che si verifica se e solo se non si verifica $E$.
+            In tal caso vale la relazione \[p(E)+p(\overline{E})=1\]
+            \begin{ex}
+                Calcolare la probabilità che lanciando un dado esca un numero minore di 5.
+                
+            \end{ex}
+            
+            $E=$"esce un numero maggiore o uguale a 5"
+
+            $\overline{E}=$"esce un numero minore di 5"
+
+            $p(E)=\frac{1}{3}$
+
+            $p(\overline{E})=1-p(E)=1-\frac{1}{3}=1\frac{2}{3}$
+
+        \subsubsection{Probabilità e calcolo combinatorio}
+            In alcuni casi per calcolare il numero di casi favorevoli e casi possibili potrebbe essere utile utilizzare alcune tecniche di calcolo proprie del calcolo combinatorio.
+            \begin{ex}
+                In una scatola di cioccolatini ne sono rimasti 4 al latte, 10 fondenti e 2 al liquore. Si prendono consecutivamente due cioccolatini a caso. Calcola la probabilità che:
+                \begin{enumerate}
+                    \item siano entrambi fondenti
+                    \item non siano al liquore
+                    \item non siano entrambi al latte
+                \end{enumerate}
+                (Volume 4A - Pagina $\alpha$81 - Esercizio 34)
+            \end{ex}
+
+            \[|\Omega|=16\]
+            \[p(E_1)=\frac{D_{10,2}}{D{16,2}}=\frac{\frac{10!}{8!}}{\frac{16!}{14!}}=\frac{10\cdot9}{16\cdot15}=\frac{3}{8}\]
+            \[p(E_2)=\frac{D_(14,2)}{D_{16,2}}=\frac{14\cdot13}{16\cdot15}=\frac{91}{120}\]
+            \[p(E_3)=1-p(\overline{E_3})=1-\frac{4\cdot3}{16\cdot15}=1-\frac{1}{20}=\frac{19}{20}\]
+
+            \subsection{Somma logica di eventi}
+                \begin{definition}
+                    Dati due eventi $E_1$ e $E_2$ appartenenti allo stesso spazio campionario, si definisce \textbf{evento unione} o \textbf{somma logica} dei due eventi l'evento $E_1 \cup E_2$ che si verifica quando si è verificato almeno uno dei due eventi. 
+                \end{definition}
+                \begin{definition}
+                    Due eventi $E_1$ e $E_2$ relativi allo stesso spazio campionario si dicono \textbf{incompatibili} se il verificarsi dell'uno esclude il verificarsi contemporaneo dell'altro, cioè $E_1\cap E_2=\varnothing$. In caso contrario si dicono \textbf{compatibili}. 
+                \end{definition}
+                \begin{theorem}
+                    La \textbf{probabilità della somma logica di due eventi} $E_1$ e $E_2$ è uguale alla somma delle loro due probabilità diminuita della probabilità del loro evento intersezione:
+                    \[p(E_1\cup E_2)=p(E_1)+p(E_2)-p(E_1\cap E_2)\]
+                    In particolare, se gli eventi sono \textit{incompatibili}:
+                    \[p(E_1\cup E_2)=p(E_1)+p(E_2)\]
+                \end{theorem}
+                \begin{ex}
+                    Si estrae una carta da un mazzo di 52 carte. Calcolare la probabilità che la carta:
+                    \begin{enumerate}
+                        \item sia un re o un sette
+                        \item sia un re o una carta di picche
+                        \item sia un asso o una carta di picche o una figura
+                    \end{enumerate}
+                    (Volume 4A - Pagina $\alpha$84 - Esercizio 64)
+                \end{ex}
+
+                \begin{tabular}{p{0.4\textwidth}p{0.5\textwidth}}
+                    $p(Re)=\frac{4}{52}=\frac{1}{13}$ & $p(fig)=\frac{3}{13}$\\
+                    $p(7)=\frac{4}{52}=\frac{1}{13}$ & $p(Re\cap \spadesuit)=\frac{1}{52}$\\
+                    $p(\spadesuit)=\frac{13}{52}=\frac{1}{4}$& $p(A\cap \spadesuit)=\frac{1}{52}$\\
+                    $p(A)=\frac{4}{52}=\frac{1}{13}$ & $p(fig \cap \spadesuit)=\frac{3}{52}$\\
+                \end{tabular}\\
+
+                Siccome gli eventi "pesco un re" e "pesco un 7" sono incompatibili:
+                \[p(E_1)=p(Re)+p(7)=\frac{1}{13}+\frac{1}{13}=\frac{2}{13}\]
+
+                "Pesco un re" e "pesco una carta" di picche sono invece compatibili, di conseguenza:
+                \[p(E_2)=p(Re)+p(\spadesuit)-p(Re\cap \spadesuit)=\frac{1}{13}+\frac{1}{4}-\frac{1}{52}=\frac{16}{52}=\frac{4}{13}\]
+
+                In questo caso bisogna considerare tutte le possibili coppie e anche l'intersezione di tutti e tre gli eventi. In particolare le coppie "pesco un asso"-"pesco una carta di picche" e "pesco una figura"-"pesco una carta di picche" sono formate da eventi compatibili, mentre la coppia "pesco un asso"-"pesco una carta di picche" è formata da eventi incompatibili, di conseguenza l'intersezione dei tre spazi campionari è vuota. 
+                \[p(E_3)=p(A)+p(\spadesuit)+p(fig)-p(A\cap \spadesuit)-p(fig \cap \spadesuit)=\frac{1}{4}+\frac{1}{13}+\frac{3}{13}-\frac{1}{52}-\frac{3}{52}=\frac{13+4+12-1-3}{52}=\frac{25}{52}\]
+
+            \subsection{Probabilità condizionata}
+                \begin{definition}
+                    Dati due eventi $E_1$ e $E_2$, con $p(E_2)\neq 0$, si dice \textbf{probabilità condizionata} di $E_1$ rispetto a $E_2$ la quantità $p(E_1|E_2)$, ovvero la probabilità che si verifichi $E_1$ sapendo che si è verificato $E_2$
+                \end{definition}
+                \begin{itemize}
+                    \item Se $p(E_1|E_2)=p(E_1)$, ovvero sapere che è avvenuto $E_2$ non modifica la probabilità di $E_1$ gli eventi di dicono \textbf{stocasticamente indipendenti} (ovvero indipententi dal punto di vista del calcolo delle probabilità).
+                    \item Se $p(E_1|E_2)\neq p(E_1)$, ovvero sapere che è avvenuto $E_2$ modifica la probabilità di $E_1$ gli eventi di dicono \textbf{dipendenti}. In particolare se $p(E_1|E_2) > p(E_1)$ i due eventi si dicono \textbf{correlati positivamente}, perchè il verificari di $E_2$ aumenta la probabilità del verificarsi di $E_1$, mentre se $p(E_1|E_2)< p(E_1)$ i due eventi si dicono \textbf{correlati negativamente}, perchè il verificari di $E_2$ riduce la probabilità del verificarsi di $E_1$.
+                \end{itemize}
+                 
+                \begin{theorem}
+                    La probabilità condizionata di un evento $E_1$ rispetto ad un evento $E_2$ non impossibile è \[p(E_1|E_2)=\frac{p(E_1\cap E_2)}{p(E_2)}\]
+                    con $p(E_2)\neq 0$.
+                \end{theorem}
+
+                \begin{ex}
+                    Calcolare la probabilità che, lanciando un dado, esca un numero meggiore di 3, sapendo che è uscito un numero pari.
+                    (Volume 4A - Pagina $\alpha$87 - Esercizio 84)
+                \end{ex}
+                $p(>3)=\frac{3}{6}=\frac{1}{3}$
+
+                $p(\mathbb{P})=\frac{3}{6}=\frac{1}{2}$
+
+                $p(>3\cap\mathbb{P})=\frac{2}{6}=\frac{1}{3}$
+
+                \[p(>3|\mathbb{P})=\frac{p(>3\cap\mathbb{P})}{p(\mathbb{P})}=\frac{\frac{1}{3}}{\frac{1}{2}}=\frac{2}{3}\]
+
+                Siccome $p(>3|\mathbb{P})>p(>3)$ i due eventi sono dipendenti e correlati positivamente.
+
+            \subsection{Prodotto logico di eventi}
+                \begin{ex}
+                    In una classe di 25 studenti i $\frac{3}{5}$ sono maggiorenni. I maschi sono 10, di cui 7 maggiorenni. Scegliendo a caso uno studente, qual è la probabilità che sia una ragaza maggiorenne? (Volume 4A - Pagina $\alpha$90 - Esercizio 101)
+                \end{ex}
+                
+                $E_1 =$ "viene scelta una ragazza"
+
+                $E_2 = $ "viene scelto uno studente maggiorenne"
+
+                Prima di tutto calcoliamo quanti sono i maschi, le femmine e gli studenti maggiorenni:
+                
+                \begin{tabular}{|c|c|c|c|}
+                    \hline 
+                    & \textbf{Maschi} & \textbf{Femmine} & \textbf{Totale}\\ \hline 
+                    \textbf{Maggiorenni} & 7 & 8 & 15\\ \hline
+                    \textbf{Minorenni} & 3 & 7 & 10\\ \hline
+                    \textbf{Totale} & 10 & 15 & 25\\ \hline
+                \end{tabular}
+
+
+                Questo problema può essere risolto in due modi: il primo e più immediato consiste nell'applicare la definizione classica di probabilità ai dati presenti nella tabella:
+                \[p(E_1\cap E_2)=\frac{8}{25}\]
+
+                Il secondo invece consiste nell'applicare la formula inversa della probabilità condizionata:
+                \[p(E_1\cap E_2)=p(E_2)\cdot p(E_1|E_2)=\frac{15}{25}\cdot\frac{8}{15}=\frac{8}{25}\]
+
+                \begin{definition}
+                    Dati due eventi $E_1$ e $E_2$ appartenenti allo stesso spazio campionario, si definisce \textbf{evento intersezione} o \textbf{prodotto logico} dei due eventi l'evento $E_1 \cap E_2$ che si verifica quando sono verificati entrambi gli eventi.
+                \end{definition}
+
+                \begin{theorem}
+                    La \textbf{probabilità del prodotto logico di due eventi} $E_1$ e $E_2$ è uguale al prodotto della probabilità dell'evento $E_1$ per la probabilità dell'evento $E_2$ nell'ipotesi che $E_1$ si sia verificato:
+                    \[p(E_1\cap E_2)=p(E_1)\cdot p(E_2|E_1)\]
+                    In particolare, se gli eventi sono \textit{indipendenti}:
+                    \[p(E_1\cap E_2)=p(E_1)\cdot p(E_2)\]
+                \end{theorem}
+
+            \subsection{Problema delle prove ripetute}
+                \begin{ex}
+                    Una rilevazione statistica ha messo in evidenza che 7 persone su 10 utilizzano in un mese surgelati di pesce. Calcola la probabilità che, scegliendo a caso 5 persone, esattamente due abbiano nel corso del mese consumato questo tipo di prodotto. (Volume 4A - Pagina $\alpha$95 - Esercizio 136)
+                \end{ex}
+
+                $E=$ "ha mangiato pesce surgelato questo mese"
+
+                $p(E)=p=\frac{7}{10}$
+
+                $p(\overline{E})=q=\frac{3}{10}$
+
+                Immaginiamo di avere 5 persone: A, B, C, D ed E. Per calcolare la probabilità che esattamente 2 di loro abbiano mangiato del pesce surgelato dobbiamo calcolare la probabilità che:
+                \begin{itemize}
+                    \item A e B hanno mangiato pesce surgelato e gli altri no
+                    \item A e C hanno mangiato pesce surgelato e gli altri no
+                    \item A e D hanno mangiato pesce surgelato e gli altri no
+                    \item A e A hanno mangiato pesce surgelato e gli altri no
+                    \item B e C hanno mangiato pesce surgelato e gli altri no
+                    \item ...
+                \end{itemize}
+
+                E poi sommaare tutti questi valori (che saranno identici), perchè essi non sono altro che tutte le possibili alternative che si possono verificare (teorema della somma). Il numero di possibili coppie di persone sarà esattamente $\binom{5}{2}$, perchè si tratta di scegliere due elementi da un gruppo di 5 senza che conti l'ordine. 
+
+                Per calcolare la probabilità che ddue persone su 5 abbiano mangiato il pesce surgelato, invece, dobbiamo applicare il teorema del prodotto, perchè dobbiamo calcolare, ad esempio, la probabilità che 
+                \begin{itemize}
+                    \item A abbia mangiato il pesce \textbf{e} B abbia mangiato il pesce \textbf{e} C non abbia mangiato il pesce \textbf{e} D non abbia mangiato il pesce \textbf{e} E non abbia mangiato il pesce:
+                \end{itemize}
+
+                Ovvero 
+                \[p(1)=\frac{7}{10}\cdot\frac{7}{10}\cdot\frac{3}{10}\cdot\frac{3}{10}\cdot\frac{3}{10}=0,01323\]
+
+                Moltiplichiamo questo valore per $\binom{5}{2}$ e otteniamo il risultato cercato
+
+                \[p_{(2,5)}=\binom{5}{2}\cdot 0,01323=0,1323\]
+
+                \begin{theorem}[Schema delle prove ripetute (o di Bernoulli)]
+                    Dato un esperimento aleatorio ripetuto nelle stesse condizioni $n$ volte e indicato con $E$ un evento che rappresenta il successo dell'esperimento e ha probabilità costante $p$ di verificarsi e probabilità $q=1-p$ di non verificarsi, la probabilità di ottenere $k$ successi su $n$ prove è: \[p_{(k,n)}=\binom{n}{k}p^k\cdot q^{n-k}\]
+                \end{theorem}
+            \subsection{Formula di disintegrazione e Teorema di Bayes}
+                \subsubsection{Probabilità totale o completa}
+                    \begin{ex}
+                        Due macchine producono lo stesso pezzo meccanico. La prima produce il $40\%$ di tutto il quantitativo e il $98\%$ della sua produzione è senza difetti. La seconda macchina ha un tasso di difettosità del $5\%$. Calcola la probabilità che, estraendo a caso un pezzo, questo sia difettoso. (Volume 4A - Pagina $\alpha$96 - Esercizio 144)
+                    \end{ex}
+
+                    Un passo molto utile per rappresentare il problema può essere tramite uno schema ad albero. I valori delle probabilità delle foglie possono essere calcolati mediante il teorema del prodotto:
+                    % Tree
+                    \begin{center}    
+                        % Set the overall layout of the tree
+                        \tikzstyle{level 1}=[level distance=3.5cm, sibling distance=3.5cm]
+                        \tikzstyle{level 2}=[level distance=3.5cm, sibling distance=2cm]
+                        
+                        % Define styles for bags and leafs
+                        \tikzstyle{bag} = [text width=4em, text centered]
+                        \tikzstyle{end} = [minimum width=3pt, inner sep=0pt]
+
+                        % The sloped option gives rotated edge labels. Personally
+                        % I find sloped labels a bit difficult to read. Remove the sloped options
+                        % to get horizontal labels. 
+                        \begin{tikzpicture}[grow=right]
+                        \node[bag] {}
+                            child {
+                                node[bag] {$M_2$}        
+                                    child {
+                                        node[end, label=right:
+                                            {$\overline{D}~~\rightarrow~~p(M_2\cap\overline{D})=60\%\cdot95\%=57\%$}] {}
+                                        edge from parent
+                                        node[below] {$95\%$}
+                                    }
+                                    child {
+                                        node[end, label=right:
+                                            {$D~~\rightarrow~~p(M_2\cap D)=60\%\cdot 5\%=3\%$}] {}
+                                        edge from parent
+                                        node[above] {$5\%$}
+                                    }
+                                    edge from parent 
+                                    node[below] {$60\%$}
+                                    }
+                            child {
+                                node[bag] {$M_1$}        
+                                    child {
+                                        node[end, label=right:
+                                            {$\overline{D}~~\rightarrow~~p(M_1\cap\overline{D})=40\%\cdot98\%=39,2\%$}] {}
+                                        edge from parent
+                                        node[below] {$98\%$}
+                                        }
+                                    child {
+                                        node[end, label=right:
+                                            {$D~~\rightarrow~~p(M_2\cap\overline{D})=40\%\cdot 2\%=0,8\%$}] {}
+                                        edge from parent
+                                        node[above] {$2\%$}
+                                        }
+                                    edge from parent 
+                                    node[below] {$40\%$}
+                                };
+                        \end{tikzpicture}
+                    \end{center}
+                    %Tree end
+                    A questo punto, per il teorema della somma:
+                    \[p(D)=p[(M_1\cap D)\cup(M_2 \cap D)]=p(M_1 \cap D)+p(M_2 \cap D)=0,8\%+3\%=3,8\%\]
+
+                    \begin{theorem}[Formula di disintegrazione]
+                        Se un evento $E$ può essere scritto nella forma \[E=(E\cap E_1)\cup(E\cap E_2)\cup\dots\cup(E\cap E_n)\]
+                        dove $E_1,E_2,\dots,E_n$ costituiscono una partizione dell'insieme $\Omega$ si ha che \[p(E)=p(E\cap E_1)+p(E\cap E_2)+\dots+p(E\cap E_n)=p(E_1)\cdot p(E|E_1)+p(E_2)\cdot p(E|E_2)+\dots+p(E_n)\cdot p(E|E_n)\]
+                    \end{theorem}
+
+                \subsubsection{Teorema di Bayes}
+                    \begin{ex}
+                        Due macchine producono lo stesso pezzo meccanico. La prima produce il $40\%$ di tutto il quantitativo e il $98\%$ della sua produzione è senza difetti. La seconda macchina ha un tasso di difettosità del $7\%$. Avendo preso a caso un pezzo e avendo accertato che è difettoso, calcola la probabilità che provenga dalla seconda macchina. (Volume 4A - Pagina $\alpha$98 - Esercizio 159)
+                    \end{ex}
+
+                    Anche in questo caso è particolarmente utile passare per la rapperesentazione mediante schema ad albero. 
+
+                    % Tree
+                    \begin{center}    
+                        % Set the overall layout of the tree
+                        \tikzstyle{level 1}=[level distance=3.5cm, sibling distance=3.5cm]
+                        \tikzstyle{level 2}=[level distance=3.5cm, sibling distance=2cm]
+                        
+                        % Define styles for bags and leafs
+                        \tikzstyle{bag} = [text width=4em, text centered]
+                        \tikzstyle{end} = [minimum width=3pt, inner sep=0pt]
+
+                        % The sloped option gives rotated edge labels. Personally
+                        % I find sloped labels a bit difficult to read. Remove the sloped options
+                        % to get horizontal labels. 
+                        \begin{tikzpicture}[grow=right]
+                        \node[bag] {}
+                            child {
+                                node[bag] {$M_2$}        
+                                    child {
+                                        node[end, label=right:
+                                            {$\overline{D}~~\rightarrow~~p(M_2\cap\overline{D})=60\%\cdot93\%=55,8\%$}] {}
+                                        edge from parent
+                                        node[below] {$93\%$}
+                                    }
+                                    child {
+                                        node[end, label=right:
+                                            {$D~~\rightarrow~~p(M_2\cap D)=60\%\cdot 7\%=4,2\%$}] {}
+                                        edge from parent
+                                        node[above] {$7\%$}
+                                    }
+                                    edge from parent 
+                                    node[below] {$60\%$}
+                                    }
+                            child {
+                                node[bag] {$M_1$}        
+                                    child {
+                                        node[end, label=right:
+                                            {$\overline{D}~~\rightarrow~~p(M_1\cap\overline{D})=40\%\cdot98\%=39,2\%$}] {}
+                                        edge from parent
+                                        node[below] {$98\%$}
+                                        }
+                                    child {
+                                        node[end, label=right:
+                                            {$D~~\rightarrow~~p(M_2\cap\overline{D})=40\%\cdot 2\%=0,8\%$}] {}
+                                        edge from parent
+                                        node[above] {$2\%$}
+                                        }
+                                    edge from parent 
+                                    node[below] {$40\%$}
+                                };
+                        \end{tikzpicture}
+                    \end{center}
+                    %Tree end
+
+                    Per calcolare la probabilità che un pezzo sia difettoso dobbiamo quindi calcolare il rapporto tra la probabilità della foglia e la probabilità che un pezzo sia difettoso ottenuta mediante la formula di disintegrazione:
+                    \[p(M_2|D)=\frac{p(M_2\cap D)}{p(D)}=\frac{4,2\%}{4,2\%+0,8\%}=84\%\]
+                    \begin{theorem}[Teorema di Bayes]
+                        La probabilità che, essendosi verificato un evento $E$, la causa che sta alla sua origine sia l'evento $E_i$, con $i=1,2,\dots, n$, è:
+                        \[p(E_i|E)=\frac{p(E\cap E_i)}{p(E)}=\frac{p(E_i)\cdotp(E|E_i)}{p(E)}\]
+                        dove $p(E)$ è la probabilità dell'evento totale ottenuta mediante la formula di disintegrazione. 
+                    \end{theorem}
+                \subsection{Definizione statistica (o frequentista) della probabilità}
+                    \begin{definition}
+                        La frequenza relativa $f(E)$ di un evento sottoposto a $n$ esperimenti, effettuati nelle stesse condizioni, è il rapporto fra il numero delle volte $y$ in cui l'evento è verificato (frequenza assoluta) e il numero $n$ delle prove effettuate.
+                        \[f(E)=\frac{y}{n}\]
+                    \end{definition}
+                    Come la probabilità, la frequenza relativa assume valori compresi tra 0 e 1. In questo caso però, se la frequenza relativa risluta 0 non significa che l'evento è impossibile, ma che non si è mai verificato nelle prove considerate, come se la frequenza è 1 non significa che l'evento è certo ma che si è verificato sempre nelle prove considerate. 
+                    \begin{law}[Legge dei grandi numeri o legge empirica del caso]
+                        Dato un evento $E$, sottoposto a $n$ prove tutte nelle stesse condizioni, il valore della frequenza relativa $f(E)=\frac{y}{n}$ tende al valore della probabilità $p(E)$, all'aumentare del numero $n$ di prove effettuate.
+                        \[\lim_{n\rightarrow +\infty}\frac{y}{n}=p(E)\]
+                    \end{law}
+                    \begin{definition}
+                        La \textbf{probabilità statistica} di un evento $E$ è la frequanza relativa del suo verificarsi iquando il numero di prove effettuato è da ritenersi "sufficientemente alto".
+                    \end{definition}
+                    Attenzione: non esiste un valore specifico per il numero di prove, che infatti dipende molto anche dall'evento analizzato. 
+                    \begin{ex}
+                        Un dado truccato viene lanciato per 3000 volte. La faccia 6 esce 375 volte. Calcolare la probabilità che in un lancio di questo dado esca 6.
+                    \end{ex}
+                    
+                    $y=375$
+
+                    $n=3000$
+
+                    \[p(6)=\frac{y}{n}=\frac{375}{3000}=\frac{1}{8}\]
+                \subsection{Definizione soggettiva di probabilità}
+                    \begin{ex}
+                        Qual è la probabilità che il prossimo papa sia un cardinale della Chiesa sudamericana?
+                    \end{ex}
+                    Non è possibile determinare questo valore con certezza, l'unico modo è chiedere ad un esperto e affidarsi alle sue stime. 
+
+                    \begin{definition}
+                        La probabilità soggettiva di un evento è la misura del grado di fiducia che una persona attribuisce al verificarsi dell'evento, secondo la sua opinione. Il valore si ottiene effettuando il rapporto fra la somma $P$ che si è disposti a pagare, in una scommessa, e la somma $V$ che si riceverà nel caso l'evento si verifichi.
+                        \[p(E)=\frac{P}{V}\]
+                    \end{definition}
+                    Deve inoltre sussistere la \textbf{condizione di coerenza}: la persona che accetta di pagare $P$ per ottenere $V$ deve anche essere disposta, scambiando i ruoli, a ricevere $P$ per pagare $V$ nel caso in cui l'evento si verifichi. Si dice che il verificarsi dell'evento è pagato $V$ a $P$.
+                \subsection{Impostazione assiomatica della probabilità}
+                    Tutte le definizioni di probabilità analizzate finora hanno dei limiti e sono legate al tipo di esperimento considerato e al metodo di calcolo utilizzato. Per ovviare a questo problema il matematico russo Kolmogorov ha introdotto tre assiomi che permettono di definire il concetto di probabilità in base alla teoria degli insiemi.
+                    \begin{definition}[Definizione assiomatica di probabilità]
+                        Dato uno spazio campionario $\Omega$, una funzione $p$ che associa a ogni evento $E$ dello spazio campionario degli eventi un numero reale viene detta probabilità se soddisfa i seguenti assiomi:
+                    \end{definition}
+                    \begin{axiom}
+                        La probabilità dell'evento deve essere un numero non negativo: $p(E) \geq 0$
+                    \end{axiom}
+                    \begin{axiom}
+                        La probabilità di un evento certo, ovvero dello spazio campionario, deve essere 1: $p(\Omega)=1$
+                    \end{axiom}
+                    \begin{axiom}
+                        La probabilità dell'unione di due eventi incompatibili deve essere la somma della probabilità dei due singoli eventi: $E_1\cap E_2 =\varnothing \rightarrow p(E_1\cup E_2)=p(E_1)+p(E_2)$ 
+                    \end{axiom}
+                    Dalla definizione assiomatica si deduce che:
+                    \begin{corollary}
+                        La probabilità dell'insieme vuoto è 0: $p(\varnothing)=0$
+                    \end{corollary}
+                    \begin{corollary}
+                        La probabilità è sempre un numero compreso tra 0 e 1: $0\leq p(E)\leq 1$
+                    \end{corollary}
+                    \begin{corollary}[Probabilità dell'evento contrario]
+                        $p(\overline{E})=1-p(E)$
+                    \end{corollary}
+                    \begin{corollary}
+                        Se gli eventi $E_1,E_2,\dots,E_n$ sono una partizione di $\Omega$, allora\[p(E_1)+p(E_2)+\dots+p(E_n)=1\]
+                    \end{corollary}
+                    \begin{corollary}
+                        $p(E_1-E_2)=p(E_1)-p(E_1\cap E_2)$, in particolare se $E_1 \subseteq E_2$ , allora $p(E_1-E_2)=p(E_1)-p(E_2)$
+                    \end{corollary}
+                    L'impostazione assiomatica della probabilità permette di risolvere problemi che altrimenti non avrebbero avuto soluzione:
+                    \begin{ex}
+                        Un tiratore lancia una freccetta su un bersaglio circolare di raggio $R=30cm$. Supponendo che il tiratore colpisca il bersaglio e che tutti i punti di quest'ultimo abbiano la stessa probabilità di essere colpiti, qual è la probabilità che sia colpito un punto distante meno di $r=10cm$ dal centro?
+                    \end{ex}
+                    In questo caso la probabilità può essere calcolata come rapporto tra le aree dei due cerchi:
+                    \definecolor{qqqqff}{rgb}{0.,0.,1.}
+                    \begin{center}
+                        \begin{tikzpicture}[line cap=round,line join=round,>=triangle 45,x=1.0cm,y=1.0cm]
+                            \clip(-3.1,-3.1) rectangle (3.1,3.1);
+                            \draw [line width=1.pt,color=qqqqff,fill=qqqqff,fill opacity=0.2] (0.,0.) circle (1.cm);
+                            \draw [line width=1.pt] (0.,0.) circle (3.0cm);
+                            \draw [line width=1.pt] (0.,0.)-- (0.8629102295469936,0.50535723576808);
+                            \draw [line width=1.pt] (0.,0.)-- (1.8433607555606102,2.3668589152839288);
+                            \begin{scriptsize}
+                            \draw[color=black] (0.6106324569739215,0.17248442614296142) node {$r$};
+                            \draw[color=black] (1.1850174216027884,1.1692112765283482) node {$R$};
+                            \end{scriptsize}
+                        \end{tikzpicture}
+                        
+                    \end{center}
+                    \[A_i=\pi r^2=(1cm)^2\pi=\pi cm^2\]
+                    \[A_e=\pi R^2=(3cm)^2\pi=9\pi cm^2\]
+                    \[p(E)=\frac{A_i}{A_e}=\frac{\pi cm^2}{9\pi cm^2}=\frac{1}{9}\]
+                        
+                    
+ \end{document}
