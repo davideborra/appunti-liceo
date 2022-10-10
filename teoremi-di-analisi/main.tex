@@ -1,76 +1,7 @@
-%Update 6/7/2022
+%Update 10/10/2022
 \documentclass{article}     %type of document
 \usepackage[utf8]{inputenc} %for text encoding
-\usepackage[italian]{babel} %for language elements
-\usepackage{graphicx}   %for adding figures
-\usepackage[a4paper, portrait, margin=2cm]{geometry}   %paper shape
-\usepackage{array}      %table management
-\usepackage{wrapfig}    %figures alignment
-\usepackage{subcaption}     %for subfigures
-%\usepackage{url}        %clickable links
-\usepackage{longtable}  %multiple page tables
-\usepackage{multirow}
-\input{insbox}
-\usepackage{tikz}
-%\usetikzlibrary{trees}
-\usetikzlibrary{calc}
-
-%geogebra
-\usepackage{pgfplots}
-\pgfplotsset{compat=1.15}
-\usepackage{mathrsfs}
-\usetikzlibrary{arrows}
-
-\usepackage{amsfonts} %per simboli insiemi numerici
-\usepackage{amsmath} %per coefficienti binomiali
-\usepackage{amsthm} %per teoremi non numerati
-\usepackage{amssymb} %per simbolo insieme vuoto \varnothing
-
-\usepackage{xcolor}
-\usepackage{mdframed}
-
-%intestazione
-\usepackage{fancyhdr}
-\pagestyle{fancy}
-\newcommand\parallelo{/\!/} %simbolo parallelismo
-\newcommand\tg{\text{\textnormal{tg\,}}} %tangente
-\newcommand\cotg{\text{\textnormal{cotg\,}}} %cotangente
-\newcommand\arctg{\text{\textnormal{arctg\,}}} %arcotangente
-\newcommand\arccotg{\text{\textnormal{arccotg\,}}} %arcocotangente
-
-\newcommand\N{\mathbb{N}}
-\newcommand\Z{\mathbb{Z}}
-\newcommand\Q{\mathbb{Q}}
-\newcommand\R{\mathbb{R}}
-\newcommand\C{\mathbb{C}}
-
-
-\pgfplotsset{compat=1.15}
-\usepackage{mathrsfs}
-\usetikzlibrary{arrows}
-
-\usepackage{standalone} %external matlab tikz files
-
-\newtheorem*{theorem}{Teorema}
-
-\newtheorem*{definition}{DEF}
-
-\newtheorem*{law}{Legge}
-
-\newtheorem{ex}{Esempio}[section]
-\newtheorem*{ex*}{Esempio}
-
-\newtheorem{axiom}{Assioma}
-
-\newtheorem{corollary}{Corollario}
-
-\newenvironment{shadedTheorem}%
-  {\begin{mdframed}[backgroundcolor=lightgray!40, linecolor=white, innertopmargin=4pt, innerbottommargin=13pt]\begin{theorem}}%
-  {\end{theorem}\end{mdframed}}
-
-
-\renewcommand\qedsymbol{QED}
-\everymath{\displaystyle}
+\usepackage{../lambdatex}
 
 \title{Teoremi di Analisi}
 \author{Davide Borra - 5LA}
@@ -83,6 +14,7 @@
 \begin{titlepage}
     \maketitle
     \tableofcontents
+    \hspace{\fill} v. 3.1   %incrementare primo numero per contenuti e secondo numero per patch
 \end{titlepage}
 \section{Primi teoremi sui limiti}
 \textbf{N.B.:} I seguenti teoremi valgono per ogni tipologia di limite, sia finito che infinito, e in ogni intorno, sia di un numero reale (anche destro e sinistro) sia di infinito.
@@ -149,8 +81,8 @@
         \begin{shadedTheorem}[Inverso della permanenza del segno]
             Se una funzione $f(x)$ ammette limite finito $l$ per $x$ che tende a $x_0$ e in un intorno $I(x_0)$ escluso al più $x_0$ è 
             \begin{itemize}
-                \item positiva o nulla, allora $l\geq 0$;
-                \item negativa o nulla, allora $l\leq 0$.
+                \item positiva o nulla, allora $l\geq 0\lor l=+\infty$;
+                \item negativa o nulla, allora $l\leq 0\lor l=-\infty$.
             \end{itemize}
         \end{shadedTheorem}
         
