@@ -1,7 +1,7 @@
 # Fdb version 3
-["pdflatex"] 1665415974 "/Users/davideborra/Documents/GitHub/appunti-liceo/teoremi-di-analisi/main.tex" "main.pdf" "main" 1665415975
-  "../lambdatex.sty" 1664885373 4085 cea7c4e2888884072886dd88567ba17b ""
-  "/Users/davideborra/Documents/GitHub/appunti-liceo/teoremi-di-analisi/main.tex" 1665415974 25255 939e6061863a8ac445af65640d5c537f ""
+["pdflatex"] 1666338926 "/Users/davideborra/Documents/GitHub/appunti-liceo/teoremi-di-analisi/main.tex" "main.pdf" "main" 1666338927
+  "../lambdatex.sty" 1666279230 4914 e853978352f2e95c2244c1ac0d40f12c ""
+  "/Users/davideborra/Documents/GitHub/appunti-liceo/teoremi-di-analisi/main.tex" 1666338924 25282 3a090e2587f25b15f7e6c3577bd0fa6b ""
   "/usr/local/texlive/2022/texmf-dist/fonts/enc/dvips/cm-super/cm-super-ts1.enc" 1136849721 2900 1537cc8184ad1792082cd229ecc269f4 ""
   "/usr/local/texlive/2022/texmf-dist/fonts/map/fontname/texfonts.map" 1577235249 3524 cb3e574dea2d1052e39280babc910dc8 ""
   "/usr/local/texlive/2022/texmf-dist/fonts/tfm/jknappen/ec/tcrm1000.tfm" 1136768653 1536 e07581a4bb3136ece9eeb4c3ffab8233 ""
@@ -246,9 +246,9 @@
   "/usr/local/texlive/2022/texmf-var/fonts/map/pdftex/updmap/pdftex.map" 1647878959 4410336 7d30a02e9fa9a16d7d1f8d037ba69641 ""
   "/usr/local/texlive/2022/texmf-var/web2c/pdftex/pdflatex.fmt" 1664453371 2826443 79048ec7f4be5f4a69f553793af991de ""
   "/usr/local/texlive/2022/texmf.cnf" 1647878952 577 209b46be99c9075fd74d4c0369380e8c ""
-  "main.aux" 1665415975 3281 7e53b2978d551a455495875e464743a5 "pdflatex"
-  "main.tex" 1665415974 25255 939e6061863a8ac445af65640d5c537f ""
-  "main.toc" 1665415975 2109 806235ca4f1c39f491a58dd3300b62bb "pdflatex"
+  "main.aux" 1666338927 3281 d16e36c7ad7cdec92ea75735de3442b1 "pdflatex"
+  "main.tex" 1666338924 25282 3a090e2587f25b15f7e6c3577bd0fa6b ""
+  "main.toc" 1666338927 2109 84483e1c7dcc3891d4657c6c99c08054 "pdflatex"
   (generated)
   "main.aux"
   "main.log"
