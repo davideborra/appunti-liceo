@@ -1,0 +1,84 @@
+%Update 9/7/2022
+\documentclass{article}     %type of document
+\usepackage[utf8]{inputenc} %for text encoding
+\usepackage{../lambdatex} 
+\everymath{\displaystyle}
+
+\title{Algebra - un'introduzione}
+\author{Davide Borra\footnote{\href{mailto:davide.borra@studenti.unitn.it}{davide.borra@studenti.unitn.it}} ~- UniTN}
+
+\begin{document}
+
+\begin{titlepage}
+    \maketitle
+    \tableofcontents
+    \vspace{\fill}
+    \hspace{\fill} v. 0.1   %incrementare primo numero per contenuti e secondo numero per patch
+\end{titlepage}
+
+\lhead{Algebra - un'introduzione}
+\chead{}
+\rhead{Davide Borra - UniTN}
+\section{Un'introduzione formale}
+\subsection{Insiemi e relazioni}
+\begin{shaded}
+    \begin{definition}[Insieme]
+        Si dice insieme una collezione $X$ di oggetti, detti elementi dell'insieme. Si scrive $x\in X$.
+    \end{definition}
+\end{shaded}
+\begin{shaded}
+    \begin{definition}[Prodotto cartesiano]
+    Siano $X, Y$ insiemi. Si definisce prodotto cartesiano di $X$ e $Y$ l'insieme delle coppie ordinate in cui il primo elemento appartiene a $X$ e il secondo appartiene a $Y$ \[X\times Y:=\{(x,y)\:|\: x\in X, y\in Y \}\]
+\end{definition}
+\end{shaded}
+\begin{shaded}
+    \begin{definition}[Relazione]
+        Sia $X$ un insieme. Si definisce relazione un insieme $R\subseteq X\times X$
+    \end{definition}
+\end{shaded}
+\paragraph{Proprietà delle relazioni}
+Una relazione può soddisfare 4 proprietà:
+\begin{enumerate}
+    \item[\textbf{(R)}] Riflessiva: $(x,x)\in R\forall x\in X$
+    \item[\textbf{(S)}] Simmetrica: $(x,y)\in R \Rightarrow (y,x)\in R$
+    \item[\textbf{(A)}] Antisimmetrica: $(x,y) \in R, (y,x)\in R \Rightarrow x=y$
+    \item[\textbf{(T)}] Transitiva: $(x,y)\in R,(y,z)\in R\Rightarrow (x,z)\in R$
+\end{enumerate}
+\subsubsection{Relazioni di equivalenza}
+\begin{shaded}
+    \begin{definition}[Relazione di equivalenza]
+        Una relazione si dice relazione di equivalenza se soddisfa le proprietà riflessiva, transitiva e simmetrica.
+    \end{definition}
+    \begin{itemize}
+        \item Notazione: $(x,y)\in R \Harr x\sim y$
+    \end{itemize}
+\end{shaded}
+Una piccola postilla sulla notazione: qui ho specificato come notazione standard il simbolo $\sim$, ma a volte si usano anche altri simboli $\equiv$ e $\simeq$. Rimane il fatto che sono simboli, per cui l'utilizzo di un preciso simbolo non comporta automaticamente una specifica relazione, che andrà definita caso per caso.
+\begin{shaded}
+    \begin{definition}[Classi di equivalenza]
+        Siano $X$ un insieme, $\sim$ una relazione di equivalenza e $x\in X$. Si definisce \underline{\textbf{classe di equivalenza di $x$}} l’insieme \[\displaystyle [x] = \left\{y\in X : y\sim x\right\}\]
+    \end{definition}
+\end{shaded}
+\paragraph{Proprietà:}~
+\begin{itemize}
+    \item $x\sim y \Leftrightarrow [x]=[y]$
+        \begin{proof}~
+            \begin{enumerate}
+                \item $x\sim y \Rightarrow [x]=[y]$
+            
+                Si assume $x\sim y$. 
+                Preso $z\in [x]$, allora per definizione $z\sim x$. Per la proprietà transitiva segue che $z\sim y$, da cui $z\in [y]$.
+                Preso $z\in [y]$, allora per definizione $z\sim y$. Per la proprietà simmetrica $y\sim x$. Di conseguenza per la proprietà transitiva $z\sim x$, da cui $z\in [x]$.
+                
+                Quindi $[x]=[y]$.
+                \item $[x]=[y] \Rightarrow x\sim y$ 
+            
+                Per definizione di classe di equivalenza $x \in [x]$. Siccome $[x]=[y]$, $x\in [y]$. Allora per definizione di classe, $x\sim y$.
+            \end{enumerate}
+        \end{proof}
+    \item $x\nsim y \Rightarrow [x]\cap[y]=\varnothing$ (classi di equivalenza disgiunte)
+    \begin{proof}
+        Passo alla contronominale $[x]\cap [y]\neq\varnothing\Rightarrow x\sim y$. Affermare che due insiemi non sono disgiunti significa affermare che hanno un elemento $z$ in comune $\exists z \in [x]: z\in [y]$, di conseguenza per definizione $z\sim x$  (per $[\textnormal{R}] ~x\sim z$)  e $z\sim y$.  Di conseguenza per la proprietà transitiva, la tesi.
+    \end{proof}
+\end{itemize}
+\end{document}
