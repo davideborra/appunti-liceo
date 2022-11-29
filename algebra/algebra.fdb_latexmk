@@ -1,7 +1,7 @@
 # Fdb version 3
-["pdflatex"] 1668021263 "/Users/davideborra/Documents/GitHub/appunti-liceo/algebra/algebra.tex" "algebra.pdf" "algebra" 1668021263
-  "../lambdatex.sty" 1668020945 5157 9777305316729ad93ffa555072528e51 ""
-  "/Users/davideborra/Documents/GitHub/appunti-liceo/algebra/algebra.tex" 1668021262 4099 2fdd85e556c6a0eee48d8f7c7c0309b7 ""
+["pdflatex"] 1668979987 "/Users/davideborra/Documents/GitHub/appunti-liceo/algebra/algebra.tex" "algebra.pdf" "algebra" 1668979989
+  "../lambdatex.sty" 1668021363 5157 efab84c93c97d4e7b10da42bc24762a9 ""
+  "/Users/davideborra/Documents/GitHub/appunti-liceo/algebra/algebra.tex" 1668979984 4104 bf43070885308daa10ab8069604dc5f1 ""
   "/usr/local/texlive/2022/texmf-dist/fonts/enc/dvips/cm-super/cm-super-ts1.enc" 1136849721 2900 1537cc8184ad1792082cd229ecc269f4 ""
   "/usr/local/texlive/2022/texmf-dist/fonts/map/fontname/texfonts.map" 1577235249 3524 cb3e574dea2d1052e39280babc910dc8 ""
   "/usr/local/texlive/2022/texmf-dist/fonts/tfm/jknappen/ec/tcrm0600.tfm" 1136768653 1536 12e8c510d3e158fdd0e9a42e75118bd9 ""
@@ -259,10 +259,10 @@
   "/usr/local/texlive/2022/texmf-var/fonts/map/pdftex/updmap/pdftex.map" 1647878959 4410336 7d30a02e9fa9a16d7d1f8d037ba69641 ""
   "/usr/local/texlive/2022/texmf-var/web2c/pdftex/pdflatex.fmt" 1664453371 2826443 79048ec7f4be5f4a69f553793af991de ""
   "/usr/local/texlive/2022/texmf.cnf" 1647878952 577 209b46be99c9075fd74d4c0369380e8c ""
-  "algebra.aux" 1668021263 1454 20b91d4182fc74f8cca6a9b2c61f5ee2 "pdflatex"
-  "algebra.out" 1668021263 512 3720dcd7d5fe7f2969de4eec74755919 "pdflatex"
-  "algebra.tex" 1668021262 4099 2fdd85e556c6a0eee48d8f7c7c0309b7 ""
-  "algebra.toc" 1668021263 449 08b1906cf5e8b3b59e2628c4132d6ce9 "pdflatex"
+  "algebra.aux" 1668979989 1454 20b91d4182fc74f8cca6a9b2c61f5ee2 "pdflatex"
+  "algebra.out" 1668979989 512 3720dcd7d5fe7f2969de4eec74755919 "pdflatex"
+  "algebra.tex" 1668979984 4104 bf43070885308daa10ab8069604dc5f1 ""
+  "algebra.toc" 1668979989 449 08b1906cf5e8b3b59e2628c4132d6ce9 "pdflatex"
   (generated)
   "algebra.aux"
   "algebra.log"
