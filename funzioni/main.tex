@@ -43,7 +43,7 @@
             \raisebox{8pt}{\phantom{M}} Funzioni polinomiali & \\
             \[y=a_n x^n+a_{n-1}x^{n-1}+\dots+a_1x^1+a_0\] & \[\R\]\\ \hline
             \raisebox{8pt}{\phantom{M}} Funzioni fratte &\\
-            \[y=\frac{P(x)}{Q(x)}~~~P \text{ e } Q\text{ polinomi}\] & \[\R - \{x\in\R|Q(x)=0\}\]\\ \hline
+            \[y=\frac{P(x)}{Q(x)}~~~P \text{ e } Q\text{ polinomi}\] & \[\R \setminus \{x\in\R|Q(x)=0\}\]\\ \hline
             \raisebox{8pt}{\phantom{M}} Funzioni irrazionali &\\
             \[y=\sqrt[n]{f(x)}\] & \[\langle \begin{array}{l}
                 \{x\in \R|f(x)\geq 0 \}\text{ se } n \text{ pari}\\
@@ -84,8 +84,8 @@
             \[
                 \renewcommand{\arraystretch}{1.5}\begin{array}{l}
                     \R\\
-                    \R -{\frac{\pi}{2}+k\pi}\text{, con } k\in\Z\\
-                    \R -{k\pi}\text{, con } k\in\Z\\
+                    \R \setminus{\frac{\pi}{2}+k\pi}\text{, con } k\in\Z\\
+                    \R \setminus{k\pi}\text{, con } k\in\Z\\
                     \left[-1,1\right]\\
                     \R
                 \end{array}
@@ -340,7 +340,8 @@
             \item la parabola ha concavità verso l'alto se $a>0$ o verso il basso se $a<0$
         \end{itemize}
     \subsection{L'iperbole equilatera $y=\dfrac{1}{x}$ e la funzione omografica}
-        \begin{wrapfigure}[10]{r}{0.2\textwidth}
+
+        \begin{wrapfigure}{r}{0.2\textwidth}
             \begin{center}
                 \begin{tikzpicture}[scale = 0.5]
                     \begin{axis}[
@@ -363,10 +364,6 @@
                     \end{axis}
                 \end{tikzpicture}
             \end{center}
-        \end{wrapfigure}
-        La funzione omografica è caratterizzata dalla relazione di proprzionalità inversa tra le due variabili. L'equazione $y=\frac{k}{x}$ rappresenta un'iperbole equilatera riferita ai propri asintoti con semiasse trasverso $a=\sqrt{2|k|}$, semidistanza focale $c=2\sqrt{|k|}$ e fuochi in $F(\pm\sqrt{2k};\pm\sqrt{2-k})$. Applicando una traslazione di vettore $\vec{v}(-\frac{d}{c},\frac{a}{c})$, si ottiene una funzione omografica generica di equazione \[y=\frac{ax+b}{cx+d}~~~~~~\text{se }c\neq0 \text{ e }ad\neq bc\]\\
-
-        \begin{wrapfigure}[10]{r}{0.2\textwidth}
             \begin{center}
                 \begin{tikzpicture}[scale = 0.5]
                     \begin{axis}[
@@ -390,11 +387,14 @@
                 \end{tikzpicture}
             \end{center}
         \end{wrapfigure}
+        La funzione omografica è caratterizzata dalla relazione di proprzionalità inversa tra le due variabili. L'equazione $y=\frac{k}{x}$ rappresenta un'iperbole equilatera riferita ai propri asintoti con semiasse trasverso $a=\sqrt{2|k|}$, semidistanza focale $c=2\sqrt{|k|}$ e fuochi in $F(\pm\sqrt{2k};\pm\sqrt{2-k})$. Applicando una traslazione di vettore $\vec{v}(-\frac{d}{c},\frac{a}{c})$, si ottiene una funzione omografica generica di equazione \[y=\frac{ax+b}{cx+d}~~~~~~\text{se }c\neq0 \text{ e }ad\neq bc\]\\
+
         Essa a un asintoto verticale di equazione $x=-\dfrac{d}{c}$, un asintoto  orizzontale di equazione $y=\frac{a}{c}$ e di conseguenza ha centro $C(-\frac{d}{c},\frac{a}{c})$. Per ricavare gli altri elementi caratteristici è sufficiente determinare $k=\frac{bc-ad}{c^2}$ e poi applicare un'eventuale traslazione di vettore $\vec{v}$
         \subsection{La funzione irrazionale $y=\sqrt{x}$}
         La funzione irrazionale è l'inversa della funzione quadratica e si ottiene restringendone il dominio e applicando una simmetria rispetto alla biseetrice I-III quadrante. La funzione che si ricava ha dominio $D:[0;+\infty[$ e codominio $C:[0;+\infty[$.
     \subsection{Le funzioni goniometriche}
     \subsubsection{La funzione seno}
+    
         \begin{wrapfigure}{r}{0.5\textwidth}
             \centering
             \begin{center}
