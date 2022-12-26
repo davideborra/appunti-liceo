@@ -1,0 +1,52 @@
+\babel@toc {italian}{}\relax 
+\babel@toc {italian}{}\relax 
+\contentsline {section}{\numberline {1}Definizione e caratteristiche}{1}{section.1}%
+\contentsline {subsection}{\numberline {1.1}Classificazione}{1}{subsection.1.1}%
+\contentsline {subsection}{\numberline {1.2}Dominio}{1}{subsection.1.2}%
+\contentsline {subsection}{\numberline {1.3}Zeri di funzione}{2}{subsection.1.3}%
+\contentsline {subsection}{\numberline {1.4}Studio del segno}{2}{subsection.1.4}%
+\contentsline {section}{\numberline {2}Proprietà}{3}{section.2}%
+\contentsline {subsection}{\numberline {2.1}Funzioni iniettive, suriettive e biiettive}{3}{subsection.2.1}%
+\contentsline {subsection}{\numberline {2.2}Monotonia}{3}{subsection.2.2}%
+\contentsline {subsection}{\numberline {2.3}Funzioni periodiche}{4}{subsection.2.3}%
+\contentsline {subsection}{\numberline {2.4}Funzioni pari e dispari}{4}{subsection.2.4}%
+\contentsline {section}{\numberline {3}Funzioni elementari}{5}{section.3}%
+\contentsline {subsection}{\numberline {3.1}La funzione lineare}{5}{subsection.3.1}%
+\contentsline {subsection}{\numberline {3.2}La parabola}{5}{subsection.3.2}%
+\contentsline {subsection}{\numberline {3.3}L'iperbole equilatera e la funzione omografica}{5}{subsection.3.3}%
+\contentsline {subsection}{\numberline {3.4}La funzione irrazionale}{5}{subsection.3.4}%
+\contentsline {subsection}{\numberline {3.5}Le funzioni goniometriche}{6}{subsection.3.5}%
+\contentsline {subsubsection}{\numberline {3.5.1}La funzione seno}{6}{subsubsection.3.5.1}%
+\contentsline {subsubsection}{\numberline {3.5.2}La funzione coseno}{6}{subsubsection.3.5.2}%
+\contentsline {subsubsection}{\numberline {3.5.3}La funzione tangente}{6}{subsubsection.3.5.3}%
+\contentsline {subsubsection}{\numberline {3.5.4}La funzione cotangtente}{6}{subsubsection.3.5.4}%
+\contentsline {subsubsection}{\numberline {3.5.5}La funzione arcoseno}{6}{subsubsection.3.5.5}%
+\contentsline {subsubsection}{\numberline {3.5.6}La funzione arcocoseno}{7}{subsubsection.3.5.6}%
+\contentsline {subsubsection}{\numberline {3.5.7}La funzione arcotangente}{7}{subsubsection.3.5.7}%
+\contentsline {subsection}{\numberline {3.6}La funzione esponenziale}{7}{subsection.3.6}%
+\contentsline {subsection}{\numberline {3.7}La funzione logaritmo}{7}{subsection.3.7}%
+\contentsline {section}{\numberline {4}Grafica dedotta}{7}{section.4}%
+\contentsline {subsection}{\numberline {4.1}Trasformazioni geometriche}{7}{subsection.4.1}%
+\contentsline {subsubsection}{\numberline {4.1.1}Simmetria rispetto agli assi}{7}{subsubsection.4.1.1}%
+\contentsline {subsubsection}{\numberline {4.1.2}Traslazione}{7}{subsubsection.4.1.2}%
+\contentsline {subsubsection}{\numberline {4.1.3}Dilatazione}{8}{subsubsection.4.1.3}%
+\contentsline {subsection}{\numberline {4.2}Funzione inversa}{8}{subsection.4.2}%
+\contentsline {subsection}{\numberline {4.3}Funzioni con valori assoluti}{8}{subsection.4.3}%
+\contentsline {subsubsection}{\numberline {4.3.1}Valore assoluto di una funzione}{8}{subsubsection.4.3.1}%
+\contentsline {subsubsection}{\numberline {4.3.2}Funzione di un valore assoluto}{8}{subsubsection.4.3.2}%
+\contentsline {subsubsection}{\numberline {4.3.3}Funzioni con più valori assouti nidificati}{8}{subsubsection.4.3.3}%
+\contentsline {subsubsection}{\numberline {4.3.4}Funzioni con più valori assoluti in sequenza}{9}{subsubsection.4.3.4}%
+\contentsline {subsection}{\numberline {4.4}Reciproco di una funzione}{9}{subsection.4.4}%
+\contentsline {subsection}{\numberline {4.5}Quadrato di una funzione}{11}{subsection.4.5}%
+\contentsline {subsection}{\numberline {4.6}Radice di una funzione}{11}{subsection.4.6}%
+\contentsline {subsection}{\numberline {4.7}Esponenziale di una funzione}{12}{subsection.4.7}%
+\contentsline {subsection}{\numberline {4.8}Logaritmo di una funzione}{13}{subsection.4.8}%
+\contentsline {section}{\numberline {5}Studio di funzione completo}{14}{section.5}%
+\contentsline {subsection}{\numberline {5.1}Classificazione}{14}{subsection.5.1}%
+\contentsline {subsection}{\numberline {5.2}Dominio}{14}{subsection.5.2}%
+\contentsline {subsection}{\numberline {5.3}Simmetrie}{14}{subsection.5.3}%
+\contentsline {subsection}{\numberline {5.4}Intersezioni con gli assi cartesiani}{14}{subsection.5.4}%
+\contentsline {subsection}{\numberline {5.5}Studio del segno}{14}{subsection.5.5}%
+\contentsline {subsection}{\numberline {5.6}Limiti, asintoti e discontinuità}{14}{subsection.5.6}%
+\contentsline {subsection}{\numberline {5.7}Derivata prima}{15}{subsection.5.7}%
+\contentsline {subsection}{\numberline {5.8}Derivata seconda}{15}{subsection.5.8}%

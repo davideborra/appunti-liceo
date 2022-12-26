@@ -1,7 +1,7 @@
 %Update 9/7/2022
 \documentclass{article}     %type of document
 \usepackage[utf8]{inputenc} %for text encoding
-\usepackage{../lambdatex} 
+\usepackage{../../LaTeX/lambdatex} 
 \everymath{\displaystyle}
 
 \title{Funzioni reali di variabili reali}
@@ -21,10 +21,11 @@
     \rhead{Davide Borra - 5LA}
 
     \section{Definizione e caratteristiche}
-        \begin{definition}
-            Presi due insiemi $D$ (dominio) e $C$ (codominio) tali che $D \subset \R$ e $C \subset \R$, si dice \textbf{funzione} $f$ da $D$ a $C$ una relazione che ad ogni elemento di $D$ associa uno e un solo elemento di $D$. In simboli \[f:D\rightarrow C\]
-        \end{definition}
-        Se ad ogni elemento $x \in D$ la funzione $f$ associa un elemento $y\in C$, $y$ (\textbf{variabile dipendente}) è detta \textbf{immagine} di $x$, mentre $x$ (\textbf{variabile indipendente}) è detta \textbf{controimmagine} di $y$. La scrittura $y=f(x)$ è detta \textbf{espressione analitica della funzione in forma esplicita}. Le funzioni possono anche essere scritte in forma implicita come $g(x,y)=0$
+        \begin{boxdef}
+            Presi due insiemi $D$ (dominio) e $C$ (codominio) tali che $D \subset \R$ e $C \subset \R$, si dice \textbf{funzione} $f$ da $D$ a $C$ una relazione che ad ogni elemento di $D$ associa uno e un solo elemento di $D$. In simboli \[\funcdef{f}{D}{C}{x}{f(x)} \]
+        \end{boxdef}
+        Se ad ogni elemento $x \in D$ la funzione $f$ associa un elemento $y\in C$, $y$ (\textbf{variabile dipendente}) è detta \textbf{immagine} di $x$ tramite $f$, mentre $x$ (\textbf{variabile indipendente}) è detta \textbf{controimmagine} di $y$ tramite $f$. La scrittura $y=f(x)$ è detta \textbf{espressione analitica della funzione in forma esplicita}. Le funzioni possono anche essere scritte in forma implicita come $g(x,y)=0$. Si definisce inoltre un insieme $\Im f\subseteq C$ detto \textbf{immagine} di $f$.
+        \[\Im f=\{f(x)\:|\: x \in D\}\] 
     
     \subsection{Classificazione}
         Le funzioni si dividono in due grandi categorie: le funzioni algebriche e le funzioni trascendenti. Una funzione si dice \textbf{algebrica} se la sua espressione analitica contiene solo operazioni di somma algebrica, moltiplicazione, divisione, elevamento a potenza ed estrazione di radice, altrimenti si dice \textbf{trascendente}. Le funzioni algebriche sono a loro volta divise in \begin{itemize}
@@ -33,11 +34,11 @@
             \item \textbf{funzioni irrazionali}: nella scrittura analitica conmpare un radicale al cui radicando è presente la variabile $x$.
         \end{itemize}
     \subsection{Dominio}
-        \begin{definition}
+        \begin{boxdef}
             Si dice \textbf{dominio naturale} o \textbf{campo di esistenza} di una funzione $y=f(x)$ l'insieme più ampio dei valori reali che è ossibile assegnare alla variabile $x$ per far sì che esista anche il corrispondente valore i $y$
-        \end{definition}
+        \end{boxdef}
 
-        \begin{longtable}[h]{| p{0.45\textwidth} | p{0.45\textwidth }|}
+        \begin{longtable}[ht]{| p{0.45\textwidth} | p{0.45\textwidth }|}
             \hline
             Funzione & Dominio \\ \hline \hline \endhead
             \raisebox{8pt}{\phantom{M}} Funzioni polinomiali & \\
@@ -93,12 +94,15 @@
         \end{longtable}
         
     \subsection{Zeri di funzione}
-        \begin{definition}
+        \begin{boxdef}
             Preso un numero reale $\lambda$, si dice zero (radice) della funzione $y=f(x)$ se $f(\lambda)=0$
-        \end{definition}
-        \begin{theorem}[Teorema fondamentale dell'algebra]
-            Sia $P(x)$ un polinomio di grado $n$ a coefficienti reali. Nell'insieme dei numeri reali, esso ha al più $n$ radici.
-        \end{theorem}
+        \end{boxdef}
+        
+        \begin{shaded}
+            \begin{theorem}[Teorema fondamentale dell'algebra]
+                Sia $P(x)$ un polinomio di grado $n$ a coefficienti reali. Nell'insieme dei numeri reali, esso ha al più $n$ radici.
+            \end{theorem}
+        \end{shaded}
     \subsection{Studio del segno}
         Data una funzione $y=f(x)$, essa può assumere sia valori positivi che valori negativi. Studiare il segno di una funzione significa determinare per quali intervalli di valori della variabile $x$, la variabile $y$ assume valori positivi, e per quali valori negativi. Generalmente per determinare il segno di una funzione è sufficiente risolvere la disequazione \[f(x)>0\]
         \begin{ex}
@@ -111,7 +115,7 @@
             \end{enumerate}
     \section{Proprietà}
         \subsection{Funzioni iniettive, suriettive e biiettive}
-        \begin{definition}
+        \begin{boxdef}
             Data una funzione $f:D\rightarrow C$, essa si dice:
             \begin{itemize}
                 \item \textbf{iniettiva} se ogni elemento di $C$ è immagine di \textnormal{al più} un elemento di $D$
@@ -120,22 +124,23 @@
             \end{itemize}
             Per dimostrare che una funzione è iniettiva, è possibile dimostrare che $\forall x_1,x_2 \in D, x_1\neq x_2\rightarrow f(x_1)\neq f(x_2)$.\\
             Ogni funzione è suriettiva nel proprio codominio, per questo generalmente la suriettività viene analizzata in $\R$.
-        \end{definition}
+        \end{boxdef}
         Un metodo semplice per capire dal grafico se una funzione è iniettiva e/o suriettiva (attenzione, non equivale ad una dimostrazione) è il criterio della retta orizzontale. Una funzione è iniettiva se ogni retta parallela all'asse $x$ che è possibile tracciare interseca la funzione in \textit{al più} un punto, suriettiva se la interseca in \textit{almeno} un punto e biiettiva se in \textit{esattamente} un punto.
     \subsection{Monotonia}
-        \begin{definition}[Funzione crescente in senso stretto]
+        \begin{boxdef}[Funzione crescente in senso stretto]
             Data una funzione $y=f(x)$ di dominio $D\subseteq \R$, essa si dice \textbf{crescente in senso stretto} in un intervallo $I\subseteq D$ se $\forall x_1,x_2 \in I, x_1 <x_2 \rightarrow f(x_1)<f(x_2)$.
-        \end{definition}
-        \begin{definition}[Funzione crescente in senso lato]
+        \end{boxdef}
+        \begin{boxdef}[Funzione crescente in senso lato]
             Data una funzione $y=f(x)$ di dominio $D\subseteq \R$, essa si dice \textbf{crescente in senso lato} (o \textbf{non decrescente}) in un intervallo $I\subseteq D$ se $\forall x_1,x_2 \in I, x_1 <x_2 \rightarrow f(x_1)\leq f(x_2)$.
-        \end{definition}
-        \begin{definition}[Funzione decrescente in senso stretto]
+        \end{boxdef}
+        \begin{boxdef}[Funzione decrescente in senso stretto]
             Data una funzione $y=f(x)$ di dominio $D\subseteq \R$, essa si dice \textbf{decrescente in senso stretto} in un intervallo $I\subseteq D$ se $\forall x_1,x_2 \in I, x_1 <x_2 \rightarrow f(x_1)>f(x_2)$.
-        \end{definition}
-        \begin{definition}[Funzione decrescente in senso lato]
-            Data una funzione $y=f(x)$ di dominio $D\subseteq \R$, essa si dice \textbf{decre- scente in senso lato} (o \textbf{non crescente}) in un intervallo $I\subseteq D$ se $\forall x_1,x_2 \in I, x_1 <x_2 \rightarrow f(x_1)\geq f(x_2)$. 
-        \end{definition}
+        \end{boxdef}
+        \begin{boxdef}[Funzione decrescente in senso lato]
+            Data una funzione $y=f(x)$ di dominio $D\subseteq \R$, essa si dice \textbf{decrescente in senso lato} (o \textbf{non crescente}) in un intervallo $I\subseteq D$ se $\forall x_1,x_2 \in I, x_1 <x_2 \rightarrow f(x_1)\geq f(x_2)$. 
+        \end{boxdef}
         \begin{ex}
+            Studiare la monotonia di $y=|x+1|+|x-2|$
         \end{ex}
         \begin{wrapfigure}[9]{r}{0.40\textwidth}
             \begin{center}
@@ -176,19 +181,19 @@
         \end{itemize}
 
         Una funzione è crescente in un intervallo $I$ se e solo se la sua derivata è positiva, decrescente se la derivata è negativa, costante se la derivata è nulla. 
-        \begin{definition}[Funzione monotòna]
+        \begin{boxdef}[Funzione monotòna]
             Una funzione $f:D\rightarrow C$, con $D\subseteq\R$, si dice \textbf{monotona in senso stretto} in un intervallo $I\subseteq D$ se in quel'intervallo è sempre crescente o sempre decrescente in senso stretto. Analoga definizione può essere data per una funzione monotona in senso lato. 
-        \end{definition}
+        \end{boxdef}
         Nell'esempio precedente la funzione è monotona in senso stretto negli intervalli $]-\infty;-1[$ e $]2;+\infty[$
     \subsection{Funzioni periodiche}
-        \begin{definition}
+        \begin{boxdef}
             Una funzione $y=f(x)$ si dice \textbf{periodica} di periodo $T$ (con $T>0$) se, per qualsiasi numero $k\in\Z$, \[f(x)=f(x+kt)\]
-        \end{definition}
+        \end{boxdef}
         Se una funzione è periodica, allora non è iniettiva. 
         \begin{ex}
             La funzione $y=\sin x$ è una funzione periodica di periodo $T=2\pi$
         \end{ex}
-        \begin{figure}[h]
+        \begin{figure}[ht]
             \centering
             \begin{center}
                 \begin{tikzpicture}[scale = 0.8]
@@ -216,21 +221,21 @@
         \end{figure}
     \subsection{Funzioni pari e dispari}
         Si indica con $D$ un sottoinsieme dell'insieme dei numeri reali $\R$ tale che se $x\in D$, allora $-x \in D$.
-        \begin{definition}[Funzione pari]
+        \begin{boxdef}[Funzione pari]
             Data una funzione $y=f(x)$, essa si dice \textit{pari} in $D$ se $\forall x \in D, f(-x)=f(x)$, ovvero la funzione è simmetrica rispetto all'asse delle ordinate.
-        \end{definition}
-        \begin{definition}[Funzione dispari]
+        \end{boxdef}
+        \begin{boxdef}[Funzione dispari]
             Data una funzione $y=f(x)$, essa si dice \textit{dispari} in $D$ se $\forall x \in D, f(-x)=-f(x)$, ovvero la funzione è simmetrica rispetto all'origine degli assi.
-        \end{definition}
+        \end{boxdef}
         \textbf{NB.:} Perché una funzione presenti simmetrie deve essere rispettata la condizione necessaria per cui il dominio deve essere simmetrico rispetto a $0$: \[\forall x \in D, -x\in D\]
         \begin{ex}
             La funzione $f(x)=x^2$ è pari, mentre la funzione $g(x)=x^3$ è dispari. Infatti \[f(-x)=(-x)^2=x^2=f(x)\] \[g(-x)=(-x)^3=-x^3=-g(x)\]
         \end{ex}
-        \begin{figure}[h]
+        \begin{figure}[ht]
             \centering
             \begin{subfigure}{0.49\textwidth}
-                \begin{center}
-                    \begin{tikzpicture}[scale = 0.8]
+                \centering
+                    \begin{tikzpicture}[scale = 0.7]
                         \begin{axis}[
                             x=1.0cm,y=1.0cm,
                             axis lines=middle,
@@ -251,11 +256,10 @@
                             \node at (1.7,2) {$f$};
                         \end{axis}
                     \end{tikzpicture}
-                \end{center}
             \end{subfigure}
             \begin{subfigure}{0.49\textwidth}
-                \begin{center}
-                    \begin{tikzpicture}[scale = 0.8]
+                \centering
+                    \begin{tikzpicture}[scale = 0.7]
                         \begin{axis}[
                             x=1.0cm,y=1.0cm,
                             axis lines=middle,
@@ -276,11 +280,10 @@
                             \node at (1.5,2) {$g$};
                         \end{axis}
                     \end{tikzpicture}
-                \end{center}
             \end{subfigure}
         \end{figure}
     \section{Funzioni elementari}
-    \subsection{La funzione lineare $y=x$}
+    \subsection{La funzione lineare}
         \begin{wrapfigure}[8]{r}{0.20\textwidth}
             \begin{center}
                 \begin{tikzpicture}[scale = 0.5]
@@ -305,8 +308,8 @@
                 \end{tikzpicture}
             \end{center}
         \end{wrapfigure}
-        La funzione lineare è un'equazione polinomiale di primo grado. Il grafico ad essa associato corrisponde ad una retta. Nel caso dela funzione $y=x$ si tratta della bisettrice I-III quadrante. Nell'equaione generica \[y=mx+q\] il parametro $m$, detto coefficiente angolare, identifica la pendenza della retta, mentre il parametro $q$, detto ordinata d'origine, rappresenta il punto di intersezione con l'asse $y$, di coordinate $(0,q)$.
-    \subsection{La parabola $y=x^2$}
+        La funzione lineare è un'equazione polinomiale di primo grado. Il grafico ad essa associato corrisponde ad una retta. Nel caso dela funzione $y=x$ si tratta della bisettrice I-III quadrante ed è l'identità associata a $\R$. Nell'equaione generica \[y=mx+q\] il parametro $m$, detto coefficiente angolare, identifica la pendenza della retta, mentre il parametro $q$, detto ordinata d'origine, rappresenta il punto di intersezione con l'asse $y$, di coordinate $(0,q)$.
+    \subsection{La parabola}
         \begin{wrapfigure}[8]{r}{0.20\textwidth}
             \begin{center}
                 \begin{tikzpicture}[scale = 0.5]
@@ -331,7 +334,7 @@
                 \end{tikzpicture}
             \end{center}
         \end{wrapfigure}
-        La funzione quadratica è un'equazione polinomiale di secondo grado. Il grafico ad essa associato corrisponde ad una parabola. Nel caso della funzione elementare $y=x^2$ si tratta di una parabola con il vertice nell'origine degli assi e concavità verso l'alto. Nel caso du una parabola generica \[y=ax^2+bx+c\]
+        La funzione quadratica $y=x^2$ è un'equazione polinomiale di secondo grado. Il grafico ad essa associato corrisponde ad una parabola. Nel caso della funzione elementare $y=x^2$ si tratta di una parabola con il vertice nell'origine degli assi e concavità verso l'alto. Nel caso du una parabola generica \[y=ax^2+bx+c\]
         \begin{itemize}
             \item l'asse di simmetria ha equazione $x=-\dfrac{b}{2a}$
             \item il vertice ha coordinate $V\left(-\dfrac{b}{2a};-\dfrac{\Delta}{4a}\right)$
@@ -339,8 +342,7 @@
             \item la direttrice ha equazione $y=-\dfrac{1+\Delta}{4a}$
             \item la parabola ha concavità verso l'alto se $a>0$ o verso il basso se $a<0$
         \end{itemize}
-    \subsection{L'iperbole equilatera $y=\dfrac{1}{x}$ e la funzione omografica}
-
+    \subsection{L'iperbole equilatera e la funzione omografica}
         \begin{wrapfigure}{r}{0.2\textwidth}
             \begin{center}
                 \begin{tikzpicture}[scale = 0.5]
@@ -359,7 +361,7 @@
                         ymin=-3.2,
                         ymax=3.2,
                         xtick={-3.0,-2.0,...,3.0},
-                        ytick={-3.0,-2.0,...,3.0},]
+                        ytick={-3.0,-2.0,...,3.0}]
                         \draw [samples=100, domain=-3.2:3.2] plot(\x,{1/(\x)});
                     \end{axis}
                 \end{tikzpicture}
@@ -387,15 +389,22 @@
                 \end{tikzpicture}
             \end{center}
         \end{wrapfigure}
-        La funzione omografica è caratterizzata dalla relazione di proprzionalità inversa tra le due variabili. L'equazione $y=\frac{k}{x}$ rappresenta un'iperbole equilatera riferita ai propri asintoti con semiasse trasverso $a=\sqrt{2|k|}$, semidistanza focale $c=2\sqrt{|k|}$ e fuochi in $F(\pm\sqrt{2k};\pm\sqrt{2-k})$. Applicando una traslazione di vettore $\vec{v}(-\frac{d}{c},\frac{a}{c})$, si ottiene una funzione omografica generica di equazione \[y=\frac{ax+b}{cx+d}~~~~~~\text{se }c\neq0 \text{ e }ad\neq bc\]\\
+        La funzione omografica è caratterizzata dalla relazione di proprzionalità inversa tra le due variabili. L'equazione $y=\frac{k}{x}$ rappresenta un'iperbole equilatera riferita ai propri asintoti con semiasse trasverso $a=\sqrt{2|k|}$, semidistanza focale $c=2\sqrt{|k|}$ e fuochi in $F(\pm\sqrt{2k};\pm\sqrt{2-k})$. Applicando una traslazione di vettore $\vec{v}(-\frac{d}{c},\frac{a}{c})$, si ottiene una funzione omografica generica di equazione 
+        \[y=\frac{ax+b}{cx+d}~~~~~~\text{se }c\neq0 \text{ e }ad\neq bc\]
 
         Essa a un asintoto verticale di equazione $x=-\dfrac{d}{c}$, un asintoto  orizzontale di equazione $y=\frac{a}{c}$ e di conseguenza ha centro $C(-\frac{d}{c},\frac{a}{c})$. Per ricavare gli altri elementi caratteristici è sufficiente determinare $k=\frac{bc-ad}{c^2}$ e poi applicare un'eventuale traslazione di vettore $\vec{v}$
-        \subsection{La funzione irrazionale $y=\sqrt{x}$}
-        La funzione irrazionale è l'inversa della funzione quadratica e si ottiene restringendone il dominio e applicando una simmetria rispetto alla biseetrice I-III quadrante. La funzione che si ricava ha dominio $D:[0;+\infty[$ e codominio $C:[0;+\infty[$.
+        \subsection{La funzione irrazionale}
+        La funzione irrazionale $y=\sqrt{x}$ è l'inversa della funzione quadratica e si ottiene restringendone il dominio e applicando una simmetria rispetto alla biseetrice I-III quadrante. La funzione che si ricava ha dominio $D:[0;+\infty[$ e codominio $C:[0;+\infty[$.
     \subsection{Le funzioni goniometriche}
     \subsubsection{La funzione seno}
-    
-        \begin{wrapfigure}{r}{0.5\textwidth}
+        La funzione seno è una funzione goniometrica trascendente, periodica in $T=2\pi$. Essa ha dominio $D:\R$ e codominio $C:[-1;1]$. Presenta zeri di funzione per $x=k\pi~~(k\in\Z)$, assume valori positivi in $]2k\pi;\pi+2k\pi[$ e negativi altrove. Essa può essere scritta nella forma generica \[y=A\sin(\omega x +\varphi)+B\] dove i parametri rappresentano:
+        \begin{itemize}
+            \item $A$: ampiezza, rappresenta la dilatazione verticale della funzione, la semidifferenza tra i valori $y$ dei massimi e dei minimi.
+            \item $\omega$: pulsazione, è collegata al periodo dalla relazione $\omega =\frac{2\pi}{T}$
+            \item $\varphi$: fase, legato alla traslazione orizzontale
+            \item $B$: la traslazione verticale
+        \end{itemize}
+        \begin{figure}[ht]
             \centering
             \begin{center}
                 \begin{tikzpicture}[scale = 0.6]
@@ -420,16 +429,11 @@
                     \end{axis}
                 \end{tikzpicture}
             \end{center}
-        \end{wrapfigure}
-        La funzione seno è una funzione goniometrica trascendente, periodica in $T=2\pi$. Essa ha dominio $D:\R$ e codominio $C:[-1;1]$. Presenta zeri di funzione per $x=k\pi~~(k\in\Z)$, assume valori positivi in $]2k\pi;\pi+2k\pi[$ e negativi altrove. Essa può essere scritta nella forma generica \[y=A\sin(\omega x +\varphi)+B\] dove i parametri rappresentano:
-        \begin{itemize}
-            \item $A$: ampiezza, rappresenta la dilatazione verticale della funzione, la semidifferenza tra i valori $y$ dei massimi e dei minimi.
-            \item $\omega$: pulsazione, è collegata al periodo dalla relazione $\omega =\frac{2\pi}{T}$
-            \item $\varphi$: fase, legato alla traslazione orizzontale
-            \item $B$: la traslazione verticale
-        \end{itemize}
+        \end{figure}
+        
     \subsubsection{La funzione coseno}
-        \begin{wrapfigure}[4]{r}{0.5\textwidth}
+        La funzione coseno è una funzione goniometrica trascendente, periodica in $T=2\pi$. Essa ha dominio $D:\R$ e codominio $C:[-1;1]$. Presenta zeri di funzione per $x=\frac{\pi}{2}+k\pi~~(k\in\Z)$, assume valori positivi in $]-\frac{\pi}{2}+k\pi;\frac{\pi}{2}+k\pi[$ e negativi altrove.
+        \begin{figure}[ht]
             \centering
                 \begin{tikzpicture}[scale = 0.6]
                     \begin{axis}[
@@ -452,8 +456,8 @@
                         \draw [samples=100, domain=-2*pi-0.5:2*pi+0.5] plot(\x,{cos(((\x))*180/pi)});
                     \end{axis}
                 \end{tikzpicture}
-        \end{wrapfigure}
-        La funzione coseno è una funzione goniometrica trascendente, periodica in $T=2\pi$. Essa ha dominio $D:\R$ e codominio $C:[-1;1]$. Presenta zeri di funzione per $x=\frac{\pi}{2}+k\pi~~(k\in\Z)$, assume valori positivi in $]-\frac{\pi}{2}+k\pi;\frac{\pi}{2}+k\pi[$ e negativi altrove.
+        \end{figure}
+        
     \subsubsection{La funzione tangente}
         \begin{wrapfigure}[4]{r}{0.5\textwidth}
             \centering
@@ -1378,7 +1382,7 @@
         \end{wrapfigure}
         La funzione arcotangente è la funzione inversa della tangente. In questo caso è necessario ridurre solamente il dominio della funzione di partenza, per cui l'arcotangente ha dominio $D:\R$ e codominio $C: ]-\frac{\pi}{2};\frac{\pi}{2}[$. Essa presenta due asintoti orizzontali agli estremi del codominio e uno zero di funzione per $x=0$. \\
         Esiste anche la funzione arcocotangente, inversa della cotangente, che consiste in una traslazione verso l'alto d $\pi$ unità della funzione $y=-\arctg{x}$.
-    \subsection{La funzione esponenziale $y=a^x$}
+    \subsection{La funzione esponenziale}
         \begin{wrapfigure}[10]{r}{0.2\textwidth}
                 \begin{tikzpicture}[scale = 0.5]
                     \begin{axis}[
@@ -1405,9 +1409,9 @@
                     \end{axis}
                 \end{tikzpicture}
         \end{wrapfigure}
-        La funzione esponenziale è una funzione trascendente. Essa ha dominio $\R$ e codominio $]0;+\infty[$, e presenta un asintoto orizzontale a $0$. Di conseguenza non ha zeri di funzione. Se $a>1$ La funzione è strettamente crescente, mentre se $0<a<1$ la funzione è strettamente decrescente. 
-    \subsection{La funzione logaritmo $y=\log_a x$}
-        La funzione logaritmo è la funzione inversa della funzione esponenziale, di conseguenza ha dominio $]0;+\infty[$ e codominio $\R$. Presenta uno zero di funzione per $x=1$ e un asintoto verticale a $0$. Per $a>1$ è strettamente crescente, mentre per $0<a<1$ è strettamente decrescente. 
+        La funzione esponenziale $y=a^x$ è una funzione trascendente. Essa ha dominio $\R$ e codominio $]0;+\infty[$, e presenta un asintoto orizzontale a $0$. Di conseguenza non ha zeri di funzione. Se $a>1$ La funzione è strettamente crescente, mentre se $0<a<1$ la funzione è strettamente decrescente. 
+    \subsection{La funzione logaritmo}
+        La funzione logaritmo $y=\log_a x$ è la funzione inversa della funzione esponenziale, di conseguenza ha dominio $]0;+\infty[$ e codominio $\R$. Presenta uno zero di funzione per $x=1$ e un asintoto verticale a $0$. Per $a>1$ è strettamente crescente, mentre per $0<a<1$ è strettamente decrescente. 
 
     \section{Grafica dedotta}
     \subsection{Trasformazioni geometriche}
@@ -1590,8 +1594,8 @@
         \end{tikzpicture}
         \caption*{$f(x)=x^2-2x$}
     \end{wrapfigure}
-    \subsubsection{$y=|f(x)|$}
-        Recuperiamo la definizione di valore assoluto:
+    \subsubsection{Valore assoluto di una funzione}
+        Per studiare il caso $y=|f(x)|$ recuperiamo la definizione di valore assoluto:
         \[|x|=\left\lbrace
             \begin{array}{ll}
                 x &\text{se }x\geq 0\\
@@ -1606,7 +1610,7 @@
             \end{array}\right. 
         \]
         Questo significa che $|f(x)|$ coincide con $f(x)$ quando essa è maggiore di 0, e con la sua simmetrica rispetto all'asse $x$ quando $f(x)<0$.
-    \subsubsection{$y=f(|x|)$}
+    \subsubsection{Funzione di un valore assoluto}
         \begin{wrapfigure}[6]{r}{0.3\textwidth}
             \centering
             \begin{tikzpicture}[scale=0.7]
@@ -1634,12 +1638,12 @@
                 \end{axis}
             \end{tikzpicture}
         \end{wrapfigure}
-        Procedendo in modo analogo al punto precedente si ricava che
-        \[f(|x|)=\left\lbrace
-            \begin{array}{ll}
+        Procedendo in modo analogo al punto precedente, per $y=f(|x|)$ si ricava che
+        \[f(|x|)=
+            \begin{cases}
                 f(x) &\text{se }x\geq 0\\
                 f(-x)&\text{se }x<0
-            \end{array}\right. 
+            \end{cases} 
         \]
         Di conseguenza la funzione è simmetrica rispetto all'asse delle $y$ in quanto coincide con $f(x)$ se $x\geq0$ e con $f(-x)$ (simmetrica di $f(x)$ rispetto all'asse $y$) quando $x<0$.
     \subsubsection{Funzioni con più valori assouti nidificati}
@@ -1679,7 +1683,7 @@
         \[2x+4\geq0~~~~~~x\geq -2 \]
         A questo punto rappresentiamo gli intervalli trovati.
         
-        \begin{figure}[h]
+        \begin{figure}[ht]
             \centering
             \begin{tikzpicture}[scale=0.8]
                 \draw [->] (0,3)--(6,3);
@@ -1744,7 +1748,7 @@
             Tracciare il grafico di $y=\frac{1}{x^2-1}$
         \end{ex*}
             Cominciamo con il tracciare il grafico di $y=x^2-1$. Si tratta di una parabola di vertice $V(0,-1)$.
-        \begin{figure}[h]
+        \begin{figure}[ht]
             \centering
             \begin{tikzpicture}[scale=0.6]
                 \begin{axis}[
@@ -1774,7 +1778,7 @@
         \[x\neq \pm 1\]
         \[D: ]-\infty;-1[\cup]-1;1[\cup]1;+\infty[\]
         In particolare dove $f(x)=0$, $\frac{1}{f(x)}$ presenta degli asintoti verticali. Il prossimo passo è studiare i punti di intersezione delle due funzioni. Siccome $f(x)=\frac{1}{f(x)}$ se $f(x)=\pm 1$, le due funzioni si intersecano solo dove intersecano la retta $y=1$ o la retta $y=-1$. Rappresentiamo quanto ottenuto.
-        \begin{figure}[h]
+        \begin{figure}[ht]
             \centering
             \begin{tikzpicture}[scale=0.6]
                 \begin{axis}[
@@ -1814,7 +1818,7 @@
             x \rightarrow 1^+ &~~~& f(x)\rightarrow 0^+ &~~~& \dfrac{1}{f(x)}\rightarrow +\infty\\
             x \rightarrow +\infty &~~~& f(x)\rightarrow +\infty &~~~& \dfrac{1}{f(x)}\rightarrow 0^+\\
         \end{array}\]
-        \begin{figure}[h]
+        \begin{figure}[ht]
             \centering
             \begin{tikzpicture}[scale=0.8]
                 \begin{axis}[
@@ -1861,7 +1865,7 @@
             Tracciare il grafico di $y=\sin^2x$
         \end{ex*}
         Cominciamo con il tracciare il grafico della funzione elementare $y=\sin x$\\
-        \begin{figure}[h]
+        \begin{figure}[ht]
             \centering
             \begin{tikzpicture}[scale = 0.8]
                 \begin{axis}[
@@ -1891,7 +1895,7 @@
         \end{figure}
 
         Per qanto riguarda il dominio, esso rimane invariato. Siccome il dominio della funzione di partenza $f(x)$ è $\R$, il dominio di $f^2(x)$ rimane $\R$. Siccome il quadrato di un numero reale è sempre non negatico, procediamo con il rappresentare $|f(x)|$. Essa inoltre interseca $f^2(x)$ lungo le rette $y=0$ e $y=1$ .\\
-        \begin{figure}[h]
+        \begin{figure}[ht]
             \centering
             \begin{tikzpicture}[scale = 0.8]
                 \begin{axis}[
@@ -1942,7 +1946,7 @@
 
         L'ultima cosa da tenere in considerazione è che se $0<|f(x)|<1$, $f^2(x)<|f(x)|$; mentre se $|f(x)|>1$, $f^2(x)>|f(x)|$. A questo punto abbiamo tutte le informazioni necessarie per tracciare il grafico di $f^2(x)$.
 
-        \begin{figure}[h]
+        \begin{figure}[ht]
             \centering
             \begin{tikzpicture}[scale = 0.8]
                 \begin{axis}[
@@ -1995,7 +1999,7 @@
             Tracciare il grafico di $y=\sqrt{\tg x}$
         \end{ex*}
         Cominciamo con il tracciare il grafico della funzione elementare $y=\tg x$. Siccome il domino della funzione irrazionale si ottiene ponendo il radicando $\geq 0$, il dominio della funzione $y=\sqrt{\tg x}$ è $D: [k\pi; \frac{\pi}{2}+k\pi]$ con $k\in \Z$. A questo punto, analogamente a quanto fatto precedentemente, sappiamo che le funzioni $y=f(x)$ e $y=\sqrt{f(x)}$ si intersecano per $f(x)=0$ e $f(x)=1$. Sappiamo inoltre che se se $0<f(x)<1$, $\sqrt{f(x)}>f(x)$; mentre se $f(x)>1$, $\sqrt{f(x)}<f(x)$. A questo punto abbiamo tutte le informazioni necessarie per tracciare il grafico di $\sqrt{f(x)}$.
-        \begin{figure}[h]
+        \begin{figure}[ht]
             \centering
             \begin{tikzpicture}[scale = 0.8]
                 \begin{axis}[
