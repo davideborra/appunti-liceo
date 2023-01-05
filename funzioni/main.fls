@@ -35,6 +35,8 @@ INPUT ../../LaTeX/lambdatex.sty
 INPUT ../../LaTeX/lambdatex.sty
 INPUT ../../LaTeX/lambdatex.sty
 INPUT ../../LaTeX/lambdatex.sty
+INPUT ./lambdatex.sty
+INPUT ./lambdatex.sty
 INPUT ../../LaTeX/lambdatex.sty
 INPUT ../../LaTeX/lambdatex.sty
 INPUT ../../LaTeX/lambdatex.sty
@@ -1393,6 +1395,12 @@ INPUT /usr/local/texlive/2022/texmf-dist/fonts/tfm/public/esint/esint10.tfm
 INPUT /usr/local/texlive/2022/texmf-dist/fonts/tfm/public/esint/esint10.tfm
 INPUT /usr/local/texlive/2022/texmf-var/fonts/map/pdftex/updmap/pdftex.map
 OUTPUT main.toc
+INPUT /usr/local/texlive/2022/texmf-dist/fonts/tfm/public/cm/cmtt10.tfm
+INPUT ./CreativeCommons/by-nc-nd.png
+INPUT ./CreativeCommons/by-nc-nd.png
+INPUT CreativeCommons/by-nc-nd.png
+INPUT ./CreativeCommons/by-nc-nd.png
+INPUT ./CreativeCommons/by-nc-nd.png
 INPUT /usr/local/texlive/2022/texmf-dist/fonts/tfm/public/cm/cmsl10.tfm
 INPUT /usr/local/texlive/2022/texmf-dist/fonts/tfm/public/cm/cmti10.tfm
 INPUT /usr/local/texlive/2022/texmf-dist/fonts/tfm/public/cm/cmbxti10.tfm
@@ -1423,6 +1431,7 @@ INPUT /usr/local/texlive/2022/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy10.p
 INPUT /usr/local/texlive/2022/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy5.pfb
 INPUT /usr/local/texlive/2022/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy7.pfb
 INPUT /usr/local/texlive/2022/texmf-dist/fonts/type1/public/amsfonts/cm/cmti10.pfb
+INPUT /usr/local/texlive/2022/texmf-dist/fonts/type1/public/amsfonts/cm/cmtt10.pfb
 INPUT /usr/local/texlive/2022/texmf-dist/fonts/type1/public/amsfonts/symbols/msbm10.pfb
 INPUT /usr/local/texlive/2022/texmf-dist/fonts/type1/public/cm-super/sfrm1000.pfb
 INPUT /usr/local/texlive/2022/texmf-dist/fonts/type1/public/yhmath/yhcmex.pfb
