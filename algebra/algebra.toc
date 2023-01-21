@@ -1,7 +1,0 @@
-\babel@toc {italian}{}\relax 
-\babel@toc {italian}{}\relax 
-\contentsline {section}{\numberline {1}Un'introduzione formale}{1}{section.1}%
-\contentsline {subsection}{\numberline {1.1}Insiemi e relazioni}{1}{subsection.1.1}%
-\contentsline {paragraph}{Proprietà delle relazioni}{1}{section*.2}%
-\contentsline {subsubsection}{\numberline {1.1.1}Relazioni di equivalenza}{1}{subsubsection.1.1.1}%
-\contentsline {paragraph}{Proprietà:}{1}{section*.3}%
