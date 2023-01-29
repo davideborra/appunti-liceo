@@ -1,0 +1,230 @@
+%Update 9/7/2022
+\documentclass{article}     %type of document
+\usepackage[utf8]{inputenc} %for text encoding
+\usepackage{lambdatex} 
+
+\title{Algebra lineare e successioni\\\textit{\small\say{Prevedere il futuro equivale a fare potenze di matrici}}}
+\author{Davide Borra\footnote{\href{mailto:davide.borra@studenti.unitn.it}{davide.borra@studenti.unitn.it} - \url{davideborra.github.io}} ~- UniTN}
+
+\begin{document}
+
+\begin{titlepage}
+    \maketitle
+    \tableofcontents
+    \vspace{\fill}
+    \hspace{\fill} v. 0.1   %incrementare primo numero per contenuti e secondo numero per patch
+\end{titlepage}
+
+\lhead{Algebra lineare e successioni}
+\chead{}
+\rhead{Davide Borra - UniTN}
+
+\section{Prerequisiti}
+\subsection{Notazione matriciale per i sistemi}
+Consideriamo un sistema di $m$ equazioni in $n$ incognite, ad esempio
+\[\begin{cases} 
+    a_{11}x_1 + a_{12}x_2 +\dots + a_{1n}x_n = b_1\\
+    a_{21}x_1 + a_{22}x_2 +\dots + a_{2n}x_n = b_2\\
+    \vdots\\
+    a_{m1}x_1 + a_{m2}x_2 +\dots + a_{mn}x_n = b_n\\
+ \end{cases} \]
+Esso può essere riscritto come equazione un'equazione matriciale come 
+\[\begin{pmatrix} 
+    a_{11}& a_{12}&\dots&a_{1n}\\
+    a_{21}& a_{22}&\dots&a_{2n}\\
+    \vdots & \vdots & \ddots& \vdots\\
+    a_{m1}& a_{m2}&\dots&a_{mn}\\
+\end{pmatrix} 
+\begin{pmatrix} x_1 \\ x_2 \\ \vdots \\ x_n\end{pmatrix} = \begin{pmatrix} b_1 \\ b_2 \\ \vdots \\ b_m\end{pmatrix} 
+\]
+\begin{ex}
+    Il sistema 
+    \[\begin{cases} 2x + 3y + z = 0\\3x + y - z = 2\\x - z = 4 \end{cases} \]
+    può essere riscritto equivalentemente come \[\begin{pmatrix} 2&3&1\\3&1&- 1\\1&0&- 1 \end{pmatrix} \begin{pmatrix} x\\y\\z \end{pmatrix} = \begin{pmatrix} 0\\2\\4 \end{pmatrix} \]
+\end{ex}
+
+\subsection{Prodotto matrice-vettore}
+Perchè questa cosa funziona? Per come è definito il prodotto tra una matrice ed un vettore. In algebra lineare moltiplicare a sinistra un a matrice ad un vettore è come applicare una trasformazione a quel vettore, per cui il risultato del prodotto sarà un altro vettore. Consideriamo un esempio:
+\begin{ex}
+    Calcolare \[\begin{pmatrix} 1 & 2 & 1\\0 & - 1 & 1\\ 2 & -1 & 0\end{pmatrix} \begin{pmatrix} 1\\2\\- 1 \end{pmatrix} \]
+    Il prodotto tra una matrice ed un vettore si fa in questo modo: cominciamo con il riscrivere il vettore in riga sopra alla matrice
+    \[\begin{array}{c}
+        {\color{red}
+        \begin{matrix}
+            1&~2&- 1
+        \end{matrix}}\\
+        \begin{pmatrix}
+            1 & 2 & ~1\\0 & - 1 & ~1\\ 2 & -1 & ~0 
+        \end{pmatrix}
+    \end{array}\]
+    Adesso moltiplichiamo ogni colonna per il numero scritto sopra
+    \[
+        \begin{pmatrix}
+            {\color{red}1\,\cdot\,}1 & {\color{red} 2\,\cdot\,}2 & {\color{red} -1\,\cdot\,}1\\
+            {\color{red}1\,\cdot\,}0 & {\color{red} 2\,\cdot\,}(- 1) & {\color{red} -1\,\cdot\,}1\\ 
+            {\color{red}1\,\cdot\,}2 & {\color{red} 2\,\cdot\,}( - 1) & {\color{red} -1\,\cdot\,}0 
+        \end{pmatrix}
+    \]
+    E per finire sommiamo le righe
+    \[
+    \begin{pmatrix}
+        {\color{red}1\,\cdot\,}1 + {\color{red} 2\,\cdot\,}2 + {\color{red} ( - 1)\,\cdot\,}1\\
+        {\color{red}1\,\cdot\,}0 + {\color{red} 2\,\cdot\,}(- 1) + {\color{red} ( - 1)\,\cdot\,}1\\ 
+        {\color{red}1\,\cdot\,}2 + {\color{red} 2\,\cdot\,}( - 1) + {\color{red} ( - 1)\,\cdot\,}0 
+    \end{pmatrix} = \begin{pmatrix} 4\\- 3\\0 \end{pmatrix} 
+    \]
+\end{ex}
+Osserviamo quindi che facendo la stessa cosa con la scrittura matriciale del sistema otteniamo proprio il sistema di partenza.
+\paragraph*{N.B.:} Non è sempre possibile fare il prodotto tra una matrice e un vettore. È possibile se e solo se il numero di colonne della matrice è uguale al numero di elementi del vettore-colonna. Il risultato avrà tanti elementi quante le righe della matrice.  
+\subsection{El metodo di Gauss-Jordan}
+Propongo ora un metodo di risolvere i sistemi che genralmente non si utilizza al liceo ma che è molto comodo soprattutto per problemi di algebra lineare. Consiste nello scrivere il sistema in forma matriciale e nell'operare sulle \textbf{righe} per cercare di ricondursi ad una matrice diagonale (ovvero con tutti gli elementi diversi da 0 sulla diagonale principale). È meglio inoltre che i numeri sulla diagonale siano 1 Abbiamo a disposizione tre operazioni:
+\begin{itemize}
+    \item Scambiare due righe (indico $R_1\leftrightarrow R_2$)
+    \item Moltiplicare una riga per un numero (indico $R_1\leftarrow kR_1$)
+    \item Sommare una riga per una seconda moltiplicata per un numero e mettere il risultato nella prima riga (indico $R_1\leftarrow R_1+kR_2$)
+\end{itemize}
+
+Consideriamo l'esempio 
+\begin{ex}[GME01-Esempio 1]
+    Risolviamo il seguente sistema con il metodo di riduzione di Gauss-Jordan.
+    \[\begin{cases} 
+        2x -2y+3z=4 \\
+        -2x + 3y - 2z = -4\\
+        x -y+z=1
+     \end{cases} \]
+     Riscriviamo il sistema in forma matriciale (scrittura compatta):
+     \[\left(\begin{array}{ccc|c} 2 & - 2 & 3& 4\\- 2 & 3 & - 2 & - 4 \\ \boxed{1} & - 1 & 1 & 1 \end{array}\right) \]
+     Osserviamo che nella posizione riquadrata abbiamo un $1$, lo spostiamo quindi in alto scambiando la prima e la terza riga ($R_1\leftrightarrow R_3$)
+     \[\left(\begin{array}{ccc|c} 
+        \boxed{1} & - 1 & 1 & 1 \\
+        - 2 & 3 & - 2 & - 4 \\
+        2 & - 2 & 3& 4\\
+    \end{array}\right) \]
+    Adesso dobbiamo \say{fare zeri} sotto il numero riquadrato che da ora in poi chiameremo \say{pivot}. Per far questo sommiamo alla riga 2 due volte la riga 1 e sottraiamo alla riga 3 due volte la riga 1.
+    \[\left(\begin{array}{ccc|c} 
+        \boxed{1} & - 1 & 1 & 1 \\
+        - 2 & 3 & - 2 & - 4 \\
+        2 & - 2 & 3& 4\\
+    \end{array}\right)
+    \overset{R_2\leftarrow R_2 + 2R_1}{\xrightarrow{\hspace{2cm}}}
+    \left(\begin{array}{ccc|c} 
+        \boxed{1} & - 1 & 1 & 1 \\
+        0 & \boxed{1} & 0 & - 2 \\
+        2 & - 2 & 3& 4\\
+    \end{array}\right)
+    \overset{R_3\leftarrow R_3 - 2R_1}{\xrightarrow{\hspace{2cm}}}
+    \left(\begin{array}{ccc|c} 
+        \boxed{1} & - 1 & 1 & 1 \\
+        0 & \boxed{1} & 0 & - 2 \\
+        0 & 0 & \boxed{1}& 2\\
+    \end{array}\right)
+    \]
+    Ora procediamo al contrario facendo zeri sopra ai pivot
+    \[\left(\begin{array}{ccc|c} 
+        \boxed{1} & - 1 & 1 & 1 \\
+        0 & \boxed{1} & 0 & - 2 \\
+        0 & 0 & \boxed{1}& 2\\
+    \end{array}\right)
+    \overset{R_1\leftarrow R_1 - R_3}{\xrightarrow{\hspace{2cm}}}
+    \left(\begin{array}{ccc|c} 
+        \boxed{1} & - 1 & 0 & - 1 \\
+        0 & \boxed{1} & 0 & - 2 \\
+        0 & 0 & \boxed{1}& 2\\
+    \end{array}\right)
+    \overset{R_1\leftarrow R_1 + R_2}{\xrightarrow{\hspace{2cm}}}
+    \left(\begin{array}{ccc|c} 
+        \boxed{1} & 0 & 0 & - 3 \\
+        0 & \boxed{1} & 0 & - 2 \\
+        0 & 0 & \boxed{1}& 2\\
+    \end{array}\right)
+    \]
+    Adesso ritorniamo nella forma di sistema
+    \[\begin{cases} x =- 3\\y =- 2\\z = 2 \end{cases} \]
+\end{ex}
+\subsection{Prodotto tra matrici}
+Se sappiamo fare il prodotto tra una matrice e un vettore, sappiamo fare anche il prodotto tra due matrici. Affinché si possa fare il prodotto tra due matrici esse devono essere conformabili, ovvero il numero di colonne della prima deve essere uguale al numero di righe della seconda. È importante sottolineare come il prodotto tra matrici NON sia commutativo. Valgono invece la proprietà associativa e distributiva.
+
+Vediamo quindi come fare il prodotto tra due matrici: si procede esattamente come il prodotto tra matrice e vettore. Separiamo le colonne della seconda matrice e facciamo il prodotto di ognuna con la prima. Ora rimettiamo insieme il tutto e otteniamo la matrice risultato. Vediamo un esempio:
+\begin{ex}[Es. 159 pag. 1029 vol. 4A]
+    \[\begin{pmatrix} 1&0\\0&- 1\\2&3 \end{pmatrix} \cdot \begin{pmatrix} - 1&0&2&3\\1&2&3&0 \end{pmatrix} \]
+    Adesso separiamo tutte le colonne della seconda matrice e facciamo il prodotto come se fosse un prodotto matrice-vettore.
+    \[\begin{pmatrix} 1&0\\0&- 1\\2&3 \end{pmatrix} \cdot \begin{pmatrix} - 1\\1 \end{pmatrix} = \begin{pmatrix} - 1\\- 1\\1 \end{pmatrix} \]
+    \[\begin{pmatrix} 1&0\\0&- 1\\2&3 \end{pmatrix} \cdot \begin{pmatrix} 0\\2 \end{pmatrix} = \begin{pmatrix} 0\\- 2\\6 \end{pmatrix}\]
+    \[\begin{pmatrix} 1&0\\0&- 1\\2&3 \end{pmatrix} \cdot \begin{pmatrix} 2\\3\end{pmatrix} = \begin{pmatrix} 2\\- 3\\ 13 \end{pmatrix}\]
+    \[\begin{pmatrix} 1&0\\0&- 1\\2&3 \end{pmatrix} \cdot \begin{pmatrix} 3\\0\end{pmatrix} = \begin{pmatrix} 3\\0\\6 \end{pmatrix}\]
+    E adesso rimettiamo insieme i risultati
+    \[\begin{pmatrix} 1&0\\0&- 1\\2&3 \end{pmatrix} \cdot \begin{pmatrix} - 1&0&2&3\\1&2&3&0 \end{pmatrix} = \begin{pmatrix} - 1&0&2&3\\- 1&- 2&- 3&0\\1&6&13&6 \end{pmatrix} \]
+\end{ex}
+Osserviamo che esiste una matrice particolare, detta \say{matrice identica} che è l'elemento neutro del prodotto tra matrici, ovvero se moltiplicata per una matrice con cui è conformabile, la mantiene invariata. Essa è una matrice quadrata del tipo
+\[I_n=\begin{pmatrix}1&\dots&0\\ \vdots&\ddots&\vdots \\ 0&\dots&1\end{pmatrix}\]
+(ovvero con 0 ovunque tranne che sulla diagonale dove ha 1)
+\subsubsection{Matrice inversa}
+Si chiama inversa di una matrice $A$ la matrice $A^{-1}$ tale che $A\cdot A^{-1}=I$. Il prodotto tra una matrice e la sua inversa è commutativo se e solo se le matrici sono quadrate. Per trovarla il procedimento migliore è sfruttare il metodo di riduzione di Gauss-Jordan: costruiamo una nuova matrice fatta affiancando la matrice $A$ che desideriamo invertire all'identità:
+\[\left( \begin{array}{cccc|cccc}
+    a_{11}& a_{12}&\dots&a_{1n}& 1&0&\dots &0\\
+    a_{21}& a_{22}&\dots&a_{2n}& 0&1&\dots &0\\
+    \vdots & \vdots & \ddots& \vdots& \vdots & \vdots & \ddots & \vdots\\
+    a_{m1}& a_{m2}&\dots&a_{mn}& 0&0&\dots &1\\
+\end{array} \right)\]
+Adesso riduciamo la matrice con il metodo di Gauss-Jordan fino ad ottenere l'identità a sinistra. A questo punto a destra avremo la matrice inversa $A^{-1}$. Non tutte le matrici sono invertibili!
+\begin{ex}[Es. 273 pag. 1036 vol. 4A]
+    Calcolare la matrice inversa di \[\begin{pmatrix} 1&1\\4&3 \end{pmatrix} \]
+    \[\left(\begin{array}{cc|cc}
+        \boxed{1}&1&1&0\\
+        4&3&0&1
+    \end{array}\right)
+    \overset{R_2\leftarrow R_2 - 4R_1}{\xrightarrow{\hspace{1.6cm}}}
+    \left(\begin{array}{cc|cc}
+        \boxed{1}&1&1&0\\
+        0&- 1&- 4&1
+    \end{array}\right)
+    \overset{R_2\leftarrow -R_2}{\xrightarrow{\hspace{1cm}}}
+    \left(\begin{array}{cc|cc}
+        \boxed{1}&1&1&0\\
+        0&\boxed{1}&4&-1
+    \end{array}\right)\]\[
+    \overset{R_1\leftarrow R_1-R_2}{\xrightarrow{\hspace{1.6cm}}}
+    \left(\begin{array}{cc|cc}
+        \boxed{1}&0&-3&1\\
+        0&\boxed{1}&4&-1
+    \end{array}\right)
+    \]
+    Quindi l'inversa è 
+    \[\begin{pmatrix} - 3&1\\4&- 1 \end{pmatrix} \]
+\end{ex}
+\subsection{Determinante}
+Il determinante è un numero associato ad ogni matrice che descrive la trasformazione adessa associata. Per quello che dobbiamo fare ci interessa sapere come si calcola solo il determinante sulle matrici $2\times 2$, ma sappiate che è definito per tutte le matrici quadrate. 
+\[\det \begin{pmatrix} a&b\\c&d \end{pmatrix} = \begin{vmatrix} a&b\\c&d \end{vmatrix} = ad - bc\]
+\section{Matrici e successioni}
+Consideriamo un esempio famoso, la successione di Fibonacci. 
+\[\begin{cases} f_0 = 1\\f_1 = 1\\f_n = f_{n - 1} + f_{n - 2} \end{cases} \]
+Osserviamo che possiamo riscrivere la terza riga come 
+\[\begin{cases} f_n = f_{n - 1} + f_{n - 2}\\ f_{n - 1} = f_{n - 1} \end{cases} \Longleftrightarrow \begin{pmatrix} f_n\\f_{n - 1} \end{pmatrix} = \begin{pmatrix} 1&1\\1&0 \end{pmatrix} \begin{pmatrix} f_{n - 1}\\f_{n - 2} \end{pmatrix} \]
+In particolare
+\[\begin{pmatrix} f_2\\f_1 \end{pmatrix} = \begin{pmatrix} 1&1\\1&0 \end{pmatrix} \begin{pmatrix} 1\\1 \end{pmatrix}\]
+\[\begin{pmatrix} f_3\\f_2 \end{pmatrix} = \begin{pmatrix} 1&1\\1&0 \end{pmatrix}\begin{pmatrix} 1&1\\1&0 \end{pmatrix} \begin{pmatrix} 1\\1 \end{pmatrix}\]
+\[\begin{pmatrix} f_4\\f_3 \end{pmatrix} = \begin{pmatrix} 1&1\\1&0 \end{pmatrix}\begin{pmatrix} 1&1\\1&0 \end{pmatrix}\begin{pmatrix} 1&1\\1&0 \end{pmatrix} \begin{pmatrix} 1\\1 \end{pmatrix}\]
+\[\begin{pmatrix} f_n\\f_{n -1} \end{pmatrix} = \begin{pmatrix} 1&1\\1&0 \end{pmatrix}^n \begin{pmatrix} 1\\1 \end{pmatrix}\]
+Per trovare una formula generale per trovare l'$n$-esimo termine della successione di Fibonacci ci serve quindi un modo comodo per fare potenze di matrici. Osserviamo che se la matrice è diagonale, fare le potenze è semplice:
+\[\begin{pmatrix} a&0\\0&b \end{pmatrix}\begin{pmatrix} a&0\\0&b \end{pmatrix} = \begin{pmatrix} a^2&0\\0&b^2 \end{pmatrix} \]
+Per cui vorremmo trovare una matrice $P$ invertibile tale che 
+\[A = P^{ - 1}DP\]
+Dove $D$ è una matrice diagonale di cui sappiamo fare le potenze, infatti
+\[A^{n} =(P^{ - 1}DP)^n = P^{ - 1}D\cancel{PP^{ - 1}}D\cancel{P}\cdot \ldots \cdot \cancel{P^{ - 1}}DP = P^{ - 1}D^nP\]
+
+Purtroppo non posso spiegare per mancanza di tempo perchè quello che sto per mostrarvi funziona, ma spero possa tornare utile.
+\subsection{Diagonalizzare una matrice}
+\subsubsection{Il polinomio caratteristico e gli autovalori}
+Si definisce polinomio caratteristico di una matrice il polinomio
+\[p_A(\lambda) = \det\left( A -\lambda I \right)\]
+\[p_A(\lambda) =\begin{vmatrix} 1 -\lambda&1\\1&-\lambda \end{vmatrix} = (1 -\lambda)( -\lambda) - 1 =\lambda^2 -\lambda - 1\]
+Adesso dobbiamo trovare quei valori di $\lambda$, detti \textbf{autovalori}, che annullano il polinomio caratteristico, ovvero risolvere l'equazione 
+\[p_A(\lambda) = 0\]
+\[\lambda^2 -\lambda - 1 = 0\] 
+\[\lambda_1 =\varphi =\frac{1 + \sqrt{5}}{2}\qquad\qquad\lambda_2 =\Phi =\frac{1 - \sqrt{5}}{2}\]
+(il procedimento proposto funziona solo se il discriminante è maggiore di 0)
+Otteniamo quindi che la matrice diagonalizzata è
+\[D =\begin{pmatrix} \varphi &0\\0&\Phi \end{pmatrix} \]
+\subsubsection{Autovettori e matrici diagonalizzanti}
+Adesso ci rimane da cercare le matrici $P$ e $P^{-1}$.
+\end{document}
