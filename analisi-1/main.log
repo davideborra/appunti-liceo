@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.141592653-2.6-1.40.24 (TeX Live 2022) (preloaded format=pdflatex 2022.9.29)  2 FEB 2023 17:25
+This is pdfTeX, Version 3.141592653-2.6-1.40.24 (TeX Live 2022) (preloaded format=pdflatex 2022.9.29)  2 FEB 2023 17:31
 entering extended mode
  restricted \write18 enabled.
  file:line:error style messages enabled.
@@ -981,10 +981,10 @@ File: uesint.fd
 \tf@toc=\write5
 \openout5 = `main.toc'.
 
-<CreativeCommons/by-nc-nd.png, id=116, 97.0827pt x 33.9669pt>
+<CreativeCommons/by-nc-nd.png, id=119, 97.0827pt x 33.9669pt>
 File: CreativeCommons/by-nc-nd.png Graphic file (type png)
 <use CreativeCommons/by-nc-nd.png>
-Package pdftex.def Info: CreativeCommons/by-nc-nd.png  used on input line 43.
+Package pdftex.def Info: CreativeCommons/by-nc-nd.png  used on input line 44.
 (pdftex.def)             Requested size: 81.32224pt x 28.45274pt.
  [1
 
@@ -994,46 +994,46 @@ Package pdftex.def Info: CreativeCommons/by-nc-nd.png  used on input line 43.
 Capitolo 1.
 
 Package hyperref Warning: Token not allowed in a PDF string (Unicode):
-(hyperref)                removing `math shift' on input line 51.
+(hyperref)                removing `math shift' on input line 52.
 
 
 Package hyperref Warning: Token not allowed in a PDF string (Unicode):
-(hyperref)                removing `math shift' on input line 51.
+(hyperref)                removing `math shift' on input line 52.
 
-Package mdframed Info: mdframed works in twoside mode on input line 52.
+Package mdframed Info: mdframed works in twoside mode on input line 53.
 Package mdframed Info: mdframed detected package amsthm 
  changed the theorem header of amsthm
-(mdframed)              on input line 52.
-Package mdframed Info: mdframed works in twoside mode on input line 62.
+(mdframed)              on input line 53.
+Package mdframed Info: mdframed works in twoside mode on input line 63.
 Package mdframed Info: mdframed detected package amsthm 
  changed the theorem header of amsthm
-(mdframed)              on input line 62.
-Package mdframed Info: mdframed works in twoside mode on input line 70.
+(mdframed)              on input line 63.
+Package mdframed Info: mdframed works in twoside mode on input line 71.
 Package mdframed Info: mdframed detected package amsthm 
  changed the theorem header of amsthm
-(mdframed)              on input line 70.
-Package mdframed Info: mdframed works in twoside mode on input line 74.
+(mdframed)              on input line 71.
+Package mdframed Info: mdframed works in twoside mode on input line 75.
 Package mdframed Info: mdframed detected package amsthm 
  changed the theorem header of amsthm
-(mdframed)              on input line 74.
+(mdframed)              on input line 75.
 
 pdfTeX warning (ext4): destination with the same identifier (name{page.1}) has been already used, duplicate ignored
 <to be read again> 
                    \relax 
-l.85 \begin{boxdef}
+l.86 \begin{boxdef}
                     [1
 
 ]
-Package mdframed Info: mdframed works in twoside mode on input line 85.
+Package mdframed Info: mdframed works in twoside mode on input line 86.
 Package mdframed Info: mdframed detected package amsthm 
  changed the theorem header of amsthm
-(mdframed)              on input line 85.
-Package mdframed Info: mdframed works in twoside mode on input line 97.
+(mdframed)              on input line 86.
+Package mdframed Info: mdframed works in twoside mode on input line 98.
 Package mdframed Info: mdframed detected package amsthm 
  changed the theorem header of amsthm
-(mdframed)              on input line 97.
+(mdframed)              on input line 98.
 
-Overfull \hbox (4.64798pt too wide) in paragraph at lines 100--104
+Overfull \hbox (4.64798pt too wide) in paragraph at lines 101--105
 [] 
  []
 
@@ -1041,180 +1041,180 @@ Overfull \hbox (4.64798pt too wide) in paragraph at lines 100--104
 pdfTeX warning (ext4): destination with the same identifier (name{page.2}) has been already used, duplicate ignored
 <to be read again> 
                    \relax 
-l.128         \begin{shadedTheorem}
+l.129         \begin{shadedTheorem}
                                    [Permanenza del segno] [2]
-Package mdframed Info: mdframed works in twoside mode on input line 128.
+Package mdframed Info: mdframed works in twoside mode on input line 129.
 Package mdframed Info: mdframed detected package amsthm 
  changed the theorem header of amsthm
-(mdframed)              on input line 128.
+(mdframed)              on input line 129.
 
-Overfull \hbox (4.64798pt too wide) in paragraph at lines 131--135
+Overfull \hbox (4.64798pt too wide) in paragraph at lines 132--136
 [] 
  []
 
-Package mdframed Info: mdframed works in twoside mode on input line 156.
+Package mdframed Info: mdframed works in twoside mode on input line 157.
 Package mdframed Info: mdframed detected package amsthm 
  changed the theorem header of amsthm
-(mdframed)              on input line 156.
-Package mdframed Info: mdframed works in twoside mode on input line 165.
+(mdframed)              on input line 157.
+Package mdframed Info: mdframed works in twoside mode on input line 166.
 Package mdframed Info: mdframed detected package amsthm 
  changed the theorem header of amsthm
-(mdframed)              on input line 165.
+(mdframed)              on input line 166.
 
 Package mdframed Warning: You got a bad break
 (mdframed)                because the last box will be empty
 (mdframed)                you have to change it manually
 (mdframed)                by changing the text, the space
-(mdframed)                or something else on input line 170.
+(mdframed)                or something else on input line 171.
 
 Package mdframed Info: You first box width is to small
  mdframed fixed it
-(mdframed)              on input line 170.
+(mdframed)              on input line 171.
 [3]
 
 Package mdframed Warning: You got a bad break
 (mdframed)                because the last split box is empty
-(mdframed)                You have to change the settings on input line 170.
+(mdframed)                You have to change the settings on input line 171.
 
-Package mdframed Info: mdframed works in twoside mode on input line 197.
+Package mdframed Info: mdframed works in twoside mode on input line 198.
 Package mdframed Info: mdframed detected package amsthm 
  changed the theorem header of amsthm
-(mdframed)              on input line 197.
-Package mdframed Info: mdframed works in twoside mode on input line 208.
+(mdframed)              on input line 198.
+Package mdframed Info: mdframed works in twoside mode on input line 209.
 Package mdframed Info: mdframed detected package amsthm 
  changed the theorem header of amsthm
-(mdframed)              on input line 208.
+(mdframed)              on input line 209.
 [4]
-Package mdframed Info: Not enough space on this page on input line 210.
-Package mdframed Info: mdframed works in twoside mode on input line 213.
+Package mdframed Info: Not enough space on this page on input line 211.
+Package mdframed Info: mdframed works in twoside mode on input line 214.
 Package mdframed Info: mdframed detected package amsthm 
  changed the theorem header of amsthm
-(mdframed)              on input line 213.
-Package mdframed Info: mdframed works in twoside mode on input line 218.
+(mdframed)              on input line 214.
+Package mdframed Info: mdframed works in twoside mode on input line 219.
 Package mdframed Info: mdframed detected package amsthm 
  changed the theorem header of amsthm
-(mdframed)              on input line 218.
-Package mdframed Info: mdframed works in twoside mode on input line 223.
+(mdframed)              on input line 219.
+Package mdframed Info: mdframed works in twoside mode on input line 224.
 Package mdframed Info: mdframed detected package amsthm 
  changed the theorem header of amsthm
-(mdframed)              on input line 223.
+(mdframed)              on input line 224.
 
-Underfull \hbox (badness 10000) in paragraph at lines 224--226
+Underfull \hbox (badness 10000) in paragraph at lines 225--227
 
  []
 
-Package mdframed Info: mdframed works in twoside mode on input line 231.
+Package mdframed Info: mdframed works in twoside mode on input line 232.
 Package mdframed Info: mdframed detected package amsthm 
  changed the theorem header of amsthm
-(mdframed)              on input line 231.
-Package mdframed Info: Not enough space on this page on input line 233.
+(mdframed)              on input line 232.
+Package mdframed Info: Not enough space on this page on input line 234.
 [5]
-Package mdframed Info: Not enough space on this page on input line 233.
-Package mdframed Info: mdframed works in twoside mode on input line 236.
+Package mdframed Info: Not enough space on this page on input line 234.
+Package mdframed Info: mdframed works in twoside mode on input line 237.
 Package mdframed Info: mdframed detected package amsthm 
  changed the theorem header of amsthm
-(mdframed)              on input line 236.
-Package mdframed Info: mdframed works in twoside mode on input line 242.
+(mdframed)              on input line 237.
+Package mdframed Info: mdframed works in twoside mode on input line 243.
 Package mdframed Info: mdframed detected package amsthm 
  changed the theorem header of amsthm
-(mdframed)              on input line 242.
-Package mdframed Info: mdframed works in twoside mode on input line 247.
+(mdframed)              on input line 243.
+Package mdframed Info: mdframed works in twoside mode on input line 248.
 Package mdframed Info: mdframed detected package amsthm 
  changed the theorem header of amsthm
-(mdframed)              on input line 247.
-Package mdframed Info: mdframed works in twoside mode on input line 250.
+(mdframed)              on input line 248.
+Package mdframed Info: mdframed works in twoside mode on input line 251.
 Package mdframed Info: mdframed detected package amsthm 
  changed the theorem header of amsthm
-(mdframed)              on input line 250.
+(mdframed)              on input line 251.
 
 
 Package hyperref Warning: Token not allowed in a PDF string (Unicode):
-(hyperref)                removing `math shift' on input line 257.
+(hyperref)                removing `math shift' on input line 258.
 
 
 Package hyperref Warning: Token not allowed in a PDF string (Unicode):
-(hyperref)                removing `superscript' on input line 257.
+(hyperref)                removing `superscript' on input line 258.
 
 
 Package hyperref Warning: Token not allowed in a PDF string (Unicode):
-(hyperref)                removing `math shift' on input line 257.
+(hyperref)                removing `math shift' on input line 258.
 
 
 Package hyperref Warning: Token not allowed in a PDF string (Unicode):
-(hyperref)                removing `math shift' on input line 257.
+(hyperref)                removing `math shift' on input line 258.
 
 
 Package hyperref Warning: Token not allowed in a PDF string (Unicode):
-(hyperref)                removing `\infty' on input line 257.
+(hyperref)                removing `\infty' on input line 258.
 
 
 Package hyperref Warning: Token not allowed in a PDF string (Unicode):
-(hyperref)                removing `superscript' on input line 257.
+(hyperref)                removing `superscript' on input line 258.
 
 
 Package hyperref Warning: Token not allowed in a PDF string (Unicode):
-(hyperref)                removing `math shift' on input line 257.
+(hyperref)                removing `math shift' on input line 258.
 
 
 Package hyperref Warning: Token not allowed in a PDF string (Unicode):
-(hyperref)                removing `math shift' on input line 257.
+(hyperref)                removing `math shift' on input line 258.
 
 
 Package hyperref Warning: Token not allowed in a PDF string (Unicode):
-(hyperref)                removing `superscript' on input line 257.
+(hyperref)                removing `superscript' on input line 258.
 
 
 Package hyperref Warning: Token not allowed in a PDF string (Unicode):
-(hyperref)                removing `\infty' on input line 257.
+(hyperref)                removing `\infty' on input line 258.
 
 
 Package hyperref Warning: Token not allowed in a PDF string (Unicode):
-(hyperref)                removing `math shift' on input line 257.
+(hyperref)                removing `math shift' on input line 258.
 
 [6]
-Package mdframed Info: mdframed works in twoside mode on input line 260.
+Package mdframed Info: mdframed works in twoside mode on input line 261.
 Package mdframed Info: mdframed detected package amsthm 
  changed the theorem header of amsthm
-(mdframed)              on input line 260.
-Package mdframed Info: mdframed works in twoside mode on input line 263.
+(mdframed)              on input line 261.
+Package mdframed Info: mdframed works in twoside mode on input line 264.
 Package mdframed Info: mdframed detected package amsthm 
  changed the theorem header of amsthm
-(mdframed)              on input line 263.
-Package mdframed Info: mdframed works in twoside mode on input line 266.
+(mdframed)              on input line 264.
+Package mdframed Info: mdframed works in twoside mode on input line 267.
 Package mdframed Info: mdframed detected package amsthm 
  changed the theorem header of amsthm
-(mdframed)              on input line 266.
+(mdframed)              on input line 267.
  [7]
-Underfull \hbox (badness 10000) in paragraph at lines 300--302
+Underfull \hbox (badness 10000) in paragraph at lines 301--303
 
  []
 
 [8] [9]
-Underfull \hbox (badness 10000) in paragraph at lines 386--401
+Underfull \hbox (badness 10000) in paragraph at lines 387--402
 
  []
 
 [10]
-Package mdframed Info: mdframed works in twoside mode on input line 403.
+Package mdframed Info: mdframed works in twoside mode on input line 404.
 Package mdframed Info: mdframed detected package amsthm 
  changed the theorem header of amsthm
-(mdframed)              on input line 403.
-Package mdframed Info: mdframed works in twoside mode on input line 412.
+(mdframed)              on input line 404.
+Package mdframed Info: mdframed works in twoside mode on input line 413.
 Package mdframed Info: mdframed detected package amsthm 
  changed the theorem header of amsthm
-(mdframed)              on input line 412.
-Package mdframed Info: mdframed works in twoside mode on input line 422.
+(mdframed)              on input line 413.
+Package mdframed Info: mdframed works in twoside mode on input line 423.
 Package mdframed Info: mdframed detected package amsthm 
  changed the theorem header of amsthm
-(mdframed)              on input line 422.
-Package mdframed Info: mdframed works in twoside mode on input line 431.
+(mdframed)              on input line 423.
+Package mdframed Info: mdframed works in twoside mode on input line 432.
 Package mdframed Info: mdframed detected package amsthm 
  changed the theorem header of amsthm
-(mdframed)              on input line 431.
-Package mdframed Info: mdframed works in twoside mode on input line 443.
+(mdframed)              on input line 432.
+Package mdframed Info: mdframed works in twoside mode on input line 444.
 Package mdframed Info: mdframed detected package amsthm 
  changed the theorem header of amsthm
-(mdframed)              on input line 443.
+(mdframed)              on input line 444.
  [11] (./main.aux)
 Package rerunfilecheck Info: File `main.out' has not changed.
 (rerunfilecheck)             Checksum: D5C62A77608233245DF8D2E3E35600A0;3837.
@@ -1228,10 +1228,10 @@ Here is how much of TeX's memory you used:
  1141 hyphenation exceptions out of 8191
  110i,12n,106p,854b,795s stack positions out of 10000i,1000n,20000p,200000b,200000s
 {/usr/local/texlive/2022/texmf-dist/fonts/enc/dvips/cm-super/cm-super-ts1.enc}</usr/local/texlive/2022/texmf-dist/fonts/type1/public/amsfonts/cm/cmbx10.pfb></usr/local/texlive/2022/texmf-dist/fonts/type1/public/amsfonts/cm/cmbx12.pfb></usr/local/texlive/2022/texmf-dist/fonts/type1/public/amsfonts/cm/cmcsc10.pfb></usr/local/texlive/2022/texmf-dist/fonts/type1/public/amsfonts/cm/cmex10.pfb></usr/local/texlive/2022/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi10.pfb></usr/local/texlive/2022/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi5.pfb></usr/local/texlive/2022/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi7.pfb></usr/local/texlive/2022/texmf-dist/fonts/type1/public/amsfonts/cm/cmr10.pfb></usr/local/texlive/2022/texmf-dist/fonts/type1/public/amsfonts/cm/cmr12.pfb></usr/local/texlive/2022/texmf-dist/fonts/type1/public/amsfonts/cm/cmr5.pfb></usr/local/texlive/2022/texmf-dist/fonts/type1/public/amsfonts/cm/cmr7.pfb></usr/local/texlive/2022/texmf-dist/fonts/type1/public/amsfonts/cm/cmr8.pfb></usr/local/texlive/2022/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy10.pfb></usr/local/texlive/2022/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy5.pfb></usr/local/texlive/2022/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy7.pfb></usr/local/texlive/2022/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy8.pfb></usr/local/texlive/2022/texmf-dist/fonts/type1/public/amsfonts/cm/cmti10.pfb></usr/local/texlive/2022/texmf-dist/fonts/type1/public/amsfonts/cm/cmtt10.pfb></usr/local/texlive/2022/texmf-dist/fonts/type1/public/amsfonts/symbols/msbm10.pfb></usr/local/texlive/2022/texmf-dist/fonts/type1/public/cm-super/sfrm1000.pfb></usr/local/texlive/2022/texmf-dist/fonts/type1/public/yhmath/yhcmex.pfb>
-Output written on main.pdf (15 pages, 283109 bytes).
+Output written on main.pdf (15 pages, 286577 bytes).
 PDF statistics:
- 351 PDF objects out of 1000 (max. 8388607)
- 287 compressed objects within 3 object streams
+ 353 PDF objects out of 1000 (max. 8388607)
+ 289 compressed objects within 3 object streams
  84 named destinations out of 1000 (max. 500000)
  170 words of extra memory for PDF output out of 10000 (max. 10000000)
 

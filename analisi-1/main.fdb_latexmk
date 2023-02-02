@@ -1,6 +1,6 @@
 # Fdb version 3
-["pdflatex"] 1675355126 "/Users/davideborra/Documents/GitHub/appunti-liceo/analisi-1/main.tex" "main.pdf" "main" 1675355126
-  "/Users/davideborra/Documents/GitHub/appunti-liceo/analisi-1/main.tex" 1675355125 26070 026ef269b30aeb613fbbe588d7a81c3a ""
+["pdflatex"] 1675355478 "/Users/davideborra/Documents/GitHub/appunti-liceo/analisi-1/main.tex" "main.pdf" "main" 1675355479
+  "/Users/davideborra/Documents/GitHub/appunti-liceo/analisi-1/main.tex" 1675355478 26229 9b6c9f4b7e6416559b6bd3b08bde6858 ""
   "/usr/local/texlive/2022/texmf-dist/fonts/enc/dvips/cm-super/cm-super-ts1.enc" 1136849721 2900 1537cc8184ad1792082cd229ecc269f4 ""
   "/usr/local/texlive/2022/texmf-dist/fonts/map/fontname/texfonts.map" 1577235249 3524 cb3e574dea2d1052e39280babc910dc8 ""
   "/usr/local/texlive/2022/texmf-dist/fonts/tfm/jknappen/ec/tcrm1000.tfm" 1136768653 1536 e07581a4bb3136ece9eeb4c3ffab8233 ""
@@ -272,11 +272,11 @@
   "/usr/local/texlive/2022/texmf-var/web2c/pdftex/pdflatex.fmt" 1664453371 2826443 79048ec7f4be5f4a69f553793af991de ""
   "/usr/local/texlive/2022/texmf.cnf" 1647878952 577 209b46be99c9075fd74d4c0369380e8c ""
   "CreativeCommons/by-nc-nd.png" 1672951571 20935 a4212c1a42d241a1351fc139b20de70b ""
-  "lambdatex.sty" 1675354087 7400 d7c2d884dad93fcc3db1163128f81fdd ""
-  "main.aux" 1675355126 10266 1f6a853f2bbeb7640a85ac1a04b01dc4 "pdflatex"
-  "main.out" 1675355126 3837 d5c62a77608233245df8d2e3e35600a0 "pdflatex"
-  "main.tex" 1675355125 26070 026ef269b30aeb613fbbe588d7a81c3a ""
-  "main.toc" 1675355126 4707 61413665635d87640843ff1c957a4613 "pdflatex"
+  "lambdatex.sty" 1675355152 7400 fc6701606c9767829f7506ed2a98d1c8 ""
+  "main.aux" 1675355479 10266 1f6a853f2bbeb7640a85ac1a04b01dc4 "pdflatex"
+  "main.out" 1675355479 3837 d5c62a77608233245df8d2e3e35600a0 "pdflatex"
+  "main.tex" 1675355478 26229 9b6c9f4b7e6416559b6bd3b08bde6858 ""
+  "main.toc" 1675355479 4707 61413665635d87640843ff1c957a4613 "pdflatex"
   (generated)
   "main.aux"
   "main.log"

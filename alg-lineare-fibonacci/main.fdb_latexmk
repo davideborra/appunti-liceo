@@ -1,6 +1,6 @@
 # Fdb version 3
-["pdflatex"] 1675335145 "/Users/davideborra/Documents/GitHub/appunti-liceo/alg-lineare-fibonacci/main.tex" "main.pdf" "main" 1675335146
-  "/Users/davideborra/Documents/GitHub/appunti-liceo/alg-lineare-fibonacci/main.tex" 1675335144 18844 278eec04276a1e3341bdcf65d8f09a1a ""
+["pdflatex"] 1675355398 "/Users/davideborra/Documents/GitHub/appunti-liceo/alg-lineare-fibonacci/main.tex" "main.pdf" "main" 1675355399
+  "/Users/davideborra/Documents/GitHub/appunti-liceo/alg-lineare-fibonacci/main.tex" 1675355398 18842 6128411985f4ad495cbfad4c46ca53ab ""
   "/usr/local/texlive/2022/texmf-dist/fonts/enc/dvips/cm-super/cm-super-ts1.enc" 1136849721 2900 1537cc8184ad1792082cd229ecc269f4 ""
   "/usr/local/texlive/2022/texmf-dist/fonts/map/fontname/texfonts.map" 1577235249 3524 cb3e574dea2d1052e39280babc910dc8 ""
   "/usr/local/texlive/2022/texmf-dist/fonts/tfm/jknappen/ec/tcrm0600.tfm" 1136768653 1536 12e8c510d3e158fdd0e9a42e75118bd9 ""
@@ -273,10 +273,10 @@
   "/usr/local/texlive/2022/texmf-var/web2c/pdftex/pdflatex.fmt" 1664453371 2826443 79048ec7f4be5f4a69f553793af991de ""
   "/usr/local/texlive/2022/texmf.cnf" 1647878952 577 209b46be99c9075fd74d4c0369380e8c ""
   "lambdatex.sty" 1673637944 6705 c5aee9f06ad4070907f851642b5adb92 ""
-  "main.aux" 1675335145 2317 39a5c514f946133e9e7fbb639add2055 "pdflatex"
-  "main.out" 1675335145 2050 8a6c79edc4bf4fc5061bb258c1ee49b9 "pdflatex"
-  "main.tex" 1675335144 18844 278eec04276a1e3341bdcf65d8f09a1a ""
-  "main.toc" 1675335145 1066 692e0e927f5f64521588a6a4fa2dc683 "pdflatex"
+  "main.aux" 1675355399 2317 39a5c514f946133e9e7fbb639add2055 "pdflatex"
+  "main.out" 1675355399 2050 8a6c79edc4bf4fc5061bb258c1ee49b9 "pdflatex"
+  "main.tex" 1675355398 18842 6128411985f4ad495cbfad4c46ca53ab ""
+  "main.toc" 1675355399 1066 692e0e927f5f64521588a6a4fa2dc683 "pdflatex"
   (generated)
   "main.aux"
   "main.log"
