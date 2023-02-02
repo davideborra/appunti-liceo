@@ -1,36 +1,36 @@
 \babel@toc {italian}{}\relax 
 \babel@toc {italian}{}\relax 
-\contentsline {section}{\numberline {1}Calcolo Combinatorio}{1}{}%
-\contentsline {subsection}{\numberline {1.1}Il principio moltiplicativo}{1}{}%
-\contentsline {subsection}{\numberline {1.2}Funzione fattoriale}{1}{}%
-\contentsline {subsection}{\numberline {1.3}Permutazioni}{2}{}%
-\contentsline {subsubsection}{\numberline {1.3.1}Permutazioni semplici}{2}{}%
-\contentsline {subsubsection}{\numberline {1.3.2}Permutazioni circolari}{2}{}%
-\contentsline {subsubsection}{\numberline {1.3.3}Permutazioni con ripetizione}{3}{}%
-\contentsline {subsection}{\numberline {1.4}Disposizioni}{3}{}%
-\contentsline {subsubsection}{\numberline {1.4.1}Disposizioni semplici}{3}{}%
-\contentsline {subsubsection}{\numberline {1.4.2}Disposizioni circolari}{3}{}%
-\contentsline {subsubsection}{\numberline {1.4.3}Disposizioni con ripetizione}{3}{}%
-\contentsline {subsection}{\numberline {1.5}Coefficienti Binomiali}{4}{}%
-\contentsline {paragraph}{Proprietà:}{4}{}%
-\contentsline {subparagraph}{Legge delle classi complementari}{4}{}%
-\contentsline {subparagraph}{Formula di ricorrenza}{4}{}%
-\contentsline {subsection}{\numberline {1.6}Combinazioni}{4}{}%
-\contentsline {subsubsection}{\numberline {1.6.1}Combinazioni semplici}{4}{}%
-\contentsline {subsubsection}{\numberline {1.6.2}Combinazioni con ripetizione}{4}{}%
-\contentsline {subsection}{\numberline {1.7}Binomio di Newton}{5}{}%
-\contentsline {section}{\numberline {2}Calcolo delle Probabilità}{5}{}%
-\contentsline {subsection}{\numberline {2.1}Definizioni}{5}{}%
-\contentsline {subsection}{\numberline {2.2}Definizione classica di probabilità}{6}{}%
-\contentsline {subsubsection}{\numberline {2.2.1}Probabilità dell'evento contrario}{6}{}%
-\contentsline {subsubsection}{\numberline {2.2.2}Probabilità e calcolo combinatorio}{6}{}%
-\contentsline {subsection}{\numberline {2.3}Somma logica di eventi}{7}{}%
-\contentsline {subsection}{\numberline {2.4}Probabilità condizionata}{7}{}%
-\contentsline {subsection}{\numberline {2.5}Prodotto logico di eventi}{8}{}%
-\contentsline {subsection}{\numberline {2.6}Problema delle prove ripetute}{8}{}%
-\contentsline {subsection}{\numberline {2.7}Formula di disintegrazione e Teorema di Bayes}{9}{}%
-\contentsline {subsubsection}{\numberline {2.7.1}Probabilità totale o completa}{9}{}%
-\contentsline {subsubsection}{\numberline {2.7.2}Teorema di Bayes}{10}{}%
-\contentsline {subsection}{\numberline {2.8}Definizione statistica (o frequentista) della probabilità}{10}{}%
-\contentsline {subsection}{\numberline {2.9}Definizione soggettiva di probabilità}{11}{}%
-\contentsline {subsection}{\numberline {2.10}Impostazione assiomatica della probabilità}{11}{}%
+\contentsline {section}{\numberline {1}Calcolo Combinatorio}{1}{section.1}%
+\contentsline {subsection}{\numberline {1.1}Il principio moltiplicativo}{1}{subsection.1.1}%
+\contentsline {subsection}{\numberline {1.2}Funzione fattoriale}{1}{subsection.1.2}%
+\contentsline {subsection}{\numberline {1.3}Permutazioni}{3}{subsection.1.3}%
+\contentsline {subsubsection}{\numberline {1.3.1}Permutazioni semplici}{3}{subsubsection.1.3.1}%
+\contentsline {subsubsection}{\numberline {1.3.2}Permutazioni circolari}{3}{subsubsection.1.3.2}%
+\contentsline {subsubsection}{\numberline {1.3.3}Permutazioni con ripetizione}{4}{subsubsection.1.3.3}%
+\contentsline {subsection}{\numberline {1.4}Disposizioni}{4}{subsection.1.4}%
+\contentsline {subsubsection}{\numberline {1.4.1}Disposizioni semplici}{4}{subsubsection.1.4.1}%
+\contentsline {subsubsection}{\numberline {1.4.2}Disposizioni circolari}{4}{subsubsection.1.4.2}%
+\contentsline {subsubsection}{\numberline {1.4.3}Disposizioni con ripetizione}{5}{subsubsection.1.4.3}%
+\contentsline {subsection}{\numberline {1.5}Coefficienti Binomiali}{5}{subsection.1.5}%
+\contentsline {paragraph}{Proprietà:}{5}{section*.2}%
+\contentsline {subparagraph}{Legge delle classi complementari}{5}{section*.3}%
+\contentsline {subparagraph}{Formula di ricorrenza}{5}{section*.4}%
+\contentsline {subsection}{\numberline {1.6}Combinazioni}{5}{subsection.1.6}%
+\contentsline {subsubsection}{\numberline {1.6.1}Combinazioni semplici}{5}{subsubsection.1.6.1}%
+\contentsline {subsubsection}{\numberline {1.6.2}Combinazioni con ripetizione}{6}{subsubsection.1.6.2}%
+\contentsline {subsection}{\numberline {1.7}Binomio di Newton}{6}{subsection.1.7}%
+\contentsline {section}{\numberline {2}Calcolo delle Probabilità}{7}{section.2}%
+\contentsline {subsection}{\numberline {2.1}Definizioni}{7}{subsection.2.1}%
+\contentsline {subsection}{\numberline {2.2}Definizione classica di probabilità}{7}{subsection.2.2}%
+\contentsline {subsubsection}{\numberline {2.2.1}Probabilità dell'evento contrario}{7}{subsubsection.2.2.1}%
+\contentsline {subsubsection}{\numberline {2.2.2}Probabilità e calcolo combinatorio}{8}{subsubsection.2.2.2}%
+\contentsline {subsection}{\numberline {2.3}Somma logica di eventi}{8}{subsection.2.3}%
+\contentsline {subsection}{\numberline {2.4}Probabilità condizionata}{9}{subsection.2.4}%
+\contentsline {subsection}{\numberline {2.5}Prodotto logico di eventi}{9}{subsection.2.5}%
+\contentsline {subsection}{\numberline {2.6}Problema delle prove ripetute}{10}{subsection.2.6}%
+\contentsline {subsection}{\numberline {2.7}Formula di disintegrazione e Teorema di Bayes}{11}{subsection.2.7}%
+\contentsline {subsubsection}{\numberline {2.7.1}Probabilità totale o completa}{11}{subsubsection.2.7.1}%
+\contentsline {subsubsection}{\numberline {2.7.2}Teorema di Bayes}{12}{subsubsection.2.7.2}%
+\contentsline {subsection}{\numberline {2.8}Definizione statistica (o frequentista) della probabilità}{12}{subsection.2.8}%
+\contentsline {subsection}{\numberline {2.9}Definizione soggettiva di probabilità}{13}{subsection.2.9}%
+\contentsline {subsection}{\numberline {2.10}Impostazione assiomatica della probabilità}{13}{subsection.2.10}%
