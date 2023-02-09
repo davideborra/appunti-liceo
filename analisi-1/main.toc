@@ -5,10 +5,10 @@
 \contentsline {subsection}{\numberline {1.1.1}Intorni}{1}{subsection.1.1.1}%
 \contentsline {subsubsection}{Intorni circolari}{1}{section*.2}%
 \contentsline {subsubsection}{Intorni di $\infty $}{1}{section*.3}%
-\contentsline {subsubsection}{Insiemi limitati e illimitati, maggiorante, minorante, estremi superiore e inferiore, massimo, minimo.}{1}{section*.4}%
-\contentsline {paragraph}{Caratterizzazione di $\qopname \relax m{sup}X$}{2}{section*.5}%
-\contentsline {paragraph}{Caratterizzazione di $\qopname \relax m{inf}X$}{3}{section*.6}%
-\contentsline {subsubsection}{Punti di accumulazione e punti isolati}{3}{section*.7}%
+\contentsline {subsection}{\numberline {1.1.2}Insiemi limitati e illimitati, maggiorante, minorante, estremi, massimo, minimo.}{1}{subsection.1.1.2}%
+\contentsline {paragraph}{Caratterizzazione di $\qopname \relax m{sup}X$}{2}{section*.4}%
+\contentsline {paragraph}{Caratterizzazione di $\qopname \relax m{inf}X$}{3}{section*.5}%
+\contentsline {subsection}{\numberline {1.1.3}Punti di accumulazione e punti isolati}{3}{subsection.1.1.3}%
 \contentsline {section}{\numberline {1.2}Definizione di limite}{4}{section.1.2}%
 \contentsline {subsection}{\numberline {1.2.1}Asintoti}{6}{subsection.1.2.1}%
 \contentsline {section}{\numberline {1.3}Continuità}{6}{section.1.3}%
@@ -21,29 +21,29 @@
 \contentsline {subsection}{\numberline {1.5.2}Algebra dei limiti}{9}{subsection.1.5.2}%
 \contentsline {subsection}{\numberline {1.5.3}Mediante il teorema del confronto}{10}{subsection.1.5.3}%
 \contentsline {subsection}{\numberline {1.5.4}Forme di indecisione (o forme indeterminate)}{10}{subsection.1.5.4}%
-\contentsline {subsubsection}{Forma di indecisione $+\infty -\infty $}{10}{section*.9}%
-\contentsline {subsubsection}{Se si presenta in una funzione polinomiale}{10}{section*.10}%
-\contentsline {subsubsection}{Se si presenta in una funzione irrazionale}{11}{section*.11}%
-\contentsline {paragraph}{Se il termine sotto radice è il quadrato del termine fuori}{11}{section*.12}%
-\contentsline {subsubsection}{Forma di indecisione $0\cdot \infty $}{12}{section*.13}%
-\contentsline {subsubsection}{Forma di indecisione $\frac {\infty }{\infty }$}{12}{section*.14}%
+\contentsline {subsubsection}{Forma di indecisione $+\infty -\infty $}{10}{section*.7}%
+\contentsline {subsubsection}{Se si presenta in una funzione polinomiale}{10}{section*.8}%
+\contentsline {subsubsection}{Se si presenta in una funzione irrazionale}{11}{section*.9}%
+\contentsline {paragraph}{Se il termine sotto radice è il quadrato del termine fuori}{11}{section*.10}%
+\contentsline {subsubsection}{Forma di indecisione $0\cdot \infty $}{12}{section*.11}%
+\contentsline {subsubsection}{Forma di indecisione $\frac {\infty }{\infty }$}{12}{section*.12}%
 \contentsline {paragraph}{Se si presenta in una funzione razionale fratta}{12}{tcb@cnt@esempio.1.5.6}%
-\contentsline {subsubsection}{Se si presenta in una funzione irrazionale fratta}{12}{section*.16}%
-\contentsline {subsubsection}{Forma di indecisione $\frac {0}{0}$}{13}{section*.17}%
-\contentsline {subsubsection}{Funzioni razionali fratte}{13}{section*.18}%
-\contentsline {subsubsection}{Funzioni irrazionali fratte}{13}{section*.19}%
-\contentsline {subsection}{\numberline {1.5.5}Forme di indecisione $0^0$, $\infty ^0$, $1^\infty $}{13}{subsection.1.5.5}%
-\contentsline {subsection}{\numberline {1.5.6}Limiti Notevoli}{14}{subsection.1.5.6}%
-\contentsline {paragraph}{$\qopname \relax m{lim}_{x\to +\infty }\left (1+\frac {k}{x}\right )^{x} = e^k$}{16}{section*.21}%
-\contentsline {paragraph}{$\qopname \relax m{lim}_{x\to 0^+}\left (1+kx\right )^{\frac {1}{x}} e^k$}{16}{section*.22}%
+\contentsline {subsubsection}{Se si presenta in una funzione irrazionale fratta}{12}{section*.14}%
+\contentsline {subsubsection}{Forma di indecisione $\frac {0}{0}$}{13}{section*.15}%
+\contentsline {subsubsection}{Funzioni razionali fratte}{13}{section*.16}%
+\contentsline {subsubsection}{Funzioni irrazionali fratte}{13}{section*.17}%
+\contentsline {subsubsection}{Forme di indecisione $0^0$, $\infty ^0$, $1^\infty $}{13}{section*.18}%
+\contentsline {subsection}{\numberline {1.5.5}Limiti Notevoli}{14}{subsection.1.5.5}%
+\contentsline {paragraph}{$\qopname \relax m{lim}_{x\to +\infty }\left (1+\frac {k}{x}\right )^{x} = e^k$}{16}{section*.20}%
+\contentsline {paragraph}{$\qopname \relax m{lim}_{x\to 0^+}\left (1+kx\right )^{\frac {1}{x}} e^k$}{16}{section*.21}%
 \contentsline {section}{\numberline {1.6}Limiti e parametri}{17}{section.1.6}%
 \contentsline {section}{\numberline {1.7}Continuità e discontinuità}{18}{section.1.7}%
 \contentsline {subsection}{\numberline {1.7.1}Discontinuità di prima specie o di salto}{18}{subsection.1.7.1}%
 \contentsline {subsection}{\numberline {1.7.2}Discontinuità di seconda specie}{18}{subsection.1.7.2}%
 \contentsline {subsection}{\numberline {1.7.3}Discontinuità di terza specie o eliminabili}{18}{subsection.1.7.3}%
 \contentsline {subsection}{\numberline {1.7.4}Continuità e funzioni inverse}{19}{subsection.1.7.4}%
-\contentsline {subsubsection}{Continuità della funzione inversa}{19}{section*.27}%
-\contentsline {subsubsection}{Condizione di invertibilità per funzioni continue}{19}{section*.28}%
+\contentsline {subsubsection}{Continuità della funzione inversa}{19}{section*.26}%
+\contentsline {subsubsection}{Condizione di invertibilità per funzioni continue}{19}{section*.27}%
 \contentsline {section}{\numberline {1.8}Teoremi sulle funzioni continue}{20}{section.1.8}%
 \contentsline {subsection}{\numberline {1.8.1}Teorema di Weistrass}{20}{subsection.1.8.1}%
 \contentsline {subsection}{\numberline {1.8.2}Teorema dell'esistenza degli zeri (o di Bolzano)}{20}{subsection.1.8.2}%
@@ -56,7 +56,7 @@
 \contentsline {subsection}{\numberline {2.2.1}Funzione costante}{23}{subsection.2.2.1}%
 \contentsline {subsection}{\numberline {2.2.2}Funzione identità}{23}{subsection.2.2.2}%
 \contentsline {subsection}{\numberline {2.2.3}Funzione potenza}{23}{subsection.2.2.3}%
-\contentsline {subsubsection}{Derivata della funzione radice quadrata}{23}{section*.30}%
+\contentsline {subsubsection}{Derivata della funzione radice quadrata}{23}{section*.29}%
 \contentsline {subsection}{\numberline {2.2.4}Funzione seno}{24}{subsection.2.2.4}%
 \contentsline {subsection}{\numberline {2.2.5}Funzione coseno}{24}{subsection.2.2.5}%
 \contentsline {subsection}{\numberline {2.2.6}Funzione esponenziale}{24}{subsection.2.2.6}%
