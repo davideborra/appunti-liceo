@@ -1,5 +1,5 @@
 # Fdb version 3
-["pdflatex"] 1675961008 "/Users/davideborra/Documents/GitHub/appunti-liceo/analisi-1/main.tex" "main.pdf" "main" 1675961020
+["pdflatex"] 1676287629 "/Users/davideborra/Documents/GitHub/appunti-liceo/analisi-1/main.tex" "main.pdf" "main" 1676287641
   "/Users/davideborra/Documents/GitHub/appunti-liceo/analisi-1/main.tex" 1675960995 94173 638ccf64738433905fda735eda97a9a9 ""
   "/usr/local/texlive/2022/texmf-dist/fonts/enc/dvips/cm-super/cm-super-ts1.enc" 1136849721 2900 1537cc8184ad1792082cd229ecc269f4 ""
   "/usr/local/texlive/2022/texmf-dist/fonts/map/fontname/texfonts.map" 1577235249 3524 cb3e574dea2d1052e39280babc910dc8 ""
@@ -321,10 +321,10 @@
   "/usr/local/texlive/2022/texmf.cnf" 1647878952 577 209b46be99c9075fd74d4c0369380e8c ""
   "CreativeCommons/by-nc-nd.png" 1672951571 20935 a4212c1a42d241a1351fc139b20de70b ""
   "lambdatex.sty" 1675941890 8163 5f661842a8fa46fdb5c2c4235c575b25 ""
-  "main.aux" 1675961019 16289 3d15592bde40ab2691fbe0b18bac2ee2 "pdflatex"
-  "main.out" 1675961019 11210 a6820025ad05606208bd47656b5fb5de "pdflatex"
+  "main.aux" 1676287640 16289 3d15592bde40ab2691fbe0b18bac2ee2 "pdflatex"
+  "main.out" 1676287640 11210 a6820025ad05606208bd47656b5fb5de "pdflatex"
   "main.tex" 1675960995 94173 638ccf64738433905fda735eda97a9a9 ""
-  "main.toc" 1675961019 7343 c6d1340876de52da5299494aabc79247 "pdflatex"
+  "main.toc" 1676287640 7343 c6d1340876de52da5299494aabc79247 "pdflatex"
   (generated)
   "main.aux"
   "main.log"
