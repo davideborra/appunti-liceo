@@ -14,13 +14,13 @@
 \contentsline {subsection}{\numberline {3.1}La funzione lineare}{5}{subsection.3.1}%
 \contentsline {subsection}{\numberline {3.2}La parabola}{5}{subsection.3.2}%
 \contentsline {subsection}{\numberline {3.3}L'iperbole equilatera e la funzione omografica}{5}{subsection.3.3}%
-\contentsline {subsection}{\numberline {3.4}La funzione irrazionale}{5}{subsection.3.4}%
+\contentsline {subsection}{\numberline {3.4}La funzione irrazionale}{6}{subsection.3.4}%
 \contentsline {subsection}{\numberline {3.5}Le funzioni goniometriche}{6}{subsection.3.5}%
 \contentsline {subsubsection}{\numberline {3.5.1}La funzione seno}{6}{subsubsection.3.5.1}%
 \contentsline {subsubsection}{\numberline {3.5.2}La funzione coseno}{6}{subsubsection.3.5.2}%
 \contentsline {subsubsection}{\numberline {3.5.3}La funzione tangente}{6}{subsubsection.3.5.3}%
 \contentsline {subsubsection}{\numberline {3.5.4}La funzione cotangtente}{6}{subsubsection.3.5.4}%
-\contentsline {subsubsection}{\numberline {3.5.5}La funzione arcoseno}{6}{subsubsection.3.5.5}%
+\contentsline {subsubsection}{\numberline {3.5.5}La funzione arcoseno}{7}{subsubsection.3.5.5}%
 \contentsline {subsubsection}{\numberline {3.5.6}La funzione arcocoseno}{7}{subsubsection.3.5.6}%
 \contentsline {subsubsection}{\numberline {3.5.7}La funzione arcotangente}{7}{subsubsection.3.5.7}%
 \contentsline {subsection}{\numberline {3.6}La funzione esponenziale}{7}{subsection.3.6}%
@@ -34,11 +34,11 @@
 \contentsline {subsection}{\numberline {4.3}Funzioni con valori assoluti}{8}{subsection.4.3}%
 \contentsline {subsubsection}{\numberline {4.3.1}Valore assoluto di una funzione}{8}{subsubsection.4.3.1}%
 \contentsline {subsubsection}{\numberline {4.3.2}Funzione di un valore assoluto}{8}{subsubsection.4.3.2}%
-\contentsline {subsubsection}{\numberline {4.3.3}Funzioni con più valori assouti nidificati}{8}{subsubsection.4.3.3}%
+\contentsline {subsubsection}{\numberline {4.3.3}Funzioni con più valori assouti nidificati}{9}{subsubsection.4.3.3}%
 \contentsline {subsubsection}{\numberline {4.3.4}Funzioni con più valori assoluti in sequenza}{9}{subsubsection.4.3.4}%
 \contentsline {subsection}{\numberline {4.4}Reciproco di una funzione}{9}{subsection.4.4}%
 \contentsline {subsection}{\numberline {4.5}Quadrato di una funzione}{11}{subsection.4.5}%
-\contentsline {subsection}{\numberline {4.6}Radice di una funzione}{11}{subsection.4.6}%
+\contentsline {subsection}{\numberline {4.6}Radice di una funzione}{12}{subsection.4.6}%
 \contentsline {subsection}{\numberline {4.7}Esponenziale di una funzione}{12}{subsection.4.7}%
 \contentsline {subsection}{\numberline {4.8}Logaritmo di una funzione}{13}{subsection.4.8}%
 \contentsline {section}{\numberline {5}Studio di funzione completo}{14}{section.5}%
@@ -47,6 +47,6 @@
 \contentsline {subsection}{\numberline {5.3}Simmetrie}{14}{subsection.5.3}%
 \contentsline {subsection}{\numberline {5.4}Intersezioni con gli assi cartesiani}{14}{subsection.5.4}%
 \contentsline {subsection}{\numberline {5.5}Studio del segno}{14}{subsection.5.5}%
-\contentsline {subsection}{\numberline {5.6}Limiti, asintoti e discontinuità}{14}{subsection.5.6}%
+\contentsline {subsection}{\numberline {5.6}Limiti, asintoti e discontinuità}{15}{subsection.5.6}%
 \contentsline {subsection}{\numberline {5.7}Derivata prima}{15}{subsection.5.7}%
 \contentsline {subsection}{\numberline {5.8}Derivata seconda}{15}{subsection.5.8}%
