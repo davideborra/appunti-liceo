@@ -78,3 +78,47 @@
 \contentsline {subsection}{\numberline {2.6.2}Cuspide}{29}{subsection.2.6.2}%
 \contentsline {subsection}{\numberline {2.6.3}Flesso a tangente verticale}{30}{subsection.2.6.3}%
 \contentsline {subsection}{\numberline {2.6.4}Punto a tangente verticale}{30}{subsection.2.6.4}%
+\contentsline {section}{\numberline {2.7}Criterio di derivabilità}{30}{section.2.7}%
+\contentsline {section}{\numberline {2.8}Operazioni con le derivate /2}{31}{section.2.8}%
+\contentsline {subsubsection}{Derivata di $[f(x)]^g(x)$}{31}{section*.34}%
+\contentsline {subsection}{\numberline {2.8.1}Derivata della funzione inversa}{32}{subsection.2.8.1}%
+\contentsline {section}{\numberline {2.9}Derivate notevoli /3}{33}{section.2.9}%
+\contentsline {subsection}{\numberline {2.9.1}Funzione arcoseno}{33}{subsection.2.9.1}%
+\contentsline {subsection}{\numberline {2.9.2}Funzione arcocoseno}{33}{subsection.2.9.2}%
+\contentsline {subsection}{\numberline {2.9.3}Funzione arcotangente}{33}{subsection.2.9.3}%
+\contentsline {subsection}{\numberline {2.9.4}Funzione arcocotangente}{34}{subsection.2.9.4}%
+\contentsline {section}{\numberline {2.10}Il differenziale}{34}{section.2.10}%
+\contentsline {subsection}{\numberline {2.10.1}Un'applicazione del differenziale}{35}{subsection.2.10.1}%
+\contentsline {section}{\numberline {2.11}Teoremi del calcolo differenziale}{35}{section.2.11}%
+\contentsline {subsection}{\numberline {2.11.1}Teorema di Fermat}{35}{subsection.2.11.1}%
+\contentsline {subsection}{\numberline {2.11.2}Teorema di Rolle}{36}{subsection.2.11.2}%
+\contentsline {subsubsection}{Un'applicazione del teorema di Rolle}{37}{section*.37}%
+\contentsline {subsection}{\numberline {2.11.3}Teorema di Lagrange}{37}{subsection.2.11.3}%
+\contentsline {subsection}{\numberline {2.11.4}Conseguenze del teorema di Lagrange}{38}{subsection.2.11.4}%
+\contentsline {subsubsection}{Funzioni con derivata nulla}{38}{section*.38}%
+\contentsline {subsubsection}{Funzioni con derivate uguali}{38}{section*.39}%
+\contentsline {subsubsection}{Monotonia di funzioni derivabili}{38}{section*.40}%
+\contentsline {subsection}{\numberline {2.11.5}Teorema di Cauchy}{38}{subsection.2.11.5}%
+\contentsline {subsection}{\numberline {2.11.6}Teorema di De l'Hôpital}{39}{subsection.2.11.6}%
+\contentsline {section}{\numberline {2.12}Studio della derivata}{40}{section.2.12}%
+\contentsline {subsection}{\numberline {2.12.1}Punti di massimo relativo}{40}{subsection.2.12.1}%
+\contentsline {subsection}{\numberline {2.12.2}Punti di minimo relativo}{40}{subsection.2.12.2}%
+\contentsline {subsection}{\numberline {2.12.3}Punti di flesso a tangente orizzontale}{40}{subsection.2.12.3}%
+\contentsline {section}{\numberline {2.13}Derivata seconda e flessi a tangente obliqua}{41}{section.2.13}%
+\contentsline {section}{\numberline {2.14}Problemi di ottimizzazione}{41}{section.2.14}%
+\contentsline {chapter}{\numberline {3}Studio di funzione completo}{43}{chapter.3}%
+\contentsline {section}{\numberline {3.1}Traccia per lo studio di funzione completo}{43}{section.3.1}%
+\contentsline {subsection}{\numberline {3.1.1}Classificazione}{43}{subsection.3.1.1}%
+\contentsline {subsection}{\numberline {3.1.2}Dominio}{43}{subsection.3.1.2}%
+\contentsline {subsection}{\numberline {3.1.3}Simmetrie}{43}{subsection.3.1.3}%
+\contentsline {subsection}{\numberline {3.1.4}Intersezioni con gli assi cartesiani}{43}{subsection.3.1.4}%
+\contentsline {subsection}{\numberline {3.1.5}Studio del segno}{43}{subsection.3.1.5}%
+\contentsline {subsection}{\numberline {3.1.6}Limiti, asintoti e discontinuità}{44}{subsection.3.1.6}%
+\contentsline {subsection}{\numberline {3.1.7}Derivata prima}{44}{subsection.3.1.7}%
+\contentsline {subsection}{\numberline {3.1.8}Derivata seconda}{45}{subsection.3.1.8}%
+\contentsline {subsection}{\numberline {3.1.9}Estremi globali}{45}{subsection.3.1.9}%
+\contentsline {section}{\numberline {3.2}Esempi}{45}{section.3.2}%
+\contentsline {section}{\numberline {3.3}Esercizi}{49}{section.3.3}%
+\contentsline {chapter}{\numberline {4}Soluzioni degli esercizi}{51}{chapter.4}%
+\contentsline {subsubsection}{Esercizio \ref {exc: sfx 1}}{51}{section*.45}%
+\contentsline {subsubsection}{Esercizio \ref {exc: sfx 2}}{53}{section*.47}%

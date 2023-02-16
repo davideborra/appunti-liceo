@@ -1,0 +1,947 @@
+\chapter{Limiti}
+\section{Intervalli in $\mathbb{R}$}
+\begin{boxdef}
+    Un insieme $A \subset \R$ si dice \textbf{intervallo} se corrisponde ad una semiretta (\textbf{illimitato}) o ad un segmento (\textbf{limitato}) della retta reale
+\end{boxdef}
+Inoltre:
+\begin{itemize}
+    \item si dice \textbf{chiuso} se gli estremi sono inclusi nell'intervallo;
+    \item si dice \textbf{aperto} se gli estremi sono esclusi nell'intervallo.
+\end{itemize}
+Gli intervallo limitati corrispondono a segmenti di retta reale di estremi $a$ e $b$ ($b>a$), lunghezza $b-a$ (detta \textbf{ampiezza} dell'intervallo), \textbf{centro} $\frac{b+a}{2}$ e \textbf{raggio} $\frac{b-a}{2}$.
+\subsection{Intorni}
+\begin{boxdef}
+    Dato numero reale $x_0$, un intorno completo di $x_0$ è un qualunque intervallo aperto contenente $x_0$ \[I(x_0)=]x_0-\delta_1;x_0+\delta_2[ ~~~~~~ (\text{con }\delta_1, \delta_2 \in \R_0^+ )\]
+\end{boxdef}
+\begin{itemize}
+    \item \textbf{Intorno destro}: $I^+(x_0)=]x_0;x_0+\delta[$
+    \item \textbf{Intorno sinistro}: $I^-(x_0)=]x_0-\delta;x_0[$
+\end{itemize}
+\subsubsection{Intorni circolari}
+    \begin{boxdef}
+        Dati un numero reale $x_0$ e un numero reale positivo $\delta$, un intorno circolare di $x_0$ di raggio $\delta$ è l'intervallo aperto $I_\delta (x_0)$ di centro $x_0$ e raggio $\delta$ \[I_\delta(x_0)=]x_0-\delta;x_0+\delta[\]
+    \end{boxdef}
+\subsubsection{Intorni di $\infty$}
+\begin{boxdef}
+    Dati due numeri reali $a$ e $b$ con $a<b$ si definisce 
+    \begin{itemize}
+        \item \textbf{intorno di $-\infty$} un qualsiasi intervallo illimitato inferiormente $]-\infty;a[$
+        \item \textbf{intorno di $+\infty$} un qualsiasi intervallo illimitato superiormente $]b;+\infty[$
+        \item \textbf{intorno di $\infty$} l'unione di un intorno di $-\infty$ e di un intorno di $+\infty$: $]-\infty;a[\  \cup\  ]b;+\infty[$
+    \end{itemize}
+\end{boxdef}
+\subsection{Insiemi limitati e illimitati, maggiorante, minorante, estremi, massimo, minimo.}
+È possibile definire come limitati/illimitati anche insiemi che non sono intervalli. 
+\begin{boxdef}
+    [Insiemi limitati]
+    Un insieme $X\subseteq R$ non vuotoè detto
+    \begin{itemize}
+        \item \textbf{superiormente limitato} se è possibile determinare un qualsiasi numero reale $\alpha$ tale che $\forall x \in X, x\leq \alpha$. $\alpha$ è detto \textbf{maggiorante} di $X$.
+        \item \textbf{inferiormente limitato} se è possibile determinare un qualsiasi numero reale $\beta$ tale che $\forall x \in X, x\geq \beta$. $\beta$ è detto \textbf{minorante} di $X$.
+        \item \textbf{limitato} se è limitato sia superiormente che inferiormente.
+    \end{itemize}
+\end{boxdef}
+\begin{boxdef}
+    [Insiemi illimitati]
+    Un insieme $X\subseteq R$ non vuoto è detto 
+    \begin{itemize}
+        \item \textbf{superiormente illimitato} se $\forall \alpha \in \R, \exists x \in X : x>\alpha$
+        \item \textbf{inferiormente illimitato} se $\forall \beta \in \R, \exists x \in X : x<\beta$
+        \item \textbf{illimitato} si è illimitato sia inferiormente che superiormente.
+    \end{itemize}
+\end{boxdef}
+
+Se un insieme è limitato superiormente/inferiormente è possibile definire minimo e massimo è possibile quindi definire massimo e minimo di un insieme (attenzione, non è detto che tutti gli insiemi limitati ammettano massimo/minimo.)
+\begin{boxdef}[Massimo]
+    Dati un insieme $X\subseteq R$ e un numero reale $M$, esso si dice \textbf{massimo} di $X$ se 
+    \begin{tasks}[label={\roman*)}](2)
+        \task $\forall x\in X, M\geq x $ (è maggiorante)
+        \task $M\in X$ (appartiene all'insieme).
+    \end{tasks}
+    Si indica $M=\max X$.
+\end{boxdef}
+\begin{boxdef}[Minimo]
+    Dati un insieme $X\subseteq R$ e un numero reale $m$, esso si dice \textbf{minimo} di $X$ se 
+    \begin{tasks}[label={\roman*)}](2)
+        \task $\forall x\in X, m\leq x $ (è minorante)
+        \task $m\in X$ (appartiene all'insieme)
+    \end{tasks}
+    Si indica $M=\min X$.
+\end{boxdef}
+Tuttavia non è possibile determinare massimo e minimo per, ad esempio, intervalli aperti. Abbiamo quindi bisogno di qualcos'altro che funzioni sempre, definiamo quindi gli estremi inferiore e superiore di un insieme.
+
+\begin{boxdef}[Estremo superiore]
+    Dato un insieme $X$ superiormente limitato, si dice \textbf{estremo superiore} di $X$ il minimo dei suoi maggioranti
+    \[\inf X = \min\{M\in \R : M \text{ è maggiorante di }X\}\]
+    Se $X$ è superiormente illimitato, si definisce $\sup X = +\infty$.
+\end{boxdef}
+\paragraph{Caratterizzazione di $\sup X$}
+Si dimostra che la seguente definizione di $\sup$ è equivalente alla precedente: dato un insieme $X$ superiormente limitato, un numero reale $M$ si dice estremo superiore di $X$ se e solo se 
+\begin{enumerate}[label={\roman*)}]
+    \item $\forall x\in X, M\geq x $ (è maggiorante)
+    \item $\forall \varepsilon >0 \exists x\in X: x>M-\varepsilon$ (è il minore dei maggioranti)
+\end{enumerate}
+
+\begin{boxdef}[Estremo inferiore]
+    Dato un insieme $X$ inferiormente limitato, si dice \textbf{estremo inferiore} di $X$ il massimo dei suoi minoranti
+    \[\inf X = \max\{m\in \R : m \text{ è minorante di }X\}\]
+    Se $X$ è inferiormente illimitato, si definisce $\inf X = -\infty$.
+\end{boxdef}
+
+\paragraph{Caratterizzazione di $\inf X$}
+Si dimostra che la seguente definizione di $\inf$ è equivalente alla precedente: dato un insieme $X$ inferiormente limitato, un numero reale $m$ si dice estremo inferiore di $X$ se e solo se 
+\begin{enumerate}[label={\roman*)}]
+    \item $\forall x\in X, m\leq x $ (è minorante)
+    \item $\forall \varepsilon >0 \exists x\in X: x<m+\varepsilon$ (è il maggiore dei minoranti)
+\end{enumerate}
+\subsection{Punti di accumulazione e punti isolati}
+\begin{boxdef}[Punto isolato]
+    Sia $x_0\in X\subseteq\R$, allora $x_0$ si definisce punto isolato di $X$ se esiste un intorno $I(x_0)$ che non contiene altri elementi di $X$.
+\end{boxdef}
+\begin{boxdef}[Punto di accumulazione]
+    Sia $ X\subseteq\R$, allora $x_0\in \R$ si definisce punto di accumulazione di $X$ se ogni intorno completo $I(x_0)$ contiene altri infiniti elementi di $X$,\\
+    \textbf{equivalentemente} se ogni intorno completo $I(x_0)$ contiene almeno un altro elemento di $X$.
+\end{boxdef}
+\begin{boxdef}[Insieme derivato]
+    Dato un insieme $A\subseteq R$, si definisce \textbf{insieme derivato} di $A$, l'insieme $DA$ contenente tutti e soli i suoi punti di accumulazione.
+\end{boxdef}
+\begin{ex}[
+    Dato l'insieme \[A =\left\{x\in \R\;\bigg|\;x =\frac{n + 1}{n}, n\in \N_{ > 0}\right\}\]
+    \begin{tasks}(1)
+        \task precisare se è limitato,
+        \task rappresentarlo graficamente,
+        \task determinare $\sup A$ e $\inf A$, specificando se sono massimo e minimo,
+        \task indicare punti di accumulazione e punti isolati.
+    \end{tasks}
+]
+     \begin{enumerate}[label=\textit{\alph*)}]
+        \item Cominciamo espandendo alcuni elementi dell'insieme
+        \[A =\left\{1, \frac{3}{2}, \frac{4}{3}, \frac{5}{4}, \frac{6}{5}, \dots \right\}\]
+        Osserviamo facilmente che è limitato inferiormente superiormente
+        \item Anche qui calcoliamo i primi elementi, in modo da poterli rappresentare:
+        \begin{center}
+            \renewcommand{\arraystretch}{1.5}
+            \everymath{\textstyle}
+            \begin{tabular}[h]{|c||c|c|c|c|c|}
+                \hline
+                $n$&$1$&$2$&$3$&$4$&$5$\\\hline
+                $x$&$2$&$\frac{3}{2}$& $\frac{4}{3}$& $\frac{5}{4}$& $\frac{6}{5}$\\ \hline
+            \end{tabular}\\
+            \begin{tikzpicture}[line cap=round,line join=round,>=triangle 45,x=1.0cm,y=1.0cm]
+                \begin{axis}[
+                x=1.0cm,y=1.0cm,
+                axis lines=middle,
+                ymajorgrids=true,
+                xmajorgrids=true,
+                xmin=-0.5,
+                xmax=10.5,
+                ymin=-0.5,
+                ymax=3.5,
+                xlabel=$n$,
+                ylabel=$x$,
+                xtick={-0.0,1.0,...,10.0},
+                ytick={-0.0,1.0,...,3.0},]
+                \clip(-0.5,-0.5) rectangle (10.5,3.5);
+                \draw[line width=1.pt,dashed,color=teal,smooth,samples=100,domain=1.0000000399999984:10.5] plot(\x,{((\x)+1)/(\x)+0*sqrt((\x)-1)});
+                \draw [line width=1.pt,dashed,color=teal,domain=0.0:10.5] plot(\x,{(--0.5-0.*\x)/0.5});
+                \begin{scriptsize}
+                \draw [fill=teal] (1.,2.) circle (2.5pt);
+                \draw [fill=teal] (2.,1.5) circle (2.5pt);
+                \draw [fill=teal] (3.,1.3333333333333333) circle (2.5pt);
+                \draw [fill=teal] (4.,1.25) circle (2.5pt);
+                \draw [fill=teal] (5.,1.2) circle (2.5pt);
+                \draw [fill=teal] (6.,1.1666666666666667) circle (2.5pt);
+                \draw [fill=teal] (7.,1.1428571428571428) circle (2.5pt);
+                \draw [fill=teal] (8.,1.125) circle (2.5pt);
+                \draw [fill=teal] (9.,1.1111111111111112) circle (2.5pt);
+                \draw [fill=teal] (10.,1.1) circle (2.5pt);
+                \draw [fill=teal] (11.,1.0909090909090908) circle (2.5pt);
+                \draw [fill=teal] (12.,1.0833333333333333) circle (2.5pt);
+                \draw [fill=teal] (13.,1.0769230769230769) circle (2.5pt);
+                \draw [fill=teal] (14.,1.0714285714285714) circle (2.5pt);
+                \draw [fill=teal] (15.,1.0666666666666667) circle (2.5pt);
+                \end{scriptsize}
+                \end{axis}
+                \end{tikzpicture}
+        \end{center}
+        \item Dal disegno si vede chiaramente che \[\sup A = 2 =\max A,\]
+        inoltre osserviamo che \[x =\frac{n + 1}{n} =\frac{n}{n} + \frac{1}{n} = 1 + \frac{1}{n}\underset{n\to +\infty}{\xrightarrow{\hspace{1cm}}}1\]
+        quindi 
+        \[\inf A = 1\qquad\qquad \nexists \min A\]
+        \item Osserviamo che qualsiasi punto dell'insieme consideriamo esiste un suo intorno (ad esempio l'intorno circolare di raggio $\textstyle \frac{1}{2}$), per cui tutti i punti dell'insieme sono punti isolati. Osserviamo inoltre che i punti si \say{addensano} intorno a $1$, per cui ogni intorno di $1$ contiene almeno un punto dell'insieme, per cui $x=1$ è un punto di accumulazione per l'insieme $A$.
+     \end{enumerate}
+\end{ex}
+\section{Definizione di limite}
+\begin{boxdef}[Definizione unificata di limite]
+    Sia $f:X\subset\R\to \R$, $x_0\in \R^\ast$ punto di accumulazione per $X$, allora $l\in \R^\ast$ si dice \underline{limite per $x$ che tende a $x_0$ di $f(x)$} e si scrive
+    \[\lim_{x\to x_0}f(x) = l\qquad\qquad\qquad \left(f(x)\underset{x\to x_0}{\xrightarrow{\hspace{1cm}}}l\right)\]
+    se
+    \[\forall I(l)\ \exists I(x_0) \ :\ f(x)\in I(l)\ \forall x \in I(x_0)\setminus \{x_0\}\]
+\end{boxdef}
+Definiamo inoltre i limiti destro e sinistro, che si ottengono sostituendo nella definizione precedente a $I(x_0)$, 
+\[\begin{array}{lll}
+    \text{Limite sinistro:} & \lim_{x \to x_0^-}f(x) = l \qquad &I^-(x_0)\\
+    \text{Limite destro:} & \lim_{x \to x_0^+}f(x) = l & I^ +(x_0)
+\end{array}\]
+Analogamente definiamo i limiti per eccesso e per difetto, che si ottengono sostituendo nella definizione precedente a $I(l)$, 
+\[\begin{array}{lll}
+    \text{Limite per eccesso:} & \lim_{x \to x_0}f(x) = l^+\qquad &I^ + (l)\\
+    \text{Limite per difetto:} & \lim_{x \to x_0}f(x) = l^-  & I^ - (l)
+\end{array}\]
+
+Vediamo ora qualche applicazione delle definizioni di limite a casi particolari:
+\begin{itemize}
+    \item Limite $+\infty$ per $x\to x_0$: $\lim_{x\to x_0}f(x)=+\infty$
+    \[\forall M > 0\ \exists \delta > 0\ :\ f(x) > M\ \forall x \in ] x_0 -\delta, x_0 +\delta[\]
+    \item Limite finito per $x\to +\infty$: $\lim_{x\to +\infty}f(x)=l$
+    \[\forall \varepsilon > 0\ \exists c > 0\ :\ |f(x) - l |< \varepsilon \ \forall x \in ] c, \infty[\]
+    \item Limite $+\infty$ per $x\to +\infty$: $\lim_{x\to +\infty}f(x)=+\infty$
+    \[\forall M > 0\ \exists c > 0\ :\ f(x) > M\ \forall x \in ] c,\infty[\]
+    \item Limite finito per $x\to x_0$: $\lim_{x\to x_0}f(x)=l$
+    \[\forall \varepsilon > 0\ \exists \delta > 0\ :\ |f(x) - l |< \varepsilon \ \forall x \in ] x_0 -\delta, x_0 + \delta[\]
+\end{itemize}
+
+\begin{ex}[
+    Verificare il seguente limite mediante definizione:
+    \[\lim_{x\to -\infty}\frac{2x - 1}{x + 1} = 2\]
+]
+    Cominciamo determinando il dominio: $\dom f = x+1\neq 0\ \Harr\ x\neq -1$. Ora rappresentiamo il grafico della funzione, osserviamo che si tratta di un'omografica con asintoti $y=2$ e $x=-1$:\\
+    \begin{center}
+        \begin{tikzpicture}[scale=0.8, line cap=round,line join=round,>=triangle 45,x=1.0cm,y=1.0cm]
+            \begin{axis}[
+            x=1.0cm,y=1.0cm,
+            axis lines=middle,
+            ymajorgrids=true,
+            xmajorgrids=true,
+            xmin=-5.5,
+            xmax=5.5,
+            ymin=-2.5,
+            ymax=6.5,
+            xtick={-5.0,-4.0,...,5.0},
+            ytick={-2.0,-1.0,...,6.0},]
+            \clip(-5.5,-2.5) rectangle (5.5,6.5);
+            \draw[line width=1.5pt,color=teal,smooth,samples=100,domain=-5.5:-1.1] plot(\x,{(2*(\x)-1)/((\x)+1)});
+            \draw[line width=1.5pt,color=teal,smooth,samples=100,domain=-0.9:5.5] plot(\x,{(2*(\x)-1)/((\x)+1)});
+            \draw [line width=1.pt,dash pattern=on 3pt off 3pt,color=red] (-1.,-2.5) -- (-1.,6.5);
+            \draw [line width=1.pt,dash pattern=on 3pt off 3pt,color=red,domain=-5.5:5.5] plot(\x,{(--2.-0.*\x)/1.});
+            \draw [color=teal](-2.5518824196978303,4.217038073385454) node[anchor=north west] {$y=\frac{2x - 1}{x + 1}$};
+            \draw (-0.0894460540647984,1.1015799091315117) node[anchor=north west] {$\left(\frac{1}{2},0\right)$};
+            \draw (0.01939091237202069,-0.816671624317422) node[anchor=north west] {$(0,-1)$};
+            \draw [color=red](-0.9601417855593511,6.121684986029785) node[anchor=north west] {$x=-1$};
+            \draw [color=red](4.100777153752737,2.5436697144193627) node[anchor=north west] {$y=2$};
+            \begin{scriptsize}
+            \draw [fill=black] (0.,-1.) circle (2.0pt);
+            \draw [fill=black] (0.5,0.) circle (2.0pt);
+            \end{scriptsize}
+            \end{axis}
+            \end{tikzpicture}
+    \end{center}
+    Recuperiamo la definizione di limite
+    \[\forall \varepsilon > 0\ \exists I( -\infty)\ :\ \left|\frac{2x - 1}{x + 1} - 2\right|<\varepsilon \ \forall x \in I( -\infty)\]
+    e svolgiamo la disequazione.
+    \[\begin{cases} \left|\frac{2x - 1}{x + 1} - 2\right|<\varepsilon\\x\neq - 1 \end{cases}\qquad \begin{cases}\left|\frac{\cancel{2x} - 1 - \cancel{2x} - 2}{x + 1}\right|<\varepsilon \\ x\neq - 1\end{cases}\]
+    \[\begin{cases}[2] -\frac{3}{x + 1} <\varepsilon \\  -\frac{3}{x + 1} >-\varepsilon\\x\neq 0\end{cases}\qquad \begin{cases}[2] \frac{ -3 -\varepsilon x -\varepsilon}{x + 1} < 0 \\  \frac{ -3 +\varepsilon x +\varepsilon}{x + 1} > 0\\x\neq 0\end{cases} \]
+    Separando le due disequazioni
+    \begin{enumerate}[label={\Roman*)\ \ }]
+        \item $\frac{ -3 -\varepsilon x -\varepsilon}{x + 1} < 0$\\
+        \begin{tikzpicture}
+            \node at (0,0.4) [anchor=west]{$-3 -\varepsilon x -\varepsilon>0$};
+            \node at (0,-0.4)[anchor=west]{$x+1>0$};
+            \node at (4,0.4)[anchor=west]{$x<-1-\frac{3}{\varepsilon}$};
+            \node at (4,-0.4)[anchor=west]{$x>-1$};
+            \draw[->] (7.5,1)--(11.5,1);
+            \draw (8.75,1)node [above]{$\textstyle-1-\frac{3}{\varepsilon}$}--(8.75,-1);
+            \draw (10.25,1) node [above]{$\textstyle-1$}--(10.25,-1);
+            \draw[color=red] (7.5, 0.4)--(8.75,0.4) node {$\circ$};
+            \draw[color=red, dashed] (8.75, 0.4)--(11.5,0.4);
+            \draw[color=red, dashed] (7.5, -0.4)--(10.25,-0.4) node{$\circ$};
+            \draw[color=red] (10.25, -0.4)--(11.5,-0.4);
+            \node [color=red]at (8.125,-0.8){$\ominus$};
+            \node [color=red]at (9.5,-0.8){$+$};
+            \node [color=red]at (11,-0.8){$\ominus$};
+            \node at (9.5,-1.6){$x <- 1 -\frac{3}{\varepsilon}\ \ \lor\ \ x > 1$};
+        \end{tikzpicture}
+        \item $\frac{ -3 +\varepsilon x +\varepsilon}{x + 1} > 0$\\
+        \begin{tikzpicture}
+            \node at (0,0.4) [anchor=west]{$-3 +\varepsilon x +\varepsilon>0$};
+            \node at (0,-0.4)[anchor=west]{$x+1>0$};
+            \node at (4,0.4)[anchor=west]{$x>-1+\frac{3}{\varepsilon}$};
+            \node at (4,-0.4)[anchor=west]{$x>-1$};
+            \draw[->] (7.5,1)--(11.5,1);
+            \draw (8.75,1)node [above]{$\textstyle-1$}--(8.75,-1);
+            \draw (10.25,1) node [above]{$\textstyle-1+\frac{3}{\varepsilon}$}--(10.25,-1);
+            \draw[color=red, dashed] (7.5, 0.4)--(10.25,0.4) node{$\circ$};
+            \draw[color=red] (10.25, 0.4)--(11.5,0.4);
+            \draw[color=red] (7.5, -0.4)--(8.75,-0.4) node {$\circ$};
+            \draw[color=red, dashed] (8.75, -0.4)--(11.5,-0.4);
+            \node [color=red]at (8.125,-0.8){$\oplus$};
+            \node [color=red]at (9.5,-0.8){$-$};
+            \node [color=red]at (11,-0.8){$\oplus$};
+            \node at (9.5,-1.6){$x <- 1\ \ \lor\ \ x >- 1 +\frac{3}{\varepsilon}$};
+        \end{tikzpicture}
+    \end{enumerate}
+    In conclusione
+    \[\begin{cases} 
+        x <- 1 -\frac{3}{\varepsilon} \lor x > 1\\
+        x <- 1 \lor x >- 1 +\frac{3}{\varepsilon}\\
+        x\neq - 1
+    \end{cases}\qquad 
+    x <- 1 -\frac{3}{\varepsilon} \lor x >- 1 +\frac{3}{\varepsilon}
+    \]
+    Che contiene un intorno di $-\infty$, $I(-\infty)=\;\left]-\infty, - 1 -\frac{3}{\varepsilon}\right[$. Il limite è quindi verificato.
+\end{ex}
+\subsection{Asintoti}
+\begin{table}[h]
+    \centering
+    \begin{tabular}{|m{0.25\textwidth}|m{0.4\textwidth}|m{0.25\textwidth}|}
+            \hline
+            \textbf{Tipologia} & \textbf{Condizioni} & \textbf{Asintoto}\\
+            \hline
+            Asintoto verticale&  \[\lim_{x\rightarrow x_0} f(x) = \infty\] & \[x= x_0\]\\\hline
+            Asintoto orizzontale & \[\lim_{x\rightarrow \infty} f(x) = l\] & \[y=l\]\\ \hline
+            Asintoto obliquo & \[\textnormal{CN: }\lim_{x\rightarrow\infty}f(x) = \infty\]
+            \[m=\lim_{x\rightarrow\infty}\frac{f(x)}{x} \qquad ~q=\lim_{x\rightarrow\infty}\left[f(x)-mx\right]\] & \[y=mx+q\] \\ \hline
+    \end{tabular}
+\end{table}
+    \textbf{NB.:} Una funzione può avere anche infiniti asintoti verticali, ma al massimo due tra asintoti orizzontali e asintoti obliqui (uno destro e uno sinistro).
+\section{Continuità}
+\begin{boxdef}
+    Sia $f(x)$ una funzione definita in un intervallo $]a;b[$ e $x_0$ un punto appartenente all'intervallo. $f(x)$ è continua in $x_0$ se e solo se \[\lim_{x\to x_0}f(x)=f(x_0)\]
+    La funzione è inoltre continua in $]a;b[$ se è continua in ogni punto $x_0$ dell'intervallo.
+\end{boxdef}
+Si parla anche di funzioni
+\begin{itemize}
+    \item \textbf{continue da destra} $x_0$ quando $\lim_{x\to x_0^+}f(x)=f(x_0)$
+    \item \textbf{continue da sinistra} $x_0$ quando $\lim_{x\to x_0^-}f(x)=f(x_0)$
+\end{itemize}
+\section{Primi teoremi sui limiti}
+\textbf{N.B.:} I seguenti teoremi valgono per ogni tipologia di limite, sia finito che infinito, e in ogni intorno, sia di un numero reale (anche destro e sinistro) sia di infinito.
+    \subsection{Teorema di unicità del limite}
+        \begin{shadedTheorem}[Unicità del limite]
+            Se una funzione $f(x)$ ha limite finito per $x$ che tende a $x_0$, allora tale limite è unico.
+        \end{shadedTheorem}
+        \begin{tabular}{m{0.48\textwidth}m{0.48\textwidth}}
+            \textit{Ipotesi} & \textit{Tesi}  \\
+            $\displaystyle\lim_{x\rightarrow x_0}f(x) = l$ & $l$ è unico
+        \end{tabular}
+        
+        \begin{proof}
+        Si procede per assurdo. Si supponga che 
+        \[\lim_{x\rightarrow x_0}f(x) = l~~~~\land~~~~ \lim_{x\rightarrow x_0}f(x) = l'\]
+        con $l\neq l'$ e $l<l'$.
+        Siccome $\varepsilon$ è una quantità arbitraria è possibile porre \[0<\varepsilon<\frac{l-l'}{2}\]
+        Si applicano ora le definizioni di limite:
+        \[\forall \varepsilon > 0 ~~\exists I(x_0) : |f(x)-l|<\varepsilon~~\forall x \in I(x_0), x\neq x_0\]
+        \[\forall \varepsilon > 0 ~~\exists I(x_0) : |f(x)-l'|<\varepsilon~~\forall x \in I(x_0), x\neq x_0\]
+        Siccome l'intersezione di due intorni di $x_0$ è ancora un intorno di $x_0$, devono valere entrambe le definizioni:
+        \[\left\{\begin{array}{l}
+            l-\varepsilon < f(x) < l+\varepsilon\\
+            l'-\varepsilon < f(x) < l'+\varepsilon 
+        \end{array}\right.\]
+        \\Ricordando che $l-\varepsilon<l'-\varepsilon < l+\varepsilon < l'+\varepsilon$ si ottiene:
+        \[l'-\varepsilon < f(x) < l+\varepsilon\]
+        \[l'-\varepsilon < l+\varepsilon\]
+        \[-2\varepsilon<l-l'\]
+        \[2\varepsilon > l'-l\]
+        \[\varepsilon > \frac{l'-l}{2}\]
+        Assurdo: contrasta con quanto posto all'inizio. L'ipotesi per assurdo è falsa, quindi la tesi è dimostrata.\\
+        \end{proof}
+        
+    \subsection{Teorema di permanenza del segno}
+        \begin{shadedTheorem}[Permanenza del segno]
+            Se il limite di un funzione per $x$ che tende a $x_0$ è un numero $l$ diverso da 0, allora esiste un intorno $I(x_0)$ escluso al più $x_0$ in cui $f(x)$ e $l$ sono entrambi positivi o entrambi negativi.
+        \end{shadedTheorem}
+        \begin{tabular}{m{0.48\textwidth}m{0.48\textwidth}}
+            \textit{Ipotesi} & \textit{Tesi}  \\
+            $\displaystyle\lim_{x\rightarrow x_0}f(x) = l ~~ \land ~~ l\neq 0$ & $\exists I(x_0) : f(x) \text{ e } l \text{ sono concordi}~~\forall x \in I(x_0), x\neq x_0$
+        \end{tabular}
+        
+        \begin{proof}
+        Espando l'ipotesi:
+        \[\forall \varepsilon > 0 ~~\exists I(x_0) : |f(x)-l|<\varepsilon~~\forall x \in I(x_0), x\neq x_0\]
+        Siccome $\varepsilon$ è un numero positivo arbitrario pongo 
+        \[\varepsilon = |l|\]
+        \[|f(x)-l|<\varepsilon\]
+        \[-\varepsilon <f(x)-l<\varepsilon\]
+        \[l-\varepsilon<f(x)<l+\varepsilon\]
+        \begin{itemize}
+            \item se $l>0 \rightarrow \varepsilon =l$
+            \[l-l<f(x)<l+l\]
+            \[0<f(x)<2l\]
+            da cui la tesi\[f(x)>0\]
+            \item se $l<0 \rightarrow \varepsilon =-l$
+            \[l+l<f(x)<l-l\]
+            \[2l<f(x)<0\]
+            da cui la tesi\[f(x)<0\]
+        \end{itemize}
+        \end{proof}
+        
+        \begin{shadedTheorem}[Inverso della permanenza del segno]
+            Se una funzione $f(x)$ ammette limite finito $l$ per $x$ che tende a $x_0$ e in un intorno $I(x_0)$ escluso al più $x_0$ è 
+            \begin{itemize}
+                \item positiva o nulla, allora $l\geq 0$;
+                \item negativa o nulla, allora $l\leq 0$.
+            \end{itemize}
+        \end{shadedTheorem}
+        
+    \subsection{Teorema del confronto (o dei due carabinieri)}
+        \begin{shadedTheorem}[Confronto]
+            Siano $g(x)$, $f(x)$ e $h(x)$ tre funzioni definite in uno stesso intorno $I(x_0)$, escluso al più $x_0$. Se per ogni $x\in I(x_0)$ è verificato che \[g(x)\leq f(x) \leq h(x)\]
+            e \[\lim_{x\rightarrow x_0} g(x)=l ~~ \land ~~ \lim_{x\rightarrow x_0} h(x)=l\]
+            allora è verificato che
+            \[\lim_{x\rightarrow x_0} f(x)=l\].
+        \end{shadedTheorem}
+        \begin{tabular}{m{0.45\textwidth}m{0.45\textwidth}}
+            \textit{Ipotesi} & \textit{Tesi}  \\
+            \begin{enumerate}
+                \item $g(x)$, $f(x)$ e $h(x)$ tre funzioni definite nello stesso intorno $I(x_0)$
+                \item $\forall x \in I(x_0) ~~ g(x)\leq f(x) \leq h(x)$
+                \item $\displaystyle\lim_{x\rightarrow x_0} g(x)=l ~~ \land ~~ \lim_{x\rightarrow x_0} h(x)=l$
+            \end{enumerate} & \[\lim_{x\rightarrow x_0} f(x)=l\]\\
+        \end{tabular}
+        
+        \begin{proof}
+            Espando l'ipotesi 3:
+            \[\forall \varepsilon > 0 ~~\exists I(x_0) : |g(x)-l|<\varepsilon~~\forall x \in I(x_0), x\neq x_0\]
+            \[\forall \varepsilon > 0 ~~\exists I(x_0) : |h(x)-l|<\varepsilon~~\forall x \in I(x_0), x\neq x_0\]
+            Di conseguenza 
+            \[l-\varepsilon < g(x) <l+\varepsilon\]
+            \[l-\varepsilon < h(x) <l+\varepsilon\]
+            da cui, per ipotesi 1, 
+            \[l-\varepsilon < g(x)\leq h(x) <l+\varepsilon\]
+            \[l-\varepsilon < g(x) \leq f(x) \leq h(x) <l+\varepsilon\]
+            \[l-\varepsilon < f(x) <l+\varepsilon\]
+            La precedente scrittura è equivalente a 
+            \[|f(x)-l|<\varepsilon\]
+            da cui la tesi.\\
+        \end{proof}
+\section{Calcolo dei limiti}
+\subsection{Funzioni continue e funzioni elementari}
+Il limite per $x\to x_0$ di una funzione $f(x)$ continua in $x_0$ è il valore della funzione in $x_0$, 
+\[\lim_{x\to x_0}f(x) = f(x_0).\]
+Il limite di una funzione elementare può essere ricavato dall'analisi del suo grafico, ad esempio
+\[\lim_{x\to -\infty}x^2=+\infty \qquad \qquad \lim_{x\to +\infty}x^2=+\infty\]
+\subsection{Algebra dei limiti}
+\begin{shadedTheorem}
+    Siano $f(x)$, $g(x)$ due funzioni definite in un intorno $I(x_0)\setminus \{x_0\}$ tali che
+    \[\lim_{x\to x_0}f(x)=l\qquad \qquad \lim_{x\to x_0}g(x)=m\]
+    con $l,m\in \R$, $x_0\in \R^\ast$, allora
+    \[\renewcommand{\arraystretch}{2}
+        \begin{array}{cr}
+        \lim_{x\to x_0}\left[ f(x) + g(x) \right] = l + m\\
+        \lim_{x\to x_0}\left[ f(x) - g(x) \right] = l - m\\
+        \lim_{x\to x_0}\left[ f(x) \cdot g(x) \right] = l \cdot m\\
+        \lim_{x\to x_0}\left[ \frac{f(x)}{g(x)} \right] = \frac{l}{m}\\
+        \lim_{x\to x_0}\left[ \frac{1}{g(x)} \right] = \frac{1}{m}\\
+        \lim_{x\to x_0}\left[ k\cdot f(x)\right] = k\cdot l & \qquad\text{ con }k\in \R\\
+        \lim_{x\to x_0}\left[ f(x) \right]^n = l^n & \text{ con }n\in \R\setminus\{0\}
+    \end{array}\]
+\end{shadedTheorem}
+\begin{shadedTheorem}
+    Siano $f(x)$, $g(x)$ due funzioni definite in un intorno $I(x_0)\setminus \{x_0\}$ tali che
+        \[\lim_{x\to x_0}f(x)=l\qquad \qquad \lim_{x\to x_0}g(x)=m\]
+        con $l,m\in \R^\ast$, $x_0\in \R^\ast$, allora\\
+        \begin{itemize}
+            \item \textbf{Somma}
+            \[\begin{array}{|c|c|c|}
+                \hline
+                \lim_{x\to x_0}f(x)& \lim_{x\to x_0}g(x)& \lim_{x\to x_0}\left[ f(x)+g(x) \right] \\ \hline\hline
+                l & +\infty & +\infty\\
+                l & -\infty & -\infty\\
+                +\infty & +\infty & +\infty\\
+                -\infty & -\infty & -\infty\\
+                +\infty & -\infty & F. I. \\\hline
+            \end{array}\]
+            \item \textbf{Prodotto}
+            \[\begin{array}{|c|c|c|}
+                \hline
+                \lim_{x\to x_0}f(x)& \lim_{x\to x_0}g(x)& \lim_{x\to x_0}\left[ f(x)\cdot g(x) \right] \\ \hline\hline
+                l & \infty & \infty\\
+                \infty & \infty & \infty\\
+                0 & \infty & F. I. \\\hline
+            \end{array}\]
+            tenendo conto della regola dei segni;
+            \item \textbf{Rapporto}
+            \[\begin{array}{|c|c|c|}
+                \hline
+                \lim_{x\to x_0}f(x)& \lim_{x\to x_0}g(x)& \lim_{x\to x_0}\left[ \frac{f(x)}{g(x)} \right] \\ \hline\hline
+                l & \infty & 0\\
+                l &  0 &\infty \\
+                \infty & l & \infty\\
+                0 & l & 0\\
+                0 & 0 & F. I. \\
+                \infty & \infty & F. I. \\\hline
+            \end{array}\]
+            tenendo conto della regola dei segni;
+            \item \textbf{Potenza}
+            \[\begin{array}{|c|c|c|}
+                \hline
+                \lim_{x\to x_0}f(x)& \lim_{x\to x_0}g(x)& \lim_{x\to x_0}\left[ f(x) \right]^{g(x)} \\ \hline\hline
+                            & 0         & 1  ~~(0^0~ F.I.)  \\
+                0\leq l < 1 &  +\infty  & 0^+    \\
+                            & -\infty   & +\infty    \\\hline
+                            & 0         & 1 ~~(\infty^0~F.I.) \\
+                l\geq 1     & +\infty   & +\infty     \\
+                            & -\infty   & 0^+     \\\hline
+            \end{array}\]
+        \end{itemize}
+\end{shadedTheorem}
+
+
+\subsection{Mediante il teorema del confronto}
+
+\begin{ex}[Si calcoli il valore di $\lim_{x\to +\infty}\frac{\sin x}{x}$]
+    Prima di tutto ricordiamo che per definizione di seno $-1\leq \sin x \leq 1$. Siccome stiamo lavorando in un intorno di $+\infty$, possiamo considerare $x>0$, quindi posso dividere tutti i membri per x, ottenendo \[-\frac{1}{x}\leq \frac{\sin x}{x}\leq \frac{1}{x}.\] Siamo quindi riusciti a ricostruire nel membro centrale della disequazione la funzione cercata. Calcoliamo ora i limiti degli estremi:
+    \[\lim_{x\to +\infty}\frac{1}{x}=\left[\frac{1}{+\infty}\right]=0^+ ~~~~~~
+    \lim_{x\to +\infty}-\frac{1}{x}=\left[-\frac{1}{+\infty}\right]=0^-.\]
+    Di conseguenza, per il teorema del confronto \[\lim_{x\to + \infty} \frac{\sin x}{x}=0\]
+\end{ex}
+
+\subsection{Forme di indecisione (o forme indeterminate)}
+\subsubsection{Forma di indecisione $+\infty-\infty$}
+\subsubsection{Se si presenta in una funzione polinomiale}
+Per superare queste forme di indecisione, in generale occorre raccogliere il termine di grado massimo. In alternativa esiste una regola pratica ottenuta tramite l'applicazione della gerarchia degli infiniti. In questo caso si considera semplicemente il termine di grado massimo perché il contributo degli altri è trascurabile rispetto ad esso.
+\begin{ex}[Calcolare $\lim_{x\to +\infty}(x^2-3x^4+5)$]
+\[\begin{aligned}\lim_{x\to +\infty}(x^2-3x^4+5)&=[-\infty+\infty]\overset{\mathrm{FI}}{=}\lim_{x\to +\infty}x^4\left( {\frac{1}{x^2}} -3+\frac{5}{x^5}\right)=\left[ +\infty \left( \cancel{\frac{1}{+\infty}^0}-3+\cancel{\frac{5}{+\infty}^0 }\right) \right]=\\&=[-3(+\infty)]=-\infty\end{aligned}\]
+infatti sostituendo dopo aver raccolto ottengo che alcuni termini vanno a 0. Oppure, applicando la regola pratica
+\[\lim_{x\to +\infty}(x^2-3x^4+5)=[-\infty+\infty]\overset{\mathrm{FI}}{=}\lim_{x\to +\infty}(-3x^4)=-\infty\]
+\end{ex}
+\subsubsection{Se si presenta in una funzione irrazionale}
+In questo caso si procede raccogliendo il termine doi grado massimo nel radicando, portandolo fuori dal segno di radice e poi raccogliendo nuovamente il termine di grado massimo. Oppure si può procedere applicando la gerarchia al radicando e portando fuori dal segno di radice il termine di grado massimo (si ricorda che $\sqrt{x^{2n}}=|x^n|$). A questo punto dovremmo esserci ricondotti al caso precedente. 
+\begin{ex}[Calcolare $\lim_{x\to +\infty}\left(\sqrt{x^2+3}-2x\right)$]
+\[\begin{aligned}\lim_{x\to +\infty}\left(\sqrt{x^2+3}-2x\right)=[-\infty+\infty]\overset{\mathrm{FI}}{=}\lim_{x\to +\infty}\left(\sqrt{x^2\left( 1+\frac{3}{x^2} \right)}-2x\right)=\lim_{x\to +\infty}\left(|x|\sqrt{1+\frac{3}{x^2}}-2x\right) =\\= \lim_{x\to +\infty}\left(x\sqrt{1+\frac{3}{x^2}}-2x\right) =\lim_{x\to +\infty}x\left( \sqrt{1+\frac{3}{x^2}-2} \right)=\left[ +\infty\left(\sqrt{1+\cancel{\frac{3}{+\infty}^0}} -2\right)\right]=-\infty\end{aligned}\]
+oppure, applicando la regola pratica,
+\[\begin{aligned}\lim_{x\to +\infty}\left(\sqrt{x^2+3}-2x\right)&=[-\infty+\infty]\overset{\mathrm{FI}}{=}\lim_{x\to +\infty}\left(\sqrt{x^2}-2x\right)=\lim_{x\to +\infty}(|x|-2x) = \lim_{x\to +\infty}(x-2x) = \\&=\lim_{x\to +\infty}-x=-\infty\end{aligned}\]
+\end{ex}
+\paragraph{Se il termine sotto radice è il quadrato del termine fuori}
+In questo caso, se procedo come nel precedente si origina un'altra forma di indecisione, per cui la soluzione è razionalizzare.
+\begin{ex}[Calcolare $\lim_{x\to +\infty}\left(\sqrt{x^2+3}-2x\right)$]
+\[\begin{aligned}\lim_{x\to +\infty}\left(\sqrt{4x^2+3}-2x\right)&=[-\infty+\infty]\overset{\mathrm{FI}}{=}\lim_{x\to +\infty}\frac{\left(\sqrt{4x^2+3}-2x\right)\left(\sqrt{4x^2+3}+2x\right)}{\sqrt{4x^2+3}+2x} = \\ &=\lim_{x\to +\infty}\frac{4x^2+3-4x^2}{\sqrt{4x^2+3}+2x}=\lim_{x\to +\infty}\frac{3}{\sqrt{4x^2+3}+2x}=\left[\frac{3}{+\infty+\infty}\right]=0^ +\end{aligned}\]
+\end{ex}
+\subsubsection{Forma di indecisione $0\cdot \infty$}
+Per risolvere questa forma di indecisione è necessario modificare l'espressione analitica della funzione di partenza in modo da rimuovere l'origine della forma di indecisione.
+\begin{ex}[Calcolare $\lim_{x\to\frac{3}{2}\pi}\sin^2\left(\frac{3}{2}\pi-x\right)\tg^2x$]
+\[\lim_{x\to\frac{3}{2}\pi}\sin^2\left(\frac{3}{2}\pi-x\right)\tg^2x=\left[\sin 0 \cdot \tg \frac{3}{2}\pi\right]=[0\cdot \infty]\overset{\mathrm{FI}}{ = }\]
+Ricordando che (per gli angoli associati) $\textstyle\sin^2\left(\frac{3}{2}\pi-x\right)= \left[\sin\left(\frac{3}{2}\pi-x\right)\right]^2=[-\cos x]^2=\cos^2 x$, è possibile riscrivere la funzione come \\ 
+\[=\lim_{x\to\frac{3}{2}\pi}\cos^2x~\tg^2x = \lim_{x\to\frac{3}{2}\pi} \cancel{\cos^2x}\cdot\frac{\sin^2x}{\cancel{\cos^2x}}=\left[ \sin^2 \left( \frac{3}{2}\pi \right)=1\right]\]
+\end{ex}
+\subsubsection{Forma di indecisione $\frac{\infty}{\infty}$}
+Si procede raccogliendo il termine di grado massimo (o applicando la gerarchia) sia a numeratore che a denominatore e poi semplificando.
+\paragraph{Se si presenta in una funzione razionale fratta}
+\begin{ex}[Calcolare $\lim_{x\to +\infty}\frac{3x^4-5x^3+2x-1}{5-2x^4-3x^2}$]
+\[\lim_{x\to +\infty}\frac{3x^4-5x^3+2x-1}{5-2x^4-3x^2}=\left[\frac{\infty}{\infty}\right]\overset{\mathrm{FI}}{=}\lim_{x\to +\infty}\frac{\cancel{x^4}\left( 3-\frac{5}{x}+\frac{2}{x^2}-\frac{1}{x^4} \right)}{\cancel{x^4}\left(\frac{5}{x^4} -2 -\frac{3}{x^2}\right)}=\left[ \frac{ 3-\cancel{\frac{5}{+\infty}}+\cancel{\frac{2}{+\infty}}-\cancel{\frac{1}{+\infty}}}{\cancel{\frac{5}{+\infty}} -2 -\cancel{\frac{3}{+\infty}}} \right]=-\frac{3}{2}\]
+oppure
+\[\lim_{x\to +\infty}\frac{3x^4-5x^3+2x-1}{5-2x^4-3x^2}=\left[\frac{\infty}{\infty}\right]\overset{\mathrm{FI}}{=}\lim_{x\to +\infty}\frac{3x^4}{-2x^4}=-\frac{3}{2}\]
+\end{ex}
+\textbf{N.B.:} Anche se sia a numeratore che a denominatore si presentano forme di indecisione $-\infty+\infty$ prevale la forma di indecisione $\frac{\infty}{\infty}$
+\subsubsection{Se si presenta in una funzione irrazionale fratta}
+\begin{ex}[Calcolare $\lim_{x\to +\infty}\frac{1+\sqrt{x^2+1}}{x}$]
+\[\begin{aligned}\lim_{x\to +\infty}\frac{1+\sqrt{x^2+1}}{x}&=\left[\frac{\infty}{\infty}\right]\overset{\mathrm{FI}}{=}\lim_{x\to +\infty}\frac{1+\sqrt{x^2\left( 1+\frac{1}{x^2} \right)}}{x}=\lim_{x\to +\infty}\frac{1+|x|\sqrt{1+\frac{1}{x^2}}}{x}=\\&=\lim_{x\to +\infty}\frac{1+x\sqrt{1+\frac{1}{x^2}}}{x}=\lim_{x\to +\infty}\frac{\cancel{x}\left( \frac{1}{x} +\sqrt{1+\frac{1}{x^2}}\right)}{\cancel{x}}=\left[ \cancel{\frac{1}{+\infty}} +\sqrt{1+\cancel{\frac{1}{+\infty}}} \right] =1\end{aligned}\]
+oppure
+\[\lim_{x\to +\infty}\frac{1+\sqrt{x^2+1}}{x}=\left[\frac{\infty}{\infty}\right]\overset{\mathrm{FI}}{=}\lim_{x\to +\infty}\frac{1+\sqrt{x^2}}{x}=\lim_{x\to +\infty}\frac{1+|x|}{x}=\lim_{x\to +\infty}\frac{1+x}{x}=\lim_{x\to +\infty}\frac{x}{x}= 1\]
+\end{ex}
+\subsubsection{Forma di indecisione $\frac{0}{0}$}
+\subsubsection{Funzioni razionali fratte}
+In generale si risolve scomponendo e semplificando
+\begin{ex}[Calcolare $\lim_{x\to 2} \frac{3x^2-6x}{x^2-4}$]
+\[\lim_{x\to 2} \frac{3x^2-6x}{x^2-4}= \left[\frac{0}{0}\right]\overset{\mathrm{FI}}{=}\lim_{x\to 2}\frac{3x\cancel{(x-2)}}{{\cancel{(x-2)}}(x+2)}=\left[\frac{6}{4}\right]=\frac{3}{2}\]
+\end{ex}
+\subsubsection{Funzioni irrazionali fratte}
+In generale si risolve razionalizzando, scomponendo e semplificando
+\begin{ex}[Calcolare $\lim_{x\to 4}\frac{\sqrt{x}-2}{x^2-3x-4}$]
+\[\begin{aligned}\lim_{x\to 4}\frac{\sqrt{x}-2}{x^2-3x-4}&= \left[\frac{0}{0}\right]\overset{\mathrm{FI}}{=}\lim_{x\to 4}\frac{(\sqrt{x}-2)(\sqrt{x}+2)}{(x^2-3x-4)(\sqrt{x}+2)}=\lim_{x\to 4}\frac{\cancel{x-4}}{\cancel{(x-4)}(x+1)(\sqrt{x}+2)} =\\&=\lim_{x\to 4}\frac{1}{(x+1)(\sqrt{x}+2)}=\frac{1}{20}\end{aligned}\]
+\end{ex}
+\begin{ex}[Calcolare $\lim_{x\to27^+}\frac{x-27}{\sqrt[3]{x}-3}$]
+\[\lim_{x\to27^+}\frac{x-27}{\sqrt[3]{x}-3}=\left[\frac{0}{0}\right]\overset{\mathrm{FI}}{=}\lim_{t\to3^+}\frac{t^3-27}{t-3}=\lim_{t\to3^+}\frac{\cancel{(t-3)}(t^2+3t+9)}{\cancel{t-3}}=\lim_{t\to3^+}(t^2+3t+9)=27\]
+Pongo $\begin{array}{ll}
+    t=\sqrt[3]{x}~~~~~ &  x\to27^+\\
+    x=t^3 & t\to 3^+
+\end{array}$
+\end{ex}
+\subsubsection{Forme di indecisione $0^0$, $\infty^0$, $1^\infty$}
+Generalmente si risolvono applicando l'uguaglianza \[\left[f(x)\right]^{g(x)}=e^{g(x)\ln f(x)}\]
+e successivamente applicando all'esponente i metodi risolutivi visti in precedenza.
+\begin{ex}[Calcolare $\lim_{x\to0^+}(2x)^{\frac{2}{\ln(2x)}}$]
+\[\lim_{x\to0^+}(2x)^{\frac{2}{\ln(2x)}}=\left[0^\frac{2}{-\infty}\right]=\left[0^0\right]\overset{\mathrm{FI}}{=}\lim_{x\to0^+}e^{\frac{2}{\ln(2x)}\ln(2x)}=e^2\]
+\end{ex}
+\begin{ex}[Calcolare $\lim_{x\to+\infty}x^\frac{1}{\ln x}$]
+\[\lim_{x\to+\infty}x^\frac{1}{\ln x}=\left[\infty^0\right]\overset{\mathrm{FI}}{=}\lim_{x\to+\infty}e^{\frac{1}{\ln x}\ln x}=e\]
+\end{ex}
+\begin{ex}[Calcolare $\lim_{x\to 0^+}\left(\frac{x^2}{4}\right)^\frac{1}{3\ln x}$]
+\[\begin{aligned}\lim_{x\to 0^+}\left(\frac{x^2}{4}\right)^\frac{1}{3\ln x}&=\left[0^\frac{1}{-\infty}\right]=\left[0^0\right]\overset{\mathrm{FI}}{=}\lim_{x\to0^+}e^{\ln\left(\frac{x^2}{4}\right)\frac{1}{3\ln x}}=\lim_{x\to0^+}e^{\frac{\ln x^2-\ln4}{3\ln x}} =\\&=\lim_{x\to0^+}e^{\frac{2\ln x}{3\ln x}-\frac{\ln4}{3\ln x}}=\left[e^{\frac{2}{3}+0}\right]=e^\frac{2}{3}\end{aligned}\]
+\end{ex}
+\subsection{Limiti Notevoli}
+\begin{itemize}
+\item {$\lim_{x\to 0}\frac{\sin x}{x}=1$}
+\begin{proof}
+    \[\frac{\sin -x}{-x}=\frac{-\sin x}{-x}=\frac{\sin x}{x}\]
+    Siccome la funzione è pari la dimostrazione si svolge solo per $x\to 0^+$. Sulla circonferenza goniometrica considero un angolo $x$. Siccome $x \to 0^+$ posso imporre la condizione $0<x<\frac{pi}{2}$\\
+    \begin{figure}[h]
+        \centering
+            \begin{tikzpicture}[scale=1.8]
+                \draw[->] (0,-1.5)--(0,1.5) node[left]{$y$};
+                \draw[->] (-1.5,0)--(1.5,0) node[below]{$x$};
+                \draw(0,0) circle (1);
+                \draw(-1.5,-1)--(1.5,1);
+                \draw(0.5,0) arc (0:33.7:0.5) node [right]{$x$};
+                \draw[dashed](0.83,0.55) node [above] {$P~~$}to (0.83,0) node [below] {$B~$};
+                \draw[dashed](1,0.67) node [above] {$~~T$}to (1,0) node [below] {$~A$};
+            \end{tikzpicture}\\
+        \caption{La situazione utilizzata per la dimostrazione}
+        \label{fig:sinx}
+    \end{figure}
+    Per definizione si ha che \[\wideparen{PA}=x\]\[\overline{PB}=\sin x\] \[\overline{TA}=\tg x\] 
+    Come è chiaramente visibile dalla Figura \ref{fig:sinx} si ha che \[\sin x < x < \tg x\] da cui \[\frac{\sin x}{\sin x}<\frac{ x}{\sin x}<\frac{\tg x}{\sin x}\] \[1<\frac{ x}{\sin x}<\frac{\tg x}{\sin x}\] \[1<\frac{\sin x}{x}<\cos x\]
+    Si calcolano ora i limiti delle funzioni che limitano quella studiata
+    \[\lim_{x \to 0^+}1=1 ~~~~~ \lim_{x \to 0^+}\cos x=1\]
+    da cui per il teorema del confronto \[\lim_{x\to 0^+} \frac{\sin x}{x}=1\] Siccome la funzione è pari vale anche per $x\to0^-$
+\end{proof}
+\textbf{Osservazioni:}
+\begin{itemize}
+    \item vale il reciproco: $\lim_{x\to 0}\frac{x}{\sin x}=1$
+    \item vale la generalizzazione: $\lim_{f(x)\to 0}\frac{\sin f(x)}{f(x)}=1$
+    \item asintotico associato: $\sin x \sim x ~~~~\textnormal{in } I(0)$
+\end{itemize}
+\item {$\lim_{x\to 0}\frac{\tg x}{x}=1$}~
+\\\begin{proof}
+    Per definizione $\tg x=\frac{\sin x}{\cos x}$, quindi \[\lim_{x\to 0} \frac{\tg x}{x}=\left[\frac{0}{0}\right]\overset{FI}{=}\lim_{x\to 0} \frac{\sin x}{x \cos x}\underset{LN}{=}\lim_{x\to 0} \frac{1}{\cos x}=1\]
+\end{proof}
+\textbf{Osservazioni:}
+\begin{itemize}
+    \item vale il reciproco: $\lim_{x\to 0}\frac{x}{\tg x}=1$
+    \item vale la generalizzazione: $\lim_{f(x)\to 0}\frac{\tg f(x)}{f(x)}=1$
+    \item asintotico associato: $\tg x \sim x ~~~~\textnormal{in } I(0)$
+\end{itemize}
+
+\item {$\lim_{x\to 0}\frac{1-\cos x}{x}=0$}
+\begin{proof}
+\[\lim_{x\to 0} \frac{1-\cos x}{x}=\left[\frac{0}{0}\right]\overset{FI}{=}\lim_{x\to 0}\frac{(1-\cos x)(1+\cos x)}{x(1+\cos x)}=\lim_{x\to 0}\frac{1-\cos^2 x}{x(1+\cos x)}=\]Per la prima relazione fondamentale della goniometria\[=\lim_{x\to 0}\frac{\sin^2 x}{x(1+\cos x)}\underset{LN}{=}\lim_{x\to 0}\frac{\sin x}{1+\cos x}=\left[\frac{0}{2}\right]=0\]
+\end{proof}
+\textbf{Osservazioni:}
+\begin{itemize}
+    \item NON vale il reciproco
+    \item vale la generalizzazione: $\lim_{f(x)\to 0}\frac{1-\cos f(x)}{f(x)}=1$
+\end{itemize}
+
+\item {$\lim_{x\to 0}\frac{1-\cos x}{x^2}=\frac{1}{2}$}
+\begin{proof}
+\[\lim_{x\to 0} \frac{1-\cos x}{x^2}=\left[\frac{0}{0}\right]\overset{FI}{=}\lim_{x\to 0}\frac{(1-\cos x)(1+\cos x)}{x^2(1+\cos x)}=\lim_{x\to 0}\frac{1-\cos^2 x}{x^2(1+\cos x)}=\]Per la prima relazione fondamentale della goniometria\[=\lim_{x\to 0}\frac{\sin^2 x}{x^2(1+\cos x)}\underset{LN}{=}\lim_{x\to 0}\frac{1}{1+\cos x}=\frac{1}{2}\]
+\end{proof}
+\textbf{Osservazioni:}
+\begin{itemize}
+    \item vale il reciproco: $\lim_{x\to 0}\frac{x^2}{1-\cos x}=1$
+    \item vale la generalizzazione: $\lim_{f(x)\to 0}\frac{1- \cos f(x)}{[f(x)]^2}=1$
+    \item asintotico associato: $\cos x \sim 1 - x^2 ~~~~\textnormal{in } I(0)$
+\end{itemize}
+
+\item {$\lim_{x\to +\infty}\left(1+\frac{1}{x}\right)^{x} = e$}~\vspace{10pt}\\
+\textbf{Osservazioni:}
+\begin{itemize}
+    \item NON vale il reciproco
+    \item vale la generalizzazione
+\end{itemize}
+
+\paragraph{$\lim_{x\to +\infty}\left(1+\frac{k}{x}\right)^{x} = e^k$}~\vspace{10pt}\\
+\textbf{Osservazioni:}
+\begin{itemize}
+    \item NON vale il reciproco
+    \item vale la generalizzazione
+\end{itemize}
+
+\paragraph{$\lim_{x\to 0^+}\left(1+kx\right)^{\frac{1}{x}}  e^k$}~\vspace{10pt}\\
+\textbf{Osservazioni:}
+\begin{itemize}
+    \item NON vale il reciproco
+    \item vale la generalizzazione
+\end{itemize}
+
+\item {$\lim_{x\to 0}\frac{\log_a(1+x)}{x}=\log_ae=\frac{1}{\ln a}~~~~~~~~\textnormal{con }a>0$}
+\begin{proof}
+\[\lim_{x\to 0}\frac{\log_a(1+x)}{x}=\left[\frac{0}{0}\right]\overset{FI}{=}\lim_{x\to 0}\frac{1}{x}\log_a(1+x)=\lim_{x\to 0}\log_a(1+x)^\frac{1}{x}=\log_ae=\frac{\ln e}{\ln a}=\frac{1}{\ln a}\]
+\end{proof}
+Particolarizzazione: $\lim_{x\to0}\frac{\ln(1+x)}{x}=1$~\vspace{10pt}\\
+\textbf{Osservazioni:}
+\begin{itemize}
+    \item vale il reciproco
+    \item vale la generalizzazione
+    \item asintotico associato: $\ln x \sim x - 1 ~~~~\textnormal{in } I(0)$
+\end{itemize}
+
+\item {$\lim_{x\to 0}\frac{a^x-1}{x}=\ln a~~~~~~~~\textnormal{con }a>0$}
+\begin{proof}
+Pongo $t=a^x-1$, quindi $e^x=t+1$ e di conseguenza $x=\log_a (t+1)$. Inoltre, se $x\to 0$, $t\to 0$.
+\[\lim_{x\to 0}\frac{a^x-1}{x}=\lim_{t\to 0}\frac{t}{\log_a (t+1)}=\ln a\]
+\end{proof}
+Particolarizzazione: $\lim_{x\to 0}\frac{e^x-1}{x}=1$~\vspace{10pt}\\
+\textbf{Osservazioni:}
+\begin{itemize}
+    \item vale il reciproco
+    \item vale la generalizzazione
+    \item asintotico associato: $e^x \sim x + 1 ~~~~\textnormal{in } I(0)$
+\end{itemize}
+
+\item {$\lim_{x\to 0}\frac{(1+x)^k-1}{x}=k$}~\vspace{10pt}\\
+\textbf{Osservazioni:}
+\begin{itemize}
+    \item vale il reciproco
+    \item vale la generalizzazione
+    \item asintotico associato: $(1+x)^k \sim 1+kx ~~~~\textnormal{in } I(0)$
+\end{itemize}
+\end{itemize}
+\section{Limiti e parametri}
+\begin{ex}
+    [
+        Trovare per quale valore di $a$ la funzione 
+        \[f(x)=\begin{cases}
+            2x^2-ax+1 &  x\leq -1\\
+            \frac{ax-1}{x+2} &  x>1
+        \end{cases}\]
+        è continua in $x_0=-1$.
+    ]
+    Ricordando la definizione di continuità, dobbiamo determinare $a$ tale che
+    \[\lim_{x\to x_0^+}f(x)=\lim_{x\to x_0^-}f(x)=f(x_0).\]
+    Calcoliamo quindi 
+    \[\begin{aligned}
+        &\lim_{x\to-1^-}2x^2-ax+1= 3+a\qquad
+        &\lim_{x\to-1^-}\frac{ax-1}{x+2}= -a-1\\
+    \end{aligned}\]
+    \[f(-1)= 2(-1)^2-a(-1)+1= 3+a\]
+    Imponiamo l'uguaglianza
+    \[\begin{cases}
+        3+a=3+a\\
+        -a-1=3+a
+    \end{cases}\quad-a-1=3+a\qquad 2a=-4\qquad \boxed{a=-2}\]
+\end{ex}
+\begin{ex}
+    [Determinare il valore di \[\lim_{x\to +\infty}\frac{(x-2)^n}{x^2+3x-10}\] al variare di $n\in \N$.]
+    \begin{itemize}
+        \item se $n=0$, \quad $\lim_{x\to +\infty}\frac{1}{x^2+3x-10}= \left[ \frac{1}{+\infty}\right]=0^+$
+        \item se $n=1$, \quad $\lim_{x\to +\infty}\frac{\cancel{x-2}}{\cancel{(x-2)}(x+5)}= \left[ \frac{1}{+\infty}\right]=0^+$
+        \item se $n=2$, \quad $\lim_{x\to +\infty}\frac{(x-2)^{\cancel{2}}}{\cancel{(x-2)}(x+5)}= \left[ \frac{\infty}{\infty}\right]\overset{FI}{=}1$
+        \item se $n>2$, \quad $\lim_{x\to +\infty}\frac{(x-2)^{\cancel{n}^{n-1}}}{\cancel{(x-2)}(x+5)}= \left[ \frac{\infty}{\infty}\right]\overset{FI}{=}+\infty$
+    \end{itemize}
+\end{ex}
+\section{Continuità e discontinuità}
+\subsection{Discontinuità di prima specie o di salto}
+\begin{boxdef}[Punti di discontinuità di prima specie]
+    Un punto $x_0$ è un punto di discontinuità di prima specie per la funzione $f(x)$ quando, per $x\to x_0$ il limite destro e il limite sinistro sono finiti ma diversi.
+    \[\lim_{x\to x_0^-}f(x)=l_1\qquad \lim_{x\to x_0^+}f(x)=l_2\qquad l_1\neq l_2.\]
+    La differenza $|l_1-l_2|$ è detta salto
+\end{boxdef}
+\begin{figure}[h]
+    \centering
+    \begin{tikzpicture}[line cap=round,line join=round,>=triangle 45,x=1.0cm,y=1.0cm]
+    \begin{axis}[
+    x=1.0cm,y=1.0cm,
+    axis lines=middle,
+    ymajorgrids=true,
+    xmajorgrids=true,
+    xmin=-4.5,
+    xmax=5.5,
+    ymin=-2.5,
+    ymax=4.5,
+    xtick={-4.0,-3.0,...,5.0},
+    ytick={-2.0,-1.0,...,4.0},]
+    \clip(-4.5,-2.5) rectangle (5.5,4.5);
+    \draw[line width=2.pt,color=red,smooth,samples=100,domain=-4.5:1.500000000000001] plot(\x,{1/50*((\x)+0*sqrt(1.5-(\x))+4)*((\x)+0*sqrt(1.5-(\x)))*((\x)+0*sqrt(1.5-(\x))-3)*((\x)+0*sqrt(1.5-(\x))-6)});
+    \draw[line width=2.pt,color=red,smooth,samples=100,domain=1.500000000000001:5.5] plot(\x,{1/50*((\x)+0*sqrt(-1.5+(\x))+4)*((\x)+0*sqrt(-1.5+(\x)))*((\x)+0*sqrt(-1.5+(\x))-3)*((\x)+0*sqrt(-1.5+(\x))-6)+1.5});
+    \draw [line width=2.pt,color=red, fill=white] (1.5,1.11375) circle (0.1cm);
+    \draw [line width=2.pt,color=red, fill=white] (1.5,2.61375) circle (0.1cm);
+    \draw (1.45,1.85) node[anchor=east, fill=white] {$salto~\Bigg\{ $};
+
+    \draw[line width=1.pt,dash pattern=on 4pt off 4pt,smooth,samples=100,domain=6.38378239159465E-16:1.4999985000000036] plot(\x,{1/50*(1.5+4)*1.5*(1.5-3)*(1.5-6)+0*sqrt(-((\x)*((\x)-1.5)))});
+    \draw[line width=1.pt,dash pattern=on 4pt off 4pt,smooth,samples=100,domain=6.38378239159465E-16:1.4999985000000036] plot(\x,{1/50*(1.5+4)*1.5*(1.5-3)*(1.5-6)+0*sqrt(-((\x)*((\x)-1.5)))+1.5});
+    \draw [line width=1.pt,dash pattern=on 4pt off 4pt] (1.5,2.61375)-- (1.5,-0.02);
+
+    \draw (1.34,0) node[anchor=north west] {$x_0$};
+    \draw (-0.44,2.9) node[anchor=north west] {$l_2$};
+    \draw (-0.44,1.55) node[anchor=north west] {$l_1$};
+
+    \end{axis}
+    \end{tikzpicture}
+    \caption{Discontinuità di prima specie}
+\end{figure}
+\subsection{Discontinuità di seconda specie}
+\begin{boxdef}[Punto di discontinuità di seconda specie]
+    Un punto $x_0$ si dice punto di discontinnuità di seconda specie per la funzione $f(x)$ quando, per $x\to x_0$, almeno uno dei due limiti, destro o sinistro, di $f(x)$ è finito o infinito. 
+\end{boxdef}
+\begin{figure}[h]
+    \centering
+    \begin{subfigure}{0.49\textwidth}
+        \centering
+        \begin{tikzpicture}[scale=0.7,line cap=round,line join=round,>=triangle 45,x=1.0cm,y=1.0cm]
+        \begin{axis}[
+        x=1.0cm,y=1.0cm,
+        axis lines=middle,
+        ymajorgrids=true,
+        xmajorgrids=true,
+        xmin=-3.5,
+        xmax=6.5,
+        ymin=-2.5,
+        ymax=4.5,
+        xtick={-3.0,-2.0,...,6.0},
+        ytick={-2.0,-1.0,...,4.0},]
+        \clip(-3.5,-2.5) rectangle (6.5,4.5);
+        \draw[line width=2.pt,color=red,smooth,samples=100,domain=-3.5:1.9] plot(\x,{1/(2*((\x)-2))+1});
+        \draw[line width=2.pt,color=red,smooth,samples=100,domain=2.1:6.5] plot(\x,{\x-1});
+        \draw [line width=2.pt,color=red, fill=red] (2,1) circle (0.1cm);
+        \draw [line width=1.pt,dash pattern=on 4pt off 4pt] (2.,-2.5) -- (2.,4.5);
+        \draw (2.06,0.1) node[anchor=south west] {$x_0$};
+        \end{axis}
+        \end{tikzpicture}
+        \caption{$\lim_{x\to x_0^-}f(x)=-\infty$}
+    \end{subfigure}
+    \begin{subfigure}{0.49\textwidth}
+        \centering
+        \begin{tikzpicture}[scale=0.7,line cap=round,line join=round,>=triangle 45,x=1.0cm,y=1.0cm]
+        \begin{axis}[
+        x=1.0cm,y=1.0cm,
+        axis lines=middle,
+        ymajorgrids=true,
+        xmajorgrids=true,
+        xmin=-3.5,
+        xmax=6.5,
+        ymin=-2.5,
+        ymax=4.5,
+        xtick={-3.0,-2.0,...,6.0},
+        ytick={-2.0,-1.0,...,4.0},]
+        \clip(-3.5,-2.5) rectangle (6.5,4.5);
+        \draw[line width=2.pt,color=red,smooth,samples=1000,domain=-3.5:1.99] plot(\x,{2*sin((10/((\x)-2))*180/pi)});
+        \draw[line width=2.pt,color=red,smooth,samples=100,domain=2.1:6.5] plot(\x,{\x-1});
+        \draw [line width=2.pt,color=red, fill=red] (2,1) circle (0.1cm);
+        \draw [line width=1.pt,dash pattern=on 4pt off 4pt] (2.,-2.5) -- (2.,4.5);
+        \draw (2.06,0.1) node[anchor=south west] {$x_0$};
+        \end{axis}
+        \end{tikzpicture}
+        \caption{$\lim_{x\to x_0^-}f(x)=\nexists$}
+    \end{subfigure}
+    \caption{Discontinuità di seconda specie}
+\end{figure}
+
+\subsection{Discontinuità di terza specie o eliminabili}
+\begin{boxdef}[Punto di discontinuità di terza specie]
+    Un punto $x_0$ si dice punto di discontinnuità di terza specie per la funzione $f(x)$ quando esiste ed è finito il limite per $x\to x_0$ e $f(x)$ non è definita o assume un valore diverso da quello del limite:
+    \[x_0\notin \dom f~~~~~\lor ~~~~~ f(x_0)\neq l\] 
+\end{boxdef}
+\begin{figure}[h]
+    \centering
+    \begin{subfigure}{0.49\textwidth}
+        \centering
+        \begin{tikzpicture}[line cap=round,line join=round,>=triangle 45,x=1.0cm,y=1.0cm]
+            \begin{axis}[
+            x=1.0cm,y=1.0cm,
+            axis lines=middle,
+            ymajorgrids=true,
+            xmajorgrids=true,
+            xmin=-2.5,
+            xmax=4.5,
+            ymin=-2.5,
+            ymax=2.5,
+            xtick={-2.0,-1.0,...,4.0},
+            ytick={-2.0,-1.0,...,2.0},]
+            \clip(-2.5,-2.5) rectangle (4.5,2.5);
+            \draw[line width=2.pt,color=red,smooth,samples=100,domain=-2.5:4.5] plot(\x,{1/50*((\x)+4)*(\x)*((\x)-3)*((\x)-6)});
+            \draw [line width=2.pt,color=red, fill=white] (1.5,1.11375) circle (0.1cm);
+            \draw[line width=1.pt,dash pattern=on 3pt off 3pt,smooth,samples=100,domain=1.0000000001885603E-6:1.499999166667005] plot(\x,{1/50*(1.5+4)*1.5*(1.5-3)*(1.5-6)+0*sqrt(-((\x)*((\x)-1.5)))});
+            \draw (1.5,0) node[anchor=north] {$x_0$};
+            \draw (-0.3801983806373771,1.5) node[anchor=north west] {$l$};
+            \draw [line width=1.pt,dash pattern=on 3pt off 3pt] (1.5,1.11375)-- (1.5,-0.02);
+            \end{axis}
+            \end{tikzpicture}
+        \caption{}
+    \end{subfigure}
+    \begin{subfigure}{0.49\textwidth}
+        \centering
+        \begin{tikzpicture}[line cap=round,line join=round,>=triangle 45,x=1.0cm,y=1.0cm]
+            \begin{axis}[
+            x=1.0cm,y=1.0cm,
+            axis lines=middle,
+            ymajorgrids=true,
+            xmajorgrids=true,
+            xmin=-2.5,
+            xmax=4.5,
+            ymin=-2.5,
+            ymax=2.5,
+            xtick={-2.0,-1.0,...,4.0},
+            ytick={-2.0,-1.0,...,2.0},]
+            \clip(-2.5,-2.5) rectangle (4.5,2.5);
+            \draw[line width=2.pt,color=red,smooth,samples=100,domain=-2.5:4.5] plot(\x,{1/50*((\x)+4)*(\x)*((\x)-3)*((\x)-6)});
+            \draw [line width=2.pt,color=red, fill=white] (1.5,1.11375) circle (0.1cm);
+            \draw[line width=1.pt,dash pattern=on 3pt off 3pt,smooth,samples=100,domain=1.0000000001885603E-6:1.499999166667005] plot(\x,{1/50*(1.5+4)*1.5*(1.5-3)*(1.5-6)+0*sqrt(-((\x)*((\x)-1.5)))});
+            \draw (1.5,0) node[anchor=north] {$x_0$};
+            \draw (-0.3801983806373771,1.5) node[anchor=north west] {$l$};
+            \draw [line width=2.pt,color=red,fill=red,fill opacity=1.0] (1.5,1.8) circle (0.1cm);
+            \draw [line width=1.pt,dash pattern=on 3pt off 3pt] (1.5,1.8)-- (1.5,-0.02);
+            \draw[line width=1.pt,dash pattern=on 3pt off 3pt,smooth,samples=100,domain=1.0000000001885603E-6:1.499999166667005] plot(\x,{1.8+0*sqrt(-((\x)*((\x)-1.5)))});
+            \draw (-1,1.95) node[anchor=north west] {$f(x_0)$};
+
+            \end{axis}
+            \end{tikzpicture}
+        \caption{Discontinuità di terza specie}
+    \end{subfigure}
+    \caption{}
+\end{figure}
+
+    \begin{table}[h]
+        \centering
+        \begin{tabular}{|m{0.3\textwidth}|m{0.6\textwidth}|}
+            \hline
+            \multicolumn{2}{|m{0.9\textwidth}|}{\textbf{Discontinuità: tipologie e condizioni}}\\
+            \hline
+            Prima specie &  \[\lim_{x\rightarrow x_0^-}f(x)=l_1~~~~\lim_{x\rightarrow x_0^+}f(x)=l_2\] \[l_1\neq l_2~~~~salto=|l_1-l_2|\]\\ \hline
+            Seconda specie &  \[\lim_{x\rightarrow x_0^\pm}f(x)=\infty ~~~~\lor~~~~ \lim_{x\rightarrow x_0^\pm}f(x)=\nexists\] \\\hline
+            Terza specie & \[\lim_{x\rightarrow x_0^-}f(x)=\lim_{x\rightarrow x_0^+}f(x)=l\]\[f(x_0)\neq l ~~~~ \lor ~~~~ f(x_0)=\nexists\]\\ \hline
+        \end{tabular}
+    \end{table}
+\subsection{Continuità e funzioni inverse}
+    \subsubsection{Continuità della funzione inversa}
+        \begin{shadedTheorem}[Continuità della funzione inversa]
+            Se $y=f(x)$ è una funzione biiettiva e continua in un intervallo $D$, allora la funzione inversa $f^{-1}$ è continua nel codominio di $f$.
+        \end{shadedTheorem}
+        \begin{tabular}{m{0.45\textwidth}m{0.45\textwidth}}
+            \textit{Ipotesi} & \textit{Tesi}  \\
+            $f:D\to C$ biiettiva e continua in D & $f^{-1}:C\to D$ continua in C 
+        \end{tabular}
+        
+    \subsubsection{Condizione di invertibilità per funzioni continue}
+        \begin{shadedTheorem}[Invertibilità di funzioni continue]
+            Sia $I$ un intervallo (limitato o illimitato) e $f:I\rightarrow \R$ una funzione continua in $I$. Allora essa è invertibile se e solo se è strettamente monotona.
+        \end{shadedTheorem}
+        \begin{tabular}{m{0.45\textwidth}m{0.45\textwidth}}
+            \textit{Ipotesi} & \textit{Tesi}  \\
+            $f:I\to \R$ continua e strettamente monotona in $I$ & $f$ è invertibile 
+        \end{tabular}
+    
+\section{Teoremi sulle funzioni continue}
+    \subsection{Teorema di Weistrass}
+        \begin{shadedTheorem}[Weistrass]
+            Se $f$ è una funzione continua in un intervallo limitato e chiuso $[a;b]$, allora essa assume in tale intervallo il massimo assoluto e il minimo assoluto.
+        \end{shadedTheorem}
+        \begin{tabular}{m{0.45\textwidth}m{0.45\textwidth}}
+            \textit{Ipotesi} & \textit{Tesi}  \\
+            $f:[a;b]\to \R$ continua in $[a;b]$ & $\exists c,d \in [a,b] : f(c) = min\{f\} \land f(d) = max\{f\}$
+        \end{tabular}
+    
+    \subsection{Teorema dell'esistenza degli zeri (o di Bolzano)}
+        \begin{shadedTheorem}[Bolzano]
+            Se $f$ è continua in un intervallo limitato e chiuso $[a;b]$ e negli estremi di tale intervallo assume valori di segno opposto, allora esiste almeno un punto $c$ interno all'intervallo in cui $f(c)=0$.
+        \end{shadedTheorem}
+        \begin{tabular}{m{0.45\textwidth}m{0.45\textwidth}}
+            \textit{Ipotesi} & \textit{Tesi}  \\
+            \begin{enumerate}
+                \item $f: [a;b] \to \R$ continua in $[a;b]$
+                \item $f(a) \cdot f(b)<0$
+            \end{enumerate} & $\exists c \in [a;b]:f(c)=0$ 
+        \end{tabular}
+    
+    \subsection{Teorema dei valori intermedi (o di Darboux)}
+        \begin{shadedTheorem}[Darbaux]
+            Se $f$ è una funzione continua in un intervallo limitato e chiuso $[a;b]$, allora essa assume almeno una volta tutti i valori compresi tra il massimo e il minimo.
+        \end{shadedTheorem}
+        \begin{tabular}{m{0.45\textwidth}m{0.45\textwidth}}
+            \textit{Ipotesi} & \textit{Tesi}  \\
+            \begin{enumerate}
+                \item $f: [a;b]\to \R$ continua in $[a;b]$
+                \item $m=min\{[a;b]\}$ ~~~ $M=max\{[a;b]\}$
+            \end{enumerate} & $\exists x \in [a,b] : f(x)=k \forall k \in [m;M]$
+        \end{tabular}
