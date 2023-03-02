@@ -1,0 +1,1097 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<?latexml searchpaths="/Users/davideborra/Documents/GitHub/appunti-liceo/algebra"?>
+<!--  %Update 9/7/2022 --><?latexml class="article"?>
+<?latexml package="inputenc" options="utf8"?>
+<?latexml package="../lambdatex"?>
+<?latexml RelaxNGSchema="LaTeXML"?>
+<document xmlns="http://dlmf.nist.gov/LaTeXML" class="ltx_authors_1line">
+  <resource src="LaTeXML.css" type="text/css"/>
+  <resource src="ltx-article.css" type="text/css"/>
+  <title>Algebra - un’introduzione</title>
+  <creator role="author">
+    <personname>Davide Borra<note mark="1" role="footnote" xml:id="footnote1"><tags>
+          <tag>1</tag>
+          <tag role="refnum">1</tag>
+          <tag role="typerefnum">footnote 1</tag>
+        </tags><ERROR class="undefined">\href</ERROR>mailto:davide.borra@studenti.unitn.itdavide.borra@studenti.unitn.it</note>  - UniTN</personname>
+  </creator>
+  <TOC lists="toc" scope="global" select="ltx:part | ltx:chapter | ltx:section | ltx:subsection | ltx:subsubsection | ltx:appendix | ltx:index | ltx:bibliography">
+    <title>Contents</title>
+  </TOC>
+  <para xml:id="p1">
+    <p>v. 0.1 <!--  %incrementare primo numero per contenuti e secondo numero per patch --></p>
+  </para>
+  <ERROR class="undefined">\lhead</ERROR>
+  <para xml:id="p2">
+    <p>Algebra - un’introduzione
+<ERROR class="undefined">\chead</ERROR>
+<ERROR class="undefined">\rhead</ERROR>Davide Borra - UniTN</p>
+  </para>
+  <section inlist="toc" xml:id="S1">
+    <tags>
+      <tag>1</tag>
+      <tag role="refnum">1</tag>
+      <tag role="typerefnum">§1</tag>
+    </tags>
+    <title><tag close=" ">1</tag>Un’introduzione formale</title>
+    <subsection inlist="toc" xml:id="S1.SS1">
+      <tags>
+        <tag>1.1</tag>
+        <tag role="refnum">1.1</tag>
+        <tag role="typerefnum">§1.1</tag>
+      </tags>
+      <title><tag close=" ">1.1</tag>Insiemi e relazioni</title>
+      <ERROR class="undefined">{shaded}</ERROR>
+<!--  %**** algebra.tex Line 25 **** -->      <ERROR class="undefined">{definition}</ERROR>
+      <para xml:id="S1.SS1.p1">
+        <p>[Insieme]
+Si dice insieme una collezione <Math mode="inline" tex="\displaystyle X" text="X" xml:id="S1.SS1.p1.m1">
+            <XMath>
+              <XMTok font="italic" role="UNKNOWN">X</XMTok>
+            </XMath>
+          </Math> di oggetti, detti elementi dell’insieme. Si scrive <Math mode="inline" tex="\displaystyle x\in X" text="x element-of X" xml:id="S1.SS1.p1.m2">
+            <XMath>
+              <XMApp>
+                <XMTok meaning="element-of" name="in" role="RELOP">∈</XMTok>
+                <XMTok font="italic" role="UNKNOWN">x</XMTok>
+                <XMTok font="italic" role="UNKNOWN">X</XMTok>
+              </XMApp>
+            </XMath>
+          </Math>.
+
+
+<ERROR class="undefined">{shaded}</ERROR>
+<ERROR class="undefined">{definition}</ERROR>[Prodotto cartesiano]
+Siano <Math mode="inline" tex="\displaystyle X,Y" text="list@(X, Y)" xml:id="S1.SS1.p1.m3">
+            <XMath>
+              <XMDual>
+                <XMApp>
+                  <XMTok meaning="list"/>
+                  <XMRef idref="S1.SS1.p1.m3.1"/>
+                  <XMRef idref="S1.SS1.p1.m3.2"/>
+                </XMApp>
+                <XMWrap>
+                  <XMTok font="italic" role="UNKNOWN" xml:id="S1.SS1.p1.m3.1">X</XMTok>
+                  <XMTok role="PUNCT">,</XMTok>
+                  <XMTok font="italic" role="UNKNOWN" xml:id="S1.SS1.p1.m3.2">Y</XMTok>
+                </XMWrap>
+              </XMDual>
+            </XMath>
+          </Math> insiemi. Si definisce prodotto cartesiano di <Math mode="inline" tex="\displaystyle X" text="X" xml:id="S1.SS1.p1.m4">
+            <XMath>
+              <XMTok font="italic" role="UNKNOWN">X</XMTok>
+            </XMath>
+          </Math> e <Math mode="inline" tex="\displaystyle Y" text="Y" xml:id="S1.SS1.p1.m5">
+            <XMath>
+              <XMTok font="italic" role="UNKNOWN">Y</XMTok>
+            </XMath>
+          </Math> l’insieme delle coppie ordinate in cui il primo elemento appartiene a <Math mode="inline" tex="\displaystyle X" text="X" xml:id="S1.SS1.p1.m6">
+            <XMath>
+              <XMTok font="italic" role="UNKNOWN">X</XMTok>
+            </XMath>
+          </Math> e il secondo appartiene a <Math mode="inline" tex="\displaystyle Y" text="Y" xml:id="S1.SS1.p1.m7">
+            <XMath>
+              <XMTok font="italic" role="UNKNOWN">Y</XMTok>
+            </XMath>
+          </Math></p>
+        <equation xml:id="S1.Ex1">
+          <Math mode="display" tex="\displaystyle X\times Y:=\{(x,y)\&gt;|\&gt;x\in X,y\in Y\}" text="X * Y assign conditional-set@(open-interval@(x, y), formulae@(x element-of X, y element-of Y))" xml:id="S1.Ex1.m1">
+            <XMath>
+              <XMApp>
+                <XMTok meaning="assign" role="RELOP">:=</XMTok>
+                <XMApp>
+                  <XMTok meaning="times" role="MULOP">×</XMTok>
+                  <XMTok font="italic" role="UNKNOWN">X</XMTok>
+                  <XMTok font="italic" role="UNKNOWN">Y</XMTok>
+                </XMApp>
+                <XMDual>
+                  <XMApp>
+                    <XMTok meaning="conditional-set"/>
+                    <XMRef idref="S1.Ex1.m1.3"/>
+                    <XMRef idref="S1.Ex1.m1.4"/>
+                  </XMApp>
+                  <XMWrap>
+                    <XMTok role="OPEN" stretchy="false">{</XMTok>
+                    <XMDual xml:id="S1.Ex1.m1.3">
+                      <XMApp>
+                        <XMTok meaning="open-interval"/>
+                        <XMRef idref="S1.Ex1.m1.1"/>
+                        <XMRef idref="S1.Ex1.m1.2"/>
+                      </XMApp>
+                      <XMWrap>
+                        <XMTok role="OPEN" stretchy="false">(</XMTok>
+                        <XMTok font="italic" role="UNKNOWN" xml:id="S1.Ex1.m1.1">x</XMTok>
+                        <XMTok role="PUNCT">,</XMTok>
+                        <XMTok font="italic" role="UNKNOWN" xml:id="S1.Ex1.m1.2">y</XMTok>
+                        <XMTok role="CLOSE" rpadding="2.2pt" stretchy="false">)</XMTok>
+                      </XMWrap>
+                    </XMDual>
+                    <XMTok role="MIDDLE" rpadding="2.2pt" stretchy="false">|</XMTok>
+                    <XMDual xml:id="S1.Ex1.m1.4">
+                      <XMApp>
+                        <XMTok meaning="formulae"/>
+                        <XMRef idref="S1.Ex1.m1.4.1"/>
+                        <XMRef idref="S1.Ex1.m1.4.2"/>
+                      </XMApp>
+                      <XMWrap>
+                        <XMApp xml:id="S1.Ex1.m1.4.1">
+                          <XMTok meaning="element-of" name="in" role="RELOP">∈</XMTok>
+                          <XMTok font="italic" role="UNKNOWN">x</XMTok>
+                          <XMTok font="italic" role="UNKNOWN">X</XMTok>
+                        </XMApp>
+                        <XMTok role="PUNCT">,</XMTok>
+                        <XMApp xml:id="S1.Ex1.m1.4.2">
+                          <XMTok meaning="element-of" name="in" role="RELOP">∈</XMTok>
+                          <XMTok font="italic" role="UNKNOWN">y</XMTok>
+                          <XMTok font="italic" role="UNKNOWN">Y</XMTok>
+                        </XMApp>
+                      </XMWrap>
+                    </XMDual>
+                    <XMTok role="CLOSE" stretchy="false">}</XMTok>
+                  </XMWrap>
+                </XMDual>
+              </XMApp>
+            </XMath>
+          </Math>
+        </equation>
+        <ERROR class="undefined">{shaded}</ERROR>
+        <ERROR class="undefined">{definition}</ERROR>
+        <p>[Relazione]
+Sia <Math mode="inline" tex="\displaystyle X" text="X" xml:id="S1.SS1.p1.m8">
+            <XMath>
+              <XMTok font="italic" role="UNKNOWN">X</XMTok>
+            </XMath>
+          </Math> un insieme. Si definisce relazione un insieme <Math mode="inline" tex="\displaystyle R\subseteq X\times X" text="R subset-of-or-equals X * X" xml:id="S1.SS1.p1.m9">
+            <XMath>
+              <XMApp>
+                <XMTok meaning="subset-of-or-equals" name="subseteq" role="RELOP">⊆</XMTok>
+                <XMTok font="italic" role="UNKNOWN">R</XMTok>
+                <XMApp>
+                  <XMTok meaning="times" role="MULOP">×</XMTok>
+                  <XMTok font="italic" role="UNKNOWN">X</XMTok>
+                  <XMTok font="italic" role="UNKNOWN">X</XMTok>
+                </XMApp>
+              </XMApp>
+            </XMath>
+          </Math></p>
+      </para>
+      <paragraph inlist="toc" xml:id="S1.SS1.SSS0.Px1">
+        <title>Proprietà delle relazioni</title>
+        <para xml:id="S1.SS1.SSS0.Px1.p1">
+          <p>Una relazione può soddisfare 4 proprietà:</p>
+          <enumerate xml:id="S1.I1">
+            <item xml:id="S1.I1.ix1">
+              <tags>
+                <tag><text font="bold">(R)</text></tag>
+                <tag role="typerefnum">item <text font="bold">(R)</text></tag>
+              </tags>
+              <para xml:id="S1.I1.ix1.p1">
+                <p>Riflessiva: <Math mode="inline" tex="\displaystyle(x,x)\in R\forall x\in X" text="open-interval@(x, x) element-of R * for-all@(x) element-of X" xml:id="S1.I1.ix1.p1.m1">
+                    <XMath>
+                      <XMApp>
+                        <XMTok meaning="multirelation"/>
+                        <XMDual>
+                          <XMApp>
+                            <XMTok meaning="open-interval"/>
+                            <XMRef idref="S1.I1.ix1.p1.m1.1"/>
+                            <XMRef idref="S1.I1.ix1.p1.m1.2"/>
+                          </XMApp>
+                          <XMWrap>
+                            <XMTok role="OPEN" stretchy="false">(</XMTok>
+                            <XMTok font="italic" role="UNKNOWN" xml:id="S1.I1.ix1.p1.m1.1">x</XMTok>
+                            <XMTok role="PUNCT">,</XMTok>
+                            <XMTok font="italic" role="UNKNOWN" xml:id="S1.I1.ix1.p1.m1.2">x</XMTok>
+                            <XMTok role="CLOSE" stretchy="false">)</XMTok>
+                          </XMWrap>
+                        </XMDual>
+                        <XMTok meaning="element-of" name="in" role="RELOP">∈</XMTok>
+                        <XMApp>
+                          <XMTok meaning="times" role="MULOP">⁢</XMTok>
+                          <XMTok font="italic" role="UNKNOWN">R</XMTok>
+                          <XMApp>
+                            <XMTok meaning="for-all" name="forall" role="BIGOP">∀</XMTok>
+                            <XMTok font="italic" role="UNKNOWN">x</XMTok>
+                          </XMApp>
+                        </XMApp>
+                        <XMTok meaning="element-of" name="in" role="RELOP">∈</XMTok>
+                        <XMTok font="italic" role="UNKNOWN">X</XMTok>
+                      </XMApp>
+                    </XMath>
+                  </Math></p>
+              </para>
+            </item>
+            <item xml:id="S1.I1.ix2">
+              <tags>
+                <tag><text font="bold">(S)</text></tag>
+                <tag role="typerefnum">item <text font="bold">(S)</text></tag>
+              </tags>
+              <para xml:id="S1.I1.ix2.p1">
+                <p>Simmetrica: <Math mode="inline" tex="\displaystyle(x,y)\in R\Rightarrow(y,x)\in R" text="open-interval@(x, y) element-of R Rightarrow open-interval@(y, x) element-of R" xml:id="S1.I1.ix2.p1.m1">
+                    <XMath>
+                      <XMApp>
+                        <XMTok meaning="multirelation"/>
+                        <XMDual>
+                          <XMApp>
+                            <XMTok meaning="open-interval"/>
+                            <XMRef idref="S1.I1.ix2.p1.m1.1"/>
+                            <XMRef idref="S1.I1.ix2.p1.m1.2"/>
+                          </XMApp>
+                          <XMWrap>
+                            <XMTok role="OPEN" stretchy="false">(</XMTok>
+                            <XMTok font="italic" role="UNKNOWN" xml:id="S1.I1.ix2.p1.m1.1">x</XMTok>
+                            <XMTok role="PUNCT">,</XMTok>
+                            <XMTok font="italic" role="UNKNOWN" xml:id="S1.I1.ix2.p1.m1.2">y</XMTok>
+                            <XMTok role="CLOSE" stretchy="false">)</XMTok>
+                          </XMWrap>
+                        </XMDual>
+                        <XMTok meaning="element-of" name="in" role="RELOP">∈</XMTok>
+                        <XMTok font="italic" role="UNKNOWN">R</XMTok>
+                        <XMTok name="Rightarrow" role="ARROW">⇒</XMTok>
+                        <XMDual>
+                          <XMApp>
+                            <XMTok meaning="open-interval"/>
+                            <XMRef idref="S1.I1.ix2.p1.m1.3"/>
+                            <XMRef idref="S1.I1.ix2.p1.m1.4"/>
+                          </XMApp>
+                          <XMWrap>
+                            <XMTok role="OPEN" stretchy="false">(</XMTok>
+                            <XMTok font="italic" role="UNKNOWN" xml:id="S1.I1.ix2.p1.m1.3">y</XMTok>
+                            <XMTok role="PUNCT">,</XMTok>
+                            <XMTok font="italic" role="UNKNOWN" xml:id="S1.I1.ix2.p1.m1.4">x</XMTok>
+                            <XMTok role="CLOSE" stretchy="false">)</XMTok>
+                          </XMWrap>
+                        </XMDual>
+                        <XMTok meaning="element-of" name="in" role="RELOP">∈</XMTok>
+                        <XMTok font="italic" role="UNKNOWN">R</XMTok>
+                      </XMApp>
+                    </XMath>
+                  </Math></p>
+              </para>
+            </item>
+            <item xml:id="S1.I1.ix3">
+              <tags>
+                <tag><text font="bold">(A)</text></tag>
+                <tag role="typerefnum">item <text font="bold">(A)</text></tag>
+              </tags>
+              <para xml:id="S1.I1.ix3.p1">
+                <p>Antisimmetrica: <Math mode="inline" tex="\displaystyle(x,y)\in R,(y,x)\in R\Rightarrow x=y" text="formulae@(open-interval@(x, y) element-of R, open-interval@(y, x) element-of R Rightarrow x = y)" xml:id="S1.I1.ix3.p1.m1">
+                    <XMath>
+                      <XMDual>
+                        <XMApp>
+                          <XMTok meaning="formulae"/>
+                          <XMRef idref="S1.I1.ix3.p1.m1.5"/>
+                          <XMRef idref="S1.I1.ix3.p1.m1.6"/>
+                        </XMApp>
+                        <XMWrap>
+                          <XMApp xml:id="S1.I1.ix3.p1.m1.5">
+                            <XMTok meaning="element-of" name="in" role="RELOP">∈</XMTok>
+                            <XMDual>
+                              <XMApp>
+                                <XMTok meaning="open-interval"/>
+                                <XMRef idref="S1.I1.ix3.p1.m1.1"/>
+                                <XMRef idref="S1.I1.ix3.p1.m1.2"/>
+                              </XMApp>
+                              <XMWrap>
+                                <XMTok role="OPEN" stretchy="false">(</XMTok>
+                                <XMTok font="italic" role="UNKNOWN" xml:id="S1.I1.ix3.p1.m1.1">x</XMTok>
+                                <XMTok role="PUNCT">,</XMTok>
+                                <XMTok font="italic" role="UNKNOWN" xml:id="S1.I1.ix3.p1.m1.2">y</XMTok>
+                                <XMTok role="CLOSE" stretchy="false">)</XMTok>
+                              </XMWrap>
+                            </XMDual>
+                            <XMTok font="italic" role="UNKNOWN">R</XMTok>
+                          </XMApp>
+                          <XMTok role="PUNCT">,</XMTok>
+                          <XMApp xml:id="S1.I1.ix3.p1.m1.6">
+                            <XMTok meaning="multirelation"/>
+                            <XMDual>
+                              <XMApp>
+                                <XMTok meaning="open-interval"/>
+                                <XMRef idref="S1.I1.ix3.p1.m1.3"/>
+                                <XMRef idref="S1.I1.ix3.p1.m1.4"/>
+                              </XMApp>
+                              <XMWrap>
+                                <XMTok role="OPEN" stretchy="false">(</XMTok>
+                                <XMTok font="italic" role="UNKNOWN" xml:id="S1.I1.ix3.p1.m1.3">y</XMTok>
+                                <XMTok role="PUNCT">,</XMTok>
+                                <XMTok font="italic" role="UNKNOWN" xml:id="S1.I1.ix3.p1.m1.4">x</XMTok>
+                                <XMTok role="CLOSE" stretchy="false">)</XMTok>
+                              </XMWrap>
+                            </XMDual>
+                            <XMTok meaning="element-of" name="in" role="RELOP">∈</XMTok>
+                            <XMTok font="italic" role="UNKNOWN">R</XMTok>
+                            <XMTok name="Rightarrow" role="ARROW">⇒</XMTok>
+                            <XMTok font="italic" role="UNKNOWN">x</XMTok>
+                            <XMTok meaning="equals" role="RELOP">=</XMTok>
+                            <XMTok font="italic" role="UNKNOWN">y</XMTok>
+                          </XMApp>
+                        </XMWrap>
+                      </XMDual>
+                    </XMath>
+                  </Math></p>
+              </para>
+            </item>
+            <item xml:id="S1.I1.ix4">
+              <tags>
+                <tag><text font="bold">(T)</text></tag>
+                <tag role="typerefnum">item <text font="bold">(T)</text></tag>
+              </tags>
+              <para xml:id="S1.I1.ix4.p1">
+                <p>Transitiva: <Math mode="inline" tex="\displaystyle(x,y)\in R,(y,z)\in R\Rightarrow(x,z)\in R" text="formulae@(open-interval@(x, y) element-of R, open-interval@(y, z) element-of R Rightarrow open-interval@(x, z) element-of R)" xml:id="S1.I1.ix4.p1.m1">
+                    <XMath>
+                      <XMDual>
+                        <XMApp>
+                          <XMTok meaning="formulae"/>
+                          <XMRef idref="S1.I1.ix4.p1.m1.7"/>
+                          <XMRef idref="S1.I1.ix4.p1.m1.8"/>
+                        </XMApp>
+                        <XMWrap>
+                          <XMApp xml:id="S1.I1.ix4.p1.m1.7">
+                            <XMTok meaning="element-of" name="in" role="RELOP">∈</XMTok>
+                            <XMDual>
+                              <XMApp>
+                                <XMTok meaning="open-interval"/>
+                                <XMRef idref="S1.I1.ix4.p1.m1.1"/>
+                                <XMRef idref="S1.I1.ix4.p1.m1.2"/>
+                              </XMApp>
+                              <XMWrap>
+                                <XMTok role="OPEN" stretchy="false">(</XMTok>
+                                <XMTok font="italic" role="UNKNOWN" xml:id="S1.I1.ix4.p1.m1.1">x</XMTok>
+                                <XMTok role="PUNCT">,</XMTok>
+                                <XMTok font="italic" role="UNKNOWN" xml:id="S1.I1.ix4.p1.m1.2">y</XMTok>
+                                <XMTok role="CLOSE" stretchy="false">)</XMTok>
+                              </XMWrap>
+                            </XMDual>
+                            <XMTok font="italic" role="UNKNOWN">R</XMTok>
+                          </XMApp>
+                          <XMTok role="PUNCT">,</XMTok>
+                          <XMApp xml:id="S1.I1.ix4.p1.m1.8">
+                            <XMTok meaning="multirelation"/>
+                            <XMDual>
+                              <XMApp>
+                                <XMTok meaning="open-interval"/>
+                                <XMRef idref="S1.I1.ix4.p1.m1.3"/>
+                                <XMRef idref="S1.I1.ix4.p1.m1.4"/>
+                              </XMApp>
+                              <XMWrap>
+                                <XMTok role="OPEN" stretchy="false">(</XMTok>
+                                <XMTok font="italic" role="UNKNOWN" xml:id="S1.I1.ix4.p1.m1.3">y</XMTok>
+                                <XMTok role="PUNCT">,</XMTok>
+                                <XMTok font="italic" role="UNKNOWN" xml:id="S1.I1.ix4.p1.m1.4">z</XMTok>
+                                <XMTok role="CLOSE" stretchy="false">)</XMTok>
+                              </XMWrap>
+                            </XMDual>
+                            <XMTok meaning="element-of" name="in" role="RELOP">∈</XMTok>
+                            <XMTok font="italic" role="UNKNOWN">R</XMTok>
+                            <XMTok name="Rightarrow" role="ARROW">⇒</XMTok>
+                            <XMDual>
+                              <XMApp>
+                                <XMTok meaning="open-interval"/>
+                                <XMRef idref="S1.I1.ix4.p1.m1.5"/>
+                                <XMRef idref="S1.I1.ix4.p1.m1.6"/>
+                              </XMApp>
+                              <XMWrap>
+                                <XMTok role="OPEN" stretchy="false">(</XMTok>
+                                <XMTok font="italic" role="UNKNOWN" xml:id="S1.I1.ix4.p1.m1.5">x</XMTok>
+                                <XMTok role="PUNCT">,</XMTok>
+                                <XMTok font="italic" role="UNKNOWN" xml:id="S1.I1.ix4.p1.m1.6">z</XMTok>
+                                <XMTok role="CLOSE" stretchy="false">)</XMTok>
+                              </XMWrap>
+                            </XMDual>
+                            <XMTok meaning="element-of" name="in" role="RELOP">∈</XMTok>
+                            <XMTok font="italic" role="UNKNOWN">R</XMTok>
+                          </XMApp>
+                        </XMWrap>
+                      </XMDual>
+                    </XMath>
+                  </Math></p>
+              </para>
+            </item>
+          </enumerate>
+        </para>
+      </paragraph>
+      <subsubsection inlist="toc" xml:id="S1.SS1.SSS1">
+        <tags>
+          <tag>1.1.1</tag>
+          <tag role="refnum">1.1.1</tag>
+          <tag role="typerefnum">§1.1.1</tag>
+        </tags>
+        <title><tag close=" ">1.1.1</tag>Relazioni di equivalenza</title>
+        <ERROR class="undefined">{shaded}</ERROR>
+        <ERROR class="undefined">{definition}</ERROR>
+        <para xml:id="S1.SS1.SSS1.p1">
+          <p>[Relazione di equivalenza]
+<!--  %**** algebra.tex Line 50 **** -->Una relazione si dice relazione di equivalenza se soddisfa le proprietà riflessiva, transitiva e simmetrica.</p>
+          <itemize xml:id="S1.I2">
+            <item xml:id="S1.I2.i1">
+              <tags>
+                <tag>•</tag>
+                <tag role="typerefnum">1st item</tag>
+              </tags>
+              <para xml:id="S1.I2.i1.p1">
+                <p>Notazione: <Math mode="inline" tex="\displaystyle(x,y)\in R\Harr x\sim y" text="open-interval@(x, y) element-of R * [\Harr] * x similar-to y" xml:id="S1.I2.i1.p1.m1">
+                    <XMath>
+                      <XMApp>
+                        <XMTok meaning="multirelation"/>
+                        <XMDual>
+                          <XMApp>
+                            <XMTok meaning="open-interval"/>
+                            <XMRef idref="S1.I2.i1.p1.m1.1"/>
+                            <XMRef idref="S1.I2.i1.p1.m1.2"/>
+                          </XMApp>
+                          <XMWrap>
+                            <XMTok role="OPEN" stretchy="false">(</XMTok>
+                            <XMTok font="italic" role="UNKNOWN" xml:id="S1.I2.i1.p1.m1.1">x</XMTok>
+                            <XMTok role="PUNCT">,</XMTok>
+                            <XMTok font="italic" role="UNKNOWN" xml:id="S1.I2.i1.p1.m1.2">y</XMTok>
+                            <XMTok role="CLOSE" stretchy="false">)</XMTok>
+                          </XMWrap>
+                        </XMDual>
+                        <XMTok meaning="element-of" name="in" role="RELOP">∈</XMTok>
+                        <XMApp>
+                          <XMTok meaning="times" role="MULOP">⁢</XMTok>
+                          <XMTok font="italic" role="UNKNOWN">R</XMTok>
+                          <ERROR class="undefined">\Harr</ERROR>
+                          <XMTok font="italic" role="UNKNOWN">x</XMTok>
+                        </XMApp>
+                        <XMTok meaning="similar-to" name="sim" role="RELOP">∼</XMTok>
+                        <XMTok font="italic" role="UNKNOWN">y</XMTok>
+                      </XMApp>
+                    </XMath>
+                  </Math></p>
+              </para>
+            </item>
+          </itemize>
+          <p>Una piccola postilla sulla notazione: qui ho specificato come notazione standard il simbolo <Math mode="inline" tex="\displaystyle\sim" text="similar-to" xml:id="S1.SS1.SSS1.p1.m1">
+              <XMath>
+                <XMTok meaning="similar-to" name="sim" role="RELOP">∼</XMTok>
+              </XMath>
+            </Math>, ma a volte si usano anche altri simboli <Math mode="inline" tex="\displaystyle\equiv" text="equivalent-to" xml:id="S1.SS1.SSS1.p1.m2">
+              <XMath>
+                <XMTok meaning="equivalent-to" name="equiv" role="RELOP">≡</XMTok>
+              </XMath>
+            </Math> e <Math mode="inline" tex="\displaystyle\simeq" text="similar-to-or-equals" xml:id="S1.SS1.SSS1.p1.m3">
+              <XMath>
+                <XMTok meaning="similar-to-or-equals" name="simeq" role="RELOP">≃</XMTok>
+              </XMath>
+            </Math>. Rimane il fatto che sono simboli, per cui l’utilizzo di un preciso simbolo non comporta automaticamente una specifica relazione, che andrà definita caso per caso.
+<ERROR class="undefined">{shaded}</ERROR>
+<ERROR class="undefined">{definition}</ERROR>[Classi di equivalenza]
+Siano <Math mode="inline" tex="\displaystyle X" text="X" xml:id="S1.SS1.SSS1.p1.m4">
+              <XMath>
+                <XMTok font="italic" role="UNKNOWN">X</XMTok>
+              </XMath>
+            </Math> un insieme, <Math mode="inline" tex="\displaystyle\sim" text="similar-to" xml:id="S1.SS1.SSS1.p1.m5">
+              <XMath>
+                <XMTok meaning="similar-to" name="sim" role="RELOP">∼</XMTok>
+              </XMath>
+            </Math> una relazione di equivalenza e <Math mode="inline" tex="\displaystyle x\in X" text="x element-of X" xml:id="S1.SS1.SSS1.p1.m6">
+              <XMath>
+                <XMApp>
+                  <XMTok meaning="element-of" name="in" role="RELOP">∈</XMTok>
+                  <XMTok font="italic" role="UNKNOWN">x</XMTok>
+                  <XMTok font="italic" role="UNKNOWN">X</XMTok>
+                </XMApp>
+              </XMath>
+            </Math>. Si definisce <text font="bold" framed="underline">classe di equivalenza di <Math mode="inline" tex="\displaystyle x" text="x" xml:id="S1.SS1.SSS1.p1.m7">
+                <XMath>
+                  <XMTok font="medium italic" role="UNKNOWN">x</XMTok>
+                </XMath>
+              </Math></text> l’insieme</p>
+          <equation xml:id="S1.Ex2">
+            <Math mode="display" tex="\displaystyle\displaystyle[x]=\left\{y\in X:y\sim x\right\}" text="delimited-[]@(x) = conditional-set@(y element-of X, y similar-to x)" xml:id="S1.Ex2.m1">
+              <XMath>
+                <XMApp>
+                  <XMTok meaning="equals" role="RELOP">=</XMTok>
+                  <XMDual>
+                    <XMApp>
+                      <XMTok meaning="delimited-[]"/>
+                      <XMRef idref="S1.Ex2.m1.1"/>
+                    </XMApp>
+                    <XMWrap>
+                      <XMTok role="OPEN" stretchy="false">[</XMTok>
+                      <XMTok font="italic" role="UNKNOWN" xml:id="S1.Ex2.m1.1">x</XMTok>
+                      <XMTok role="CLOSE" stretchy="false">]</XMTok>
+                    </XMWrap>
+                  </XMDual>
+                  <XMDual>
+                    <XMApp>
+                      <XMTok meaning="conditional-set"/>
+                      <XMRef idref="S1.Ex2.m1.2"/>
+                      <XMRef idref="S1.Ex2.m1.3"/>
+                    </XMApp>
+                    <XMWrap>
+                      <XMTok role="OPEN" stretchy="true">{</XMTok>
+                      <XMApp xml:id="S1.Ex2.m1.2">
+                        <XMTok meaning="element-of" name="in" role="RELOP">∈</XMTok>
+                        <XMTok font="italic" role="UNKNOWN">y</XMTok>
+                        <XMTok font="italic" role="UNKNOWN">X</XMTok>
+                      </XMApp>
+                      <XMTok name="colon" role="METARELOP">:</XMTok>
+                      <XMApp xml:id="S1.Ex2.m1.3">
+                        <XMTok meaning="similar-to" name="sim" role="RELOP">∼</XMTok>
+                        <XMTok font="italic" role="UNKNOWN">y</XMTok>
+                        <XMTok font="italic" role="UNKNOWN">x</XMTok>
+                      </XMApp>
+                      <XMTok role="CLOSE" stretchy="true">}</XMTok>
+                    </XMWrap>
+                  </XMDual>
+                </XMApp>
+              </XMath>
+            </Math>
+          </equation>
+        </para>
+        <paragraph inlist="toc" xml:id="S1.SS1.SSS1.Px1">
+          <title>Proprietà:</title>
+          <para xml:id="S1.SS1.SSS1.Px1.p1">
+            <itemize xml:id="S1.I3">
+              <item xml:id="S1.I3.i1">
+                <tags>
+                  <tag>•</tag>
+                  <tag role="typerefnum">1st item</tag>
+                </tags>
+                <para xml:id="S1.I3.i1.p1">
+                  <p><Math mode="inline" tex="\displaystyle x\sim y\Leftrightarrow[x]=[y]" text="x similar-to y Leftrightarrow delimited-[]@(x) = delimited-[]@(y)" xml:id="S1.I3.i1.p1.m1">
+                      <XMath>
+                        <XMApp>
+                          <XMTok name="Leftrightarrow" role="METARELOP">⇔</XMTok>
+                          <XMApp>
+                            <XMTok meaning="similar-to" name="sim" role="RELOP">∼</XMTok>
+                            <XMTok font="italic" role="UNKNOWN">x</XMTok>
+                            <XMTok font="italic" role="UNKNOWN">y</XMTok>
+                          </XMApp>
+                          <XMApp>
+                            <XMTok meaning="equals" role="RELOP">=</XMTok>
+                            <XMDual>
+                              <XMApp>
+                                <XMTok meaning="delimited-[]"/>
+                                <XMRef idref="S1.I3.i1.p1.m1.1"/>
+                              </XMApp>
+                              <XMWrap>
+                                <XMTok role="OPEN" stretchy="false">[</XMTok>
+                                <XMTok font="italic" role="UNKNOWN" xml:id="S1.I3.i1.p1.m1.1">x</XMTok>
+                                <XMTok role="CLOSE" stretchy="false">]</XMTok>
+                              </XMWrap>
+                            </XMDual>
+                            <XMDual>
+                              <XMApp>
+                                <XMTok meaning="delimited-[]"/>
+                                <XMRef idref="S1.I3.i1.p1.m1.2"/>
+                              </XMApp>
+                              <XMWrap>
+                                <XMTok role="OPEN" stretchy="false">[</XMTok>
+                                <XMTok font="italic" role="UNKNOWN" xml:id="S1.I3.i1.p1.m1.2">y</XMTok>
+                                <XMTok role="CLOSE" stretchy="false">]</XMTok>
+                              </XMWrap>
+                            </XMDual>
+                          </XMApp>
+                        </XMApp>
+                      </XMath>
+                    </Math>
+<ERROR class="undefined">{proof}</ERROR></p>
+                  <enumerate xml:id="S1.I3.i1.I1">
+                    <item xml:id="S1.I3.i1.I1.i1">
+                      <tags>
+                        <tag>1.</tag>
+                        <tag role="refnum">1</tag>
+                        <tag role="typerefnum">item 1</tag>
+                      </tags>
+                      <para xml:id="S1.I3.i1.I1.i1.p1">
+                        <p><Math mode="inline" tex="\displaystyle x\sim y\Rightarrow[x]=[y]" text="x similar-to y Rightarrow delimited-[]@(x) = delimited-[]@(y)" xml:id="S1.I3.i1.I1.i1.p1.m1">
+                            <XMath>
+                              <XMApp>
+                                <XMTok meaning="multirelation"/>
+                                <XMTok font="italic" role="UNKNOWN">x</XMTok>
+                                <XMTok meaning="similar-to" name="sim" role="RELOP">∼</XMTok>
+                                <XMTok font="italic" role="UNKNOWN">y</XMTok>
+                                <XMTok name="Rightarrow" role="ARROW">⇒</XMTok>
+                                <XMDual>
+                                  <XMApp>
+                                    <XMTok meaning="delimited-[]"/>
+                                    <XMRef idref="S1.I3.i1.I1.i1.p1.m1.1"/>
+                                  </XMApp>
+                                  <XMWrap>
+                                    <XMTok role="OPEN" stretchy="false">[</XMTok>
+                                    <XMTok font="italic" role="UNKNOWN" xml:id="S1.I3.i1.I1.i1.p1.m1.1">x</XMTok>
+                                    <XMTok role="CLOSE" stretchy="false">]</XMTok>
+                                  </XMWrap>
+                                </XMDual>
+                                <XMTok meaning="equals" role="RELOP">=</XMTok>
+                                <XMDual>
+                                  <XMApp>
+                                    <XMTok meaning="delimited-[]"/>
+                                    <XMRef idref="S1.I3.i1.I1.i1.p1.m1.2"/>
+                                  </XMApp>
+                                  <XMWrap>
+                                    <XMTok role="OPEN" stretchy="false">[</XMTok>
+                                    <XMTok font="italic" role="UNKNOWN" xml:id="S1.I3.i1.I1.i1.p1.m1.2">y</XMTok>
+                                    <XMTok role="CLOSE" stretchy="false">]</XMTok>
+                                  </XMWrap>
+                                </XMDual>
+                              </XMApp>
+                            </XMath>
+                          </Math></p>
+                      </para>
+                      <para xml:id="S1.I3.i1.I1.i1.p2">
+                        <p>Si assume <Math mode="inline" tex="\displaystyle x\sim y" text="x similar-to y" xml:id="S1.I3.i1.I1.i1.p2.m1">
+                            <XMath>
+                              <XMApp>
+                                <XMTok meaning="similar-to" name="sim" role="RELOP">∼</XMTok>
+                                <XMTok font="italic" role="UNKNOWN">x</XMTok>
+                                <XMTok font="italic" role="UNKNOWN">y</XMTok>
+                              </XMApp>
+                            </XMath>
+                          </Math>.
+Preso <Math mode="inline" tex="\displaystyle z\in[x]" text="z element-of delimited-[]@(x)" xml:id="S1.I3.i1.I1.i1.p2.m2">
+                            <XMath>
+                              <XMApp>
+                                <XMTok meaning="element-of" name="in" role="RELOP">∈</XMTok>
+                                <XMTok font="italic" role="UNKNOWN">z</XMTok>
+                                <XMDual>
+                                  <XMApp>
+                                    <XMTok meaning="delimited-[]"/>
+                                    <XMRef idref="S1.I3.i1.I1.i1.p2.m2.1"/>
+                                  </XMApp>
+                                  <XMWrap>
+                                    <XMTok role="OPEN" stretchy="false">[</XMTok>
+                                    <XMTok font="italic" role="UNKNOWN" xml:id="S1.I3.i1.I1.i1.p2.m2.1">x</XMTok>
+                                    <XMTok role="CLOSE" stretchy="false">]</XMTok>
+                                  </XMWrap>
+                                </XMDual>
+                              </XMApp>
+                            </XMath>
+                          </Math>, allora per definizione <Math mode="inline" tex="\displaystyle z\sim x" text="z similar-to x" xml:id="S1.I3.i1.I1.i1.p2.m3">
+                            <XMath>
+                              <XMApp>
+                                <XMTok meaning="similar-to" name="sim" role="RELOP">∼</XMTok>
+                                <XMTok font="italic" role="UNKNOWN">z</XMTok>
+                                <XMTok font="italic" role="UNKNOWN">x</XMTok>
+                              </XMApp>
+                            </XMath>
+                          </Math>. Per la proprietà transitiva segue che <Math mode="inline" tex="\displaystyle z\sim y" text="z similar-to y" xml:id="S1.I3.i1.I1.i1.p2.m4">
+                            <XMath>
+                              <XMApp>
+                                <XMTok meaning="similar-to" name="sim" role="RELOP">∼</XMTok>
+                                <XMTok font="italic" role="UNKNOWN">z</XMTok>
+                                <XMTok font="italic" role="UNKNOWN">y</XMTok>
+                              </XMApp>
+                            </XMath>
+                          </Math>, da cui <Math mode="inline" tex="\displaystyle z\in[y]" text="z element-of delimited-[]@(y)" xml:id="S1.I3.i1.I1.i1.p2.m5">
+                            <XMath>
+                              <XMApp>
+                                <XMTok meaning="element-of" name="in" role="RELOP">∈</XMTok>
+                                <XMTok font="italic" role="UNKNOWN">z</XMTok>
+                                <XMDual>
+                                  <XMApp>
+                                    <XMTok meaning="delimited-[]"/>
+                                    <XMRef idref="S1.I3.i1.I1.i1.p2.m5.1"/>
+                                  </XMApp>
+                                  <XMWrap>
+                                    <XMTok role="OPEN" stretchy="false">[</XMTok>
+                                    <XMTok font="italic" role="UNKNOWN" xml:id="S1.I3.i1.I1.i1.p2.m5.1">y</XMTok>
+                                    <XMTok role="CLOSE" stretchy="false">]</XMTok>
+                                  </XMWrap>
+                                </XMDual>
+                              </XMApp>
+                            </XMath>
+                          </Math>.
+Preso <Math mode="inline" tex="\displaystyle z\in[y]" text="z element-of delimited-[]@(y)" xml:id="S1.I3.i1.I1.i1.p2.m6">
+                            <XMath>
+                              <XMApp>
+                                <XMTok meaning="element-of" name="in" role="RELOP">∈</XMTok>
+                                <XMTok font="italic" role="UNKNOWN">z</XMTok>
+                                <XMDual>
+                                  <XMApp>
+                                    <XMTok meaning="delimited-[]"/>
+                                    <XMRef idref="S1.I3.i1.I1.i1.p2.m6.1"/>
+                                  </XMApp>
+                                  <XMWrap>
+                                    <XMTok role="OPEN" stretchy="false">[</XMTok>
+                                    <XMTok font="italic" role="UNKNOWN" xml:id="S1.I3.i1.I1.i1.p2.m6.1">y</XMTok>
+                                    <XMTok role="CLOSE" stretchy="false">]</XMTok>
+                                  </XMWrap>
+                                </XMDual>
+                              </XMApp>
+                            </XMath>
+                          </Math>, allora per definizione <Math mode="inline" tex="\displaystyle z\sim y" text="z similar-to y" xml:id="S1.I3.i1.I1.i1.p2.m7">
+                            <XMath>
+                              <XMApp>
+                                <XMTok meaning="similar-to" name="sim" role="RELOP">∼</XMTok>
+                                <XMTok font="italic" role="UNKNOWN">z</XMTok>
+                                <XMTok font="italic" role="UNKNOWN">y</XMTok>
+                              </XMApp>
+                            </XMath>
+                          </Math>. Per la proprietà simmetrica <Math mode="inline" tex="\displaystyle y\sim x" text="y similar-to x" xml:id="S1.I3.i1.I1.i1.p2.m8">
+                            <XMath>
+                              <XMApp>
+                                <XMTok meaning="similar-to" name="sim" role="RELOP">∼</XMTok>
+                                <XMTok font="italic" role="UNKNOWN">y</XMTok>
+                                <XMTok font="italic" role="UNKNOWN">x</XMTok>
+                              </XMApp>
+                            </XMath>
+                          </Math>. Di conseguenza per la proprietà transitiva <Math mode="inline" tex="\displaystyle z\sim x" text="z similar-to x" xml:id="S1.I3.i1.I1.i1.p2.m9">
+                            <XMath>
+                              <XMApp>
+                                <XMTok meaning="similar-to" name="sim" role="RELOP">∼</XMTok>
+                                <XMTok font="italic" role="UNKNOWN">z</XMTok>
+                                <XMTok font="italic" role="UNKNOWN">x</XMTok>
+                              </XMApp>
+                            </XMath>
+                          </Math>, da cui <Math mode="inline" tex="\displaystyle z\in[x]" text="z element-of delimited-[]@(x)" xml:id="S1.I3.i1.I1.i1.p2.m10">
+                            <XMath>
+                              <XMApp>
+                                <XMTok meaning="element-of" name="in" role="RELOP">∈</XMTok>
+                                <XMTok font="italic" role="UNKNOWN">z</XMTok>
+                                <XMDual>
+                                  <XMApp>
+                                    <XMTok meaning="delimited-[]"/>
+                                    <XMRef idref="S1.I3.i1.I1.i1.p2.m10.1"/>
+                                  </XMApp>
+                                  <XMWrap>
+                                    <XMTok role="OPEN" stretchy="false">[</XMTok>
+                                    <XMTok font="italic" role="UNKNOWN" xml:id="S1.I3.i1.I1.i1.p2.m10.1">x</XMTok>
+                                    <XMTok role="CLOSE" stretchy="false">]</XMTok>
+                                  </XMWrap>
+                                </XMDual>
+                              </XMApp>
+                            </XMath>
+                          </Math>.</p>
+                      </para>
+                      <para xml:id="S1.I3.i1.I1.i1.p3">
+                        <p>Quindi <Math mode="inline" tex="\displaystyle[x]=[y]" text="delimited-[]@(x) = delimited-[]@(y)" xml:id="S1.I3.i1.I1.i1.p3.m1">
+                            <XMath>
+                              <XMApp>
+                                <XMTok meaning="equals" role="RELOP">=</XMTok>
+                                <XMDual>
+                                  <XMApp>
+                                    <XMTok meaning="delimited-[]"/>
+                                    <XMRef idref="S1.I3.i1.I1.i1.p3.m1.1"/>
+                                  </XMApp>
+                                  <XMWrap>
+                                    <XMTok role="OPEN" stretchy="false">[</XMTok>
+                                    <XMTok font="italic" role="UNKNOWN" xml:id="S1.I3.i1.I1.i1.p3.m1.1">x</XMTok>
+                                    <XMTok role="CLOSE" stretchy="false">]</XMTok>
+                                  </XMWrap>
+                                </XMDual>
+                                <XMDual>
+                                  <XMApp>
+                                    <XMTok meaning="delimited-[]"/>
+                                    <XMRef idref="S1.I3.i1.I1.i1.p3.m1.2"/>
+                                  </XMApp>
+                                  <XMWrap>
+                                    <XMTok role="OPEN" stretchy="false">[</XMTok>
+                                    <XMTok font="italic" role="UNKNOWN" xml:id="S1.I3.i1.I1.i1.p3.m1.2">y</XMTok>
+                                    <XMTok role="CLOSE" stretchy="false">]</XMTok>
+                                  </XMWrap>
+                                </XMDual>
+                              </XMApp>
+                            </XMath>
+                          </Math>.</p>
+                      </para>
+                    </item>
+                    <item xml:id="S1.I3.i1.I1.i2">
+                      <tags>
+                        <tag>2.</tag>
+                        <tag role="refnum">2</tag>
+                        <tag role="typerefnum">item 2</tag>
+                      </tags>
+                      <para xml:id="S1.I3.i1.I1.i2.p1">
+                        <p><Math mode="inline" tex="\displaystyle[x]=[y]\Rightarrow x\sim y" text="delimited-[]@(x) = delimited-[]@(y) Rightarrow x similar-to y" xml:id="S1.I3.i1.I1.i2.p1.m1">
+                            <XMath>
+                              <XMApp>
+                                <XMTok meaning="multirelation"/>
+                                <XMDual>
+                                  <XMApp>
+                                    <XMTok meaning="delimited-[]"/>
+                                    <XMRef idref="S1.I3.i1.I1.i2.p1.m1.1"/>
+                                  </XMApp>
+                                  <XMWrap>
+                                    <XMTok role="OPEN" stretchy="false">[</XMTok>
+                                    <XMTok font="italic" role="UNKNOWN" xml:id="S1.I3.i1.I1.i2.p1.m1.1">x</XMTok>
+                                    <XMTok role="CLOSE" stretchy="false">]</XMTok>
+                                  </XMWrap>
+                                </XMDual>
+                                <XMTok meaning="equals" role="RELOP">=</XMTok>
+                                <XMDual>
+                                  <XMApp>
+                                    <XMTok meaning="delimited-[]"/>
+                                    <XMRef idref="S1.I3.i1.I1.i2.p1.m1.2"/>
+                                  </XMApp>
+                                  <XMWrap>
+                                    <XMTok role="OPEN" stretchy="false">[</XMTok>
+                                    <XMTok font="italic" role="UNKNOWN" xml:id="S1.I3.i1.I1.i2.p1.m1.2">y</XMTok>
+                                    <XMTok role="CLOSE" stretchy="false">]</XMTok>
+                                  </XMWrap>
+                                </XMDual>
+                                <XMTok name="Rightarrow" role="ARROW">⇒</XMTok>
+                                <XMTok font="italic" role="UNKNOWN">x</XMTok>
+                                <XMTok meaning="similar-to" name="sim" role="RELOP">∼</XMTok>
+                                <XMTok font="italic" role="UNKNOWN">y</XMTok>
+                              </XMApp>
+                            </XMath>
+                          </Math>
+<!--  %**** algebra.tex Line 75 **** --></p>
+                      </para>
+                      <para xml:id="S1.I3.i1.I1.i2.p2">
+                        <p>Per definizione di classe di equivalenza <Math mode="inline" tex="\displaystyle x\in[x]" text="x element-of delimited-[]@(x)" xml:id="S1.I3.i1.I1.i2.p2.m1">
+                            <XMath>
+                              <XMApp>
+                                <XMTok meaning="element-of" name="in" role="RELOP">∈</XMTok>
+                                <XMTok font="italic" role="UNKNOWN">x</XMTok>
+                                <XMDual>
+                                  <XMApp>
+                                    <XMTok meaning="delimited-[]"/>
+                                    <XMRef idref="S1.I3.i1.I1.i2.p2.m1.1"/>
+                                  </XMApp>
+                                  <XMWrap>
+                                    <XMTok role="OPEN" stretchy="false">[</XMTok>
+                                    <XMTok font="italic" role="UNKNOWN" xml:id="S1.I3.i1.I1.i2.p2.m1.1">x</XMTok>
+                                    <XMTok role="CLOSE" stretchy="false">]</XMTok>
+                                  </XMWrap>
+                                </XMDual>
+                              </XMApp>
+                            </XMath>
+                          </Math>. Siccome <Math mode="inline" tex="\displaystyle[x]=[y]" text="delimited-[]@(x) = delimited-[]@(y)" xml:id="S1.I3.i1.I1.i2.p2.m2">
+                            <XMath>
+                              <XMApp>
+                                <XMTok meaning="equals" role="RELOP">=</XMTok>
+                                <XMDual>
+                                  <XMApp>
+                                    <XMTok meaning="delimited-[]"/>
+                                    <XMRef idref="S1.I3.i1.I1.i2.p2.m2.1"/>
+                                  </XMApp>
+                                  <XMWrap>
+                                    <XMTok role="OPEN" stretchy="false">[</XMTok>
+                                    <XMTok font="italic" role="UNKNOWN" xml:id="S1.I3.i1.I1.i2.p2.m2.1">x</XMTok>
+                                    <XMTok role="CLOSE" stretchy="false">]</XMTok>
+                                  </XMWrap>
+                                </XMDual>
+                                <XMDual>
+                                  <XMApp>
+                                    <XMTok meaning="delimited-[]"/>
+                                    <XMRef idref="S1.I3.i1.I1.i2.p2.m2.2"/>
+                                  </XMApp>
+                                  <XMWrap>
+                                    <XMTok role="OPEN" stretchy="false">[</XMTok>
+                                    <XMTok font="italic" role="UNKNOWN" xml:id="S1.I3.i1.I1.i2.p2.m2.2">y</XMTok>
+                                    <XMTok role="CLOSE" stretchy="false">]</XMTok>
+                                  </XMWrap>
+                                </XMDual>
+                              </XMApp>
+                            </XMath>
+                          </Math>, <Math mode="inline" tex="\displaystyle x\in[y]" text="x element-of delimited-[]@(y)" xml:id="S1.I3.i1.I1.i2.p2.m3">
+                            <XMath>
+                              <XMApp>
+                                <XMTok meaning="element-of" name="in" role="RELOP">∈</XMTok>
+                                <XMTok font="italic" role="UNKNOWN">x</XMTok>
+                                <XMDual>
+                                  <XMApp>
+                                    <XMTok meaning="delimited-[]"/>
+                                    <XMRef idref="S1.I3.i1.I1.i2.p2.m3.1"/>
+                                  </XMApp>
+                                  <XMWrap>
+                                    <XMTok role="OPEN" stretchy="false">[</XMTok>
+                                    <XMTok font="italic" role="UNKNOWN" xml:id="S1.I3.i1.I1.i2.p2.m3.1">y</XMTok>
+                                    <XMTok role="CLOSE" stretchy="false">]</XMTok>
+                                  </XMWrap>
+                                </XMDual>
+                              </XMApp>
+                            </XMath>
+                          </Math>. Allora per definizione di classe, <Math mode="inline" tex="\displaystyle x\sim y" text="x similar-to y" xml:id="S1.I3.i1.I1.i2.p2.m4">
+                            <XMath>
+                              <XMApp>
+                                <XMTok meaning="similar-to" name="sim" role="RELOP">∼</XMTok>
+                                <XMTok font="italic" role="UNKNOWN">x</XMTok>
+                                <XMTok font="italic" role="UNKNOWN">y</XMTok>
+                              </XMApp>
+                            </XMath>
+                          </Math>.</p>
+                      </para>
+                    </item>
+                  </enumerate>
+                </para>
+              </item>
+              <item xml:id="S1.I3.i2">
+                <tags>
+                  <tag>•</tag>
+                  <tag role="typerefnum">2nd item</tag>
+                </tags>
+                <para xml:id="S1.I3.i2.p1">
+                  <p><Math mode="inline" tex="\displaystyle x\nsim y\Rightarrow[x]\cap[y]=\varnothing" text="x * [\nsim] * y Rightarrow delimited-[]@(x) intersection delimited-[]@(y) = [\varnothing]" xml:id="S1.I3.i2.p1.m1">
+                      <XMath>
+                        <XMApp>
+                          <XMTok meaning="multirelation"/>
+                          <XMApp>
+                            <XMTok meaning="times" role="MULOP">⁢</XMTok>
+                            <XMTok font="italic" role="UNKNOWN">x</XMTok>
+                            <ERROR class="undefined">\nsim</ERROR>
+                            <XMTok font="italic" role="UNKNOWN">y</XMTok>
+                          </XMApp>
+                          <XMTok name="Rightarrow" role="ARROW">⇒</XMTok>
+                          <XMApp>
+                            <XMTok meaning="intersection" name="cap" role="ADDOP">∩</XMTok>
+                            <XMDual>
+                              <XMApp>
+                                <XMTok meaning="delimited-[]"/>
+                                <XMRef idref="S1.I3.i2.p1.m1.1"/>
+                              </XMApp>
+                              <XMWrap>
+                                <XMTok role="OPEN" stretchy="false">[</XMTok>
+                                <XMTok font="italic" role="UNKNOWN" xml:id="S1.I3.i2.p1.m1.1">x</XMTok>
+                                <XMTok role="CLOSE" stretchy="false">]</XMTok>
+                              </XMWrap>
+                            </XMDual>
+                            <XMDual>
+                              <XMApp>
+                                <XMTok meaning="delimited-[]"/>
+                                <XMRef idref="S1.I3.i2.p1.m1.2"/>
+                              </XMApp>
+                              <XMWrap>
+                                <XMTok role="OPEN" stretchy="false">[</XMTok>
+                                <XMTok font="italic" role="UNKNOWN" xml:id="S1.I3.i2.p1.m1.2">y</XMTok>
+                                <XMTok role="CLOSE" stretchy="false">]</XMTok>
+                              </XMWrap>
+                            </XMDual>
+                          </XMApp>
+                          <XMTok meaning="equals" role="RELOP">=</XMTok>
+                          <ERROR class="undefined">\varnothing</ERROR>
+                        </XMApp>
+                      </XMath>
+                    </Math> (classi di equivalenza disgiunte)
+<ERROR class="undefined">{proof}</ERROR>
+Passo alla contronominale <Math mode="inline" tex="\displaystyle[x]\cap[y]\neq\varnothing\Rightarrow x\sim y" text="delimited-[]@(x) intersection delimited-[]@(y) not-equals [\varnothing] Rightarrow x similar-to y" xml:id="S1.I3.i2.p1.m2">
+                      <XMath>
+                        <XMApp>
+                          <XMTok meaning="multirelation"/>
+                          <XMApp>
+                            <XMTok meaning="intersection" name="cap" role="ADDOP">∩</XMTok>
+                            <XMDual>
+                              <XMApp>
+                                <XMTok meaning="delimited-[]"/>
+                                <XMRef idref="S1.I3.i2.p1.m2.1"/>
+                              </XMApp>
+                              <XMWrap>
+                                <XMTok role="OPEN" stretchy="false">[</XMTok>
+                                <XMTok font="italic" role="UNKNOWN" xml:id="S1.I3.i2.p1.m2.1">x</XMTok>
+                                <XMTok role="CLOSE" stretchy="false">]</XMTok>
+                              </XMWrap>
+                            </XMDual>
+                            <XMDual>
+                              <XMApp>
+                                <XMTok meaning="delimited-[]"/>
+                                <XMRef idref="S1.I3.i2.p1.m2.2"/>
+                              </XMApp>
+                              <XMWrap>
+                                <XMTok role="OPEN" stretchy="false">[</XMTok>
+                                <XMTok font="italic" role="UNKNOWN" xml:id="S1.I3.i2.p1.m2.2">y</XMTok>
+                                <XMTok role="CLOSE" stretchy="false">]</XMTok>
+                              </XMWrap>
+                            </XMDual>
+                          </XMApp>
+                          <XMTok meaning="not-equals" name="neq" role="RELOP">≠</XMTok>
+                          <ERROR class="undefined">\varnothing</ERROR>
+                          <XMTok name="Rightarrow" role="ARROW">⇒</XMTok>
+                          <XMTok font="italic" role="UNKNOWN">x</XMTok>
+                          <XMTok meaning="similar-to" name="sim" role="RELOP">∼</XMTok>
+                          <XMTok font="italic" role="UNKNOWN">y</XMTok>
+                        </XMApp>
+                      </XMath>
+                    </Math>. Affermare che due insiemi non sono disgiunti significa affermare che hanno un elemento <Math mode="inline" tex="\displaystyle z" text="z" xml:id="S1.I3.i2.p1.m3">
+                      <XMath>
+                        <XMTok font="italic" role="UNKNOWN">z</XMTok>
+                      </XMath>
+                    </Math> in comune <Math mode="inline" tex="\displaystyle\exists z\in[x]:z\in[y]" text="exists@(z) element-of delimited-[]@(x) colon z element-of delimited-[]@(y)" xml:id="S1.I3.i2.p1.m4">
+                      <XMath>
+                        <XMApp>
+                          <XMTok name="colon" role="METARELOP">:</XMTok>
+                          <XMApp>
+                            <XMTok meaning="element-of" name="in" role="RELOP">∈</XMTok>
+                            <XMApp>
+                              <XMTok meaning="exists" role="BIGOP">∃</XMTok>
+                              <XMTok font="italic" role="UNKNOWN">z</XMTok>
+                            </XMApp>
+                            <XMDual>
+                              <XMApp>
+                                <XMTok meaning="delimited-[]"/>
+                                <XMRef idref="S1.I3.i2.p1.m4.1"/>
+                              </XMApp>
+                              <XMWrap>
+                                <XMTok role="OPEN" stretchy="false">[</XMTok>
+                                <XMTok font="italic" role="UNKNOWN" xml:id="S1.I3.i2.p1.m4.1">x</XMTok>
+                                <XMTok role="CLOSE" stretchy="false">]</XMTok>
+                              </XMWrap>
+                            </XMDual>
+                          </XMApp>
+                          <XMApp>
+                            <XMTok meaning="element-of" name="in" role="RELOP">∈</XMTok>
+                            <XMTok font="italic" role="UNKNOWN">z</XMTok>
+                            <XMDual>
+                              <XMApp>
+                                <XMTok meaning="delimited-[]"/>
+                                <XMRef idref="S1.I3.i2.p1.m4.2"/>
+                              </XMApp>
+                              <XMWrap>
+                                <XMTok role="OPEN" stretchy="false">[</XMTok>
+                                <XMTok font="italic" role="UNKNOWN" xml:id="S1.I3.i2.p1.m4.2">y</XMTok>
+                                <XMTok role="CLOSE" stretchy="false">]</XMTok>
+                              </XMWrap>
+                            </XMDual>
+                          </XMApp>
+                        </XMApp>
+                      </XMath>
+                    </Math>, di conseguenza per definizione <Math mode="inline" tex="\displaystyle z\sim x" text="z similar-to x" xml:id="S1.I3.i2.p1.m5">
+                      <XMath>
+                        <XMApp>
+                          <XMTok meaning="similar-to" name="sim" role="RELOP">∼</XMTok>
+                          <XMTok font="italic" role="UNKNOWN">z</XMTok>
+                          <XMTok font="italic" role="UNKNOWN">x</XMTok>
+                        </XMApp>
+                      </XMath>
+                    </Math> (per <Math mode="inline" tex="\displaystyle[\textnormal{R}]~{}x\sim z" text="delimited-[]@([R]) * x similar-to z" xml:id="S1.I3.i2.p1.m6">
+                      <XMath>
+                        <XMApp>
+                          <XMTok meaning="similar-to" name="sim" role="RELOP">∼</XMTok>
+                          <XMApp>
+                            <XMTok meaning="times" role="MULOP">⁢</XMTok>
+                            <XMDual>
+                              <XMApp>
+                                <XMTok meaning="delimited-[]"/>
+                                <XMRef idref="S1.I3.i2.p1.m6.1"/>
+                              </XMApp>
+                              <XMWrap>
+                                <XMTok role="OPEN" stretchy="false">[</XMTok>
+                                <XMText xml:id="S1.I3.i2.p1.m6.1">R</XMText>
+                                <XMTok role="CLOSE" rpadding="3.3pt" stretchy="false">]</XMTok>
+                              </XMWrap>
+                            </XMDual>
+                            <XMTok font="italic" role="UNKNOWN">x</XMTok>
+                          </XMApp>
+                          <XMTok font="italic" role="UNKNOWN">z</XMTok>
+                        </XMApp>
+                      </XMath>
+                    </Math>) e <Math mode="inline" tex="\displaystyle z\sim y" text="z similar-to y" xml:id="S1.I3.i2.p1.m7">
+                      <XMath>
+                        <XMApp>
+                          <XMTok meaning="similar-to" name="sim" role="RELOP">∼</XMTok>
+                          <XMTok font="italic" role="UNKNOWN">z</XMTok>
+                          <XMTok font="italic" role="UNKNOWN">y</XMTok>
+                        </XMApp>
+                      </XMath>
+                    </Math>. Di conseguenza per la proprietà transitiva, la tesi.</p>
+                </para>
+              </item>
+            </itemize>
+          </para>
+        </paragraph>
+      </subsubsection>
+    </subsection>
+  </section>
+  <section inlist="toc" xml:id="S2">
+    <tags>
+      <tag>2</tag>
+      <tag role="refnum">2</tag>
+      <tag role="typerefnum">§2</tag>
+    </tags>
+    <title><tag close=" ">2</tag>title</title>
+  </section>
+</document>
