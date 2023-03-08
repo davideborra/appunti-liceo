@@ -1,0 +1,124 @@
+\babel@toc {italian}{}\relax 
+\babel@toc {italian}{}\relax 
+\contentsline {chapter}{\numberline {1}Limiti}{1}{chapter.1}%
+\contentsline {section}{\numberline {1.1}Intervalli in $\mathbb {R}$}{1}{section.1.1}%
+\contentsline {subsection}{\numberline {1.1.1}Intorni}{1}{subsection.1.1.1}%
+\contentsline {subsubsection}{Intorni circolari}{1}{section*.2}%
+\contentsline {subsubsection}{Intorni di $\infty $}{1}{section*.3}%
+\contentsline {subsection}{\numberline {1.1.2}Insiemi limitati e illimitati, maggiorante, minorante, estremi, massimo, minimo.}{1}{subsection.1.1.2}%
+\contentsline {paragraph}{Caratterizzazione di $\qopname \relax m{sup}X$}{2}{section*.4}%
+\contentsline {paragraph}{Caratterizzazione di $\qopname \relax m{inf}X$}{3}{section*.5}%
+\contentsline {subsection}{\numberline {1.1.3}Punti di accumulazione e punti isolati}{3}{subsection.1.1.3}%
+\contentsline {section}{\numberline {1.2}Definizione di limite}{4}{section.1.2}%
+\contentsline {subsection}{\numberline {1.2.1}Asintoti}{6}{subsection.1.2.1}%
+\contentsline {section}{\numberline {1.3}Continuità}{6}{section.1.3}%
+\contentsline {section}{\numberline {1.4}Primi teoremi sui limiti}{6}{section.1.4}%
+\contentsline {subsection}{\numberline {1.4.1}Teorema di unicità del limite}{7}{subsection.1.4.1}%
+\contentsline {subsection}{\numberline {1.4.2}Teorema di permanenza del segno}{7}{subsection.1.4.2}%
+\contentsline {subsection}{\numberline {1.4.3}Teorema del confronto (o dei due carabinieri)}{8}{subsection.1.4.3}%
+\contentsline {section}{\numberline {1.5}Calcolo dei limiti}{9}{section.1.5}%
+\contentsline {subsection}{\numberline {1.5.1}Funzioni continue e funzioni elementari}{9}{subsection.1.5.1}%
+\contentsline {subsection}{\numberline {1.5.2}Algebra dei limiti}{9}{subsection.1.5.2}%
+\contentsline {subsection}{\numberline {1.5.3}Mediante il teorema del confronto}{10}{subsection.1.5.3}%
+\contentsline {subsection}{\numberline {1.5.4}Forme di indecisione (o forme indeterminate)}{10}{subsection.1.5.4}%
+\contentsline {subsubsection}{Forma di indecisione $+\infty -\infty $}{10}{section*.7}%
+\contentsline {subsubsection}{Se si presenta in una funzione polinomiale}{10}{section*.8}%
+\contentsline {subsubsection}{Se si presenta in una funzione irrazionale}{11}{section*.9}%
+\contentsline {paragraph}{Se il termine sotto radice è il quadrato del termine fuori}{11}{section*.10}%
+\contentsline {subsubsection}{Forma di indecisione $0\cdot \infty $}{12}{section*.11}%
+\contentsline {subsubsection}{Forma di indecisione $\frac {\infty }{\infty }$}{12}{section*.12}%
+\contentsline {paragraph}{Se si presenta in una funzione razionale fratta}{12}{tcb@cnt@esempio.1.5.6}%
+\contentsline {subsubsection}{Se si presenta in una funzione irrazionale fratta}{12}{section*.14}%
+\contentsline {subsubsection}{Forma di indecisione $\frac {0}{0}$}{13}{section*.15}%
+\contentsline {subsubsection}{Funzioni razionali fratte}{13}{section*.16}%
+\contentsline {subsubsection}{Funzioni irrazionali fratte}{13}{section*.17}%
+\contentsline {subsubsection}{Forme di indecisione $0^0$, $\infty ^0$, $1^\infty $}{13}{section*.18}%
+\contentsline {subsection}{\numberline {1.5.5}Limiti Notevoli}{14}{subsection.1.5.5}%
+\contentsline {paragraph}{$\qopname \relax m{lim}_{x\to +\infty }\left (1+\frac {k}{x}\right )^{x} = e^k$}{16}{section*.20}%
+\contentsline {paragraph}{$\qopname \relax m{lim}_{x\to 0^+}\left (1+kx\right )^{\frac {1}{x}} e^k$}{16}{section*.21}%
+\contentsline {section}{\numberline {1.6}Limiti e parametri}{17}{section.1.6}%
+\contentsline {section}{\numberline {1.7}Continuità e discontinuità}{18}{section.1.7}%
+\contentsline {subsection}{\numberline {1.7.1}Discontinuità di prima specie o di salto}{18}{subsection.1.7.1}%
+\contentsline {subsection}{\numberline {1.7.2}Discontinuità di seconda specie}{18}{subsection.1.7.2}%
+\contentsline {subsection}{\numberline {1.7.3}Discontinuità di terza specie o eliminabili}{18}{subsection.1.7.3}%
+\contentsline {subsection}{\numberline {1.7.4}Continuità e funzioni inverse}{19}{subsection.1.7.4}%
+\contentsline {subsubsection}{Continuità della funzione inversa}{19}{section*.26}%
+\contentsline {subsubsection}{Condizione di invertibilità per funzioni continue}{19}{section*.27}%
+\contentsline {section}{\numberline {1.8}Teoremi sulle funzioni continue}{20}{section.1.8}%
+\contentsline {subsection}{\numberline {1.8.1}Teorema di Weistrass}{20}{subsection.1.8.1}%
+\contentsline {subsection}{\numberline {1.8.2}Teorema dell'esistenza degli zeri (o di Bolzano)}{20}{subsection.1.8.2}%
+\contentsline {subsection}{\numberline {1.8.3}Teorema dei valori intermedi (o di Darboux)}{20}{subsection.1.8.3}%
+\contentsline {chapter}{\numberline {2}Derivate}{21}{chapter.2}%
+\contentsline {section}{\numberline {2.1}Definizione}{21}{section.2.1}%
+\contentsline {subsection}{\numberline {2.1.1}Problema classico}{22}{subsection.2.1.1}%
+\contentsline {subsection}{\numberline {2.1.2}Calcolo della derivata mediante definizione}{22}{subsection.2.1.2}%
+\contentsline {section}{\numberline {2.2}Derivate fondamentali}{23}{section.2.2}%
+\contentsline {subsection}{\numberline {2.2.1}Funzione costante}{23}{subsection.2.2.1}%
+\contentsline {subsection}{\numberline {2.2.2}Funzione identità}{23}{subsection.2.2.2}%
+\contentsline {subsection}{\numberline {2.2.3}Funzione potenza}{23}{subsection.2.2.3}%
+\contentsline {subsubsection}{Derivata della funzione radice quadrata}{23}{section*.29}%
+\contentsline {subsection}{\numberline {2.2.4}Funzione seno}{24}{subsection.2.2.4}%
+\contentsline {subsection}{\numberline {2.2.5}Funzione coseno}{24}{subsection.2.2.5}%
+\contentsline {subsection}{\numberline {2.2.6}Funzione esponenziale}{24}{subsection.2.2.6}%
+\contentsline {subsection}{\numberline {2.2.7}Funzione logaritmo}{25}{subsection.2.2.7}%
+\contentsline {section}{\numberline {2.3}Operazioni con le derivate}{25}{section.2.3}%
+\contentsline {subsection}{\numberline {2.3.1}Linearità rispetto al prodotto}{25}{subsection.2.3.1}%
+\contentsline {subsection}{\numberline {2.3.2}Linearità rispetto alla somma}{25}{subsection.2.3.2}%
+\contentsline {subsection}{\numberline {2.3.3}Derivata del prodotto}{25}{subsection.2.3.3}%
+\contentsline {subsection}{\numberline {2.3.4}Derivata del rapporto}{26}{subsection.2.3.4}%
+\contentsline {subsection}{\numberline {2.3.5}Derivata della funzione composta (chain rule)}{26}{subsection.2.3.5}%
+\contentsline {section}{\numberline {2.4}Derivate notevoli /2}{27}{section.2.4}%
+\contentsline {subsection}{\numberline {2.4.1}Funzione tangente}{27}{subsection.2.4.1}%
+\contentsline {subsection}{\numberline {2.4.2}Funzione cotangente}{27}{subsection.2.4.2}%
+\contentsline {section}{\numberline {2.5}Legame tra continuità e derivabilità}{27}{section.2.5}%
+\contentsline {subsection}{\numberline {2.5.1}Continuità delle funzioni derivabili}{27}{subsection.2.5.1}%
+\contentsline {subsection}{\numberline {2.5.2}Studi di continuità e derivabilità}{28}{subsection.2.5.2}%
+\contentsline {section}{\numberline {2.6}Punti di non derivabilità}{29}{section.2.6}%
+\contentsline {subsection}{\numberline {2.6.1}Punto angoloso}{29}{subsection.2.6.1}%
+\contentsline {subsection}{\numberline {2.6.2}Cuspide}{29}{subsection.2.6.2}%
+\contentsline {subsection}{\numberline {2.6.3}Flesso a tangente verticale}{30}{subsection.2.6.3}%
+\contentsline {subsection}{\numberline {2.6.4}Punto a tangente verticale}{30}{subsection.2.6.4}%
+\contentsline {section}{\numberline {2.7}Criterio di derivabilità}{30}{section.2.7}%
+\contentsline {section}{\numberline {2.8}Operazioni con le derivate /2}{31}{section.2.8}%
+\contentsline {subsubsection}{Derivata di $[f(x)]^g(x)$}{31}{section*.34}%
+\contentsline {subsection}{\numberline {2.8.1}Derivata della funzione inversa}{32}{subsection.2.8.1}%
+\contentsline {section}{\numberline {2.9}Derivate notevoli /3}{33}{section.2.9}%
+\contentsline {subsection}{\numberline {2.9.1}Funzione arcoseno}{33}{subsection.2.9.1}%
+\contentsline {subsection}{\numberline {2.9.2}Funzione arcocoseno}{33}{subsection.2.9.2}%
+\contentsline {subsection}{\numberline {2.9.3}Funzione arcotangente}{33}{subsection.2.9.3}%
+\contentsline {subsection}{\numberline {2.9.4}Funzione arcocotangente}{34}{subsection.2.9.4}%
+\contentsline {section}{\numberline {2.10}Il differenziale}{34}{section.2.10}%
+\contentsline {subsection}{\numberline {2.10.1}Un'applicazione del differenziale}{35}{subsection.2.10.1}%
+\contentsline {section}{\numberline {2.11}Teoremi del calcolo differenziale}{35}{section.2.11}%
+\contentsline {subsection}{\numberline {2.11.1}Teorema di Fermat}{35}{subsection.2.11.1}%
+\contentsline {subsection}{\numberline {2.11.2}Teorema di Rolle}{36}{subsection.2.11.2}%
+\contentsline {subsubsection}{Un'applicazione del teorema di Rolle}{37}{section*.37}%
+\contentsline {subsection}{\numberline {2.11.3}Teorema di Lagrange}{37}{subsection.2.11.3}%
+\contentsline {subsection}{\numberline {2.11.4}Conseguenze del teorema di Lagrange}{38}{subsection.2.11.4}%
+\contentsline {subsubsection}{Funzioni con derivata nulla}{38}{section*.38}%
+\contentsline {subsubsection}{Funzioni con derivate uguali}{38}{section*.39}%
+\contentsline {subsubsection}{Monotonia di funzioni derivabili}{38}{section*.40}%
+\contentsline {subsection}{\numberline {2.11.5}Teorema di Cauchy}{38}{subsection.2.11.5}%
+\contentsline {subsection}{\numberline {2.11.6}Teorema di De l'Hôpital}{39}{subsection.2.11.6}%
+\contentsline {section}{\numberline {2.12}Studio della derivata}{40}{section.2.12}%
+\contentsline {subsection}{\numberline {2.12.1}Punti di massimo relativo}{40}{subsection.2.12.1}%
+\contentsline {subsection}{\numberline {2.12.2}Punti di minimo relativo}{40}{subsection.2.12.2}%
+\contentsline {subsection}{\numberline {2.12.3}Punti di flesso a tangente orizzontale}{40}{subsection.2.12.3}%
+\contentsline {section}{\numberline {2.13}Derivata seconda e flessi a tangente obliqua}{41}{section.2.13}%
+\contentsline {section}{\numberline {2.14}Problemi di ottimizzazione}{41}{section.2.14}%
+\contentsline {chapter}{\numberline {3}Studio di funzione completo}{43}{chapter.3}%
+\contentsline {section}{\numberline {3.1}Traccia per lo studio di funzione completo}{43}{section.3.1}%
+\contentsline {subsection}{\numberline {3.1.1}Classificazione}{43}{subsection.3.1.1}%
+\contentsline {subsection}{\numberline {3.1.2}Dominio}{43}{subsection.3.1.2}%
+\contentsline {subsection}{\numberline {3.1.3}Simmetrie}{43}{subsection.3.1.3}%
+\contentsline {subsection}{\numberline {3.1.4}Intersezioni con gli assi cartesiani}{43}{subsection.3.1.4}%
+\contentsline {subsection}{\numberline {3.1.5}Studio del segno}{43}{subsection.3.1.5}%
+\contentsline {subsection}{\numberline {3.1.6}Limiti, asintoti e discontinuità}{44}{subsection.3.1.6}%
+\contentsline {subsection}{\numberline {3.1.7}Derivata prima}{44}{subsection.3.1.7}%
+\contentsline {subsection}{\numberline {3.1.8}Derivata seconda}{45}{subsection.3.1.8}%
+\contentsline {subsection}{\numberline {3.1.9}Estremi globali}{45}{subsection.3.1.9}%
+\contentsline {section}{\numberline {3.2}Esempi}{45}{section.3.2}%
+\contentsline {section}{\numberline {3.3}Esercizi}{49}{section.3.3}%
+\contentsline {chapter}{\numberline {4}Soluzioni degli esercizi}{51}{chapter.4}%
+\contentsline {subsubsection}{Esercizio \ref {exc: sfx 1}}{51}{section*.45}%
+\contentsline {subsubsection}{Esercizio \ref {exc: sfx 2}}{53}{section*.47}%
