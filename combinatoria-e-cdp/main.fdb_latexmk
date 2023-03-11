@@ -1,6 +1,6 @@
 # Fdb version 3
-["pdflatex"] 1675359106 "/Users/davideborra/Documents/GitHub/appunti-liceo/combinatoria-e-cdp/main.tex" "main.pdf" "main" 1675359107
-  "/Users/davideborra/Documents/GitHub/appunti-liceo/combinatoria-e-cdp/main.tex" 1675359106 55431 d970378de1c8b7599c6db712a8ffe8f6 ""
+["pdflatex"] 1678378825 "/Users/davideborra/Documents/GitHub/appunti-liceo/combinatoria-e-cdp/main.tex" "main.pdf" "main" 1678378826
+  "/Users/davideborra/Documents/GitHub/appunti-liceo/combinatoria-e-cdp/main.tex" 1678378823 55431 d970378de1c8b7599c6db712a8ffe8f6 ""
   "/usr/local/texlive/2022/texmf-dist/fonts/enc/dvips/cm-super/cm-super-ts1.enc" 1136849721 2900 1537cc8184ad1792082cd229ecc269f4 ""
   "/usr/local/texlive/2022/texmf-dist/fonts/map/fontname/texfonts.map" 1577235249 3524 cb3e574dea2d1052e39280babc910dc8 ""
   "/usr/local/texlive/2022/texmf-dist/fonts/tfm/jknappen/ec/tcrm1000.tfm" 1136768653 1536 e07581a4bb3136ece9eeb4c3ffab8233 ""
@@ -274,14 +274,14 @@
   "/usr/local/texlive/2022/texmf-dist/tex/latex/zref/zref-base.sty" 1602274933 20688 beaddf14d96104d4bf016523be5395c5 ""
   "/usr/local/texlive/2022/texmf-dist/web2c/texmf.cnf" 1646502317 40171 cdab547de63d26590bebb3baff566530 ""
   "/usr/local/texlive/2022/texmf-var/fonts/map/pdftex/updmap/pdftex.map" 1647878959 4410336 7d30a02e9fa9a16d7d1f8d037ba69641 ""
-  "/usr/local/texlive/2022/texmf-var/web2c/pdftex/pdflatex.fmt" 1664453371 2826443 79048ec7f4be5f4a69f553793af991de ""
+  "/usr/local/texlive/2022/texmf-var/web2c/pdftex/pdflatex.fmt" 1678305909 2826443 0920fe6d4238dc556472a8799ba4e36c ""
   "/usr/local/texlive/2022/texmf.cnf" 1647878952 577 209b46be99c9075fd74d4c0369380e8c ""
   "CreativeCommons/by-nc-nd.png" 1672951571 20935 a4212c1a42d241a1351fc139b20de70b ""
   "lambdatex.sty" 1675355293 7400 fc6701606c9767829f7506ed2a98d1c8 ""
-  "main.aux" 1675359107 5417 eaa9c0ab20e3ae29bf1b9367de1014ef "pdflatex"
-  "main.out" 1675359107 6075 45a70a3a2cf98fa3877c2c0ec9af9cd5 "pdflatex"
-  "main.tex" 1675359106 55431 d970378de1c8b7599c6db712a8ffe8f6 ""
-  "main.toc" 1675359107 3222 00343a75d6bdeb6d3ac6bd1b10127877 "pdflatex"
+  "main.aux" 1678378826 5417 eaa9c0ab20e3ae29bf1b9367de1014ef "pdflatex"
+  "main.out" 1678378826 6075 45a70a3a2cf98fa3877c2c0ec9af9cd5 "pdflatex"
+  "main.tex" 1678378823 55431 d970378de1c8b7599c6db712a8ffe8f6 ""
+  "main.toc" 1678378826 3222 00343a75d6bdeb6d3ac6bd1b10127877 "pdflatex"
   "pkmn/A.png" 1664866304 267 bfd7c82efcba0eb9981a6a4dc1c46e7f ""
   "pkmn/B.png" 1664866304 343 a36e6dbeb5c690e082c265631c8ea982 ""
   "pkmn/Box.png" 1664866304 2678 c84abd0798f5870f5854e175ba5664f9 ""
