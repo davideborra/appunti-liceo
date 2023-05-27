@@ -199,36 +199,34 @@ L'eccentricità permette di classificare le coniche come segue:
                             }
                     };
                 \end{tikzpicture}
-\subsection*{Metodo 3: Matrice associata}
-Si costruisce la matrice \[\renewcommand{\arraystretch}{2}A=\left[\begin{array}{ccc}
+\subsection*{Metodo 3: Matrice associata\footnote{Potrebbe contenere errori}}
+Si costruisce la matrice \[\renewcommand{\arraystretch}{2}M=\begin{pmatrix}
     A & \dfrac{B}{2} & \dfrac{D}{2}\\
     \dfrac{B}{2} & C & \dfrac{E}{2} \\
     \dfrac{D}{2} & \dfrac{E}{2} & F
-\end{array}\right]\]
+\end{pmatrix}\]
 Il cui minore principale di ordine 2 è la matrice 
-\[\renewcommand{\arraystretch}{2}M=\left[\begin{array}{cc}
-    A & \dfrac{B}{2} \\
+\[\renewcommand{\arraystretch}{2}M=\begin{pmatrix}
+    M_0 & \dfrac{B}{2} \\
     \dfrac{B}{2} & C
-\end{array}\right]\]
+\end{pmatrix}\]
 \begin{itemize}
-    \item $detM>0$: ellisse
+    \item $\det M>0$: ellisse
         \begin{itemize}
-            \item $detA(A+C)>0$ ellisse complessa
-            \item $detA(A+C)<0$ ellisse reale
-            \item $detA=0$ ellisse degenere
+            \item $\det M(A+C)>0$ ellisse complessa
+            \item $\det M(A+C)<0$ ellisse reale
+            \item $\det M=0$ ellisse degenere
             \item $B=0 \land A=C$ circonferenza (reale o complessa come sopra)
         \end{itemize}
-    \item $detM=0$: parabola
+    \item $\det M_0=0$: parabola
         \begin{itemize}
-            \item $detA(A+C)>0$ parabola complessa
-            \item $detA(A+C)<0$ parabola reale
-            \item $detA=0$ parabola degenere
+            \item $\det A\neq 0$ parabola non degenere
+            \item $\det A=0$ parabola degenere
         \end{itemize}
-    \item $detM<0$: iperbole
+    \item $\det M<0$: iperbole
     \begin{itemize}
-            \item $detA(A+C)>0$ iperbole complessa
-            \item $detA(A+C)<0$ iperbole reale
-            \item $detA=0$ iperbole degenere
+            \item $\det A\neq0$ iperbole non degenere
+            \item $\det A=0$ iperbole degenere
             \item $A+C=0$ iperbole equilatera (reale o complessa come sopra)
         \end{itemize}
 \end{itemize}

@@ -1,23 +1,47 @@
-%Update 2/2/23
+%Update 17/05/23
 \documentclass{article}     %type of document
 \usepackage[utf8]{inputenc} %for text encoding
 \usepackage{lambdatex} 
+\usepackage[article]{lambdabook}
 
 \title{Algebra lineare e successioni\\\textit{\small\say{Prevedere il futuro equivale a fare potenze di matrici}}}
 \author{Davide Borra\footnote{\href{mailto:davide.borra@studenti.unitn.it}{davide.borra@studenti.unitn.it} - \href{http://davideborra.github.io}{davideborra.github.io}} ~- UniTN}
 
 \begin{document}
 
+\pagestyle{fancy}
+    
+\setlength{\headheight}{25pt}
+\setlength{\headsep}{17mm}
+\setlength{\textheight}{24cm}
+\renewcommand{\footrulewidth}{0.4pt}
+\lhead{\includegraphics[width=7cm]{Galilei.png}}
+\rhead{
+    \begin{tabular}[h]{cc}
+       &\multirow{4}{*}{\includegraphics[width=2cm]{lambdaNEW.jpg}}\\
+        \vspace{10pt}\large \textsc{Squadra di Matematica}\\
+        {\it\Large“L}{\it \large AMBDA}{\Large ''}\\
+    \end{tabular}\\
+}
+\lfoot{Algebra lineare e successioni}
+\chead{}
+\rfoot{Davide Borra - UniTN}
+
 \begin{titlepage}
     \maketitle
+    \begin{tabular}[h]{cp{0.5cm}cc}
+        \multirow{4}{*}{\includegraphics[width=7cm]{Galilei.png}} &&&\multirow{4}{*}{\includegraphics[width=2cm]{lambdaNEW.jpg}}\\
+        && \vspace{10pt}\large \textsc{Squadra di Matematica}\\
+        && {\it\Large“L}{\it \large AMBDA}{\Large ''}\\
+     \end{tabular}\\
+     \\~\\~\\
+
+     \hrule{}
+     ~\\~
     \tableofcontents
     \vspace{\fill}
-    \hspace{\fill} v. 0.1   %incrementare primo numero per contenuti e secondo numero per patch
+    \hspace{\fill} v. 1.0   %incrementare primo numero per contenuti e secondo numero per patch
 \end{titlepage}
-
-\lhead{Algebra lineare e successioni}
-\chead{}
-\rhead{Davide Borra - UniTN}
 
 \section{Prerequisiti}
 \subsection{Notazione matriciale per i sistemi}
@@ -37,42 +61,43 @@ Esso può essere riscritto come equazione un'equazione matriciale come
 \end{pmatrix} 
 \begin{pmatrix} x_1 \\ x_2 \\ \vdots \\ x_n\end{pmatrix} = \begin{pmatrix} b_1 \\ b_2 \\ \vdots \\ b_m\end{pmatrix} 
 \]
-\begin{ex}
-    Il sistema 
-    \[\begin{cases} 2x + 3y + z = 0\\3x + y - z = 2\\x - z = 4 \end{cases} \]
-    può essere riscritto equivalentemente come \[\begin{pmatrix} 2&3&1\\3&1&- 1\\1&0&- 1 \end{pmatrix} \begin{pmatrix} x\\y\\z \end{pmatrix} = \begin{pmatrix} 0\\2\\4 \end{pmatrix} \]
-\end{ex}
+Ad esempio il sistema seguente può essere riscritto equivalentemente come 
 
+\begin{tabular}{m{3cm}m{12cm}}
+    \[\begin{cases} 2x + 3y + z = 0\\3x + y - z = 2\\x - z = 4 \end{cases} \] & \grid[1.9cm]{}
+\end{tabular}
+    %\[\begin{pmatrix} 2&3&1\\3&1&- 1\\1&0&- 1 \end{pmatrix} \begin{pmatrix} x\\y\\z \end{pmatrix} = \begin{pmatrix} 0\\2\\4 \end{pmatrix} \]
 \subsection{Prodotto matrice-vettore}
 Perchè questa cosa funziona? Per come è definito il prodotto tra una matrice ed un vettore. In algebra lineare moltiplicare a sinistra un a matrice ad un vettore è come applicare una trasformazione a quel vettore, per cui il risultato del prodotto sarà un altro vettore. Consideriamo un esempio:
 \begin{ex}
-    Calcolare \[\begin{pmatrix} 1 & 2 & 1\\0 & - 1 & 1\\ 2 & -1 & 0\end{pmatrix} \begin{pmatrix} 1\\2\\- 1 \end{pmatrix} \]
-    Il prodotto tra una matrice ed un vettore si fa in questo modo: cominciamo con il riscrivere il vettore in riga sopra alla matrice
-    \[\begin{array}{c}
-        {\color{red}
-        \begin{matrix}
-            1&~2&- 1
-        \end{matrix}}\\
-        \begin{pmatrix}
-            1 & 2 & ~1\\0 & - 1 & ~1\\ 2 & -1 & ~0 
-        \end{pmatrix}
-    \end{array}\]
-    Adesso moltiplichiamo ogni colonna per il numero scritto sopra
-    \[
-        \begin{pmatrix}
-            {\color{red}1\,\cdot\,}1 & {\color{red} 2\,\cdot\,}2 & {\color{red} -1\,\cdot\,}1\\
-            {\color{red}1\,\cdot\,}0 & {\color{red} 2\,\cdot\,}(- 1) & {\color{red} -1\,\cdot\,}1\\ 
-            {\color{red}1\,\cdot\,}2 & {\color{red} 2\,\cdot\,}( - 1) & {\color{red} -1\,\cdot\,}0 
-        \end{pmatrix}
-    \]
-    E per finire sommiamo le righe
-    \[
-    \begin{pmatrix}
-        {\color{red}1\,\cdot\,}1 + {\color{red} 2\,\cdot\,}2 + {\color{red} ( - 1)\,\cdot\,}1\\
-        {\color{red}1\,\cdot\,}0 + {\color{red} 2\,\cdot\,}(- 1) + {\color{red} ( - 1)\,\cdot\,}1\\ 
-        {\color{red}1\,\cdot\,}2 + {\color{red} 2\,\cdot\,}( - 1) + {\color{red} ( - 1)\,\cdot\,}0 
-    \end{pmatrix} = \begin{pmatrix} 4\\- 3\\0 \end{pmatrix} 
-    \]
+    [Calcolare \[\begin{pmatrix} 1 & 2 & 1\\0 & - 1 & 1\\ 2 & -1 & 0\end{pmatrix} \begin{pmatrix} 1\\2\\- 1 \end{pmatrix} \]]
+    \grid[5.9cm]{}
+    % Il prodotto tra una matrice ed un vettore si fa in questo modo: cominciamo con il riscrivere il vettore in riga sopra alla matrice
+    % \[\begin{array}{c}
+    %     {\color{red}
+    %     \begin{matrix}
+    %         1&~2&- 1
+    %     \end{matrix}}\\
+    %     \begin{pmatrix}
+    %         1 & 2 & ~1\\0 & - 1 & ~1\\ 2 & -1 & ~0 
+    %     \end{pmatrix}
+    % \end{array}\]
+    % Adesso moltiplichiamo ogni colonna per il numero scritto sopra
+    % \[
+    %     \begin{pmatrix}
+    %         {\color{red}1\,\cdot\,}1 & {\color{red} 2\,\cdot\,}2 & {\color{red} -1\,\cdot\,}1\\
+    %         {\color{red}1\,\cdot\,}0 & {\color{red} 2\,\cdot\,}(- 1) & {\color{red} -1\,\cdot\,}1\\ 
+    %         {\color{red}1\,\cdot\,}2 & {\color{red} 2\,\cdot\,}( - 1) & {\color{red} -1\,\cdot\,}0 
+    %     \end{pmatrix}
+    % \]
+    % E per finire sommiamo le righe
+    % \[
+    % \begin{pmatrix}
+    %     {\color{red}1\,\cdot\,}1 + {\color{red} 2\,\cdot\,}2 + {\color{red} ( - 1)\,\cdot\,}1\\
+    %     {\color{red}1\,\cdot\,}0 + {\color{red} 2\,\cdot\,}(- 1) + {\color{red} ( - 1)\,\cdot\,}1\\ 
+    %     {\color{red}1\,\cdot\,}2 + {\color{red} 2\,\cdot\,}( - 1) + {\color{red} ( - 1)\,\cdot\,}0 
+    % \end{pmatrix} = \begin{pmatrix} 4\\- 3\\0 \end{pmatrix} 
+    % \]
 \end{ex}
 Osserviamo quindi che facendo la stessa cosa con la scrittura matriciale del sistema otteniamo proprio il sistema di partenza.
 \paragraph*{N.B.:} Non è sempre possibile fare il prodotto tra una matrice e un vettore. È possibile se e solo se il numero di colonne della matrice è uguale al numero di elementi del vettore-colonna. Il risultato avrà tanti elementi quante le righe della matrice.  
@@ -85,75 +110,77 @@ Propongo ora un metodo di risolvere i sistemi che genralmente non si utilizza al
 \end{itemize}
 
 Consideriamo l'esempio 
-\begin{ex}[GME01-Esempio 1]
+\begin{ex}[(GME01-Esempio 1)
     Risolviamo il seguente sistema con il metodo di riduzione di Gauss-Jordan.
     \[\begin{cases} 
         2x -2y+3z=4 \\
         -2x + 3y - 2z = -4\\
         x -y+z=1
-     \end{cases} \]
-     Riscriviamo il sistema in forma matriciale (scrittura compatta):
-     \[\left(\begin{array}{ccc|c} 2 & - 2 & 3& 4\\- 2 & 3 & - 2 & - 4 \\ \boxed{1} & - 1 & 1 & 1 \end{array}\right) \]
-     Osserviamo che nella posizione riquadrata abbiamo un $1$, lo spostiamo quindi in alto scambiando la prima e la terza riga ($R_1\leftrightarrow R_3$)
-     \[\left(\begin{array}{ccc|c} 
-        \boxed{1} & - 1 & 1 & 1 \\
-        - 2 & 3 & - 2 & - 4 \\
-        2 & - 2 & 3& 4\\
-    \end{array}\right) \]
-    Adesso dobbiamo \say{fare zeri} sotto il numero riquadrato che da ora in poi chiameremo \say{pivot}. Per far questo sommiamo alla riga 2 due volte la riga 1 e sottraiamo alla riga 3 due volte la riga 1.
-    \[\left(\begin{array}{ccc|c} 
-        \boxed{1} & - 1 & 1 & 1 \\
-        - 2 & 3 & - 2 & - 4 \\
-        2 & - 2 & 3& 4\\
-    \end{array}\right)
-    \overset{R_2\leftarrow R_2 + 2R_1}{\xrightarrow{\hspace{2cm}}}
-    \left(\begin{array}{ccc|c} 
-        \boxed{1} & - 1 & 1 & 1 \\
-        0 & \boxed{1} & 0 & - 2 \\
-        2 & - 2 & 3& 4\\
-    \end{array}\right)
-    \overset{R_3\leftarrow R_3 - 2R_1}{\xrightarrow{\hspace{2cm}}}
-    \left(\begin{array}{ccc|c} 
-        \boxed{1} & - 1 & 1 & 1 \\
-        0 & \boxed{1} & 0 & - 2 \\
-        0 & 0 & \boxed{1}& 2\\
-    \end{array}\right)
-    \]
-    Ora procediamo al contrario facendo zeri sopra ai pivot
-    \[\left(\begin{array}{ccc|c} 
-        \boxed{1} & - 1 & 1 & 1 \\
-        0 & \boxed{1} & 0 & - 2 \\
-        0 & 0 & \boxed{1}& 2\\
-    \end{array}\right)
-    \overset{R_1\leftarrow R_1 - R_3}{\xrightarrow{\hspace{2cm}}}
-    \left(\begin{array}{ccc|c} 
-        \boxed{1} & - 1 & 0 & - 1 \\
-        0 & \boxed{1} & 0 & - 2 \\
-        0 & 0 & \boxed{1}& 2\\
-    \end{array}\right)
-    \overset{R_1\leftarrow R_1 + R_2}{\xrightarrow{\hspace{2cm}}}
-    \left(\begin{array}{ccc|c} 
-        \boxed{1} & 0 & 0 & - 3 \\
-        0 & \boxed{1} & 0 & - 2 \\
-        0 & 0 & \boxed{1}& 2\\
-    \end{array}\right)
-    \]
-    Adesso ritorniamo nella forma di sistema
-    \[\begin{cases} x =- 3\\y =- 2\\z = 2 \end{cases} \]
+     \end{cases} \]]
+    %  Riscriviamo il sistema in forma matriciale (scrittura compatta):
+    %  \[\left(\begin{array}{ccc|c} 2 & - 2 & 3& 4\\- 2 & 3 & - 2 & - 4 \\ \boxed{1} & - 1 & 1 & 1 \end{array}\right) \]
+    %  Osserviamo che nella posizione riquadrata abbiamo un $1$, lo spostiamo quindi in alto scambiando la prima e la terza riga ($R_1\leftrightarrow R_3$)
+    %  \[\left(\begin{array}{ccc|c} 
+    %     \boxed{1} & - 1 & 1 & 1 \\
+    %     - 2 & 3 & - 2 & - 4 \\
+    %     2 & - 2 & 3& 4\\
+    % \end{array}\right) \]
+    % Adesso dobbiamo \say{fare zeri} sotto il numero riquadrato che da ora in poi chiameremo \say{pivot}. Per far questo sommiamo alla riga 2 due volte la riga 1 e sottraiamo alla riga 3 due volte la riga 1.
+    % \[\left(\begin{array}{ccc|c} 
+    %     \boxed{1} & - 1 & 1 & 1 \\
+    %     - 2 & 3 & - 2 & - 4 \\
+    %     2 & - 2 & 3& 4\\
+    % \end{array}\right)
+    % \overset{R_2\leftarrow R_2 + 2R_1}{\xrightarrow{\hspace{2cm}}}
+    % \left(\begin{array}{ccc|c} 
+    %     \boxed{1} & - 1 & 1 & 1 \\
+    %     0 & \boxed{1} & 0 & - 2 \\
+    %     2 & - 2 & 3& 4\\
+    % \end{array}\right)
+    % \overset{R_3\leftarrow R_3 - 2R_1}{\xrightarrow{\hspace{2cm}}}
+    % \left(\begin{array}{ccc|c} 
+    %     \boxed{1} & - 1 & 1 & 1 \\
+    %     0 & \boxed{1} & 0 & - 2 \\
+    %     0 & 0 & \boxed{1}& 2\\
+    % \end{array}\right)
+    % \]
+    % Ora procediamo al contrario facendo zeri sopra ai pivot
+    % \[\left(\begin{array}{ccc|c} 
+    %     \boxed{1} & - 1 & 1 & 1 \\
+    %     0 & \boxed{1} & 0 & - 2 \\
+    %     0 & 0 & \boxed{1}& 2\\
+    % \end{array}\right)
+    % \overset{R_1\leftarrow R_1 - R_3}{\xrightarrow{\hspace{2cm}}}
+    % \left(\begin{array}{ccc|c} 
+    %     \boxed{1} & - 1 & 0 & - 1 \\
+    %     0 & \boxed{1} & 0 & - 2 \\
+    %     0 & 0 & \boxed{1}& 2\\
+    % \end{array}\right)
+    % \overset{R_1\leftarrow R_1 + R_2}{\xrightarrow{\hspace{2cm}}}
+    % \left(\begin{array}{ccc|c} 
+    %     \boxed{1} & 0 & 0 & - 3 \\
+    %     0 & \boxed{1} & 0 & - 2 \\
+    %     0 & 0 & \boxed{1}& 2\\
+    % \end{array}\right)
+    % \]
+    % Adesso ritorniamo nella forma di sistema
+    % \[\begin{cases} x =- 3\\y =- 2\\z = 2 \end{cases} \]
+    \grid[10.4cm]{}
 \end{ex}
 \subsection{Prodotto tra matrici}
 Se sappiamo fare il prodotto tra una matrice e un vettore, sappiamo fare anche il prodotto tra due matrici. Affinché si possa fare il prodotto tra due matrici esse devono essere conformabili, ovvero il numero di colonne della prima deve essere uguale al numero di righe della seconda. È importante sottolineare come il prodotto tra matrici NON sia commutativo. Valgono invece la proprietà associativa e distributiva.
 
 Vediamo quindi come fare il prodotto tra due matrici: si procede esattamente come il prodotto tra matrice e vettore. Separiamo le colonne della seconda matrice e facciamo il prodotto di ognuna con la prima. Ora rimettiamo insieme il tutto e otteniamo la matrice risultato. Vediamo un esempio:
-\begin{ex}[Es. 159 pag. 1029 vol. 4A]
-    \[\begin{pmatrix} 1&0\\0&- 1\\2&3 \end{pmatrix} \cdot \begin{pmatrix} - 1&0&2&3\\1&2&3&0 \end{pmatrix} \]
-    Adesso separiamo tutte le colonne della seconda matrice e facciamo il prodotto come se fosse un prodotto matrice-vettore.
-    \[\begin{pmatrix} 1&0\\0&- 1\\2&3 \end{pmatrix} \cdot \begin{pmatrix} - 1\\1 \end{pmatrix} = \begin{pmatrix} - 1\\- 1\\1 \end{pmatrix} \]
-    \[\begin{pmatrix} 1&0\\0&- 1\\2&3 \end{pmatrix} \cdot \begin{pmatrix} 0\\2 \end{pmatrix} = \begin{pmatrix} 0\\- 2\\6 \end{pmatrix}\]
-    \[\begin{pmatrix} 1&0\\0&- 1\\2&3 \end{pmatrix} \cdot \begin{pmatrix} 2\\3\end{pmatrix} = \begin{pmatrix} 2\\- 3\\ 13 \end{pmatrix}\]
-    \[\begin{pmatrix} 1&0\\0&- 1\\2&3 \end{pmatrix} \cdot \begin{pmatrix} 3\\0\end{pmatrix} = \begin{pmatrix} 3\\0\\6 \end{pmatrix}\]
-    E adesso rimettiamo insieme i risultati
-    \[\begin{pmatrix} 1&0\\0&- 1\\2&3 \end{pmatrix} \cdot \begin{pmatrix} - 1&0&2&3\\1&2&3&0 \end{pmatrix} = \begin{pmatrix} - 1&0&2&3\\- 1&- 2&- 3&0\\1&6&13&6 \end{pmatrix} \]
+\begin{ex}[(Es. 159 pag. 1029 vol. 4A)
+    Calcolare \[\begin{pmatrix} 1&0\\0&- 1\\2&3 \end{pmatrix} \cdot \begin{pmatrix} - 1&0&2&3\\1&2&3&0 \end{pmatrix} \]]
+    \grid[5.9cm]{}
+    % Adesso separiamo tutte le colonne della seconda matrice e facciamo il prodotto come se fosse un prodotto matrice-vettore.
+    % \[\begin{pmatrix} 1&0\\0&- 1\\2&3 \end{pmatrix} \cdot \begin{pmatrix} - 1\\1 \end{pmatrix} = \begin{pmatrix} - 1\\- 1\\1 \end{pmatrix} \]
+    % \[\begin{pmatrix} 1&0\\0&- 1\\2&3 \end{pmatrix} \cdot \begin{pmatrix} 0\\2 \end{pmatrix} = \begin{pmatrix} 0\\- 2\\6 \end{pmatrix}\]
+    % \[\begin{pmatrix} 1&0\\0&- 1\\2&3 \end{pmatrix} \cdot \begin{pmatrix} 2\\3\end{pmatrix} = \begin{pmatrix} 2\\- 3\\ 13 \end{pmatrix}\]
+    % \[\begin{pmatrix} 1&0\\0&- 1\\2&3 \end{pmatrix} \cdot \begin{pmatrix} 3\\0\end{pmatrix} = \begin{pmatrix} 3\\0\\6 \end{pmatrix}\]
+    % E adesso rimettiamo insieme i risultati
+    % \[\begin{pmatrix} 1&0\\0&- 1\\2&3 \end{pmatrix} \cdot \begin{pmatrix} - 1&0&2&3\\1&2&3&0 \end{pmatrix} = \begin{pmatrix} - 1&0&2&3\\- 1&- 2&- 3&0\\1&6&13&6 \end{pmatrix} \]
 \end{ex}
 Osserviamo che esiste una matrice particolare, detta \say{matrice identica} che è l'elemento neutro del prodotto tra matrici, ovvero se moltiplicata per una matrice con cui è conformabile, la mantiene invariata. Essa è una matrice quadrata del tipo
 \[I_n=\begin{pmatrix}1&\dots&0\\ \vdots&\ddots&\vdots \\ 0&\dots&1\end{pmatrix}\]
@@ -167,30 +194,31 @@ Si chiama inversa di una matrice $A$ la matrice $A^{-1}$ tale che $A\cdot A^{-1}
     a_{m1}& a_{m2}&\dots&a_{mn}& 0&0&\dots &1\\
 \end{array} \right)\]
 Adesso riduciamo la matrice con il metodo di Gauss-Jordan fino ad ottenere l'identità a sinistra. A questo punto a destra avremo la matrice inversa $A^{-1}$. Non tutte le matrici sono invertibili!
-\begin{ex}[Es. 273 pag. 1036 vol. 4A]
-    Calcolare la matrice inversa di \[\begin{pmatrix} 1&1\\4&3 \end{pmatrix} \]
-    \[\left(\begin{array}{cc|cc}
-        \boxed{1}&1&1&0\\
-        4&3&0&1
-    \end{array}\right)
-    \overset{R_2\leftarrow R_2 - 4R_1}{\xrightarrow{\hspace{1.6cm}}}
-    \left(\begin{array}{cc|cc}
-        \boxed{1}&1&1&0\\
-        0&- 1&- 4&1
-    \end{array}\right)
-    \overset{R_2\leftarrow -R_2}{\xrightarrow{\hspace{1cm}}}
-    \left(\begin{array}{cc|cc}
-        \boxed{1}&1&1&0\\
-        0&\boxed{1}&4&-1
-    \end{array}\right)\]\[
-    \overset{R_1\leftarrow R_1-R_2}{\xrightarrow{\hspace{1.6cm}}}
-    \left(\begin{array}{cc|cc}
-        \boxed{1}&0&-3&1\\
-        0&\boxed{1}&4&-1
-    \end{array}\right)
-    \]
-    Quindi l'inversa è 
-    \[\begin{pmatrix} - 3&1\\4&- 1 \end{pmatrix} \]
+\begin{ex}[(Es. 273 pag. 1036 vol. 4A)
+    Calcolare la matrice inversa di \[\begin{pmatrix} 1&1\\4&3 \end{pmatrix} \]]
+    \grid[4.9cm]{}
+    % \[\left(\begin{array}{cc|cc}
+    %     \boxed{1}&1&1&0\\
+    %     4&3&0&1
+    % \end{array}\right)
+    % \overset{R_2\leftarrow R_2 - 4R_1}{\xrightarrow{\hspace{1.6cm}}}
+    % \left(\begin{array}{cc|cc}
+    %     \boxed{1}&1&1&0\\
+    %     0&- 1&- 4&1
+    % \end{array}\right)
+    % \overset{R_2\leftarrow -R_2}{\xrightarrow{\hspace{1cm}}}
+    % \left(\begin{array}{cc|cc}
+    %     \boxed{1}&1&1&0\\
+    %     0&\boxed{1}&4&-1
+    % \end{array}\right)\]\[
+    % \overset{R_1\leftarrow R_1-R_2}{\xrightarrow{\hspace{1.6cm}}}
+    % \left(\begin{array}{cc|cc}
+    %     \boxed{1}&0&-3&1\\
+    %     0&\boxed{1}&4&-1
+    % \end{array}\right)
+    % \]
+    % Quindi l'inversa è 
+    % \[\begin{pmatrix} - 3&1\\4&- 1 \end{pmatrix} \]
 \end{ex}
 \subsection{Determinante}
 Il determinante è un numero associato ad ogni matrice che descrive la trasformazione adessa associata. Per quello che dobbiamo fare ci interessa sapere come si calcola solo il determinante sulle matrici $2\times 2$, ma sappiate che è definito per tutte le matrici quadrate. 
@@ -201,10 +229,11 @@ Consideriamo un esempio famoso, la successione di Fibonacci.
 Osserviamo che possiamo riscrivere la terza riga come 
 \[\begin{cases} f_n = f_{n - 1} + f_{n - 2}\\ f_{n - 1} = f_{n - 1} \end{cases} \Longleftrightarrow \begin{pmatrix} f_n\\f_{n - 1} \end{pmatrix} = \begin{pmatrix} 1&1\\1&0 \end{pmatrix} \begin{pmatrix} f_{n - 1}\\f_{n - 2} \end{pmatrix} \]
 In particolare
-\[\begin{pmatrix} f_2\\f_1 \end{pmatrix} = \begin{pmatrix} 1&1\\1&0 \end{pmatrix} \begin{pmatrix} 1\\1 \end{pmatrix}\]
-\[\begin{pmatrix} f_3\\f_2 \end{pmatrix} = \begin{pmatrix} 1&1\\1&0 \end{pmatrix}\begin{pmatrix} 1&1\\1&0 \end{pmatrix} \begin{pmatrix} 1\\1 \end{pmatrix}\]
-\[\begin{pmatrix} f_4\\f_3 \end{pmatrix} = \begin{pmatrix} 1&1\\1&0 \end{pmatrix}\begin{pmatrix} 1&1\\1&0 \end{pmatrix}\begin{pmatrix} 1&1\\1&0 \end{pmatrix} \begin{pmatrix} 1\\1 \end{pmatrix}.\]
-\[\begin{pmatrix} f_n\\f_{n -1} \end{pmatrix} = \begin{pmatrix} 1&1\\1&0 \end{pmatrix}^{n - 1} \begin{pmatrix} 1\\1 \end{pmatrix}\]
+% \[\begin{pmatrix} f_2\\f_1 \end{pmatrix} = \begin{pmatrix} 1&1\\1&0 \end{pmatrix} \begin{pmatrix} 1\\1 \end{pmatrix}\]
+% \[\begin{pmatrix} f_3\\f_2 \end{pmatrix} = \begin{pmatrix} 1&1\\1&0 \end{pmatrix}\begin{pmatrix} 1&1\\1&0 \end{pmatrix} \begin{pmatrix} 1\\1 \end{pmatrix}\]
+% \[\begin{pmatrix} f_4\\f_3 \end{pmatrix} = \begin{pmatrix} 1&1\\1&0 \end{pmatrix}\begin{pmatrix} 1&1\\1&0 \end{pmatrix}\begin{pmatrix} 1&1\\1&0 \end{pmatrix} \begin{pmatrix} 1\\1 \end{pmatrix}.\]
+% \[\begin{pmatrix} f_n\\f_{n -1} \end{pmatrix} = \begin{pmatrix} 1&1\\1&0 \end{pmatrix}^{n - 1} \begin{pmatrix} 1\\1 \end{pmatrix}\]
+\grid[4.4cm]{}
 Chiamiamo quindi 
 \[A =\begin{pmatrix} 1&1\\1&0 \end{pmatrix}.\]
 Per trovare una formula generale per trovare l'$n$-esimo termine della successione di Fibonacci ci serve quindi un modo comodo per fare potenze di matrici. Osserviamo che se la matrice è diagonale, fare le potenze è semplice:
@@ -219,12 +248,14 @@ Purtroppo non posso spiegare per mancanza di tempo perchè quello che sto per mo
 \subsubsection{Il polinomio caratteristico e gli autovalori}
 Si definisce polinomio caratteristico di una matrice il polinomio
 \[p_A(\lambda) = \det\left( A -\lambda I \right)\]
-\[p_A(\lambda) =\begin{vmatrix} 1 -\lambda&1\\1&-\lambda \end{vmatrix} = (1 -\lambda)( -\lambda) - 1 =\lambda^2 -\lambda - 1\]
+%\[p_A(\lambda) =\begin{vmatrix} 1 -\lambda&1\\1&-\lambda \end{vmatrix} = (1 -\lambda)( -\lambda) - 1 =\lambda^2 -\lambda - 1\]
+\grid[1.4cm]{}
 Adesso dobbiamo trovare quei valori di $\lambda$, detti \textbf{autovalori}, che annullano il polinomio caratteristico, ovvero risolvere l'equazione 
 \[p_A(\lambda) = 0\]
-\[\lambda^2 -\lambda - 1 = 0\] 
-\[\lambda_1 =\varphi =\frac{1 + \sqrt{5}}{2}\qquad\qquad\lambda_2 =\Phi =\frac{1 - \sqrt{5}}{2}\]
-(il procedimento proposto funziona solo se il discriminante è maggiore di 0)
+%\[\lambda^2 -\lambda - 1 = 0\] 
+%\[\lambda_1 =\varphi =\frac{1 + \sqrt{5}}{2}\qquad\qquad\lambda_2 =\Phi =\frac{1 - \sqrt{5}}{2}\]
+\grid[1.4cm]{}
+\noindent(il procedimento proposto funziona solo se il discriminante è maggiore di 0)\\
 Otteniamo quindi che la matrice diagonalizzata è
 \[D =\begin{pmatrix} \varphi &0\\0&\Phi \end{pmatrix} \]
 \subsubsection{Autovettori e matrici diagonalizzanti}
@@ -234,62 +265,68 @@ Per trovare questa matrice dobbiamo trovare i due vettori che la compongono. Per
 \[(A -\lambda_1 I)x_1 = 0\]
 \[(A -\lambda_2 I)x_2 = 0\]
 ovvero (sempre riprendendo la notazione compatta vista all'Esempio 1.3)
-\[
-    \left(\begin{array}{cc|c} 1 -\varphi&1&0\\1& -\varphi &0 \end{array}\right) 
-    \overset{R_1\leftarrow \varphi R_1}{\xrightarrow{\hspace{1.6cm}}}
-    \left(\begin{array}{cc|c} \varphi -\varphi^2&\varphi&0\\1& -\varphi &0 \end{array}\right) 
-\]
-ovvero, ricordando che $\varphi^2-\varphi=1$
-\[
-    \left(\begin{array}{cc|c} - 1&\varphi&0\\1& -\varphi &0 \end{array}\right) 
-    \overset{R_2\leftarrow R_2 + R_1}{\xrightarrow{\hspace{1.6cm}}}
-    \left(\begin{array}{cc|c} - 1&\varphi&0\\0& 0 &0 \end{array}\right) ,
-\]
-da cui
-\[ - a +\varphi b = 0\]
+% \[
+%     \left(\begin{array}{cc|c} 1 -\varphi&1&0\\1& -\varphi &0 \end{array}\right) 
+%     \overset{R_1\leftarrow \varphi R_1}{\xrightarrow{\hspace{1.6cm}}}
+%     \left(\begin{array}{cc|c} \varphi -\varphi^2&\varphi&0\\1& -\varphi &0 \end{array}\right) 
+% \]
+% ovvero, ricordando che $\varphi^2-\varphi=1$
+% \[
+%     \left(\begin{array}{cc|c} - 1&\varphi&0\\1& -\varphi &0 \end{array}\right) 
+%     \overset{R_2\leftarrow R_2 + R_1}{\xrightarrow{\hspace{1.6cm}}}
+%     \left(\begin{array}{cc|c} - 1&\varphi&0\\0& 0 &0 \end{array}\right) ,
+% \]
+% da cui
+% \[ - a +\varphi b = 0\]
+\grid[4.4cm]{}
 Adesso ci basta scegliere un rappresentante diverso da 0 di questa classe (ne basta uno qualsiasi), ad esempio poniamo $b=1$ e otteniamo
 \[x_1 =\begin{pmatrix} \varphi\\1 \end{pmatrix} .\]
 Analogamente per l'altra equazione
-\[
-    \left(\begin{array}{cc|c} 1 -\Phi&1&0\\1& -\Phi &0 \end{array}\right) 
-    \overset{R_1\leftarrow \Phi R_1}{\xrightarrow{\hspace{1.6cm}}}
-    \left(\begin{array}{cc|c} \Phi -\Phi^2&\Phi&0\\1& -\Phi &0 \end{array}\right) 
-\]
-ovvero, ricordando che $\Phi^2-\Phi=1$
-\[
-    \left(\begin{array}{cc|c} - 1&\Phi&0\\1& -\Phi &0 \end{array}\right) 
-    \overset{R_2\leftarrow R_2 + R_1}{\xrightarrow{\hspace{1.6cm}}}
-    \left(\begin{array}{cc|c} - 1&\Phi&0\\0& 0 &0 \end{array}\right) ,
-\]
-da cui
-\[ - a +\Phi b = 0\qquad \Harr\qquad x_2 = \begin{pmatrix} \Phi\\1 \end{pmatrix} .\]
-
+% \[
+%     \left(\begin{array}{cc|c} 1 -\Phi&1&0\\1& -\Phi &0 \end{array}\right) 
+%     \overset{R_1\leftarrow \Phi R_1}{\xrightarrow{\hspace{1.6cm}}}
+%     \left(\begin{array}{cc|c} \Phi -\Phi^2&\Phi&0\\1& -\Phi &0 \end{array}\right) 
+% \]
+% ovvero, ricordando che $\Phi^2-\Phi=1$
+% \[
+%     \left(\begin{array}{cc|c} - 1&\Phi&0\\1& -\Phi &0 \end{array}\right) 
+%     \overset{R_2\leftarrow R_2 + R_1}{\xrightarrow{\hspace{1.6cm}}}
+%     \left(\begin{array}{cc|c} - 1&\Phi&0\\0& 0 &0 \end{array}\right) ,
+% \]
+% da cui
+% \[ - a +\Phi b = 0\qquad \Harr\qquad x_2 = \begin{pmatrix} \Phi\\1 \end{pmatrix} .\]
+\grid[4.4cm]{}
 Otteniamo quindi che la matrice P è
-\[P = \begin{pmatrix} \varphi &\Phi\\1&1 \end{pmatrix} \]
+% \[P = \begin{pmatrix} \varphi &\Phi\\1&1 \end{pmatrix} \]
+\grid[1.4cm]{}
 Rimane solo da invertire la matrice $P$
-\[
-    \left(\begin{array}{cc|cc} \varphi&\Phi&1&0\\1& 1 &0&1\end{array}\right) 
-    \overset{R_2\leftarrow \varphi R_2}{\xrightarrow{\hspace{1.6cm}}}
-    \left(\begin{array}{cc|cc} \varphi&\Phi&1&0\\\varphi& \varphi &0&\varphi\end{array}\right)
-    \overset{R_2\leftarrow R_2 - R_1}{\xrightarrow{\hspace{1.6cm}}}
-    \left(\begin{array}{cc|cc} \varphi&\Phi&1&0\\0& \varphi - \Phi &- 1&\varphi\end{array}\right)
-\]
-\[ 
-    \overset{R_2\leftarrow \frac{R_2}{\varphi - \Phi}}{\xrightarrow{\hspace{1.6cm}}}
-    \left(\begin{array}{cc|cc} \varphi&\Phi&1&0\\0& 1 &- \frac{1}{\varphi - \Phi}&\frac{\varphi}{\varphi -\Phi}\end{array}\right)
-    \overset{R_1\leftarrow R_1 -\Phi R_2}{\xrightarrow{\hspace{1.6cm}}}
-    \left(\begin{array}{cc|cc} \varphi&0&1 +\frac{\Phi}{\varphi -\Phi}&-\frac{\varphi\Phi}{\varphi -\Phi}\\0& 1 &- \frac{1}{\varphi - \Phi}&\frac{\varphi}{\varphi -\Phi}\end{array}\right)
-\]
-\[ 
-    \underset{1 +\frac{\Phi}{\varphi -\Phi} =\frac{\varphi -\cancel{\Phi} +\cancel{\Phi}}{\varphi -\Phi}}{\overset{R_1\leftarrow \frac{R_1}{\varphi}}{\xrightarrow{\hspace{2.5cm}}}}
-    \left(\begin{array}{cc|cc} 1&0&\frac{1}{\varphi -\Phi}&-\frac{\Phi}{\varphi -\Phi}\\0& 1 &- \frac{1}{\varphi - \Phi}&\frac{\varphi}{\varphi -\Phi}\end{array}\right) .
-\]
+% \[
+%     \left(\begin{array}{cc|cc} \varphi&\Phi&1&0\\1& 1 &0&1\end{array}\right) 
+%     \overset{R_2\leftarrow \varphi R_2}{\xrightarrow{\hspace{1.6cm}}}
+%     \left(\begin{array}{cc|cc} \varphi&\Phi&1&0\\\varphi& \varphi &0&\varphi\end{array}\right)
+%     \overset{R_2\leftarrow R_2 - R_1}{\xrightarrow{\hspace{1.6cm}}}
+%     \left(\begin{array}{cc|cc} \varphi&\Phi&1&0\\0& \varphi - \Phi &- 1&\varphi\end{array}\right)
+% \]
+% \[ 
+%     \overset{R_2\leftarrow \frac{R_2}{\varphi - \Phi}}{\xrightarrow{\hspace{1.6cm}}}
+%     \left(\begin{array}{cc|cc} \varphi&\Phi&1&0\\0& 1 &- \frac{1}{\varphi - \Phi}&\frac{\varphi}{\varphi -\Phi}\end{array}\right)
+%     \overset{R_1\leftarrow R_1 -\Phi R_2}{\xrightarrow{\hspace{1.6cm}}}
+%     \left(\begin{array}{cc|cc} \varphi&0&1 +\frac{\Phi}{\varphi -\Phi}&-\frac{\varphi\Phi}{\varphi -\Phi}\\0& 1 &- \frac{1}{\varphi - \Phi}&\frac{\varphi}{\varphi -\Phi}\end{array}\right)
+% \]
+% \[ 
+%     \underset{1 +\frac{\Phi}{\varphi -\Phi} =\frac{\varphi -\cancel{\Phi} +\cancel{\Phi}}{\varphi -\Phi}}{\overset{R_1\leftarrow \frac{R_1}{\varphi}}{\xrightarrow{\hspace{2.5cm}}}}
+%     \left(\begin{array}{cc|cc} 1&0&\frac{1}{\varphi -\Phi}&-\frac{\Phi}{\varphi -\Phi}\\0& 1 &- \frac{1}{\varphi - \Phi}&\frac{\varphi}{\varphi -\Phi}\end{array}\right) .
+% \]
+\grid[7.4cm]{}
+
 Per cui 
 \[P^{ - 1} = \begin{pmatrix} \frac{1}{\varphi -\Phi}&-\frac{\Phi}{\varphi -\Phi}\\- \frac{1}{\varphi - \Phi}&\frac{\varphi}{\varphi -\Phi} \end{pmatrix} \]
 In conclusione
 \[A^n = \begin{pmatrix} \varphi &\Phi\\1&1 \end{pmatrix} \begin{pmatrix} \varphi &0\\0&\Phi \end{pmatrix}^n \begin{pmatrix} \frac{1}{\varphi -\Phi}&-\frac{\Phi}{\varphi -\Phi}\\- \frac{1}{\varphi - \Phi}&\frac{\varphi}{\varphi -\Phi} \end{pmatrix},\]
 e rimane solo da fare i conti e ottenere
-\[\renewcommand{\arraystretch}{2}\begin{aligned}\begin{pmatrix} f_n\\f_{n - 1} \end{pmatrix} &= \begin{pmatrix} \varphi &\Phi\\1&1 \end{pmatrix} \begin{pmatrix} \varphi &0\\0&\Phi \end{pmatrix}^{n - 1} \begin{pmatrix} \dfrac{1}{\varphi -\Phi}&-\dfrac{\Phi}{\varphi -\Phi}\\- \dfrac{1}{\varphi - \Phi}&\dfrac{\varphi}{\varphi -\Phi} \end{pmatrix} \begin{pmatrix} 1 \\ 1 \end{pmatrix} = \begin{pmatrix} \varphi^n&\Phi^n\\ \varphi^{n - 1}&\Phi^{n - 1} \end{pmatrix}  \begin{pmatrix} \dfrac{1 -\Phi}{\varphi -\Phi} \\ \dfrac{\varphi - 1}{\varphi -\Phi} \end{pmatrix} =\\&= \begin{pmatrix} \varphi^n\left( \dfrac{1 -\Phi}{\varphi -\Phi}\right) +\Phi^n\left( \dfrac{\varphi - 1}{\varphi - \Phi} \right) \\ \varphi^{n - 1}\left( \dfrac{1 -\Phi}{\varphi -\Phi}\right) +\Phi^{n - 1}\left( \dfrac{\varphi - 1}{\varphi - \Phi} \right)\end{pmatrix}  \end{aligned},\]
+% \[\renewcommand{\arraystretch}{2}\begin{aligned}\begin{pmatrix} f_n\\f_{n - 1} \end{pmatrix} &= \begin{pmatrix} \varphi &\Phi\\1&1 \end{pmatrix} \begin{pmatrix} \varphi &0\\0&\Phi \end{pmatrix}^{n - 1} \begin{pmatrix} \dfrac{1}{\varphi -\Phi}&-\dfrac{\Phi}{\varphi -\Phi}\\- \dfrac{1}{\varphi - \Phi}&\dfrac{\varphi}{\varphi -\Phi} \end{pmatrix} \begin{pmatrix} 1 \\ 1 \end{pmatrix} = \begin{pmatrix} \varphi^n&\Phi^n\\ \varphi^{n - 1}&\Phi^{n - 1} \end{pmatrix}  \begin{pmatrix} \dfrac{1 -\Phi}{\varphi -\Phi} \\ \dfrac{\varphi - 1}{\varphi -\Phi} \end{pmatrix} =\\&= \begin{pmatrix} \varphi^n\left( \dfrac{1 -\Phi}{\varphi -\Phi}\right) +\Phi^n\left( \dfrac{\varphi - 1}{\varphi - \Phi} \right) \\ \varphi^{n - 1}\left( \dfrac{1 -\Phi}{\varphi -\Phi}\right) +\Phi^{n - 1}\left( \dfrac{\varphi - 1}{\varphi - \Phi} \right)\end{pmatrix}  \end{aligned}\]
+\grid[18.4cm]{}
+
 ovvero 
 \[f_n = \varphi^n\left( \dfrac{1 -\Phi}{\varphi -\Phi}\right) +\Phi^n\left( \dfrac{\varphi - 1}{\varphi - \Phi} \right)\]
 Adesso rimane eventualmente solo da espandere $\varphi$ e $\Phi$.

@@ -4,10 +4,10 @@
 \contentsline {subsection}{\numberline {1.1}Notazione matriciale per i sistemi}{1}{subsection.1.1}%
 \contentsline {subsection}{\numberline {1.2}Prodotto matrice-vettore}{1}{subsection.1.2}%
 \contentsline {subsection}{\numberline {1.3}El metodo di Gauss-Jordan}{2}{subsection.1.3}%
-\contentsline {subsection}{\numberline {1.4}Prodotto tra matrici}{2}{subsection.1.4}%
+\contentsline {subsection}{\numberline {1.4}Prodotto tra matrici}{3}{subsection.1.4}%
 \contentsline {subsubsection}{\numberline {1.4.1}Matrice inversa}{3}{subsubsection.1.4.1}%
 \contentsline {subsection}{\numberline {1.5}Determinante}{4}{subsection.1.5}%
 \contentsline {section}{\numberline {2}Matrici e successioni}{4}{section.2}%
-\contentsline {subsection}{\numberline {2.1}Diagonalizzare una matrice}{4}{subsection.2.1}%
-\contentsline {subsubsection}{\numberline {2.1.1}Il polinomio caratteristico e gli autovalori}{4}{subsubsection.2.1.1}%
+\contentsline {subsection}{\numberline {2.1}Diagonalizzare una matrice}{5}{subsection.2.1}%
+\contentsline {subsubsection}{\numberline {2.1.1}Il polinomio caratteristico e gli autovalori}{5}{subsubsection.2.1.1}%
 \contentsline {subsubsection}{\numberline {2.1.2}Autovettori e matrici diagonalizzanti}{5}{subsubsection.2.1.2}%
