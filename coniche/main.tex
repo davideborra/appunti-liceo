@@ -130,104 +130,104 @@ L'area del segmento parabolico compreso tra una retta $r$ secante alla parabola 
         Vertici & \[A\left(\pm \sqrt{|k|} + x_C;\pm\sqrt{|k|}+y_C\right)\] & \[A\left(\pm \sqrt{|k|} + x_C;\mp\sqrt{|k|}+y_C\right)\]\\\hline
     \end{tabular}
 \end{table}
-\section*{Classificazione di coniche nella forma $Ax^2+Bxy+Cy^2+Dx+Ey+F=0$}
-\subsection*{Metodo 1: Eccentricità}
-\begin{definition}
-Si dice conica il luogo dei punti P del piano tali che sia costante il rapporto $e$ (eccentricità della curva) tra le distanze da un punto $F$ detto fuoco e una retta $d$ detta direttrice:
-\end{definition}
-\[\frac{\overline{PF}}{d(P, d)}=e\]
-L'eccentricità permette di classificare le coniche come segue:
-\begin{itemize}
-    \item $e>1$: iperbole (2 direttrici)
-    \begin{itemize}
-        \item $e=\sqrt{2}$: iperbole equilatera
-    \end{itemize}
-    \item $e=1$: parabola
-    \item $0<e<1$: ellisse
-    \item $e=0$: circonferenza
-\end{itemize}
-\subsection*{Metodo 2: Termine rettangolare} 
-                \tikzstyle{level 1}=[level distance=1cm, sibling distance=4.5cm]
-                \tikzstyle{level 2}=[level distance=2.5cm, sibling distance=2cm]
-                \tikzstyle{level 3}=[level distance=3.5cm, sibling distance=0.9cm]
+% \section*{Classificazione di coniche nella forma $Ax^2+Bxy+Cy^2+Dx+Ey+F=0$}
+% \subsection*{Metodo 1: Eccentricità}
+% \begin{definition}
+% Si dice conica il luogo dei punti P del piano tali che sia costante il rapporto $e$ (eccentricità della curva) tra le distanze da un punto $F$ detto fuoco e una retta $d$ detta direttrice:
+% \end{definition}
+% \[\frac{\overline{PF}}{d(P, d)}=e\]
+% L'eccentricità permette di classificare le coniche come segue:
+% \begin{itemize}
+%     \item $e>1$: iperbole (2 direttrici)
+%     \begin{itemize}
+%         \item $e=\sqrt{2}$: iperbole equilatera
+%     \end{itemize}
+%     \item $e=1$: parabola
+%     \item $0<e<1$: ellisse
+%     \item $e=0$: circonferenza
+% \end{itemize}
+% \subsection*{Metodo 2: Termine rettangolare} 
+%                 \tikzstyle{level 1}=[level distance=1cm, sibling distance=4.5cm]
+%                 \tikzstyle{level 2}=[level distance=2.5cm, sibling distance=2cm]
+%                 \tikzstyle{level 3}=[level distance=3.5cm, sibling distance=0.9cm]
                 
-                \tikzstyle{bag} = [text width=1.5 cm, text centered]
-                \tikzstyle{end} = [text width=9 cm, anchor = west]
+%                 \tikzstyle{bag} = [text width=1.5 cm, text centered]
+%                 \tikzstyle{end} = [text width=9 cm, anchor = west]
                 
-                \begin{tikzpicture}[grow=right]
-                \node[bag] {}
-                    child {
-                        node[bag] {$B=0$}        
-                            child {
-                                node[bag]{$A\neq 0$ $\lor$ $C\neq 0$}
-                                    child {
-                                        node[end]{Altra conica ruotata}
-                                    }
-                            }
-                            child {
-                                node[bag]{$A=0$ $\land$ $C=0$}
-                                    child {
-                                        node[end]{Omografica}
-                                    }
-                            }
-                    }
-                    child {
-                        node[bag] {$B\neq0$}        
-                            child {
-                                node[bag]{$AC>0$}
-                                    child {
-                                        node[end]{Ellisse se $s>0$ e concorde con $A$ e $C$ (cfr se $A=C$)}
-                                    }child {
-                                        node[end]{Ellisse degenere in punto se $s=0$}
-                                    }
-                            }
-                            child {
-                                node[bag]{$AC<0$}
-                                    child {
-                                        node[end]{Iperbole se $s=\frac{D^2}{4A}+\frac{E^2}{4C}-F\neq0$}
-                                    }child {
-                                        node[end]{Iperbole degenere in rette se $s=0$}
-                                    }
-                            }
-                            child {
-                                node[bag]{$AC=0$}
-                                    child {
-                                        node[end]{Parabola}
-                                    }child {
-                                        node[end]{Parabola degenere in rette ($A=D=0 \lor C=E=0$)}
-                                }
-                            }
-                    };
-                \end{tikzpicture}
-\subsection*{Metodo 3: Matrice associata\footnote{Potrebbe contenere errori}}
-Si costruisce la matrice \[\renewcommand{\arraystretch}{2}M=\begin{pmatrix}
-    A & \dfrac{B}{2} & \dfrac{D}{2}\\
-    \dfrac{B}{2} & C & \dfrac{E}{2} \\
-    \dfrac{D}{2} & \dfrac{E}{2} & F
-\end{pmatrix}\]
-Il cui minore principale di ordine 2 è la matrice 
-\[\renewcommand{\arraystretch}{2}M=\begin{pmatrix}
-    M_0 & \dfrac{B}{2} \\
-    \dfrac{B}{2} & C
-\end{pmatrix}\]
-\begin{itemize}
-    \item $\det M>0$: ellisse
-        \begin{itemize}
-            \item $\det M(A+C)>0$ ellisse complessa
-            \item $\det M(A+C)<0$ ellisse reale
-            \item $\det M=0$ ellisse degenere
-            \item $B=0 \land A=C$ circonferenza (reale o complessa come sopra)
-        \end{itemize}
-    \item $\det M_0=0$: parabola
-        \begin{itemize}
-            \item $\det A\neq 0$ parabola non degenere
-            \item $\det A=0$ parabola degenere
-        \end{itemize}
-    \item $\det M<0$: iperbole
-    \begin{itemize}
-            \item $\det A\neq0$ iperbole non degenere
-            \item $\det A=0$ iperbole degenere
-            \item $A+C=0$ iperbole equilatera (reale o complessa come sopra)
-        \end{itemize}
-\end{itemize}
+%                 \begin{tikzpicture}[grow=right]
+%                 \node[bag] {}
+%                     child {
+%                         node[bag] {$B=0$}        
+%                             child {
+%                                 node[bag]{$A\neq 0$ $\lor$ $C\neq 0$}
+%                                     child {
+%                                         node[end]{Altra conica ruotata}
+%                                     }
+%                             }
+%                             child {
+%                                 node[bag]{$A=0$ $\land$ $C=0$}
+%                                     child {
+%                                         node[end]{Omografica}
+%                                     }
+%                             }
+%                     }
+%                     child {
+%                         node[bag] {$B\neq0$}        
+%                             child {
+%                                 node[bag]{$AC>0$}
+%                                     child {
+%                                         node[end]{Ellisse se $s>0$ e concorde con $A$ e $C$ (cfr se $A=C$)}
+%                                     }child {
+%                                         node[end]{Ellisse degenere in punto se $s=0$}
+%                                     }
+%                             }
+%                             child {
+%                                 node[bag]{$AC<0$}
+%                                     child {
+%                                         node[end]{Iperbole se $s=\frac{D^2}{4A}+\frac{E^2}{4C}-F\neq0$}
+%                                     }child {
+%                                         node[end]{Iperbole degenere in rette se $s=0$}
+%                                     }
+%                             }
+%                             child {
+%                                 node[bag]{$AC=0$}
+%                                     child {
+%                                         node[end]{Parabola}
+%                                     }child {
+%                                         node[end]{Parabola degenere in rette ($A=D=0 \lor C=E=0$)}
+%                                 }
+%                             }
+%                     };
+%                 \end{tikzpicture}
+% \subsection*{Metodo 3: Matrice associata\footnote{Potrebbe contenere errori}}
+% Si costruisce la matrice \[\renewcommand{\arraystretch}{2}M=\begin{pmatrix}
+%     A & \dfrac{B}{2} & \dfrac{D}{2}\\
+%     \dfrac{B}{2} & C & \dfrac{E}{2} \\
+%     \dfrac{D}{2} & \dfrac{E}{2} & F
+% \end{pmatrix}\]
+% Il cui minore principale di ordine 2 è la matrice 
+% \[\renewcommand{\arraystretch}{2}M=\begin{pmatrix}
+%     M_0 & \dfrac{B}{2} \\
+%     \dfrac{B}{2} & C
+% \end{pmatrix}\]
+% \begin{itemize}
+%     \item $\det M>0$: ellisse
+%         \begin{itemize}
+%             \item $\det M(A+C)>0$ ellisse complessa
+%             \item $\det M(A+C)<0$ ellisse reale
+%             \item $\det M=0$ ellisse degenere
+%             \item $B=0 \land A=C$ circonferenza (reale o complessa come sopra)
+%         \end{itemize}
+%     \item $\det M_0=0$: parabola
+%         \begin{itemize}
+%             \item $\det A\neq 0$ parabola non degenere
+%             \item $\det A=0$ parabola degenere
+%         \end{itemize}
+%     \item $\det M<0$: iperbole
+%     \begin{itemize}
+%             \item $\det A\neq0$ iperbole non degenere
+%             \item $\det A=0$ iperbole degenere
+%             \item $A+C=0$ iperbole equilatera (reale o complessa come sopra)
+%         \end{itemize}
+% \end{itemize}
 \end{document}
