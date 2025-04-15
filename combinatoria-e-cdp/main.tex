@@ -2,7 +2,7 @@
 \usepackage[utf8]{inputenc} %for text encoding
 \usepackage[italian]{babel} %for language elements
 \usepackage{lambdatex}
-\usepackage{lambdabook}
+\usepackage[article, colorful]{lambdabook}
 \usepackage[a4paper, portrait, margin=2cm]{geometry}   %paper shape
 %trees
 \usepackage{tikz}
@@ -18,14 +18,16 @@
 \author{Davide Borra - 5LA}
 \date{A.S. 2021-2022}
 
+\setup
 \begin{document}
-    \begin{titlepage}
-    \maketitle
-    \tableofcontents
-    \creativecommons
-    \vspace{\fill}
-    \hspace{\fill} v. 2.0   %incrementare primo numero per contenuti e secondo numero per patch
-    \end{titlepage}
+    % \begin{titlepage}
+    % \maketitle
+    % \tableofcontents
+    % \license
+    % \vspace{\fill}
+    % \hspace{\fill} v. 2.0   %incrementare primo numero per contenuti e secondo numero per patch
+    % \end{titlepage}
+    \opening[2.0]
     
     \lhead{Calcolo Combinatorio e Calcolo delle Probabilità}
     \chead{}
@@ -460,12 +462,12 @@
                 \begin{boxdef}
                     Due eventi $E_1$ e $E_2$ relativi allo stesso spazio campionario si dicono \textbf{incompatibili} se il verificarsi dell'uno esclude il verificarsi contemporaneo dell'altro, cioè $E_1\cap E_2=\varnothing$. In caso contrario si dicono \textbf{compatibili}. 
                 \end{boxdef}
-                \begin{shadedTheorem}
+                \begin{thm}
                     La \textbf{probabilità della somma logica di due eventi} $E_1$ e $E_2$ è uguale alla somma delle loro due probabilità diminuita della probabilità del loro evento intersezione:
                     \[p(E_1\cup E_2)=p(E_1)+p(E_2)-p(E_1\cap E_2)\]
                     In particolare, se gli eventi sono \textit{incompatibili}:
                     \[p(E_1\cup E_2)=p(E_1)+p(E_2)\]
-                \end{shadedTheorem}
+                \end{thm}
                 \begin{ex}
                     [Si estrae una carta da un mazzo di 52 carte. Calcolare la probabilità che la carta:
                     \begin{enumerate}
@@ -501,10 +503,10 @@
                     \item Se $p(E_1|E_2)\neq p(E_1)$, ovvero sapere che è avvenuto $E_2$ modifica la probabilità di $E_1$ gli eventi di dicono \textbf{dipendenti}. In particolare se $p(E_1|E_2) > p(E_1)$ i due eventi si dicono \textbf{correlati positivamente}, perchè il verificari di $E_2$ aumenta la probabilità del verificarsi di $E_1$, mentre se $p(E_1|E_2)< p(E_1)$ i due eventi si dicono \textbf{correlati negativamente}, perchè il verificari di $E_2$ riduce la probabilità del verificarsi di $E_1$.
                 \end{itemize}
                  
-                \begin{shadedTheorem}
+                \begin{thm}
                     La probabilità condizionata di un evento $E_1$ rispetto ad un evento $E_2$ non impossibile è \[p(E_1|E_2)=\frac{p(E_1\cap E_2)}{p(E_2)}\]
                     con $p(E_2)\neq 0$.
-                \end{shadedTheorem}
+                \end{thm}
 
                 \begin{ex}
                     [Calcolare la probabilità che, lanciando un dado, esca un numero meggiore di 3, sapendo che è uscito un numero pari.
@@ -548,12 +550,12 @@
                     Dati due eventi $E_1$ e $E_2$ appartenenti allo stesso spazio campionario, si definisce \textbf{evento intersezione} o \textbf{prodotto logico} dei due eventi l'evento $E_1 \cap E_2$ che si verifica quando sono verificati entrambi gli eventi.
                 \end{boxdef}
 
-                \begin{shadedTheorem}
+                \begin{thm}
                     La \textbf{probabilità del prodotto logico di due eventi} $E_1$ e $E_2$ è uguale al prodotto della probabilità dell'evento $E_1$ per la probabilità dell'evento $E_2$ nell'ipotesi che $E_1$ si sia verificato:
                     \[p(E_1\cap E_2)=p(E_1)\cdot p(E_2|E_1)\]
                     In particolare, se gli eventi sono \textit{indipendenti}:
                     \[p(E_1\cap E_2)=p(E_1)\cdot p(E_2)\]
-                \end{shadedTheorem}
+                \end{thm}
 
             \subsection{Problema delle prove ripetute}~
             pippo
@@ -586,9 +588,9 @@
                 \[p_{(2,5)}=\binom{5}{2}\cdot 0,01323=0,1323\]
                 \end{ex}
                 ~
-                \begin{shadedTheorem}[Schema delle prove ripetute (o di Bernoulli)]
+                \begin{thm}[Schema delle prove ripetute (o di Bernoulli)]
                     Dato un esperimento aleatorio ripetuto nelle stesse condizioni $n$ volte e indicato con $E$ un evento che rappresenta il successo dell'esperimento e ha probabilità costante $p$ di verificarsi e probabilità $q=1-p$ di non verificarsi, la probabilità di ottenere $k$ successi su $n$ prove è: \[p_{(k,n)}=\binom{n}{k}p^k\cdot q^{n-k}\]
-                \end{shadedTheorem}
+                \end{thm}
             \subsection{Formula di disintegrazione e Teorema di Bayes}
                 \subsubsection{Probabilità totale o completa}
                     \begin{ex}
@@ -651,10 +653,10 @@
                                                 \[p(D)=p[(M_1\cap D)\cup(M_2 \cap D)]=p(M_1 \cap D)+p(M_2 \cap D)=0,8\%+3\%=3,8\%\]
                                                 
                                             \end{ex}
-                                                \begin{shadedTheorem}[Formula di disintegrazione]
+                                                \begin{thm}[Formula di disintegrazione]
                                                     Se un evento $E$ può essere scritto nella forma \[E=(E\cap E_1)\cup(E\cap E_2)\cup\dots\cup(E\cap E_n)\]
                         dove $E_1,E_2,\dots,E_n$ costituiscono una partizione dell'insieme $\Omega$ si ha che \[p(E)=p(E\cap E_1)+p(E\cap E_2)+\dots+p(E\cap E_n)=p(E_1)\cdot p(E|E_1)+p(E_2)\cdot p(E|E_2)+\dots+p(E_n)\cdot p(E|E_n)\]
-                    \end{shadedTheorem}
+                    \end{thm}
 
                 \subsubsection{Teorema di Bayes}
                     \begin{ex}
@@ -718,23 +720,21 @@
                                                 Per calcolare la probabilità che un pezzo sia difettoso dobbiamo quindi calcolare il rapporto tra la probabilità della foglia e la probabilità che un pezzo sia difettoso ottenuta mediante la formula di disintegrazione:
                                                 \[p(M_2|D)=\frac{p(M_2\cap D)}{p(D)}=\frac{4,2\%}{4,2\%+0,8\%}=84\%\]
                                             \end{ex}
-                    \begin{shadedTheorem}[Teorema di Bayes]
+                    \begin{thm}[Teorema di Bayes]
                         La probabilità che, essendosi verificato un evento $E$, la causa che sta alla sua origine sia l'evento $E_i$, con $i=1,2,\dots, n$, è:
                         \[p(E_i|E)=\frac{p(E\cap E_i)}{p(E)}=\frac{p(E_i)\cdotp(E|E_i)}{p(E)}\]
                         dove $p(E)$ è la probabilità dell'evento totale ottenuta mediante la formula di disintegrazione. 
-                    \end{shadedTheorem}
+                    \end{thm}
                 \subsection{Definizione statistica (o frequentista) della probabilità}
                     \begin{boxdef}
                         La frequenza relativa $f(E)$ di un evento sottoposto a $n$ esperimenti, effettuati nelle stesse condizioni, è il rapporto fra il numero delle volte $y$ in cui l'evento è verificato (frequenza assoluta) e il numero $n$ delle prove effettuate.
                         \[f(E)=\frac{y}{n}\]
                     \end{boxdef}
                     Come la probabilità, la frequenza relativa assume valori compresi tra 0 e 1. In questo caso però, se la frequenza relativa risluta 0 non significa che l'evento è impossibile, ma che non si è mai verificato nelle prove considerate, come se la frequenza è 1 non significa che l'evento è certo ma che si è verificato sempre nelle prove considerate. 
-                    \begin{shaded}
-                    \begin{law}[Legge dei grandi numeri o legge empirica del caso]
+                    \begin{thm}[Legge dei grandi numeri o legge empirica del caso]
                         Dato un evento $E$, sottoposto a $n$ prove tutte nelle stesse condizioni, il valore della frequenza relativa $f(E)=\frac{y}{n}$ tende al valore della probabilità $p(E)$, all'aumentare del numero $n$ di prove effettuate.
                         \[\lim_{n\rightarrow +\infty}\frac{y}{n}=p(E)\]
-                    \end{law}
-                    \end{shaded}
+                    \end{thm}
                     \begin{boxdef}
                         La \textbf{probabilità statistica} di un evento $E$ è la frequanza relativa del suo verificarsi iquando il numero di prove effettuato è da ritenersi "sufficientemente alto".
                     \end{boxdef}
