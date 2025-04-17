@@ -35,9 +35,10 @@
     
     \section{Calcolo Combinatorio}
         \subsection{Il principio moltiplicativo}
-            \begin{ex}[
+            \begin{ex}
+            \tcbsubtitle{
                 In un armadio ci sono tre camicie, due giacche e quattro pantaloni, in quanti modi ci si può vestire, sapendo che non ci sono problemi dovuti al colore dei capi?
-            ]
+            }
             
             Per risolvere questo problema una strategia efficace potrebbe essere quella di costruire uno schema ad albero in modo da trovare tutti gli abbinamenti possibili:
             
@@ -164,9 +165,10 @@
                  n(n-1)! & se ~n\geq 1
             \end{array}\right.\]
             
-            \begin{ex}[
-                Si risolva la seguente equazione (Volume 4A - Pagina $\alpha$42 - Esercizio 4\footnote{Tutti gli esercizi per cui è specificato un riferimento sono tratti da \textit{Manuale blu 2.0 di matematica} di M.Bergamini, G. Barozzi, A. Trifone - Ed. Zanichelli.}):
-            \[(x+1)!-4(x-1)!=x!\]]
+            \begin{ex}[Volume 4A - Pagina $\alpha$42 - Esercizio 4\footnote{Tutti gli esercizi per cui è specificato un riferimento sono tratti da \textit{Manuale blu 2.0 di matematica} di M.Bergamini, G. Barozzi, A. Trifone - Ed. Zanichelli.}]
+                \tcbsubtitle{
+                Si risolva la seguente equazione :
+            \[(x+1)!-4(x-1)!=x!\]}
                 
                 Prima di procedere con la semplificazione dell'espressione è opportuno porre le condizioni di esistenza (l'argomento della funzione fattoriale deve essere $\geq 0$).
                 \[ \left\{
@@ -195,9 +197,9 @@
                 \[x=\pm2\]
                 Confronto ora il risultato trovato con le condizioni precedentemente poste: siccome $x\geq1$, posso accettare unicamente la soluzione positiva, per cui \[x=2\]
             \end{ex}
-            \begin{ex}
-                [Si risolva la seguente disequazione (Volume 4A - Pagina $\alpha$26 - Esercizio 98):
-                \[\frac{x!}{(x-2)!}>\frac{x!}{(x-1)!}\]]
+            \begin{ex}[Volume 4A - Pagina $\alpha$26 - Esercizio 98]
+                \tcbsubtitle{Si risolva la seguente disequazione:
+                \[\frac{x!}{(x-2)!}>\frac{x!}{(x-1)!}\]}
             
             
             Prima di procedere con la semplificazione della disequazione è necessario porre le condizioni di esistenza:
@@ -231,7 +233,7 @@
            \subsection{Permutazioni}
             \subsubsection{Permutazioni semplici} 
             \begin{ex}
-                [Si determini il numero degli anagrammi, anche privi di senso, della parola "MONTE"]
+                \tcbsubtitle{Si determini il numero degli anagrammi, anche privi di senso, della parola \say{MONTE}}
             
             
             Il problema si risolve applicando il principio moltiplicativo: Immaginiamo di dovere scegliere le lettere una per volta: la prima scelta può essere effettuata tra 5 lettere, la seconda potrà essere fatta tra 4, la terza tra 3 e così via fino all'ultima lettera la cui scelta sarà obbligata. Il numero di anagrammi si ricaverà quindi secondo la relazione \[P_5=5\cdot4\cdot3\cdot2\cdot1=120\]
@@ -242,7 +244,7 @@
             
             \subsubsection{Permutazioni circolari} 
             \begin{ex}
-                [Alice, Bob e Carlo devono sedersi attorno ad un tavolo rotondo, in quanti modi lo possono fare?]
+                \tcbsubtitle{Alice, Bob e Carlo devono sedersi attorno ad un tavolo rotondo, in quanti modi lo possono fare?}
                 
             
             Cominciamo rappresentando tutte le $3!=6$ possibili configurazioni come se si trattasse di permutazioni semplici:
@@ -285,7 +287,7 @@
             
             \subsubsection{Permutazioni con ripetizione} 
             \begin{ex}
-                [Si determini il numero degli anagrammi, anche privi di senso, della parola "TETTO"]
+                \tcbsubtitle{Si determini il numero degli anagrammi, anche privi di senso, della parola \say{TETTO}}
                 Anche in questo caso non è possibile applicare il modello delle permutazioni semplici perché si andrebbero a contare sei volte tutte le reali configurazioni (infatti le tre T sarebbero considerate come lettere diverse), per cui è necessario dividere il numero delle configurazioni ottenute tramite le permutazioni semplici per le permutazioni di tutte le lettere ripetute, in questo caso \[P_5^{(3)}=\frac{P_5}{P_3}=\frac{5!}{3!}=\frac{5\cdot4\cdot3!}{3!}=5\cdot4=20\]
             \end{ex}
             \begin{boxdef}
@@ -295,7 +297,7 @@
             \subsection{Disposizioni}
             \subsubsection{Disposizioni semplici}
             \begin{ex}
-                [Dobbiamo stilare una Top 6 tra i 151 pokémon della prima generazione, in quanti modi possiamo farlo?]
+                \tcbsubtitle{Dobbiamo stilare una Top 6 tra i 151 pokémon della prima generazione, in quanti modi possiamo farlo?}
                 
             
             Qui è possibile seguire due strade, entrambe già viste per le permutazioni: 
@@ -310,14 +312,14 @@
             
             \subsubsection{Disposizioni circolari}
             \begin{ex}
-                [8 amici devonoi sedersi attorno ad un tavolo rotondo che ha 5 posti, in quanti modi possono farlo?]
+                \tcbsubtitle{8 amici devono sedersi attorno ad un tavolo rotondo che ha 5 posti, in quanti modi possono farlo?}
                 
             La soluzione è analoga a quella relativa alle permutazioni circolari, basta fissare una persona e variare le altre. Si ottengono quindi $k$ configurazioni identiche per ogni classe e di conseguenza il totale dei modi sarà
             \[D_{8,5}^{circ}=\frac{8!}{5\cdot(8-5)!}\]
         \end{ex} 
             \subsubsection{Disposizioni con ripetizione}
             \begin{ex}
-                [Dobbiamo creare la nuova password per la nostra mail usando 8 caratteri anche ripetuti scelti tra le 26 lettere dell'alfabeto (maiuscole e minuscole) e le 10 cifre. In quanti modi possiamo farlo?]
+                \tcbsubtitle{Dobbiamo creare la nuova password per la nostra mail usando 8 caratteri anche ripetuti scelti tra le 26 lettere dell'alfabeto (maiuscole e minuscole) e le 10 cifre. In quanti modi possiamo farlo?}
 
             Abbiamo la possibilità di scegliere tra $n=26\cdot2+10=62$ caratteri. Il ragionamento è sempre lo stesso visto dall'inizio: il primo carattere può essere scelto tra 62, il secodo tra 62 (perché posso ripetere il primo), il terzo ancora tra 62 e così via. 
             \[D_{62,8}^r=62\cdot62\cdot62\cdot62\cdot62\cdot62\cdot62\cdot62=62^8\]
@@ -341,8 +343,8 @@
         
         \subsection{Combinazioni}
             \subsubsection{Combinazioni semplici}
-            \begin{ex}[
-                Devo formare una squadra con 6 dei 10 pokémon che ho catturato finora. Sapendo che non conta l'ordine con cui i pokémon si trovano nella squadra  e che ho catturato un esemplare per ogni pokémon, in quanti modi posso farlo?]
+            \begin{ex}\tcbsubtitle{
+                Devo formare una squadra con 6 dei 10 pokémon che ho catturato finora. Sapendo che non conta l'ordine con cui i pokémon si trovano nella squadra  e che ho catturato un esemplare per ogni pokémon, in quanti modi posso farlo?}
                 
             
             \begin{wrapfigure}{r}{0.25\textwidth}
@@ -360,13 +362,13 @@
             \end{boxdef}
         \subsubsection{Combinazioni con ripetizione}
             \begin{ex}
-                [E se avessi catturato abbastanza pokémon da poterli ripetere nella squadra?]
+                \tcbsubtitle{E se avessi catturato abbastanza pokémon da poterli ripetere nella squadra?}
 
-            Qui la situazione si complica: non possiamo più passare per le disposizioni o per le combinazioni, ma possiamo utilizzare dei "separatori". Immaginiamo mettere tutti i pokémon in fila e di aggiungere dei separatori "$|$" che indicano che il pokémon alla loro sinistra farà parte della squadra: 
+            Qui la situazione si complica: non possiamo più passare per le disposizioni o per le combinazioni, ma possiamo utilizzare dei \say{separatori}. Immaginiamo mettere tutti i pokémon in fila e di aggiungere dei separatori \say{$|$} che indicano che il pokémon alla loro sinistra farà parte della squadra: 
             \begin{center}
-                \includegraphics{pkmn/A.png} $|$\includegraphics{pkmn/B.png} $|$\includegraphics{pkmn/C.png} $|$$|$ \includegraphics{pkmn/D.png} \includegraphics{pkmn/J.png} \includegraphics{pkmn/M.png} \includegraphics{pkmn/MK.png} $|$\includegraphics{pkmn/P.png}$|$$|$\includegraphics{pkmn/R.png} \includegraphics{pkmn/Z.png}
+                \includegraphics{pkmn/A.png} \raisebox{5pt}{$\big|$}\includegraphics{pkmn/B.png}\includegraphics{pkmn/C.png} \raisebox{5pt}{$\big|$}\raisebox{5pt}{$\big|$} \includegraphics{pkmn/D.png} \includegraphics{pkmn/J.png} \includegraphics{pkmn/M.png} \includegraphics{pkmn/MK.png} \raisebox{5pt}{$\big|$}\includegraphics{pkmn/P.png}\raisebox{5pt}{$\big|$}\raisebox{5pt}{$\big|$}\includegraphics{pkmn/R.png} \includegraphics{pkmn/Z.png}
             \end{center} 
-            A questo punto calcoliamo tutte le permutazioni di questa stringa, trattando tutti i pokémon e tutti i separatori come indistinguibili (si tratta quindi di permutazioni con ripetizione $P_{16}^{(10,6)}$). Così facendo stiamo eliminando tutte le configurazioni ripetute. Rimane solo un problema: in questo modo si può presentare una configurazione in cui un separatore compare prima di \includegraphics{pkmn/A.png}, andando a scegliere un pokémon che in realtà non esiste. Per risolvere questo problema basta semplicemente eliminare \includegraphics{pkmn/A.png} dalla serie e sapere che se un separatore non avrà niente alla propria sinistra, in realtà starà indicando proprio lui. In sintesi si tratterebbe quindi di permutazioni con ripetizione di $n+k-1$ elementi, di cui $n-1$ e $k$ ripetuti, o meglio $\binom{n+k-1}{k}$.
+            A questo punto calcoliamo tutte le permutazioni di questa stringa, trattando tutti i pokémon e tutti i separatori come indistinguibili (si tratta quindi di permutazioni con ripetizione $P_{16}^{(10,6)}$). Così facendo stiamo eliminando tutte le configurazioni ripetute. Rimane solo un problema: in questo modo si può presentare una configurazione in cui un separatore compare prima di \raisebox{-4pt}{\includegraphics{pkmn/A.png}}, andando a scegliere un pokémon che in realtà non esiste. Per risolvere questo problema basta semplicemente eliminare \raisebox{-4pt}{\includegraphics{pkmn/A.png}} dalla serie e sapere che se un separatore non avrà niente alla propria sinistra, in realtà starà indicando proprio lui. In sintesi si tratterebbe quindi di permutazioni con ripetizione di $n+k-1$ elementi, di cui $n-1$ e $k$ ripetuti, o meglio $\binom{n+k-1}{k}$.
             \[C^r_{10,6}=\binom{10+6-1}{6}=\frac{15!}{6!\cdot9!}=455\]
         \end{ex} 
             \begin{boxdef}  
@@ -389,7 +391,7 @@
             \textbf{Evento:} un qualsiasi sottoinsieme dallo spazio campionario.\\
             \textbf{Evento elementare:} sottoinsieme dello spazio campionario formato da un singolo risultato   dell'esperimento.
             \begin{ex}
-                [Si lancia un dado a sei facce due volte, rappresentare lo spazio campionario e individuare i seguenti eventi: $E_1=$"sul primo dado esce 2 e sul secondo esce 5" e $E_2=$"escono due numeri uguali."]
+                \tcbsubtitle{Si lancia un dado a sei facce due volte, rappresentare lo spazio campionario e individuare i seguenti eventi: $E_1=$\say{sul primo dado esce 2 e sul secondo esce 5} e $E_2=$\say{escono due numeri uguali.}}
 
             Iniziamo rappresentando lo spazio campionario $\Omega$. Per farlo in questo caso la scelta migliore è una tabella a doppia entrata:
             \begin{center}
@@ -410,18 +412,18 @@
         \subsection{Definizione classica di probabilità}
         \begin{boxdef}
             Si dice probabilità dell'evento $E$ il rapporto tra i casi favorevoli in cui si verifica $E$ e i casi possibili che si possono verificare, quando sono tutti equiprobabili:
-        \[p(E)=\frac{casi~favorevoli}{casi~possibili}=\frac{|E|}{|\Omega|}\]
+        \[p(E)=\frac{\text{casi favorevoli}}{\text{casi possibili}}=\frac{|E|}{|\Omega|}\]
         La probabilità di un evento può assumere un valore compreso tra 0 e 1. Se è 0 l'evento si dice \textbf{impossibile}, se è 1 l'evento si dice \textbf{certo}. 
         \end{boxdef}
         \begin{ex}
-           [ Calcolare la probabilità che lanciando un dado esca un numero maggiore o ugugale a 5.]
+            \tcbsubtitle{Calcolare la probabilità che lanciando un dado esca un numero maggiore o ugugale a 5.}
 
 
         $\Omega=\{1,2,3,4,5,6\}$
 
         $|\Omega|=6$
 
-        $E=$"esce un numero maggiore o uguale a 5"
+        $E=$\say{esce un numero maggiore o uguale a 5}
 
         $E=\{5,6\}$
 
@@ -433,21 +435,21 @@
         \subsubsection{Probabilità dell'evento contrario}
             Si consideri un evento $E$, si dice evento contrario di $E$ l'evento $\overline{E}$ che si verifica se e solo se non si verifica $E$.
             In tal caso vale la relazione \[p(E)+p(\overline{E})=1\]
-            \begin{ex}[Calcolare la probabilità che lanciando un dado esca un numero minore di 5.]
-                $E=$"esce un numero maggiore o uguale a 5" \qquad $p(E)=\frac{1}{3}$ \\
-                $\overline{E}=$"esce un numero minore di 5" \qquad $p(\overline{E})=1-p(E)=1-\frac{1}{3}=1\frac{2}{3}$
+            \begin{ex}\tcbsubtitle{Calcolare la probabilità che lanciando un dado esca un numero minore di 5.}
+                $E=$\say{esce un numero maggiore o uguale a 5} \qquad $p(E)=\frac{1}{3}$ \\
+                $\overline{E}=$\say{esce un numero minore di 5} \qquad $p(\overline{E})=1-p(E)=1-\frac{1}{3}=\frac{2}{3}$
             \end{ex}
             
         \subsubsection{Probabilità e calcolo combinatorio}
             In alcuni casi per calcolare il numero di casi favorevoli e casi possibili potrebbe essere utile utilizzare alcune tecniche di calcolo proprie del calcolo combinatorio.
-            \begin{ex}
-                [In una scatola di cioccolatini ne sono rimasti 4 al latte, 10 fondenti e 2 al liquore. Si prendono consecutivamente due cioccolatini a caso. Calcola la probabilità che:
+            \begin{ex} [Volume 4A - Pagina $\alpha$81 - Esercizio 34]
+                \tcbsubtitle{In una scatola di cioccolatini ne sono rimasti 4 al latte, 10 fondenti e 2 al liquore. Si prendono consecutivamente due cioccolatini a caso. Calcola la probabilità che:
                 \begin{enumerate}
                     \item siano entrambi fondenti
                     \item non siano al liquore
                     \item non siano entrambi al latte
-                \end{enumerate}
-                (Volume 4A - Pagina $\alpha$81 - Esercizio 34)]
+                \end{enumerate}}
+               
             
 
             \[|\Omega|=16\]
@@ -468,21 +470,21 @@
                     In particolare, se gli eventi sono \textit{incompatibili}:
                     \[p(E_1\cup E_2)=p(E_1)+p(E_2)\]
                 \end{thm}
-                \begin{ex}
-                    [Si estrae una carta da un mazzo di 52 carte. Calcolare la probabilità che la carta:
+                \begin{ex}[Volume 4A - Pagina $\alpha$84 - Esercizio 64]
+                    \tcbsubtitle{Si estrae una carta da un mazzo di 52 carte. Calcolare la probabilità che la carta:
                     \begin{enumerate}
                         \item sia un re o un sette
                         \item sia un re o una carta di picche
                         \item sia un asso o una carta di picche o una figura
                     \end{enumerate}
-                    (Volume 4A - Pagina $\alpha$84 - Esercizio 64)]
+                    }
                 
 
                 \begin{tabular}{p{0.4\textwidth}p{0.5\textwidth}}
-                    $p(Re)=\frac{4}{52}=\frac{1}{13}$ & $p(fig)=\frac{3}{13}$\\
+                    $p(Re)=\frac{4}{52}=\frac{1}{13}$ & $p(\text{fig})=\frac{3}{13}$\\
                     $p(7)=\frac{4}{52}=\frac{1}{13}$ & $p(Re\cap \spadesuit)=\frac{1}{52}$\\
                     $p(\spadesuit)=\frac{13}{52}=\frac{1}{4}$& $p(A\cap \spadesuit)=\frac{1}{52}$\\
-                    $p(A)=\frac{4}{52}=\frac{1}{13}$ & $p(fig \cap \spadesuit)=\frac{3}{52}$\\
+                    $p(A)=\frac{4}{52}=\frac{1}{13}$ & $p(\text{fig} \cap \spadesuit)=\frac{3}{52}$\\
                 \end{tabular}\\
 
                 Siccome gli eventi "pesco un re" e "pesco un 7" sono incompatibili:
@@ -492,7 +494,7 @@
                 \[p(E_2)=p(Re)+p(\spadesuit)-p(Re\cap \spadesuit)=\frac{1}{13}+\frac{1}{4}-\frac{1}{52}=\frac{16}{52}=\frac{4}{13}\]
 
                 In questo caso bisogna considerare tutte le possibili coppie e anche l'intersezione di tutti e tre gli eventi. In particolare le coppie "pesco un asso"-"pesco una carta di picche" e "pesco una figura"-"pesco una carta di picche" sono formate da eventi compatibili, mentre la coppia "pesco un asso"-"pesco una carta di picche" è formata da eventi incompatibili, di conseguenza l'intersezione dei tre spazi campionari è vuota. 
-                \[p(E_3)=p(A)+p(\spadesuit)+p(fig)-p(A\cap \spadesuit)-p(fig \cap \spadesuit)=\frac{1}{4}+\frac{1}{13}+\frac{3}{13}-\frac{1}{52}-\frac{3}{52}=\frac{13+4+12-1-3}{52}=\frac{25}{52}\]
+                \[p(E_3)=p(A)+p(\spadesuit)+p(\text{fig})-p(A\cap \spadesuit)-p(\text{fig} \cap \spadesuit)=\frac{1}{4}+\frac{1}{13}+\frac{3}{13}-\frac{1}{52}-\frac{3}{52}=\frac{13+4+12-1-3}{52}=\frac{25}{52}\]
             \end{ex}
             \subsection{Probabilità condizionata}
                 \begin{boxdef}
@@ -509,8 +511,8 @@
                 \end{thm}
 
                 \begin{ex}
-                    [Calcolare la probabilità che, lanciando un dado, esca un numero meggiore di 3, sapendo che è uscito un numero pari.
-                    (Volume 4A - Pagina $\alpha$87 - Esercizio 84)]
+                    [Volume 4A - Pagina $\alpha$87 - Esercizio 84]
+                    \tcbsubtitle{Calcolare la probabilità che, lanciando un dado, esca un numero meggiore di 3, sapendo che è uscito un numero pari.}
                 
                 $p(>3)=\frac{3}{6}=\frac{1}{3}$
 
@@ -523,11 +525,11 @@
                 Siccome $p(>3|\mathbb{P})>p(>3)$ i due eventi sono dipendenti e correlati positivamente.
             \end{ex}
             \subsection{Prodotto logico di eventi}~
-            \begin{ex}
-                [In una classe di 25 studenti i $\frac{3}{5}$ sono maggiorenni. I maschi sono 10, di cui 7 maggiorenni. Scegliendo a caso uno studente, qual è la probabilità che sia una ragaza maggiorenne? (Volume 4A - Pagina $\alpha 90$ - Esercizio 101)]
+            \begin{ex}[Volume 4A - Pagina $\alpha 90$ - Esercizio 101]
+                \tcbsubtitle{In una classe di 25 studenti i $\frac{3}{5}$ sono maggiorenni. I maschi sono 10, di cui 7 maggiorenni. Scegliendo a caso uno studente, qual è la probabilità che sia una ragaza maggiorenne? }
             \noindent
-            $E_1 =$ "viene scelta una ragazza"\\
-            $E_2 = $ "viene scelto uno studente maggiorenne"\\
+            $E_1 =$ \say{viene scelta una ragazza}\\
+            $E_2 = $ \say{viene scelto uno studente maggiorenne}\\
             Prima di tutto calcoliamo quanti sono i maschi, le femmine e gli studenti maggiorenni:
             \begin{center}
             \begin{tabular}{|c|c|c|c|}
@@ -557,11 +559,12 @@
                     \[p(E_1\cap E_2)=p(E_1)\cdot p(E_2)\]
                 \end{thm}
 
-            \subsection{Problema delle prove ripetute}~
-            pippo
-                \begin{ex}[Una rilevazione statistica ha messo in evidenza che 7 persone su 10 utilizzano in un mese surgelati di pesce. Calcola la probabilità che, scegliendo a caso 5 persone, esattamente due abbiano nel corso del mese consumato questo tipo di prodotto. (Volume 4A - Pagina $\alpha$95 - Esercizio 136)]
+            \subsection{Problema delle prove ripetute}
+            \begin{ex}
+                [Volume 4A - Pagina $\alpha$95 - Esercizio 136]
+                \tcbsubtitle{Una rilevazione statistica ha messo in evidenza che 7 persone su 10 utilizzano in un mese surgelati di pesce. Calcola la probabilità che, scegliendo a caso 5 persone, esattamente due abbiano nel corso del mese consumato questo tipo di prodotto.}
                     \noindent
-                $E=$ "ha mangiato pesce surgelato questo mese" \qquad
+                $E=$ \say{ha mangiato pesce surgelato questo mese} \qquad
                 $p(E)=p=\frac{7}{10}$ \qquad
                 $p(\overline{E})=q=\frac{3}{10}$
 
@@ -594,7 +597,8 @@
             \subsection{Formula di disintegrazione e Teorema di Bayes}
                 \subsubsection{Probabilità totale o completa}
                     \begin{ex}
-                        [Due macchine producono lo stesso pezzo meccanico. La prima produce il $40\%$ di tutto il quantitativo e il $98\%$ della sua produzione è senza difetti. La seconda macchina ha un tasso di difettosità del $5\%$. Calcola la probabilità che, estraendo a caso un pezzo, questo sia difettoso. (Volume 4A - Pagina $\alpha$96 - Esercizio 144)]
+                        [Volume 4A - Pagina $\alpha$96 - Esercizio 144]
+                        \tcbsubtitle{Due macchine producono lo stesso pezzo meccanico. La prima produce il $40\%$ di tutto il quantitativo e il $98\%$ della sua produzione è senza difetti. La seconda macchina ha un tasso di difettosità del $5\%$. Calcola la probabilità che, estraendo a caso un pezzo, questo sia difettoso. }
                         
                         Un passo molto utile per rappresentare il problema può essere tramite uno schema ad albero. I valori delle probabilità delle foglie possono essere calcolati mediante il teorema del prodotto:
                         % Tree
@@ -658,9 +662,10 @@
                         dove $E_1,E_2,\dots,E_n$ costituiscono una partizione dell'insieme $\Omega$ si ha che \[p(E)=p(E\cap E_1)+p(E\cap E_2)+\dots+p(E\cap E_n)=p(E_1)\cdot p(E|E_1)+p(E_2)\cdot p(E|E_2)+\dots+p(E_n)\cdot p(E|E_n)\]
                     \end{thm}
 
-                \subsubsection{Teorema di Bayes}
+                    \subsubsection{Teorema di Bayes}
                     \begin{ex}
-                        [Due macchine producono lo stesso pezzo meccanico. La prima produce il $40\%$ di tutto il quantitativo e il $98\%$ della sua produzione è senza difetti. La seconda macchina ha un tasso di difettosità del $7\%$. Avendo preso a caso un pezzo e avendo accertato che è difettoso, calcola la probabilità che provenga dalla seconda macchina. (Volume 4A - Pagina $\alpha$98 - Esercizio 159)]
+                        [Volume 4A - Pagina $\alpha$98 - Esercizio 159]
+                        \tcbsubtitle{Due macchine producono lo stesso pezzo meccanico. La prima produce il $40\%$ di tutto il quantitativo e il $98\%$ della sua produzione è senza difetti. La seconda macchina ha un tasso di difettosità del $7\%$. Avendo preso a caso un pezzo e avendo accertato che è difettoso, calcola la probabilità che provenga dalla seconda macchina. }
                         
                         Anche in questo caso è particolarmente utile passare per la rapperesentazione mediante schema ad albero. 
                         
@@ -740,7 +745,7 @@
                     \end{boxdef}
                     Attenzione: non esiste un valore specifico per il numero di prove, che infatti dipende molto anche dall'evento analizzato. 
                     \begin{ex}
-                        [Un dado truccato viene lanciato per 3000 volte. La faccia 6 esce 375 volte. Calcolare la probabilità che in un lancio di questo dado esca 6.]
+                        \tcbsubtitle{Un dado truccato viene lanciato per 3000 volte. La faccia 6 esce 375 volte. Calcolare la probabilità che in un lancio di questo dado esca 6.}
                         
                         $y=375$
                         
@@ -750,7 +755,7 @@
                     \end{ex}
                 \subsection{Definizione soggettiva di probabilità}
                     \begin{ex}
-                        [Qual è la probabilità che il prossimo papa sia un cardinale della Chiesa sudamericana?]
+                        \tcbsubtitle{Qual è la probabilità che il prossimo papa sia un cardinale della Chiesa sudamericana?}
                         Non è possibile determinare questo valore con certezza, l'unico modo è chiedere ad un esperto e affidarsi alle sue stime. 
                     \end{ex}
 
@@ -791,8 +796,8 @@
                     \end{corollary}
                     L'impostazione assiomatica della probabilità permette di risolvere problemi che altrimenti non avrebbero avuto soluzione:
                     \begin{ex}
-                        [Un tiratore lancia una freccetta su un bersaglio circolare di raggio $R=30cm$. Supponendo che il tiratore colpisca il bersaglio e che tutti i punti di quest'ultimo abbiano la stessa probabilità di essere colpiti, qual è la probabilità che sia colpito un punto distante meno di $r=10cm$ dal centro?]
-                        In questo caso la probabilità può essere calcolata come rapporto tra le aree dei due cerchi:
+                        \tcbsubtitle{Un tiratore lancia una freccetta su un bersaglio circolare di raggio $R=30cm$. Supponendo che il tiratore colpisca il bersaglio e che tutti i punti di quest'ultimo abbiano la stessa probabilità di essere colpiti, qual è la probabilità che sia colpito un punto distante meno di $r=10cm$ dal centro?}
+                        In questo caso la definizione classica non ha alcun senso: gli eventi possibili sono infiniti in quanto la freccetta può colpire ciascuno degli infiniti punti interni al bersaglio. Tuttavia, grazie alla definizione assiomatica, la probabilità può essere calcolata come rapporto tra l'area del cerchio piccolo e quella del cerchio grosso: 
                         \definecolor{qqqqff}{rgb}{0.,0.,1.}
                         \begin{center}
                             \begin{tikzpicture}[line cap=round,line join=round,>=triangle 45,x=1.0cm,y=1.0cm]
@@ -813,5 +818,8 @@
                         \[p(E)=\frac{A_i}{A_e}=\frac{\pi cm^2}{9\pi cm^2}=\frac{1}{9}\]
                     \end{ex}
                         
+\begin{oss}[$\curvearrowright$]
+    Il vantaggio della formulazione assiomatica di Kolmogorov è che permette di utilizzare per il cacolo delle probabilità strumenti più avanzati provenienti da altre branche della matematica, in particolare la Teoria della Misura grazie ad alcune funzioni dette \say{variabili aleatorie}. Questo approccio, consente di parlare di probabilità in contesti molto più ampi rispetto al solo caso classico, ad esempio quando lo spazio campionario è un insieme infinito.
+\end{oss}
                     
  \end{document}
